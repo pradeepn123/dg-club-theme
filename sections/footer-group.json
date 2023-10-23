@@ -1,0 +1,65 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "ebdaaa5c-c47c-42ac-a830-30a799694755": {
+          "type": "text",
+          "settings": {
+            "column_size": "large",
+            "text_alignment": "left",
+            "title": "",
+            "image": "shopify:\/\/shop_images\/Logo.png",
+            "text": "<p>Personalized décor and gifts, empowering artists. Elevate your space with unique, customizable creations<\/p>",
+            "text_size": "small",
+            "button_text": "",
+            "button_link": "",
+            "show_social_links": false
+          }
+        },
+        "d402e6d5-9d79-43ad-900a-cfaddc6cd9f8": {
+          "type": "menu",
+          "settings": {
+            "column_size": "small",
+            "title": "Company",
+            "menu": "main-menu"
+          }
+        },
+        "055d0c35-3f11-4f51-9e3d-eab55edb7a9b": {
+          "type": "menu",
+          "settings": {
+            "column_size": "small",
+            "title": "Resources",
+            "menu": "main-menu"
+          }
+        },
+        "2ab8345e-9f63-4c80-b028-f4edae3633b5": {
+          "type": "signup",
+          "settings": {
+            "column_size": "large",
+            "title": "Subscribe to our newsletter",
+            "text": "<p>Signup for our newsletter and receive 10% off of your first order!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "ebdaaa5c-c47c-42ac-a830-30a799694755",
+        "d402e6d5-9d79-43ad-900a-cfaddc6cd9f8",
+        "055d0c35-3f11-4f51-9e3d-eab55edb7a9b",
+        "2ab8345e-9f63-4c80-b028-f4edae3633b5"
+      ],
+      "settings": {
+        "footer_reveal_animation": false,
+        "copyright_text": "All rights reserved.",
+        "show_language_switcher": false,
+        "show_currency_switcher": false,
+        "show_payment_icons": true
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}
