@@ -122,3 +122,42 @@
     @media only screen and (min-width: 768px) {
       .scrolling-content .flickity-page-dots .dot {
         margin: 6px 0; } }
+
+.heading_text {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 118.5%;
+}
+.subheading_text {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 130%;
+}
+.scrolling-content--content-text p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+}
+@media only screen and (max-width: 768px) {
+  .heading_text  {
+    font-size: 36px;
+  } 
+  .subheading_text{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .scrolling-content--content-text p {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .heading_text  {
+    font-size: 42px;
+  } 
+  .subheading_text{
+    font-size: 28px;
+  }
+  .scrolling-content--content-text p {
+    font-size: 18px;
+  }
+}

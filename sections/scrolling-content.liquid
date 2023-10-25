@@ -102,7 +102,7 @@
 							assign marker_color = block.settings.marker_color
 							assign text = block.settings.heading | newline_to_br
 						-%}
-							<h2 class="{{ heading_size }}">{% render 'animated-marker-heading', heading: text, style: marker_style, color: marker_color %}</h2>
+							<h2 class="heading_text">{% render 'animated-marker-heading', heading: text, style: marker_style, color: marker_color %}</h2>
 						{% endif %}
 						{% if block.settings.subheading != blank %}
 							<h3 class="subheading_text">{{ block.settings.subheading }}</h3>

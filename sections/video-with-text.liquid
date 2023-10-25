@@ -14,6 +14,10 @@
     assign button_text = section.settings.button_text
     assign button_link = section.settings.button_link
     assign video_first = section.settings.video_first
+    assign color_bg = section.settings.color_bg
+    assign color_text = section.settings.color_text
+    assign color_button = section.settings.color_button
+    assign color_button_text = section.settings.color_button_text
 -%}
 
 {%- style -%}
@@ -22,17 +26,30 @@
 .video-section--text {
     flex-direction: row-reverse;
 }
-.video-section--text--inner {
-    padding-left: 0;
-    padding-right: 54px;
+@media only screen and (max-width: 768px) {
+    .video-section--text {
+        flex-direction: column-reverse;
+    }
 }
 {% endif %}
+
+.video-section--inner a.button span {
+    color: {{ color_button_text }};
+}
+
+.video-section--inner a.button {
+    background: {{ color_button }};
+}
+
+.video-section--text .video-section--inner, .video-section--text .video-section--inner h2 {
+    color: {{ color_text }};
+}
 
 {%- endstyle -%}
 
 <div class="row {% if full_width %} full-width-row-full{% endif %}">
 	<div class="small-12 columns">
-		<div class="video-section--text {% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+		<div class="video-section--text{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="background:{{ color_bg }};">
 			<div class="video-section--inner">
 				{% if heading != blank %}
 					<h2 class="{{ heading_size }}">{{ heading }}</h2>
@@ -130,11 +147,11 @@
 					"label": "Medium"
 				},
 				{
-					"value": "h2",
+					"value": "h3",
 					"label": "Small"
 				}
 			],
-			"default": "h2"
+			"default": "h3"
 		},
         {
 			"id": "button_link",
@@ -210,11 +227,29 @@
             "content": "Colors"
         },
         {
-            "type": "color",
-            "id": "marker_color",
-            "label": "Marker",
-            "default": "#FD6262"
-        },
+			"type": "color",
+			"id": "color_bg",
+			"label": "Background Color",
+			"default": "#f5f3ef"
+		},
+        {
+			"type": "color",
+			"id": "color_text",
+			"label": "Text color",
+			"default": "#f5f3ef"
+		},
+        {
+			"type": "color",
+			"id": "color_button",
+			"label": "Button color",
+			"default": "#f5f3ef"
+		},
+        {
+			"type": "color",
+			"id": "color_button_text",
+			"label": "Button text color",
+			"default": "#f5f3ef"
+		},
         {
             "type": "header",
             "content": "Spacing"
