@@ -9,6 +9,7 @@
 	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
 
 	assign color_heading = section.settings.color_heading
+	assign color_subheading = section.settings.color_subheading
 	assign color_text = section.settings.color_text
 	assign color_links = section.settings.color_links
 
@@ -20,6 +21,15 @@
 		assign has_bg = false
 	endif
 -%}
+
+{%- style -%}
+
+.subheading_text {
+	color: {{ color_subheading }};
+}
+
+{%- endstyle -%}
+
 <scrolling-content class="scrolling-content section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
 	<div class="scrolling-content--inner {% if has_bg -%}scrolling-content--has-bg{% endif %}" style="--color-bg: {{ color_bg }}; --color-heading: {{ color_heading }}; --color-body: {{ color_text }}; --color-accent: {{ color_links }};">
 		<div class="scrolling-content--container {{ desktop_layout }}{% if mobile_swipe %} swipe-on-mobile{% endif %}">
@@ -36,7 +46,7 @@
 				{%- liquid
 					assign heading_size = block.settings.heading_size
 					assign description_size = block.settings.description_size
-
+					assign subheading_size = block.settings.subheading_size
 					assign color_bg_badge = block.settings.color_bg_badge
 					assign color_badge = block.settings.color_badge
 
@@ -92,14 +102,17 @@
 							assign marker_color = block.settings.marker_color
 							assign text = block.settings.heading | newline_to_br
 						-%}
-							<h3 class="{{ heading_size }}">{% render 'animated-marker-heading', heading: text, style: marker_style, color: marker_color %}</h3>
+							<h2 class="{{ heading_size }}">{% render 'animated-marker-heading', heading: text, style: marker_style, color: marker_color %}</h2>
+						{% endif %}
+						{% if block.settings.subheading != blank %}
+							<h3 class="subheading_text">{{ block.settings.subheading }}</h3>
 						{% endif %}
 						{% if block.settings.content %}
 							<div class="rte description-size--{{ description_size }}">{{ block.settings.content }}</div>
 						{% endif %}
 						{% if block.settings.button_text != blank %}
 							{% render 'text-button', url: block.settings.button_link, title: block.settings.button_text %}
-		        {% endif %}
+		        		{% endif %}
 					</div>
 				</div>
 				{% if desktop_layout == 'text_first' %}
@@ -114,13 +127,13 @@
 {% schema %}
   {
     "name": "Scrolling content",
-		"class": "section-scrolling-content",
+	"class": "section-scrolling-content",
     "settings": [
+		{
+			"type": "select",
+			"id": "desktop_layout",
+			"options": [
 			{
-	      "type": "select",
-	      "id": "desktop_layout",
-	      "options": [
-	        {
 	          "value": "image_first",
 	          "label": "Image first"
 	        },
@@ -128,219 +141,225 @@
 	          "value": "text_first",
 	          "label": "Image second"
 	        }
-	      ],
+			],
 	      "default": "text_first",
 	      "label": "Desktop image placement",
 	      "info": "Image first is the default mobile layout."
 	    },
-			{
-				"type": "checkbox",
-				"id": "mobile_swipe",
-				"default": true,
-				"label": "Enable swipe on mobile"
-			},
-			{
-				"type": "checkbox",
-				"id": "dots",
-				"default": true,
-				"label": "Enable dots"
-			},
-			{
-	      "type": "header",
-	      "content": "Colors"
+		{
+			"type": "checkbox",
+			"id": "mobile_swipe",
+			"default": true,
+			"label": "Enable swipe on mobile"
+		},
+		{
+			"type": "checkbox",
+			"id": "dots",
+			"default": true,
+			"label": "Enable dots"
+		},
+		{
+			"type": "header",
+			"content": "Colors"
 	    },
-			{
-        "type": "color",
-        "id": "color_bg",
-        "label": "Background",
-        "default": "transparent"
-      },
-			{
-				"type": "color",
-				"id": "color_heading",
-				"label": "Heading",
-				"default": "#1a1c1d"
-			},
-			{
-				"type": "color",
-				"id": "color_text",
-				"label": "Text",
-				"default": "#2c2d2e"
-			},
-			{
-				"type": "color",
-				"id": "color_links",
-				"label": "Links",
-				"default": "#2c2d2e"
-			},
-			{
-	      "type": "header",
-	      "content": "Spacing"
+		{
+			"type": "color",
+			"id": "color_bg",
+			"label": "Background",
+			"default": "transparent"
+      	},
+		{
+			"type": "color",
+			"id": "color_heading",
+			"label": "Heading",
+			"default": "#1a1c1d"
+		},
+		{
+			"type": "color",
+			"id": "color_subheading",
+			"label": "Sub Heading",
+			"default": "#1a1c1d"
+		},
+		{
+			"type": "color",
+			"id": "color_text",
+			"label": "Text",
+			"default": "#2c2d2e"
+		},
+		{
+			"type": "color",
+			"id": "color_links",
+			"label": "Links",
+			"default": "#2c2d2e"
+		},
+		{
+			"type": "header",
+			"content": "Spacing"
 	    },
-			{
-				"type": "checkbox",
-				"id": "disable_top_spacing",
-				"default": false,
-				"label": "Remove top spacing"
-			},
-			{
-				"type": "checkbox",
-				"id": "disable_bottom_spacing",
-				"default": false,
-				"label": "Remove bottom spacing"
-			}
+		{
+			"type": "checkbox",
+			"id": "disable_top_spacing",
+			"default": false,
+			"label": "Remove top spacing"
+		},
+		{
+			"type": "checkbox",
+			"id": "disable_bottom_spacing",
+			"default": false,
+			"label": "Remove bottom spacing"
+		}
     ],
     "blocks": [
       {
         "type": "section",
         "name": "Section",
         "settings": [
-					{
-						"type": "image_picker",
-						"id": "image",
-						"label": "Image",
-						"info": "1280 x 1280 .jpg recommended."
-					},
-					{
-            "type": "text",
-            "id": "badge",
-            "label": "Badge",
-            "default": "badge"
-          },
-					{
-            "type": "text",
-            "id": "subheading",
-            "label": "Subheading",
-            "default": "subheading"
-          },
-          {
-            "type": "textarea",
-            "id": "heading",
-            "label": "Heading",
-            "default": "Heading",
-						"info": "Wrap your text between | to add animated markers. For example: Animated |marker| will underline marker text."
-          },
-					{
-						"type": "select",
-						"id": "marker_style",
-						"options": [
-							{
-								"value": "style1",
-								"label": "Basic"
-							},
-							{
-								"value": "style2",
-								"label": "Double"
-							},
-							{
-								"value": "style3",
-								"label": "Squiggle"
-							},
-							{
-								"value": "style4",
-								"label": "Zigzag"
-							}
-						],
-						"default": "style1",
-						"label": "Marker"
-					},
-					{
-						"type": "select",
-						"id": "heading_size",
-						"label": "Heading size",
-						"options": [
-							{
-								"value": "large",
-								"label": "Large"
-							},
-							{
-								"value": "medium",
-								"label": "Medium"
-							},
-							{
-								"value": "small",
-								"label": "Small"
-							}
-						],
-						"default": "small"
-					},
-          {
-            "type": "richtext",
-            "id": "content",
-            "label": "Description",
-            "default": "<p>Add a descriptive text here for your slide.</p>"
-          },
-					{
-						"type": "select",
-						"id": "description_size",
-						"label": "Size",
-						"options": [
-							{
-								"value": "small",
-								"label": "Small"
-							},
-							{
-								"value": "medium",
-								"label": "Medium"
-							},
-							{
-								"value": "large",
-								"label": "Large"
-							}
-						],
-						"default": "medium"
-					},
-          {
-            "id": "button_text",
-            "type": "text",
-            "label": "Button label",
-            "default": "Shop Now",
-						"info": "Leave the label blank to hide the button."
-          },
-          {
-            "id": "button_link",
-            "type": "url",
-            "label": "Button link"
-          },
-					{
-			      "type": "header",
-			      "content": "Colors"
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Image",
+					"info": "1280 x 1280 .jpg recommended."
+				},
+				{
+					"type": "text",
+					"id": "badge",
+					"label": "Badge",
+					"default": "badge"
+				},
+				{
+					"type": "textarea",
+					"id": "heading",
+					"label": "Heading",
+					"default": "Heading",
+					"info": "Wrap your text between | to add animated markers. For example: Animated |marker| will underline marker text."
+				},
+				{
+					"type": "text",
+					"id": "subheading",
+					"label": "Subheading",
+					"default": "subheading"
+				},
+				{
+					"type": "select",
+					"id": "marker_style",
+					"options": [
+						{
+							"value": "style1",
+							"label": "Basic"
+						},
+						{
+							"value": "style2",
+							"label": "Double"
+						},
+						{
+							"value": "style3",
+							"label": "Squiggle"
+						},
+						{
+							"value": "style4",
+							"label": "Zigzag"
+						}
+					],
+					"default": "style1",
+					"label": "Marker"
+				},
+				{
+					"type": "select",
+					"id": "heading_size",
+					"label": "Heading size",
+					"options": [
+						{
+							"value": "large",
+							"label": "Large"
+						},
+						{
+							"value": "medium",
+							"label": "Medium"
+						},
+						{
+							"value": "small",
+							"label": "Small"
+						}
+					],
+					"default": "small"
+				},
+				{
+					"type": "richtext",
+					"id": "content",
+					"label": "Description",
+					"default": "<p>Add a descriptive text here for your slide.</p>"
+				},
+				{
+					"type": "select",
+					"id": "description_size",
+					"label": "Size",
+					"options": [
+						{
+							"value": "small",
+							"label": "Small"
+						},
+						{
+							"value": "medium",
+							"label": "Medium"
+						},
+						{
+							"value": "large",
+							"label": "Large"
+						}
+					],
+					"default": "medium"
+				},
+				{
+					"id": "button_text",
+					"type": "text",
+					"label": "Button label",
+					"default": "Shop Now",
+					"info": "Leave the label blank to hide the button."
+				},
+				{
+					"id": "button_link",
+					"type": "url",
+					"label": "Button link"
+				},
+				{
+					"type": "header",
+					"content": "Colors"
 			    },
-					{
-						"type": "color",
-						"id": "marker_color",
-						"label": "Marker",
-						"default": "#FD6262"
-					},
-					{
-		        "type": "color",
-		        "id": "color_bg_badge",
-		        "label": "Badge background",
-		        "default": "#3f72e5"
-		      },
-					{
-		        "type": "color",
-		        "id": "color_badge",
-		        "label": "Badge text",
-		        "default": "#ffffff"
-		      }
-        ]
-      }
+				{
+					"type": "color",
+					"id": "marker_color",
+					"label": "Marker",
+					"default": "#FD6262"
+				},
+				{
+					"type": "color",
+					"id": "color_bg_badge",
+					"label": "Badge background",
+					"default": "#3f72e5"
+		      	},
+				{
+					"type": "color",
+					"id": "color_badge",
+					"label": "Badge text",
+					"default": "#ffffff"
+		      	}
+        	]
+      	}
     ],
     "presets": [
       {
         "name": "Scrolling content",
-				"blocks": [
-					{
-						"type": "section"
-					},
-					{
-						"type": "section"
-					},
-					{
-						"type": "section"
-					}
-				]
+		"blocks": [
+			{
+				"type": "section"
+			},
+			{
+				"type": "section"
+			},
+			{
+				"type": "section"
+			}
+		]
       }
     ]
   }
