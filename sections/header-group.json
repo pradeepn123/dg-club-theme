@@ -27,6 +27,7 @@
         },
         "888fc484-50e5-4566-bad6-41e835d00d5f": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "text": "Add campaign text here.",
@@ -67,7 +68,7 @@
       "settings": {
         "sticky_header": true,
         "logo": "shopify:\/\/shop_images\/Logo.png",
-        "logo_height_range": 55,
+        "logo_height_range": 42,
         "logo_height_range_mobile": 26,
         "style": "style1",
         "header_shadow": "header--shadow-small",

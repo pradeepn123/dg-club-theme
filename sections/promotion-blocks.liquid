@@ -15,6 +15,11 @@
 	<div class="promotion-blocks--inner column-spacing--{{ column_spacing }}">
 		{%- for block in section.blocks -%}
 			<div class="promotion-blocks--item" {{ block.shopify_attributes }}>
+				{% if block.settings.image != blank %}
+				<figure class="promotion-blocks--image">
+					{%- render 'responsive-image', image: block.settings.image, sizes: '120x120,240x240' -%}
+				</figure>
+				{% endif %}
 				<div class="promotion-blocks--text">
 					{% if block.settings.title != blank %}
 						<h6>{{ block.settings.title }}</h6>
@@ -22,12 +27,7 @@
 					{% if block.settings.button_text != blank %}
 						{% render 'text-button', url: block.settings.button_link, title: block.settings.button_text %}
 					{% endif %}
-				</div>
-				{% if block.settings.image != blank %}
-				<figure class="promotion-blocks--image">
-					{%- render 'responsive-image', image: block.settings.image, sizes: '120x120,240x240' -%}
-				</figure>
-				{% endif %}
+				</div>				
 			</div>
 		{%- endfor -%}
 	</div>
