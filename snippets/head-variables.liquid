@@ -1,3 +1,7 @@
+{%- style -%}
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&display=swap');
+{%- endstyle -%}
+
 {%- liquid
 	assign heading_font = settings.heading_font
 	assign body_font = settings.body_font
@@ -103,14 +107,14 @@
 	.customer-addresses .my-address .address-index {
 		font-style: {{ heading_font.style }};
 		font-weight: {{ heading_font.weight }};
-		font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+		font-family: 'Jost', sans-serif;
 	}
 	body,
 	.body-font,
 	.thb-product-detail .product-title {
 		font-style: {{ body_font.style }};
 		font-weight: {{ body_font.weight }};
-		font-family: {{ body_font.family }}, {{ body_font.fallback_families }};
+		font-family: 'Jost', sans-serif;
 	}
 	:root {
 
