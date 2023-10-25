@@ -765,7 +765,7 @@
             "color_text": "#ffffff",
             "color_link": "#ffffff",
             "overlay_color": "#000000",
-            "overlay_opacity": 40
+            "overlay_opacity": 0
           }
         }
       },
