@@ -830,7 +830,6 @@
         "template--21508546429228__2081a2f1-fed7-416d-8c0c-100c4469fa89-icon-3",
         "40014807-3392-4b0f-af7a-ff30a9ab579f"
       ],
-      "disabled": true,
       "settings": {
         "text_alignment": "left",
         "icon_position": "top",
@@ -1087,6 +1086,7 @@
         "heading_size": "h2",
         "button_link": "",
         "full_width": false,
+        "video_first": true,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
         "aspect_ratio": "16-9",
