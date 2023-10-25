@@ -723,6 +723,7 @@
         "template--17918041129242__f896bcf0-40bd-4c23-8c79-b4d0863d7715-167639056582313b87-2": {
           "type": "media",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_308.jpg",
             "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
@@ -746,6 +747,7 @@
         "3963f5c5-4bf4-4cd9-b70a-a4a9e5283569": {
           "type": "media",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_309.jpg",
             "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
