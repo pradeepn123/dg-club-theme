@@ -1078,6 +1078,7 @@
     },
     "d17c9fda-c778-4cae-8662-16c275ddedf1": {
       "type": "video-with-text",
+      "disabled": true,
       "settings": {
         "heading": "Experience our user-friendly editor tool",
         "marker_style": "style1",
