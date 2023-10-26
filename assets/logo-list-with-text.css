@@ -126,9 +126,16 @@
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1025px) {
+@media only screen and (min-width: 767px) and (max-width: 1025px) {
     .logo-list--logo--has-bg {
         padding: 28px 18px;
+    }
+    .logo-list--logo .logo_text {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    .logo-list--logo .heading {
+        font-size: 14px;
     }
 }
 
