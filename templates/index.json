@@ -300,44 +300,6 @@
         "disable_bottom_spacing": false
       }
     },
-    "b6a221e5-6cbb-4160-83a7-a387a8f98553": {
-      "type": "rich-text",
-      "blocks": {
-        "template--17918041129242__b6a221e5-6cbb-4160-83a7-a387a8f98553-16764607056c9a15f5-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Featured |Collections|",
-            "marker_style": "style2",
-            "size": "h1",
-            "marker_color": "#fd6b62"
-          }
-        },
-        "template--17918041129242__b6a221e5-6cbb-4160-83a7-a387a8f98553-16764607056c9a15f5-2": {
-          "type": "text",
-          "disabled": true,
-          "settings": {
-            "text": "<p><strong>Add a section description here<\/strong><\/p>",
-            "size": "text-size-large"
-          }
-        }
-      },
-      "block_order": [
-        "template--17918041129242__b6a221e5-6cbb-4160-83a7-a387a8f98553-16764607056c9a15f5-1",
-        "template--17918041129242__b6a221e5-6cbb-4160-83a7-a387a8f98553-16764607056c9a15f5-2"
-      ],
-      "disabled": true,
-      "settings": {
-        "text_width": "large",
-        "text_position": "left",
-        "text_alignment": "left",
-        "color_bg": "rgba(0,0,0,0)",
-        "color_heading": "#252f35",
-        "color_text": "#303c43",
-        "color_links": "#ffffff",
-        "disable_top_spacing": true,
-        "disable_bottom_spacing": false
-      }
-    },
     "60ed2e7d-3f50-428a-b546-03274d862db0": {
       "type": "collection-list",
       "settings": {
@@ -669,6 +631,34 @@
         "disable_bottom_spacing": false
       }
     },
+    "b6a221e5-6cbb-4160-83a7-a387a8f98553": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17918041129242__b6a221e5-6cbb-4160-83a7-a387a8f98553-16764607056c9a15f5-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Featured |Collections|",
+            "marker_style": "style3",
+            "size": "h2",
+            "marker_color": "#fd6b62"
+          }
+        }
+      },
+      "block_order": [
+        "template--17918041129242__b6a221e5-6cbb-4160-83a7-a387a8f98553-16764607056c9a15f5-1"
+      ],
+      "settings": {
+        "text_width": "grid",
+        "text_position": "left",
+        "text_alignment": "left",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_heading": "#252f35",
+        "color_text": "#303c43",
+        "color_links": "#ffffff",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
     "f896bcf0-40bd-4c23-8c79-b4d0863d7715": {
       "type": "media-grid",
       "blocks": {
@@ -690,7 +680,7 @@
             "text_alignment": "center",
             "color_bg": "#ffe2b6",
             "color_bg_gradient": "",
-            "color_text": "#252f35",
+            "color_text": "#8e7144",
             "color_link": "#3f72e5",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -707,14 +697,14 @@
             "row": 1,
             "subheading": "",
             "heading": "Monsoon Collection",
-            "heading_size": "h4",
+            "heading_size": "h3",
             "button_text": "",
             "button_link": "",
             "content_position": "middle-center",
             "text_alignment": "left",
             "color_bg": "#ffffff",
             "color_bg_gradient": "",
-            "color_text": "#252f35",
+            "color_text": "#458d81",
             "color_link": "#3f72e5",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -731,7 +721,7 @@
             "row": 1,
             "subheading": "",
             "heading": "Birthday",
-            "heading_size": "h4",
+            "heading_size": "h3",
             "button_text": "",
             "button_link": "",
             "content_position": "bottom-center",
@@ -755,14 +745,14 @@
             "row": 1,
             "subheading": "",
             "heading": "Animals",
-            "heading_size": "h4",
+            "heading_size": "h3",
             "button_text": "",
             "button_link": "",
             "content_position": "top-center",
             "text_alignment": "center",
             "color_bg": "#f6e7d0",
             "color_bg_gradient": "radial-gradient(rgba(246, 231, 208, 1), rgba(246, 231, 208, 1) 100%)",
-            "color_text": "#ffffff",
+            "color_text": "#92764c",
             "color_link": "#ffffff",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -842,6 +832,28 @@
         "color_bg": "rgba(0,0,0,0)",
         "color_heading": "#000000",
         "color_text": "#000000",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "d17c9fda-c778-4cae-8662-16c275ddedf1": {
+      "type": "video-with-text",
+      "settings": {
+        "heading": "Experience our user-friendly editor tool",
+        "marker_style": "style1",
+        "description": "<p>to personalize and bring your ideas to life. Create unique, one-of-a-kind products with ease!<\/p>",
+        "button_text": "Start Customizing",
+        "heading_size": "h2",
+        "button_link": "",
+        "full_width": false,
+        "video_first": true,
+        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_autoplay": true,
+        "aspect_ratio": "16-9",
+        "color_bg": "#d5bff1",
+        "color_text": "#4444e1",
+        "color_button": "#4444e1",
+        "color_button_text": "#ffffff",
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
@@ -1077,26 +1089,6 @@
         "color_logo_bg": "#ffffff",
         "marker_color": "#fd6262"
       }
-    },
-    "d17c9fda-c778-4cae-8662-16c275ddedf1": {
-      "type": "video-with-text",
-      "disabled": true,
-      "settings": {
-        "heading": "Experience our user-friendly editor tool",
-        "marker_style": "style1",
-        "description": "<p>to personalize and bring your ideas to life. Create unique, one-of-a-kind products with ease!<\/p>",
-        "button_text": "Start Customizing",
-        "heading_size": "h2",
-        "button_link": "",
-        "full_width": false,
-        "video_first": true,
-        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "video_autoplay": true,
-        "aspect_ratio": "16-9",
-        "marker_color": "#fd6262",
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
-      }
     }
   },
   "order": [
@@ -1105,7 +1097,6 @@
     "16614195534fb74bc3",
     "1661426105a80f3333",
     "66e51d40-1da7-4a8a-8d7c-2e5b727c5f4c",
-    "b6a221e5-6cbb-4160-83a7-a387a8f98553",
     "60ed2e7d-3f50-428a-b546-03274d862db0",
     "6b1d3b5d-a0fa-4928-834a-d82c491bc99d",
     "166366563622039b3e",
@@ -1115,12 +1106,13 @@
     "41985d74-e833-4bbd-b6df-f14039d7d1e4",
     "d569a596-bbbd-43f5-bc5d-eea42d9c524a",
     "bd5ac47b-89ee-4ca4-8b29-9399f29dcc4a",
+    "b6a221e5-6cbb-4160-83a7-a387a8f98553",
     "f896bcf0-40bd-4c23-8c79-b4d0863d7715",
     "2081a2f1-fed7-416d-8c0c-100c4469fa89",
+    "d17c9fda-c778-4cae-8662-16c275ddedf1",
     "09fbaadd-eaad-4e04-9edb-42de8cc123f0",
     "bbe1b14c-ffcc-46f3-8d0a-a83a6122cbc4",
     "1647955648d6a0baee",
-    "079614df-346b-471f-b6f5-d223ec6e6680",
-    "d17c9fda-c778-4cae-8662-16c275ddedf1"
+    "079614df-346b-471f-b6f5-d223ec6e6680"
   ]
 }
