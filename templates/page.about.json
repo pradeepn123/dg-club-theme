@@ -1,6 +1,422 @@
 {
   "sections": {
-    "94589f0a-09ae-45e4-9510-dfed64308805": {
+    "c020db19-3228-4454-a487-a8c5e49acd75": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 40,
+        "spacer_desktop": 40,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "cd72b2f3-5040-437c-b460-413c1d2fdbdb": {
+      "type": "about",
+      "blocks": {
+        "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "ABOUT"
+          }
+        },
+        "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "DG Club, Where Creativity Meets Commerce",
+            "marker_style": "style1",
+            "heading_size": "h3",
+            "marker_color": "#fd6262"
+          }
+        },
+        "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>DG CLUB is a Print-On-Demand E-commerce Store, where creativity knows no bounds, and every design has the potential to become a masterpiece. Our mission is to bring your imagination to life, one print at a time. Our unwavering dedication to quality, innovation, and personalized expression sets us apart in the world of online shopping.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-subheading-1",
+        "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-heading-1",
+        "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-text-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Frame_486.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Group_410.jpg",
+        "use_video": false,
+        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_autoplay": true,
+        "height": "adapt",
+        "desktop_image_width": "small",
+        "full_width": false,
+        "layout": "text_first",
+        "content_position": "text-left",
+        "column_spacing": "no",
+        "color_bg": "#d5bff1",
+        "color_text": "#4444e1",
+        "color_border": "#e2e2e2",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "bc1e9616-8f5b-469e-ba23-9bc8ef1799e4": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 40,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "8653503a-90e7-446a-8f99-8905e1d4a2ac": {
+      "type": "image-with-text",
+      "blocks": {
+        "935514a8-d9e2-410b-b7b6-2e2f19127424": {
+          "type": "subheading",
+          "settings": {
+            "text": "OUR VISION"
+          }
+        },
+        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Envisioning a world where your ideas and designs take center stage",
+            "marker_style": "style3",
+            "heading_size": "h2",
+            "marker_color": "#1fd76c"
+          }
+        },
+        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-2": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At our Print-On-Demand E-commerce Store, we believe that everyone has a unique story to tell, and we're here to turn those stories into stunning prints that resonate with you and your audience. From custom apparel to home decor, we're passionate about transforming your vision into tangible works of art.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "935514a8-d9e2-410b-b7b6-2e2f19127424",
+        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-1",
+        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Rectangle_304.jpg",
+        "use_video": false,
+        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_autoplay": true,
+        "height": "large",
+        "desktop_image_width": "medium",
+        "full_width": false,
+        "layout": "image_first",
+        "content_position": "text-left",
+        "column_spacing": "medium",
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_border": "#e2e2e2",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "7308912d-fa5b-4aff-af5c-749024b09120": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 40,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "00f554c8-bdc2-4f23-9c8f-0d6d19f698ca": {
+      "type": "toggle-boxes",
+      "blocks": {
+        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-1": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_196.jpg",
+            "image_link": "",
+            "open": false,
+            "heading": "Printing Your Memories",
+            "text": "<p>Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
+          }
+        },
+        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-2": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_196_1.jpg",
+            "image_link": "",
+            "open": false,
+            "heading": "Learning and Creating",
+            "text": "<p>Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
+          }
+        },
+        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-3": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_196_2.jpg",
+            "image_link": "",
+            "open": false,
+            "heading": "Monetizing skills",
+            "text": "<p>Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-1",
+        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-2",
+        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-3"
+      ],
+      "settings": {
+        "heading": "DG Club is for..",
+        "marker_style": "style2",
+        "description": "",
+        "columns_desktop": 3,
+        "column_spacing": "medium",
+        "image_ratio": "adapt",
+        "mobile_swipe": true,
+        "text_alignment": "left",
+        "color_bg": "#ffffff",
+        "color_heading": "#000000",
+        "marker_color": "#fd6262",
+        "color_text": "#535353",
+        "color_link": "#3f72e5",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "a0ac2747-816e-400f-a3ea-35deb465e9b3": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 40,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "157d79ff-0e6c-48ee-b95d-67487dcdda4c": {
+      "type": "customer-reviews",
+      "blocks": {
+        "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-1": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "heading": "Top-notch",
+            "text": "“Go-to place for personalized gifts. They have a impressive range of products”",
+            "author": "Sarah.R",
+            "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
+          }
+        },
+        "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-2": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "heading": "Game-changer",
+            "text": "“As a part of 'Entrepreneurship for Creative Minds', I've learned to turn my art into a thriving business.”",
+            "author": "Rajesh K.",
+            "author_image": "shopify:\/\/shop_images\/Ellipse_4_1.svg"
+          }
+        },
+        "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-3": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "heading": "Moments into timeless",
+            "text": "“Their user-friendly design editor makes it a breeze to create something truly unique.”",
+            "author": "PRIYA.S",
+            "author_image": "shopify:\/\/shop_images\/Ellipse_4_2.svg"
+          }
+        },
+        "1dbb0978-7e6f-49c1-92db-fe44d1a79610": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "heading": "Fantastic Platform",
+            "text": "“It's not just about printing; it's about building a brand.for anyone looking to turn their passion into profit.\"",
+            "author": "ARYAN.M",
+            "author_image": "shopify:\/\/shop_images\/Ellipse_4_3.svg"
+          }
+        }
+      },
+      "block_order": [
+        "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-1",
+        "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-2",
+        "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-3",
+        "1dbb0978-7e6f-49c1-92db-fe44d1a79610"
+      ],
+      "settings": {
+        "heading": "What customers think",
+        "description": "",
+        "columns": 4,
+        "autoplay": true,
+        "autoplay_length": 5,
+        "color_bg": "#ffffff",
+        "color_heading": "#000000",
+        "color_text": "#000000",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "8294ccce-f553-48b2-8ea1-db6deec4619c": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 40,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "fcf92382-4f7b-4511-962c-a72e974ed185": {
+      "type": "logo-list-with-text",
+      "blocks": {
+        "3235e774-761b-4b41-9315-433e5396dbcb": {
+          "type": "block-info",
+          "settings": {
+            "logo_text": "3K+",
+            "link": "",
+            "heading": "Successful Artists Nurtured"
+          }
+        },
+        "1114a163-faec-493b-a881-e4c7d9117119": {
+          "type": "block-info",
+          "settings": {
+            "logo_text": "50+",
+            "link": "",
+            "heading": "Shipping to Countries"
+          }
+        },
+        "7a426a5d-c704-4f1f-8ec7-780d051bc616": {
+          "type": "block-info",
+          "settings": {
+            "logo_text": "2M+",
+            "link": "",
+            "heading": "Products printed on demand"
+          }
+        },
+        "603a221b-3c9e-46ef-8db9-3dba3e366b28": {
+          "type": "block-info",
+          "settings": {
+            "logo_text": "20+",
+            "link": "",
+            "heading": "Products inCatlogue"
+          }
+        }
+      },
+      "block_order": [
+        "3235e774-761b-4b41-9315-433e5396dbcb",
+        "1114a163-faec-493b-a881-e4c7d9117119",
+        "7a426a5d-c704-4f1f-8ec7-780d051bc616",
+        "603a221b-3c9e-46ef-8db9-3dba3e366b28"
+      ],
+      "settings": {
+        "heading": "",
+        "marker_style": "style1",
+        "description": "",
+        "columns": 4,
+        "mobile_swipe": true,
+        "center_align": true,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true,
+        "card_inner_spacing": 30,
+        "color_logo_bg": "#ffffff",
+        "marker_color": "#fd6262"
+      }
+    },
+    "31d68794-7380-4b4d-90c0-6555126dc159": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 40,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "13cf50b5-564f-4fce-8d2d-9e114c48a9c7": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 50,
+        "spacer_desktop": 40,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
+    "12d81516-043b-4ed1-a6fb-84d87b540bc3": {
+      "type": "scrolling-images",
+      "blocks": {
+        "template--21508546920748__12d81516-043b-4ed1-a6fb-84d87b540bc3-image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_202.jpg",
+            "link": "",
+            "heading": "",
+            "text": ""
+          }
+        },
+        "template--21508546920748__12d81516-043b-4ed1-a6fb-84d87b540bc3-image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_203.jpg",
+            "link": "",
+            "heading": "",
+            "text": ""
+          }
+        },
+        "template--21508546920748__12d81516-043b-4ed1-a6fb-84d87b540bc3-image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_204.jpg",
+            "link": "",
+            "heading": "",
+            "text": ""
+          }
+        },
+        "a66cb4e7-143b-4cab-a53f-c8f9914eadc0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_202.jpg",
+            "link": "",
+            "heading": "",
+            "text": ""
+          }
+        },
+        "d701b12b-88eb-48fe-b86a-5b9aab72fa94": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_203.jpg",
+            "link": "",
+            "heading": "",
+            "text": ""
+          }
+        },
+        "a2e5279f-e509-4004-bc54-4e3069a183a0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_204.jpg",
+            "link": "",
+            "heading": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--21508546920748__12d81516-043b-4ed1-a6fb-84d87b540bc3-image-1",
+        "template--21508546920748__12d81516-043b-4ed1-a6fb-84d87b540bc3-image-2",
+        "template--21508546920748__12d81516-043b-4ed1-a6fb-84d87b540bc3-image-3",
+        "a66cb4e7-143b-4cab-a53f-c8f9914eadc0",
+        "d701b12b-88eb-48fe-b86a-5b9aab72fa94",
+        "a2e5279f-e509-4004-bc54-4e3069a183a0"
+      ],
+      "settings": {
+        "image_ratio": "square",
+        "column_spacing": "medium",
+        "image_alignment": "top",
+        "direction": "left",
+        "speed": "30s",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "b28517b5-315c-4d81-a71d-d5c5fda6e1b6": {
       "type": "spacer",
       "settings": {
         "spacer_mobile": 50,
@@ -23,6 +439,7 @@
       "block_order": [
         "166161901437c6bc67-1"
       ],
+      "disabled": true,
       "settings": {
         "image_parallax": true,
         "desktop_height": "desktop-height-450",
@@ -31,47 +448,11 @@
         "content_width": "medium",
         "content_position": "middle-center",
         "text_alignment": "center",
+        "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 0,
         "disable_top_spacing": true,
         "disable_bottom_spacing": false
-      }
-    },
-    "430e3fd4-6487-4550-8d73-86cdc88a218b": {
-      "type": "rich-text",
-      "blocks": {
-        "template--17918040834330__430e3fd4-6487-4550-8d73-86cdc88a218b-1676976677d37e1c8b-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Rich text description",
-            "marker_style": "style1",
-            "size": "h3",
-            "marker_color": "#fd6262"
-          }
-        }
-      },
-      "block_order": [
-        "template--17918040834330__430e3fd4-6487-4550-8d73-86cdc88a218b-1676976677d37e1c8b-1"
-      ],
-      "settings": {
-        "text_width": "grid",
-        "text_position": "left",
-        "text_alignment": "left",
-        "color_bg": "rgba(0,0,0,0)",
-        "color_heading": "#252f35",
-        "color_text": "#252f35",
-        "color_links": "#2c2d2e",
-        "disable_top_spacing": true,
-        "disable_bottom_spacing": true
-      }
-    },
-    "b7b77547-bea6-4159-a527-6dc5cd50e5b5": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 20,
-        "spacer_desktop": 60,
-        "border_separator": false,
-        "border_separator_full": false
       }
     },
     "1661619177029ffd60": {
@@ -84,11 +465,13 @@
             "enable_hover_play": true,
             "subheading": "",
             "title": "Gallery item",
+            "marker_style": "style1",
             "text": "Gallery item description",
             "link_label": "Learn more",
             "link": "",
             "use_text_button": false,
-            "block_link": ""
+            "block_link": "",
+            "marker_color": "#fd6262"
           }
         },
         "1661619177c83c7652-1": {
@@ -98,11 +481,13 @@
             "enable_hover_play": true,
             "subheading": "",
             "title": "Gallery item",
+            "marker_style": "style1",
             "text": "Gallery item description",
             "link_label": "Learn more",
             "link": "",
             "use_text_button": false,
-            "block_link": ""
+            "block_link": "",
+            "marker_color": "#fd6262"
           }
         },
         "4614f273-2ac5-4a81-823d-dd4b3761ea19": {
@@ -112,11 +497,13 @@
             "enable_hover_play": true,
             "subheading": "",
             "title": "Gallery item",
+            "marker_style": "style1",
             "text": "Gallery item description",
             "link_label": "Learn more",
             "link": "",
             "use_text_button": false,
-            "block_link": ""
+            "block_link": "",
+            "marker_color": "#fd6262"
           }
         }
       },
@@ -125,6 +512,7 @@
         "1661619177c83c7652-1",
         "4614f273-2ac5-4a81-823d-dd4b3761ea19"
       ],
+      "disabled": true,
       "settings": {
         "columns_desktop": 3,
         "full_width": false,
@@ -139,15 +527,6 @@
         "overlay_opacity": 20,
         "disable_top_spacing": true,
         "disable_bottom_spacing": true
-      }
-    },
-    "e33b843b-b58f-4267-816b-664b79a1bcbb": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 10,
-        "spacer_desktop": 30,
-        "border_separator": false,
-        "border_separator_full": false
       }
     },
     "166161906436c7d4d0": {
@@ -183,6 +562,7 @@
         "a6a1c077-b0fb-43df-b891-1b41cec21c61",
         "2e8471b2-3ec3-48d8-9877-4c982b421bea"
       ],
+      "disabled": true,
       "settings": {
         "height": "height-auto",
         "full_width": true,
@@ -235,6 +615,7 @@
         "5e4db5a5-4d24-4307-b9fb-8a93da1ee683",
         "130969bf-004a-4e0c-ac4b-9784c03ce253"
       ],
+      "disabled": true,
       "settings": {
         "height": "height-auto",
         "full_width": true,
@@ -274,6 +655,7 @@
         "9caf18da-d1fc-4d14-a08d-9fc9061d5e6e",
         "template--17918040834330__76bbe0bf-7501-455a-acd8-8418cd712356-1676976677d37e1c8b-2"
       ],
+      "disabled": true,
       "settings": {
         "text_width": "xlarge",
         "text_position": "center",
@@ -284,70 +666,6 @@
         "color_links": "#2c2d2e",
         "disable_top_spacing": true,
         "disable_bottom_spacing": true
-      }
-    },
-    "3dffb284-32e0-40fe-b93f-9a6ac28668ec": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 10,
-        "spacer_desktop": 30,
-        "border_separator": false,
-        "border_separator_full": false
-      }
-    },
-    "8653503a-90e7-446a-8f99-8905e1d4a2ac": {
-      "type": "image-with-text",
-      "blocks": {
-        "db73f8a2-20e5-459a-9b76-0f22a981a6f5": {
-          "type": "image",
-          "settings": {
-          }
-        },
-        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Image with text |Heading|",
-            "marker_style": "style3",
-            "heading_size": "h2",
-            "marker_color": "#1fd76c"
-          }
-        },
-        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-2": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Image with text description<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "db73f8a2-20e5-459a-9b76-0f22a981a6f5",
-        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-1",
-        "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-2"
-      ],
-      "settings": {
-        "use_video": false,
-        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "video_autoplay": true,
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "full_width": false,
-        "layout": "image_first",
-        "content_position": "text-center",
-        "column_spacing": "medium",
-        "color_bg": "#ffffff",
-        "color_text": "#252f35",
-        "color_border": "#e2e2e2",
-        "disable_top_spacing": true,
-        "disable_bottom_spacing": true
-      }
-    },
-    "f9dfc74b-ea6d-4369-8439-7dce248b605c": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 30,
-        "spacer_desktop": 20,
-        "border_separator": false,
-        "border_separator_full": false
       }
     },
     "6669cf74-31f8-4f94-a562-b72e8c241d3b": {
@@ -379,6 +697,7 @@
         "template--17918040834330__6669cf74-31f8-4f94-a562-b72e8c241d3b-16769132332abda0ff-1",
         "template--17918040834330__6669cf74-31f8-4f94-a562-b72e8c241d3b-16769132332abda0ff-2"
       ],
+      "disabled": true,
       "settings": {
         "use_video": false,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
@@ -398,6 +717,7 @@
     },
     "3c475617-855b-4e78-b265-b1ed05a760bb": {
       "type": "spacer",
+      "disabled": true,
       "settings": {
         "spacer_mobile": 40,
         "spacer_desktop": 70,
@@ -421,6 +741,7 @@
       "block_order": [
         "template--17918040834330__b4886a0d-aad0-4c13-9dc7-7decc9f31202-1676976677d37e1c8b-1"
       ],
+      "disabled": true,
       "settings": {
         "text_width": "xlarge",
         "text_position": "center",
@@ -431,15 +752,6 @@
         "color_links": "#2c2d2e",
         "disable_top_spacing": true,
         "disable_bottom_spacing": true
-      }
-    },
-    "3deaef5c-9bfc-4ffe-b1f5-65bfbbad2be0": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 50,
-        "spacer_desktop": 100,
-        "border_separator": true,
-        "border_separator_full": false
       }
     },
     "4741272f-d447-433a-bf7a-8df7997a0032": {
@@ -496,6 +808,7 @@
         "template--17918040834330__4741272f-d447-433a-bf7a-8df7997a0032-16769789110686510d-2",
         "template--17918040834330__4741272f-d447-433a-bf7a-8df7997a0032-16769789110686510d-3"
       ],
+      "disabled": true,
       "settings": {
         "heading": "",
         "marker_style": "style1",
@@ -519,7 +832,6 @@
         "ac7744c3-9e9c-4066-97b6-4806dfbb21d5": {
           "type": "image",
           "settings": {
-            "image": ""
           }
         },
         "b6904058-55cb-47ce-a593-5ab529dc4c82": {
@@ -562,46 +874,44 @@
         "b1b5dbcf-a9f7-4d54-b69c-8e047cf1c37e",
         "template--17918040834330__0eb2a065-5719-4c18-aa88-b6b407e912b9-1676981706a00887b9-2"
       ],
+      "disabled": true,
       "settings": {
         "full_width": false,
-        "background_image": "",
         "color_bg": "#5f4e75",
         "color_text": "#ffffff",
         "color_heading": "#ffffff",
         "color_border": "#d3d3d3",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
-      }
-    },
-    "67cee068-09c3-497c-8aa4-795e2ba03856": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 50,
-        "spacer_desktop": 100,
-        "border_separator": false,
-        "border_separator_full": false
       }
     }
   },
   "order": [
-    "94589f0a-09ae-45e4-9510-dfed64308805",
+    "c020db19-3228-4454-a487-a8c5e49acd75",
+    "cd72b2f3-5040-437c-b460-413c1d2fdbdb",
+    "bc1e9616-8f5b-469e-ba23-9bc8ef1799e4",
+    "8653503a-90e7-446a-8f99-8905e1d4a2ac",
+    "7308912d-fa5b-4aff-af5c-749024b09120",
+    "00f554c8-bdc2-4f23-9c8f-0d6d19f698ca",
+    "a0ac2747-816e-400f-a3ea-35deb465e9b3",
+    "157d79ff-0e6c-48ee-b95d-67487dcdda4c",
+    "8294ccce-f553-48b2-8ea1-db6deec4619c",
+    "fcf92382-4f7b-4511-962c-a72e974ed185",
+    "31d68794-7380-4b4d-90c0-6555126dc159",
+    "13cf50b5-564f-4fce-8d2d-9e114c48a9c7",
+    "12d81516-043b-4ed1-a6fb-84d87b540bc3",
+    "b28517b5-315c-4d81-a71d-d5c5fda6e1b6",
     "166161901464a25e50",
-    "430e3fd4-6487-4550-8d73-86cdc88a218b",
-    "b7b77547-bea6-4159-a527-6dc5cd50e5b5",
     "1661619177029ffd60",
-    "e33b843b-b58f-4267-816b-664b79a1bcbb",
     "166161906436c7d4d0",
     "e86e88e7-e07f-41d8-a41a-c08f7c8238f8",
     "76bbe0bf-7501-455a-acd8-8418cd712356",
-    "3dffb284-32e0-40fe-b93f-9a6ac28668ec",
-    "8653503a-90e7-446a-8f99-8905e1d4a2ac",
-    "f9dfc74b-ea6d-4369-8439-7dce248b605c",
     "6669cf74-31f8-4f94-a562-b72e8c241d3b",
     "3c475617-855b-4e78-b265-b1ed05a760bb",
     "b4886a0d-aad0-4c13-9dc7-7decc9f31202",
-    "3deaef5c-9bfc-4ffe-b1f5-65bfbbad2be0",
     "4741272f-d447-433a-bf7a-8df7997a0032",
-    "0eb2a065-5719-4c18-aa88-b6b407e912b9",
-    "67cee068-09c3-497c-8aa4-795e2ba03856"
+    "0eb2a065-5719-4c18-aa88-b6b407e912b9"
   ]
 }

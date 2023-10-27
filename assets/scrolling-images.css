@@ -28,12 +28,12 @@
       align-items: center;
       flex-shrink: 0; }
   .scrolling-images--spacing-small .scrolling-images--item {
-    margin: 0 5px; }
+    margin: 0 13px; }
   .scrolling-images--spacing-medium .scrolling-images--item {
-    margin: 0 5px; }
+    margin: 0 6px; }
     @media only screen and (min-width: 768px) {
       .scrolling-images--spacing-medium .scrolling-images--item {
-        margin: 0 10px; } }
+        margin: 0 12px; } }
   .scrolling-images--spacing-large .scrolling-images--item {
     margin: 0 5px; }
     @media only screen and (min-width: 768px) {
@@ -71,3 +71,6 @@
     transform: translateX(-100%); }
   100% {
     transform: translateX(0%); } }
+.aspect-ratio img {
+  border-radius: var(--block-border-radius, 16px);
+}

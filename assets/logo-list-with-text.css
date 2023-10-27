@@ -106,10 +106,9 @@
 
 .logo-list--logo .heading {
     margin: 0;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 30px;
+    font-size: var(--font-size-text-desktop);
+    font-weight: var(--font-weight-text-normal);
+    line-height: var(--line-height-text);
 }
 
 @media only screen and (max-width: 768px) {
@@ -121,8 +120,7 @@
         margin-bottom: 22px;
     }
     .logo-list--logo .heading {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: var(--font-size-text-mobile);
     }
 }
 

@@ -720,32 +720,32 @@
     "079614df-346b-471f-b6f5-d223ec6e6680": {
       "type": "logo-list-with-text",
       "blocks": {
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-1": {
-          "type": "logo",
+        "5be22151-c32a-4fa2-b895-5cf0abddf222": {
+          "type": "block-info",
           "settings": {
             "logo_text": "3K+",
             "link": "",
             "heading": "Successful Artists  Nurtured"
           }
         },
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-2": {
-          "type": "logo",
+        "f10b9788-7aed-4a42-8ddf-20ea251ea71a": {
+          "type": "block-info",
           "settings": {
             "logo_text": "50+",
             "link": "",
             "heading": "Shipping to Countries"
           }
         },
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-3": {
-          "type": "logo",
+        "01cd4e78-b102-4682-b405-ee98143bd728": {
+          "type": "block-info",
           "settings": {
             "logo_text": "2M+",
             "link": "",
             "heading": "Products printed  on demand"
           }
         },
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-4": {
-          "type": "logo",
+        "223af680-87a4-43b1-b5b5-74046e72b300": {
+          "type": "block-info",
           "settings": {
             "logo_text": "20+",
             "link": "",
@@ -754,10 +754,10 @@
         }
       },
       "block_order": [
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-1",
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-2",
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-3",
-        "template--21508546429228__079614df-346b-471f-b6f5-d223ec6e6680-logo-4"
+        "5be22151-c32a-4fa2-b895-5cf0abddf222",
+        "f10b9788-7aed-4a42-8ddf-20ea251ea71a",
+        "01cd4e78-b102-4682-b405-ee98143bd728",
+        "223af680-87a4-43b1-b5b5-74046e72b300"
       ],
       "settings": {
         "heading": "",
