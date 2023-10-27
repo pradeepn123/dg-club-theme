@@ -28,7 +28,15 @@
 @media only screen and (min-width: 768px) {
   .promotion-blocks--inner {
     grid-template-columns: repeat(var(--column-size, 3), 1fr); 
-  } 
+  }
+  .promotion-blocks--text h6 {
+    font-size: 20px;  
+    font-weight: 600;
+  }
+  .promotion-blocks--text .text-button {
+    font-size: 16px; 
+    font-weight: 600;
+  }
 }
 @media only screen and (max-width: 767px) {
   .promotion-blocks--inner {
