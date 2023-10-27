@@ -40,7 +40,7 @@
 </div>
 {% schema %}
   {
-    "name": "Logo list with Text",
+    "name": "Count-Down Numbers",
     "settings": [
         {
             "type": "text",
@@ -143,20 +143,20 @@
         }],
         "blocks": [
         {
-            "type": "logo",
-            "name": "Logo",
+            "type": "block-info",
+            "name": "Block Info",
             "settings": [
                 {
                     "type": "image_picker",
                     "id": "image",
-                    "label": "Logo",
+                    "label": "Image",
                     "info": "240 x 100 px .png recommended."
                 },
                 {
                     "type": "text",
                     "id": "logo_text",
-                    "label": "Logo Text",
-                    "default": "Logo"
+                    "label": "Text label",
+                    "default": "Count"
                 },
                 {
                     "id": "link",
@@ -174,22 +174,22 @@
         }],
         "presets": [
         {
-            "name": "Logo list with text",
+            "name": "Count-Down Numbers",
                     "blocks": [
                 {
-                    "type": "logo"
+                    "type": "block-info"
                 },
                 {
-                    "type": "logo"
+                    "type": "block-info"
                 },
                 {
-                    "type": "logo"
+                    "type": "block-info"
                 },
                 {
-                    "type": "logo"
+                    "type": "block-info"
                 },
                 {
-                    "type": "logo"
+                    "type": "block-info"
                 }
             ]
         }]

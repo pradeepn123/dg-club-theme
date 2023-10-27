@@ -154,7 +154,7 @@
       color: var(--color-heading, #1a1c1d);
       margin-bottom: 8px; }
     .customer-reviews--review p {
-      font-size: 0.9375rem;
+      font-size: var(--font-size-text-mobile);
       line-height: 1.5; }
     .customer-reviews--review > *:last-child {
       margin-bottom: 0; }
@@ -164,7 +164,8 @@
     display: flex;
     grid-gap: 15px;
     align-items: center;
-    font-size: 0.75rem;
+    font-size: 12px;
+    color: #929292;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     line-height: 1; }
@@ -190,3 +191,16 @@
   .customer-reviews scroll-shadow {
     margin: 0 -15px;
     width: calc(100% + 30px); }
+.customer-reviews .section-header--content h3 {
+  font-size: var(--font-size-title-desktop);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-title);
+}
+@media only screen and (max-width: 678px) {
+  .customer-reviews .section-header--content h3 {
+    font-size: var(--font-size-title-mobile);
+  }
+  .customer-reviews--content h6 {
+    font-size: var(--font-size-text-mobile);
+  }
+}

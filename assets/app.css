@@ -4017,7 +4017,7 @@ input[type="radio"], .field label, .custom-checkbox[type="checkbox"], .custom-ch
 
 
 .section-header {
-  padding: 0 0 30px;
+  padding: 0 0 40px;
   display: flex;
   flex-direction: column; }
   @media only screen and (min-width: 768px) {

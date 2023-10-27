@@ -52,3 +52,8 @@
     max-width: 1000px; }
   .rich-text.text-width-grid .rich-text__inner {
     max-width: 1380px; }
+.rich-text__inner .h2 {
+  font-size: var(--font-size-title-desktop);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-title);
+}
