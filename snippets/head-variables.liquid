@@ -1,3 +1,7 @@
+{%- style -%}
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700;800;900&display=swap');
+{%- endstyle -%}
+
 {%- liquid
 	assign heading_font = settings.heading_font
 	assign body_font = settings.body_font
@@ -103,14 +107,14 @@
 	.customer-addresses .my-address .address-index {
 		font-style: {{ heading_font.style }};
 		font-weight: {{ heading_font.weight }};
-		font-family: {{ heading_font.family }}, {{ heading_font.fallback_families }};
+		font-family: 'Jost', sans-serif;
 	}
 	body,
 	.body-font,
 	.thb-product-detail .product-title {
 		font-style: {{ body_font.style }};
 		font-weight: {{ body_font.weight }};
-		font-family: {{ body_font.family }}, {{ body_font.fallback_families }};
+		font-family: 'Jost', sans-serif;
 	}
 	:root {
 
@@ -280,5 +284,25 @@
 		{%- if color_footer_bg -%}
 			--color-footer-bg: {{ color_footer_bg }};
 		{%- endif -%}
+
+	/* Font size and weights used in About Us page, customer review section and logo with text section */
+	--font-size-title-desktop: 40px;
+	--font-size-heading-desktop: 36px;
+	--font-size-subheading-desktop: 14px;
+	--font-size-text-desktop: 20px;
+
+	--font-weight-heading: 700;
+	--font-weight-subheading: 500;
+	--font-weight-text-normal: 400;
+	--font-weight-text-bold: 600;
+
+	--line-height-title: 120%;
+	--line-height-heading: 130%;
+	--line-height-subheading: 215%;
+	--line-height-text: 150%;
+
+	--font-size-title-mobile: 32px;
+	--font-size-heading-mobile: 20px;
+	--font-size-text-mobile: 16px;
 	}
 {% endstyle %}

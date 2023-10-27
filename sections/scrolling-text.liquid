@@ -9,10 +9,12 @@
 	assign image_size = section.settings.image_size
 	assign font_family = section.settings.font_family
 	assign text_size = section.settings.text_size
+	assign text_weight = section.settings.text_weight
 	assign text_uppercase = section.settings.text_uppercase
 	assign direction = section.settings.direction
 	assign color_bg = section.settings.color_bg
 	assign color_text = section.settings.color_text
+	assign color_text_hover = section.settings.color_text_hover
 	assign overlay_color = section.settings.overlay_color
 	assign overlay_opacity = section.settings.overlay_opacity
 	assign disable_top_spacing = section.settings.disable_top_spacing
@@ -33,7 +35,7 @@
 -%}
 <div class="row{% if full_width %} full-width-row-full{% endif %}">
 	<div class="small-12 columns">
-		<div class="scrolling-text scrolling-text--full-width-{{ full_width }} scrolling-text-uppercase--{{ text_uppercase }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %} {{ height }} {{ font_family }}-font" id="scrolling-text-{{ section.id }}" style="--color-bg:{{ color_bg }};--color-text:{{ color_text }};--overlay-color-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}; --rotation: {{ negative }}{{ rotation | append: 'deg' }}">
+		<div class="scrolling-text scrolling-text--full-width-{{ full_width }} scrolling-text-uppercase--{{ text_uppercase }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %} {{ height }} {{ font_family }}-font" id="scrolling-text-{{ section.id }}" style="--color-bg:{{ color_bg }};--color-text:{{ color_text }};--color-text-hover:{{ color_text_hover }};--overlay-color-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}; --rotation: {{ negative }}{{ rotation | append: 'deg' }}">
 		<div class="scrolling-text--inner direction-{{ direction }}" style="--marquee-speed: {{ speed }}">
 			{% capture scrolling_text %}
 			<div>
@@ -47,6 +49,9 @@
 						{%- liquid
 							assign class = 'scrolling-text--image scrolling-text--image--' | append: image_size
 							render 'responsive-image', image: section.blocks[index].settings.image, sizes: image_width, class: class -%}
+						{%- endif -%}
+						{%- if section.blocks[index].settings.svg_code -%}
+							<div class="scrolling-text--svg">{{ section.blocks[index].settings.svg_code }}</div>
 						{%- endif -%}
 						<span>{{ section.blocks[index].settings.text }}</span>
 						{%- if section.blocks[index].settings.link -%}
@@ -66,6 +71,7 @@
 			{%- endif -%}
 			#scrolling-text-{{ section.id }}  .scrolling-text--inner {
 				font-size: {{ text_size | append: 'px' }};
+				font-weight: {{ text_weight }};
 			}
 
 		{% endstyle %}
@@ -75,257 +81,288 @@
 {% schema %}
   {
     "name": "Scrolling text",
-		"class": "section-scrolling-text",
+	"class": "section-scrolling-text",
     "settings": [
-			{
-				"type": "image_picker",
-				"id": "bg_image",
-				"label": "Background image"
-			},
-			{
-				"type": "select",
-				"id": "height",
-				"label": "Height",
-				"options": [
-					{
-						"value": "height-auto",
-						"label": "Adapt to content"
-					},
-					{
-						"value": "height-300",
-						"label": "300px"
-					},
-					{
-						"value": "height-350",
-						"label": "350px"
-					},
-					{
-						"value": "height-400",
-						"label": "400px"
-					},
-					{
-						"value": "height-450",
-						"label": "450px"
-					},
-					{
-						"value": "height-full",
-						"label": "Full screen"
-					}
-				],
-				"default": "height-auto"
-			},
-			{
-        "type": "checkbox",
-        "id": "full_width",
-        "label": "Make section full width",
-        "default": true
-      },
-			{
-				"type": "select",
-				"id": "direction",
-				"options": [
-					{
-						"value": "left",
-						"label": "Left"
-					},
-					{
-						"value": "right",
-						"label": "Right"
-					}
-				],
-				"default": "left",
-				"label": "Direction"
-			},
-			{
-				"type": "select",
-				"id": "speed",
-				"options": [
-					{
-						"value": "10s",
-						"label": "Fast"
-					},
-					{
-						"value": "20s",
-						"label": "Normal"
-					},
-					{
-						"value": "30s",
-						"label": "Slow"
-					},
-					{
-						"value": "50s",
-						"label": "Very slow"
-					}
-				],
-				"default": "20s",
-				"label": "Speed"
-			},
-			{
-        "type": "range",
-        "id": "rotation",
-        "min": 0,
-        "max": 10,
-        "step": 2,
-        "unit": "°",
-        "label": "Rotation",
-        "default": 0
-      },
-			{
-        "type": "checkbox",
-        "id": "negative_rotation",
-        "label": "Enable negative rotation",
-        "default": false
-      },
-			{
-	      "type": "header",
-	      "content": "Content"
+		{
+			"type": "image_picker",
+			"id": "bg_image",
+			"label": "Background image"
+		},
+		{
+			"type": "select",
+			"id": "height",
+			"label": "Height",
+			"options": [
+				{
+					"value": "height-auto",
+					"label": "Adapt to content"
+				},
+				{
+					"value": "height-300",
+					"label": "300px"
+				},
+				{
+					"value": "height-350",
+					"label": "350px"
+				},
+				{
+					"value": "height-400",
+					"label": "400px"
+				},
+				{
+					"value": "height-450",
+					"label": "450px"
+				},
+				{
+					"value": "height-full",
+					"label": "Full screen"
+				}
+			],
+			"default": "height-auto"
+		},
+		{
+			"type": "checkbox",
+			"id": "full_width",
+			"label": "Make section full width",
+			"default": true
+		},
+		{
+			"type": "select",
+			"id": "direction",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "left",
+			"label": "Direction"
+		},
+		{
+			"type": "select",
+			"id": "speed",
+			"options": [
+				{
+					"value": "10s",
+					"label": "Fast"
+				},
+				{
+					"value": "20s",
+					"label": "Normal"
+				},
+				{
+					"value": "30s",
+					"label": "Slow"
+				},
+				{
+					"value": "50s",
+					"label": "Very slow"
+				}
+			],
+			"default": "20s",
+			"label": "Speed"
+		},
+		{
+			"type": "range",
+			"id": "rotation",
+			"min": 0,
+			"max": 10,
+			"step": 2,
+			"unit": "°",
+			"label": "Rotation",
+			"default": 0
+		},
+		{
+			"type": "checkbox",
+			"id": "negative_rotation",
+			"label": "Enable negative rotation",
+			"default": false
+		},
+		{
+	      	"type": "header",
+	      	"content": "Content"
 	    },
-			{
-				"type": "select",
-				"id": "font_family",
-				"options": [
-					{
-						"value": "body",
-						"label": "Body"
-					},
-					{
-						"value": "heading",
-						"label": "Heading"
-					}
-				],
-				"default": "heading",
-				"label": "Font family"
-			},
-			{
-        "type": "range",
-        "id": "text_size",
-        "min": 16,
-        "max": 140,
-        "step": 2,
-        "unit": "px",
-        "label": "Text size",
-        "default": 24
-      },
-			{
-				"type": "checkbox",
-				"id": "text_uppercase",
-				"default": false,
-				"label": "Make text uppercase"
-			},
-			{
-				"type": "select",
-				"id": "image_size",
-				"options": [
-					{
-						"value": "small",
-						"label": "Small"
-					},
-					{
-						"value": "medium",
-						"label": "Medium"
-					},
-					{
-						"value": "large",
-						"label": "Large"
-					}
-				],
-				"default": "large",
-				"label": "Image size"
-			},
-			{
-	      "type": "header",
-	      "content": "Colors"
+		{
+			"type": "select",
+			"id": "font_family",
+			"options": [
+				{
+					"value": "body",
+					"label": "Body"
+				},
+				{
+					"value": "heading",
+					"label": "Heading"
+				}
+			],
+			"default": "heading",
+			"label": "Font family"
+		},
+		{
+			"type": "range",
+			"id": "text_size",
+			"min": 16,
+			"max": 140,
+			"step": 2,
+			"unit": "px",
+			"label": "Text size",
+			"default": 24
+		},
+		{
+			"type": "select",
+			"id": "text_weight",
+			"options": [
+				{
+					"value": "400",
+					"label": "Normal"
+				},
+				{
+					"value": "600",
+					"label": "Semibold"
+				},
+				{
+					"value": "800",
+					"label": "Bold"
+				}
+			],
+			"default": "600",
+			"label": "Text weight"
+		},
+		{
+			"type": "checkbox",
+			"id": "text_uppercase",
+			"default": false,
+			"label": "Make text uppercase"
+		},
+		{
+			"type": "select",
+			"id": "image_size",
+			"options": [
+				{
+					"value": "small",
+					"label": "Small"
+				},
+				{
+					"value": "medium",
+					"label": "Medium"
+				},
+				{
+					"value": "large",
+					"label": "Large"
+				}
+			],
+			"default": "large",
+			"label": "Image size"
+		},
+		{
+	      	"type": "header",
+	      	"content": "Colors"
 	    },
-			{
-        "type": "color",
-        "id": "color_bg",
-        "label": "Background",
-        "default": "transparent"
-      },
-			{
-        "type": "color",
-        "id": "color_text",
-        "label": "Text",
-        "default": "#1A1C1D"
-      },
-			{
-				"type": "color",
-				"id": "overlay_color",
-				"label": "Overlay",
-				"default": "#000000"
-			},
-			{
-				"type": "range",
-				"id": "overlay_opacity",
-				"min": 0,
-				"max": 100,
-				"step": 1,
-				"unit": "%",
-				"label": "Overlay opacity",
-				"default": 0
-			},
-			{
-	      "type": "header",
-	      "content": "Spacing"
+		{
+			"type": "color",
+			"id": "color_bg",
+			"label": "Background",
+			"default": "transparent"
+		},
+		{
+			"type": "color",
+			"id": "color_text",
+			"label": "Text",
+			"default": "#1A1C1D"
+		},
+		{
+			"type": "color",
+			"id": "color_text_hover",
+			"label": "Text hover color",
+			"default": "#4444E1"
+		},
+		{
+			"type": "color",
+			"id": "overlay_color",
+			"label": "Overlay",
+			"default": "#000000"
+		},
+		{
+			"type": "range",
+			"id": "overlay_opacity",
+			"min": 0,
+			"max": 100,
+			"step": 1,
+			"unit": "%",
+			"label": "Overlay opacity",
+			"default": 0
+		},
+		{
+	      	"type": "header",
+	      	"content": "Spacing"
 	    },
-			{
-				"type": "checkbox",
-				"id": "disable_top_spacing",
-				"default": false,
-				"label": "Remove top spacing"
-			},
-			{
-				"type": "checkbox",
-				"id": "disable_bottom_spacing",
-				"default": false,
-				"label": "Remove bottom spacing"
-			}
+		{
+			"type": "checkbox",
+			"id": "disable_top_spacing",
+			"default": false,
+			"label": "Remove top spacing"
+		},
+		{
+			"type": "checkbox",
+			"id": "disable_bottom_spacing",
+			"default": false,
+			"label": "Remove bottom spacing"
+		}
     ],
-		"blocks": [
-      {
-        "type": "text",
-        "name": "Text",
-        "settings": [
-					{
-						"type": "image_picker",
-						"id": "image",
-						"label": "Image"
-					},
-          {
-            "type": "text",
-            "id": "text",
-            "label": "Content",
-						"default": "Add campaign text here."
-          },
-					{
-						"id": "link",
-						"type": "url",
-						"label": "Link"
-					},
-					{
-		        "type": "checkbox",
-		        "id": "outline_text",
-		        "label": "Make text outline",
-		        "default": false
-		      }
-				]
-			}
-		],
+	"blocks": [
+      	{
+			"type": "text",
+			"name": "Text",
+			"settings": [
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Image"
+				},
+				{
+					"type": "html",
+					"id": "svg_code",
+					"label": "Add svg code here"
+				},
+				{
+					"type": "text",
+					"id": "text",
+					"label": "Content",
+					"default": "Add campaign text here."
+				},
+				{
+					"id": "link",
+					"type": "url",
+					"label": "Link"
+				},
+				{
+					"type": "checkbox",
+					"id": "outline_text",
+					"label": "Make text outline",
+					"default": false
+				}
+			]
+		}
+	],
     "presets": [
-      {
-        "name": "Scrolling text",
-				"blocks": [
-					{
-						"type": "text"
-					},
-					{
-						"type": "text"
-					},
-					{
-						"type": "text"
-					}
-				]
-      }
+      	{
+        	"name": "Scrolling text",
+			"blocks": [
+				{
+					"type": "text"
+				},
+				{
+					"type": "text"
+				},
+				{
+					"type": "text"
+				}
+			]
+      	}
     ]
   }
 {% endschema %}

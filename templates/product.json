@@ -462,8 +462,8 @@
           "type": "section",
           "settings": {
             "badge": "",
-            "subheading": "subheading",
             "heading": "Heading",
+            "subheading": "subheading",
             "marker_style": "style1",
             "heading_size": "small",
             "content": "<p>Add a descriptive text here for your slide.<\/p>",
@@ -479,8 +479,8 @@
           "type": "section",
           "settings": {
             "badge": "",
-            "subheading": "subheading",
             "heading": "Heading",
+            "subheading": "subheading",
             "marker_style": "style1",
             "heading_size": "small",
             "content": "<p>Add a descriptive text here for your slide.<\/p>",

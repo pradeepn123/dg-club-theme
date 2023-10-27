@@ -1338,7 +1338,7 @@ h5,
 h6,
 .h6,
 #shopify-product-reviews .spr-review .spr-review-header-title {
-  font-size: calc(var(--font-heading-scale) * 18px);
+  font-size: calc(var(--font-heading-scale) * 20px);
   line-height: calc( var(--font-heading-line-height-scale) * calc(var(--font-heading-scale) * 26px)); }
 
 @media only screen and (min-width: 768px) {

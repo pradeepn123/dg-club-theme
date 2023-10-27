@@ -71,8 +71,9 @@
       height: calc(100% - 60px); }
       .toggle-box--content-inner div {
         height: 100%;
-        padding: 30px;
+        padding: 56px 24px;
         overflow: scroll; }
+
         .toggle-box--content-inner div > *:last-child {
           margin-bottom: 0; }
   .toggle-box--image > a {
@@ -83,39 +84,93 @@
     bottom: 0;
     top: 0; }
   .toggle-box[open] .toggle-box--content {
-    height: 97%; }
+    height: 88%; }
   .toggle-box[open] button span {
     transform: translateY(-50%) rotate(135deg); }
   .toggle-box button {
     width: 100%;
+    font-size: 20px;
+    font-weight: 600;
     display: flex;
     align-items: center;
-    line-height: 1.2;
-    height: 60px;
-    padding: 10px 30px;
+    line-height: 130%;
+    height: fit-content;
+    padding: 24px 35px;
     background: var(--color-bg, #fff);
     color: var(--color-heading, #1a1c1d);
     font-weight: 500;
     position: relative;
     z-index: 15; }
     .toggle-box button span {
-      width: 14px;
-      height: 14px;
+      width: 25px;
+      height: 25px;
       position: absolute;
       right: 25px;
       top: 50%;
       transform: translateY(-50%); }
       .toggle-box button span:before, .toggle-box button span:after {
         content: "";
-        background: var(--color-heading, #1a1c1d);
+        background: #4444E1;
         position: absolute;
-        top: 6px;
+        top: 11px;
         left: 0;
         width: 100%;
-        height: 2px;
-        border-radius: 1px; }
+        height: 4px; }
       .toggle-box button span:after {
         top: 0;
-        left: 6px;
-        width: 2px;
+        left: 11px;
+        width: 4px;
         height: 100%; }
+
+@media only screen and (max-width: 768px) {
+  .toggle-box button span {
+    width: 18px;
+    height: 18px;
+    right: 18px;
+  }
+  .toggle-box button span:before {
+    top: 7.5px;
+    height: 3px; 
+  }
+  .toggle-box button span:after {
+    left: 7.5px;
+    width: 3px;
+  }
+  .toggle-box button {
+    font-size: 16px;
+    line-height: 120%;
+    padding: 25px 18px;
+  }
+  .toggle-box--content-inner div {
+    padding: 30px 24px;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1024px) {
+  .toggle-box button {
+    font-size: 18px;
+  }
+}
+.toggle-box--image.aspect-ratio img {
+  border-radius: unset;
+  border-top-right-radius: var(--block-border-radius, 16px);
+  border-top-left-radius: var(--block-border-radius, 16px);
+}
+.toggle-boxes .section-header--content h3 {
+  font-size: var(--font-size-title-desktop);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-title);
+}
+.toggle-box--content-inner p {
+  font-size: var(--font-size-text-desktop);
+  font-weight: var(--font-weight-text-normal);
+  line-height: var(--line-height-text);
+}
+@media only screen and (max-width: 678px) {
+  .toggle-boxes .section-header--content h3 {
+    font-size: var(--font-size-title-mobile);
+  }
+  .toggle-box--content-inner p {
+    font-size: var(--font-size-text-mobile);
+  }
+}
