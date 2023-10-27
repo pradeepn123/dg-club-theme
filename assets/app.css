@@ -2354,31 +2354,56 @@ h6,
   min-width: 70px;
   white-space: nowrap;
   justify-content: end;
-  display: inline-flex; }
-  @media only screen and (min-width: 768px) {
-    .thb-secondary-area {
-      min-width: 135px; } }
-  [dir="rtl"] .thb-secondary-area {
-    margin-right: auto;
-    margin-left: 0; }
+  display: inline-flex; 
+}
+.thb-secondary-area.thb-header-right {
+  align-items: center;
+}
+.thb-secondary-area.thb-header-right .thb-header-right-button{
+  display: none;
+}
+@media only screen and (min-width: 768px) {  
+  .thb-secondary-area {
+    min-width: 135px; 
+  }
+}
+[dir="rtl"] .thb-secondary-area {
+  margin-right: auto;
+  margin-left: 0; 
+}
+.thb-secondary-area .no-js-hidden {
+  align-items: center;
+  display: none; 
+}
+@media only screen and (min-width: 1068px) {
+  .thb-secondary-area.thb-header-right .thb-header-right-button {
+    display: flex;
+    margin-right: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
   .thb-secondary-area .no-js-hidden {
-    align-items: center;
-    display: none; }
-    @media only screen and (min-width: 1068px) {
-      .thb-secondary-area .no-js-hidden {
-        display: inline-flex; } }
+    display: inline-flex; 
+  } 
+}
+.thb-secondary-area-item {
+  padding: 0 7px;
+  height: 100%;
+  align-items: center;
+  display: inline-flex; 
+}
+@media only screen and (min-width: 1068px) {
   .thb-secondary-area-item {
-    padding: 0 7px;
-    height: 100%;
-    align-items: center;
-    display: inline-flex; }
-    @media only screen and (min-width: 1068px) {
-      .thb-secondary-area-item {
-        padding: 0 10px; } }
-    .thb-secondary-area-item:last-child {
-      padding-right: 0; }
-      [dir="rtl"] .thb-secondary-area-item:last-child {
-        padding-right: 7px; }
+    padding: 0 10px; 
+  } 
+}
+.thb-secondary-area-item:last-child {
+  padding-right: 0; 
+}
+[dir="rtl"] .thb-secondary-area-item:last-child {
+  padding-right: 7px; 
+}
     .thb-secondary-area-item.thb-secondary-myaccount {
       display: none;
       font-weight: 500;
@@ -2554,7 +2579,7 @@ h6,
   .thb-full-menu a {
     color: var(--color-header-links, --color-accent);
     position: relative;
-    font-size: calc(var(--font-navigation-scale, 1) * 15px); }
+    font-size: calc(var(--font-navigation-scale, 1) * 16px); }
     .navigation-uppercase-true .thb-full-menu a {
       text-transform: uppercase; }
     .thb-full-menu a:after {
@@ -2581,7 +2606,7 @@ h6,
     align-items: center; }
     .thb-full-menu > li > a {
       margin: 10px 0;
-      font-weight: 500; }
+      font-weight: 400; }
   .thb-full-menu li.menu-item-has-children {
     position: relative;
     z-index: 1; }

@@ -65,6 +65,33 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "79c54100-3130-4737-955b-cb1b8e5a4d8d": {
+          "type": "megamenu",
+          "settings": {
+            "position": "2",
+            "promo_1_image": "shopify:\/\/shop_images\/Rectangle_183.jpg",
+            "promo_1_heading": "Mural Wallpapers",
+            "promo_1_content": "",
+            "promo_1_link": "",
+            "promo_2_image": "shopify:\/\/shop_images\/Rectangle_184.jpg",
+            "promo_2_heading": "DIY Wallpapers",
+            "promo_2_content": "",
+            "promo_2_link": "",
+            "promo_3_image": "shopify:\/\/shop_images\/Rectangle_185.jpg",
+            "promo_3_heading": "Printed curtain blinds",
+            "promo_3_content": "",
+            "promo_3_link": "",
+            "promo_4_image": "shopify:\/\/shop_images\/Rectangle_186.jpg",
+            "promo_4_heading": "Wall arts",
+            "promo_4_content": "",
+            "promo_4_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "79c54100-3130-4737-955b-cb1b8e5a4d8d"
+      ],
       "settings": {
         "sticky_header": true,
         "logo": "shopify:\/\/shop_images\/Logo.png",
@@ -73,6 +100,8 @@
         "style": "style1",
         "header_shadow": "header--shadow-small",
         "menu": "main-menu",
+        "button_label": "Start Selling",
+        "button_link": "",
         "transparent_header": false,
         "mobile_secondary_menu": "",
         "show_social_links": true,
@@ -82,6 +111,7 @@
     },
     "header-mobile-navigation": {
       "type": "header-mobile-navigation",
+      "disabled": true,
       "settings": {
         "mobile_nav": "main-menu",
         "color_links": "#d6d8d9",
