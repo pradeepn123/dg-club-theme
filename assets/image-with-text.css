@@ -115,9 +115,9 @@
 .image-with-text--content--inner .h2 {
     max-width: 500px;
     margin-bottom: 24px;
-    font-size: var(--font-size-heading-desktop) !important;
-    font-weight: var(--font-weight-heading) !important;
-    line-height: var(--line-height-heading) !important;
+    font-size: var(--font-size-heading-desktop);
+    font-weight: var(--font-weight-heading);
+    line-height: var(--line-height-heading);
 }
 .image-with-text--content--inner .rte p {
     margin-bottom: 0;

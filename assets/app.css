@@ -1279,6 +1279,7 @@ body {
   --button-border-radius: 6px;
   --input-border-radius: 6px;
   --color-body: #2c2d2e;
+  --color-carousel-button: #4444E1;
   --color-body-rgb: 44, 45, 46;
   --color-heading-text: #1a1c1d;
   --color-heading-text-rgb: 26, 28, 29;
@@ -3931,7 +3932,8 @@ https://flickity.metafizzy.co
   margin-top: -21px;
   z-index: 30;
   opacity: 0;
-  cursor: pointer; }
+  cursor: pointer;
+  border: 1px solid var(--color-carousel-button); }
   .flickity-nav svg {
     pointer-events: none; }
   @media only screen and (min-width: 768px) {
