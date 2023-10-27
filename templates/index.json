@@ -264,7 +264,7 @@
         "image_size": "small",
         "color_bg": "rgba(0,0,0,0)",
         "color_text": "#adb3bb",
-        "color_text_hover": "#4444E1",
+        "color_text_hover": "#4444e1",
         "overlay_color": "#000000",
         "overlay_opacity": 0,
         "disable_top_spacing": true,
@@ -284,6 +284,8 @@
             "content": "Our program is your gateway to turning artistic passion into a thriving business. With no upfront costs, we provide the tools, support, and expertise you need to launch your own brand in the world of Print on Demand. Start today and let your creativity flourish",
             "button_text": "Learn More",
             "button_link": "",
+            "artists_image": "shopify:\/\/shop_images\/Frame_228.png",
+            "artists_info": "<p>+3K Artists have enrolled<\/p>",
             "color_bg": "#d5bff1",
             "color_text": "#4444e1",
             "color_button": "#4444e1"
@@ -308,7 +310,7 @@
     "60ed2e7d-3f50-428a-b546-03274d862db0": {
       "type": "collection-list",
       "settings": {
-        "heading": "Featured |Creators|",
+        "heading": "Featured Creators",
         "marker_style": "style3",
         "description": "",
         "heading_size": "small",
@@ -319,7 +321,7 @@
           "priya-singhania",
           "siddharth-sharma"
         ],
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "collection_layout": "grid",
         "style": "style1",
         "columns_desktop": 5,
