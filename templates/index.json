@@ -859,7 +859,7 @@
         "video_autoplay": true,
         "aspect_ratio": "16-9",
         "color_bg": "#d5bff1",
-        "color_text": "#3F72E5",
+        "color_text": "#4444e1",
         "color_button": "#4444e1",
         "color_button_text": "#ffffff",
         "disable_top_spacing": false,
