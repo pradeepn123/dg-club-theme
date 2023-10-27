@@ -100,8 +100,6 @@
         "style": "style1",
         "header_shadow": "header--shadow-small",
         "menu": "main-menu",
-        "button_label": "Start Selling",
-        "button_link": "",
         "transparent_header": false,
         "mobile_secondary_menu": "",
         "show_social_links": true,
