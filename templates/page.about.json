@@ -326,16 +326,7 @@
       "type": "spacer",
       "settings": {
         "spacer_mobile": 50,
-        "spacer_desktop": 40,
-        "border_separator": false,
-        "border_separator_full": false
-      }
-    },
-    "13cf50b5-564f-4fce-8d2d-9e114c48a9c7": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 50,
-        "spacer_desktop": 40,
+        "spacer_desktop": 80,
         "border_separator": false,
         "border_separator_full": false
       }
@@ -416,10 +407,10 @@
         "disable_bottom_spacing": true
       }
     },
-    "b28517b5-315c-4d81-a71d-d5c5fda6e1b6": {
+    "dcc0f4b5-5f54-43fd-973c-a65011212123": {
       "type": "spacer",
       "settings": {
-        "spacer_mobile": 50,
+        "spacer_mobile": 10,
         "spacer_desktop": 40,
         "border_separator": false,
         "border_separator_full": false
@@ -535,6 +526,7 @@
         "5e198257-a073-4004-a95d-c9d8d80ebb45": {
           "type": "text",
           "settings": {
+            "svg_code": "",
             "text": "Add campaign text here.",
             "link": "",
             "outline_text": false
@@ -543,6 +535,7 @@
         "a6a1c077-b0fb-43df-b891-1b41cec21c61": {
           "type": "text",
           "settings": {
+            "svg_code": "",
             "text": "Add campaign text here.",
             "link": "",
             "outline_text": false
@@ -551,6 +544,7 @@
         "2e8471b2-3ec3-48d8-9877-4c982b421bea": {
           "type": "text",
           "settings": {
+            "svg_code": "",
             "text": "Add campaign text here.",
             "link": "",
             "outline_text": false
@@ -572,10 +566,12 @@
         "negative_rotation": false,
         "font_family": "heading",
         "text_size": 48,
+        "text_weight": "600",
         "text_uppercase": false,
         "image_size": "small",
         "color_bg": "#626178",
         "color_text": "#ffffff",
+        "color_text_hover": "#4444E1",
         "overlay_color": "#ffffff",
         "overlay_opacity": 0,
         "disable_top_spacing": false,
@@ -588,6 +584,7 @@
         "8b4e5e0d-2bca-438f-829d-15dea2836071": {
           "type": "text",
           "settings": {
+            "svg_code": "",
             "text": "Add campaign text here.",
             "link": "",
             "outline_text": false
@@ -596,6 +593,7 @@
         "5e4db5a5-4d24-4307-b9fb-8a93da1ee683": {
           "type": "text",
           "settings": {
+            "svg_code": "",
             "text": "Add campaign text here.",
             "link": "",
             "outline_text": false
@@ -604,6 +602,7 @@
         "130969bf-004a-4e0c-ac4b-9784c03ce253": {
           "type": "text",
           "settings": {
+            "svg_code": "",
             "text": "Add campaign text here.",
             "link": "",
             "outline_text": false
@@ -625,10 +624,12 @@
         "negative_rotation": true,
         "font_family": "heading",
         "text_size": 48,
+        "text_weight": "600",
         "text_uppercase": false,
         "image_size": "small",
         "color_bg": "#e36464",
         "color_text": "#ffffff",
+        "color_text_hover": "#4444E1",
         "overlay_color": "#000000",
         "overlay_opacity": 0,
         "disable_top_spacing": true,
@@ -900,9 +901,8 @@
     "8294ccce-f553-48b2-8ea1-db6deec4619c",
     "fcf92382-4f7b-4511-962c-a72e974ed185",
     "31d68794-7380-4b4d-90c0-6555126dc159",
-    "13cf50b5-564f-4fce-8d2d-9e114c48a9c7",
     "12d81516-043b-4ed1-a6fb-84d87b540bc3",
-    "b28517b5-315c-4d81-a71d-d5c5fda6e1b6",
+    "dcc0f4b5-5f54-43fd-973c-a65011212123",
     "166161901464a25e50",
     "1661619177029ffd60",
     "166161906436c7d4d0",

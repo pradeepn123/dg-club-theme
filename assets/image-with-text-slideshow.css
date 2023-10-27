@@ -54,9 +54,12 @@
         padding: 70px;
         padding-bottom: 90px; } }
     .image-with-text-slideshow--content h3 {
-      color: inherit; }
+      color: inherit;
+      margin-bottom: 24px; }
+    .image-with-text-slideshow--content .subheading {
+        margin-bottom: 16px; }
     .image-with-text-slideshow--content p {
-      margin-bottom: 30px; }
+      margin-bottom: 32px; }
     @media only screen and (min-width: 768px) {
       .image-with-text-slideshow--content .flickity-viewport,
       .image-with-text-slideshow--content .carousel__slide {
@@ -101,3 +104,12 @@
       grid-template-columns: 4fr 6fr; } }
   .image-with-text-slideshow .flickity-page-dots {
     --color-body: #fff; }
+    @media only screen and (max-width: 768px) {
+    .image-with-text-slideshow--content h3 {
+      color: inherit;
+      margin-bottom: 14px; }
+    .image-with-text-slideshow--content .subheading {
+        margin-bottom: 9px; }
+    .image-with-text-slideshow--content p {
+      margin-bottom: 18px; }
+    }
