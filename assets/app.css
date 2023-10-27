@@ -4146,3 +4146,6 @@ input[type="radio"], .field label, .custom-checkbox[type="checkbox"], .custom-ch
       height: 30%;
       top: auto;
       bottom: -20%; }
+.announcement-bar .announcement-bar--carousel .flickity-nav {
+  border: unset;
+}

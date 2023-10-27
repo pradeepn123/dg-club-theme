@@ -160,6 +160,60 @@
         "disable_bottom_spacing": true
       }
     },
+    "8ca0f2be-52f0-4ad3-bd68-49f432322085": {
+      "type": "custom-collection-tabs",
+      "blocks": {
+        "template--21508546429228__8ca0f2be-52f0-4ad3-bd68-49f432322085-collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection_list": [
+              "aarav-kapoor",
+              "framed-prints",
+              "frontpage",
+              "nandini-patel",
+              "priya-singhania",
+              "siddharth-sharma"
+            ],
+            "title": "Photo Gifts"
+          }
+        },
+        "template--21508546429228__8ca0f2be-52f0-4ad3-bd68-49f432322085-collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection_list": [
+              "nandini-patel",
+              "priya-singhania",
+              "siddharth-sharma"
+            ],
+            "title": "Decor Prints"
+          }
+        }
+      },
+      "block_order": [
+        "template--21508546429228__8ca0f2be-52f0-4ad3-bd68-49f432322085-collection-1",
+        "template--21508546429228__8ca0f2be-52f0-4ad3-bd68-49f432322085-collection-2"
+      ],
+      "settings": {
+        "heading": "|Customize| products",
+        "marker_style": "style2",
+        "description": "",
+        "heading_size": "small",
+        "image_ratio": "square",
+        "collection_layout": "carousel",
+        "style": "style1",
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_progress_bar": false,
+        "mobile_swipe": true,
+        "heading_position": "bottom-center",
+        "marker_color": "#fd6262",
+        "text_color": "#000000",
+        "overlay_color": "rgba(0,0,0,0)",
+        "overlay_opacity": 0,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
     "16614195534fb74bc3": {
       "type": "collection-tabs",
       "blocks": {
@@ -202,6 +256,7 @@
         "62cb3915-bc43-41ce-b3f3-2e48c9eefdd2",
         "daf43de1-d4e8-41d4-b6ee-0d3a6da11a2e"
       ],
+      "disabled": true,
       "settings": {
         "heading": "Collection tabs",
         "marker_style": "style1",
@@ -779,6 +834,7 @@
   "order": [
     "8ba47ba3-de7f-4f0a-b30d-6f2a540748c3",
     "a7802e0a-30f4-4485-bf29-8868a637ca3e",
+    "8ca0f2be-52f0-4ad3-bd68-49f432322085",
     "16614195534fb74bc3",
     "1661426105a80f3333",
     "66e51d40-1da7-4a8a-8d7c-2e5b727c5f4c",
