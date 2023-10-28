@@ -1,15 +1,13 @@
 
-{{- 'collection-tabs.css' | asset_url | stylesheet_tag -}}
+{{- 'custom-collection-tabs.css' | asset_url | stylesheet_tag -}}
 {%- liquid
 	assign section_heading = section.settings.heading
 	assign marker_style = section.settings.marker_style
-	assign section_description = section.settings.description
 	assign heading_size = section.settings.heading_size
 	assign columns_desktop = section.settings.columns_desktop
 	assign columns_mobile = section.settings.columns_mobile
 	assign show_progress_bar = section.settings.show_progress_bar
 	assign mobile_swipe = section.settings.mobile_swipe
-	assign collections = section.settings.collection_list
 	assign style = section.settings.style
 	assign heading_position = section.settings.heading_position
 	assign collection_layout = section.settings.collection_layout
@@ -32,7 +30,7 @@
 -%}
 <div class="row">
 	<div class="small-12 columns">
-		<div class="list-collections section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--overlay-color-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}; --var-collection-list-columns:{{ columns_desktop }}; --collection-text-color: {{ text_color }}">
+		<div class="list-collections_custom section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--overlay-color-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}; --var-collection-list-columns:{{ columns_desktop }}; --collection-text-color: {{ text_color }}">
 			<div class="section-header">
                 <div class="section-header--content">
                     {%- if section_heading -%}
@@ -70,7 +68,6 @@
 		</div>
 	</div>
 </div>
-{{- 'list-collections.css' | asset_url | stylesheet_tag -}}
 
 <script>
     var i, tabcontent, tablinks;
@@ -134,12 +131,6 @@
 			"label": "Marker"
 		},
 		{
-			"type": "richtext",
-			"id": "description",
-			"label": "Description",
-			"default": "<p>Add a short description for your collections</p>"
-		},
-		{
 			"type": "select",
 			"id": "heading_size",
 			"options": [
@@ -194,7 +185,8 @@
 				}
 			],
 			"default": "grid",
-			"label": "Layout"
+			"label": "Layout",
+			"info": "Save the settings and let the window load properly."
 		},
 		{
 			"type": "select",
@@ -335,7 +327,7 @@
                 {
                     "type": "collection_list",
                     "id": "collection_list",
-                    "label": "Collections",
+                    "label": "Collections List",
                     "limit": 18
                 },
                 {

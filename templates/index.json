@@ -196,8 +196,7 @@
       "settings": {
         "heading": "|Customize| products",
         "marker_style": "style2",
-        "description": "",
-        "heading_size": "small",
+        "heading_size": "medium",
         "image_ratio": "square",
         "collection_layout": "carousel",
         "style": "style1",
@@ -211,7 +210,7 @@
         "overlay_color": "rgba(0,0,0,0)",
         "overlay_opacity": 0,
         "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "disable_bottom_spacing": true
       }
     },
     "16614195534fb74bc3": {
@@ -322,7 +321,7 @@
         "color_text_hover": "#4444e1",
         "overlay_color": "#000000",
         "overlay_opacity": 0,
-        "disable_top_spacing": true,
+        "disable_top_spacing": false,
         "disable_bottom_spacing": true
       }
     },
