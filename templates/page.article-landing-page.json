@@ -122,14 +122,14 @@
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-3"
       ],
       "settings": {
-        "desktop_height": "desktop-height-650",
+        "desktop_height": "desktop-height-550",
         "mobile_height": "mobile-height-500",
-        "height": "adapt",
+        "height": "small",
         "desktop_layout": "text_first",
-        "color_bg": "#746461",
-        "color_text": "#ffffff",
-        "color_link": "#ffffff",
-        "color_border": "#827471",
+        "color_bg": "#ffffff",
+        "color_text": "#2c2d2e",
+        "color_link": "#2c2d2e",
+        "color_border": "#000000",
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
