@@ -58,6 +58,7 @@
       "blocks": {
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-badge-1": {
           "type": "badge",
+          "disabled": true,
           "settings": {
             "text": "",
             "color_bg": "#3f72e5",
