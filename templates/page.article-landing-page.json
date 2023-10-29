@@ -81,6 +81,7 @@
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-1": {
           "type": "tab",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
             "use_video": false,
             "heading_icon": "recycle",
             "heading": "Diverse Opportunities",
@@ -91,6 +92,7 @@
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-2": {
           "type": "tab",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
             "use_video": false,
             "heading_icon": "fire",
             "heading": "Free Advertisement",
@@ -101,6 +103,7 @@
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-3": {
           "type": "tab",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
             "use_video": false,
             "heading_icon": "price_tag",
             "heading": "Competitive Commissions",
