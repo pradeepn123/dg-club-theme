@@ -36,7 +36,7 @@
     "social_pinterest_link": "#",
     "social_tiktok_link": "",
     "product_card_spacing": "medium",
-    "product_aspect_ratio": "portrait",
+    "product_aspect_ratio": "square",
     "enable_quick_view": false,
     "show_products_vendor": false,
     "product_card_border": false,

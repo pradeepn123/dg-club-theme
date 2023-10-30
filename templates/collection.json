@@ -26,7 +26,7 @@
         "enable_filtering": false,
         "enable_sorting": false,
         "show_counts": false,
-        "filter_color_swatches": true,
+        "filter_color_swatches": false,
         "facets_desktop": "sidebar"
       }
     },
