@@ -145,3 +145,8 @@
     .text-with-icons__block-content p {
       font-size: 18px; }
   }
+  @media only screen and (max-width: 500px) {
+    .text-with-icons__inner {
+      grid-gap: 0;
+    }
+  }
