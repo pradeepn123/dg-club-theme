@@ -181,3 +181,13 @@
       transform: translateY(-10px); } }
   .collection-card.style2.collection-card--has-shadow:hover .has-shadow--true {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16); }
+
+    /* custom button */
+.list-collections .section-header .button {
+  height: 52px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 116.433%;
+  text-transform: capitalize;
+  border-radius: 60px;
+}

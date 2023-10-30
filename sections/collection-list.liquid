@@ -17,6 +17,10 @@
 	assign overlay_color = section.settings.overlay_color
 	assign overlay_opacity = section.settings.overlay_opacity
 
+	assign button_enabled = section.settings.button_enabled
+	assign button_text = section.settings.button_text
+	assign button_link = section.settings.button_link
+
 	assign disable_top_spacing = section.settings.disable_top_spacing
 	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
 	assign is_carousel = false
@@ -31,7 +35,29 @@
 <div class="row">
 	<div class="small-12 columns">
 		<div class="list-collections section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--overlay-color-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}; --var-collection-list-columns:{{ columns_desktop }}; --collection-text-color: {{ text_color }}">
-			{%- render 'section-header', section_heading: section_heading, section_description: section_description, marker_color: marker_color, marker_style: marker_style -%}
+			
+			{%- if button_enabled -%}
+				{%- if section_heading != blank or section_description != blank -%}
+					<div class="section-header">
+						<div class="section-header--content">
+							{%- if section_heading -%}
+								<h3 class="section-header--title">
+									{% render 'animated-marker-heading', heading: section_heading, style: marker_style, color: marker_color %}
+								</h3>
+							{%- endif -%}
+							{%- if section_description != blank -%}
+								<div class="section-header--description rte">
+									{{ section_description }}
+								</div>
+							{%- endif -%}
+						</div>
+						<a class="button accent" href="{{ button_link }}" role="button" title="{{ button_text | escape }}" {{ block.shopify_attributes }}>{{ button_text }}</a>
+					</div>
+				{% endif %}
+			{% else %}
+				{%- render 'section-header', section_heading: section_heading, section_description: section_description, marker_color: marker_color, marker_style: marker_style -%}
+			{% endif %}
+
 			<{{ tag }} class="collection-grid collection-grid__{{ collection_layout }} {{ carousel_class }}{% if mobile_swipe %} swipe-on-mobile{% endif %} mobile-columns--{{ columns_mobile | default: 1 }}">
 				{%- if collections.count > 0 -%}
 					{%- for collection in collections -%}
@@ -100,6 +126,22 @@
 			"id": "description",
 			"label": "Description",
 			"default": "<p>Add a short description for your collections</p>"
+		},
+		{
+			"type": "checkbox",
+			"id": "button_enabled",
+			"label": "Enable button",
+			"default": false
+		},
+		{
+			"type": "text",
+			"id": "button_text",
+			"label": "Button Text"
+		},
+		{
+			"type": "url",
+			"id": "button_link",
+			"label": "Button link"
 		},
 		{
 			"type": "select",
