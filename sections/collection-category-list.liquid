@@ -41,9 +41,9 @@
 					<div class="section-header">
 						<div class="section-header--content">
 							{%- if section_heading -%}
-								<h2 class="section-header--title">
+								<h1 class="section-header--title">
 									{% render 'animated-marker-heading', heading: section_heading, style: marker_style, color: marker_color %}
-								</h2>
+								</h1>
 							{%- endif -%}
 							{%- if section_description != blank -%}
 								<div class="section-header--description rte">
@@ -87,8 +87,8 @@
 
 {% schema %}
   {
-    "name": "Collection list",
-	"class": "collection-list-section",
+    "name": "Collection category list",
+	"class": "collection-category-list-section",
     "settings": [
 		{
 			"type": "text",
@@ -339,7 +339,7 @@
     ],
     "presets": [
       	{
-        	"name": "Collection list"
+        	"name": "Collection category list"
       	}
     ]
   }
