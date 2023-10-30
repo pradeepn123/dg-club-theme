@@ -18,6 +18,7 @@
 	assign color_border = section.settings.color_border
 	assign disable_top_spacing = section.settings.disable_top_spacing
 	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+	assign mobile_image_width = section.settings.mobile_image_width
 
 	assign ratio = 1
 	if height == 'adapt' and image != blank
@@ -32,6 +33,20 @@
 		endif
 	endif
 -%}
+
+{%- style -%}
+	{% if mobile_image_width == 'landscape' %}
+	.image-with-text--image-media_about {
+        --ratio-percent: 50% !important;
+    }
+	@media only screen and (min-width: 550px) and (max-width: 990px) {
+		.image-with-text--image-media_about {
+			--ratio-percent: 30% !important;
+		}
+	}
+	{% endif %}
+{%- endstyle -%}
+
 <div class="row{% if full_width %} full-width-row{% endif %}">
 	<div class="small-12 columns">
         <div class="image-with-text--conatiner">
@@ -102,7 +117,7 @@
                                         <a class="button" href="{{ block.settings.button_link }}" role="button" title="{{ block.settings.button_text | escape }}" {{ block.shopify_attributes }}><span>{{ block.settings.button_text }}</span></a>
                                     {% endif %}
                                 {% when 'space' %}
-                        <div style="height: {{ block.settings.height | append: 'px' }}" {{ block.shopify_attributes }}></div>
+                        			<div style="height: {{ block.settings.height | append: 'px' }}" {{ block.shopify_attributes }}></div>
                             {%- endcase -%}
                         {%- endfor -%}
                     </div>
@@ -185,6 +200,22 @@
             ],
                 "default": "adapt",
                 "label": "Image height"
+            },
+			{
+                "type": "select",
+                "id": "mobile_image_width",
+                "options": [
+                {
+                    "value": "adapt",
+                    "label": "Adapt to image"
+                },
+                {
+                    "value": "landscape",
+                    "label": "Landscape"
+                }
+            ],
+                "default": "adapt",
+                "label": "Mobile Image width"
             },
 			{
 				"type": "select",
