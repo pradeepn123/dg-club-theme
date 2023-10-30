@@ -38,15 +38,12 @@
   @media only screen and (min-width: 1068px) {
     .text-with-icons.icon-columns-4 .text-with-icons__inner {
       grid-template-columns: repeat(4, minmax(200px, 300px)); } }
-  @media only screen and (max-width: 910px) {
+  @media only screen and (min-width: 678px) and (max-width: 1024px) {
     .text-with-icons.swipe-on-mobile .text-with-icons__inner {
-      overflow-x: auto;
-      justify-content: flex-start;
-      scroll-snap-type: x mandatory;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(250px, 300px);
-      grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
-      scrollbar-width: none; }
+      grid-auto-columns: minmax(160px, 300px);
+      grid-template-columns: repeat(auto-fill, minmax(160px, 300px)); }
+      .text-with-icons__inner {
+        grid-gap: 20px;}
       .text-with-icons.swipe-on-mobile .text-with-icons__inner::-webkit-scrollbar {
         display: none; } }
   .text-with-icons__block {
@@ -145,8 +142,19 @@
     .text-with-icons__block-content p {
       font-size: 18px; }
   }
-  @media only screen and (max-width: 500px) {
+  @media only screen and (max-width: 768px){
     .text-with-icons__inner {
-      grid-gap: 0;
+      grid-gap: 20px;
     }
+    .text-with-icons.swipe-on-mobile .text-with-icons__inner {
+      overflow-x: auto;
+      justify-content: flex-start;
+      scroll-snap-type: x mandatory;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(132px, 300px);
+      grid-template-columns: repeat(auto-fill, minmax(132px, 300px));
+      scrollbar-width: none;
+    }
+    .text-with-icons.swipe-on-mobile .text-with-icons__inner::-webkit-scrollbar {
+      display: none; }
   }

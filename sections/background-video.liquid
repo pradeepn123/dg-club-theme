@@ -8,6 +8,7 @@
   assign video = section.settings.video
   assign video_hosted = section.settings.video_hosted
   assign video_controls = section.settings.video_controls
+  assign autoplay_lightbox = section.settings.autoplay_lightbox
   assign disable_top_spacing = section.settings.disable_top_spacing
   assign disable_bottom_spacing = section.settings.disable_bottom_spacing
 
@@ -38,36 +39,37 @@
             >
           </noscript>
         </div>
-      {%- endif -%}
-      <div class="background-video__iframe" data-provider="{{ video_type }}">
-        {%- if video_hosted == blank -%}
-          {%- if video != blank -%}
-            {%- if video.type == 'youtube' -%}
-              <iframe
-                data-src="https://www.youtube.com/embed/{{ video.id }}?loop=1&autoplay=1&mute=1&playlist={{ video.id }}&iv_load_policy=3&disablekb=1&controls=0&playsinline=1&enablejsapi=1"
-                frameborder="0"
-                class="lazyload"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-                title="{{ section.settings.heading | escape }}"
-                tabindex="-1"
-              ></iframe>
-            {%- else -%}
-              <iframe
-                data-src="https://player.vimeo.com/video/{{ video.id }}?background=1"
-                frameborder="0"
-                class="lazyload"
-                allow="autoplay; encrypted-media"
-                allowfullscreen
-                title="{{ section.settings.heading | escape }}"
-                tabindex="-1"
-              ></iframe>
+      {%- else -%}
+        <div class="background-video__iframe" data-provider="{{ video_type }}">
+          {%- if video_hosted == blank -%}
+            {%- if video != blank -%}
+              {%- if video.type == 'youtube' -%}
+                <iframe
+                  data-src="https://www.youtube.com/embed/{{ video.id }}?loop=1&autoplay=0&mute=1&playlist={{ video.id }}&iv_load_policy=3&disablekb=1&controls=0&playsinline=1&enablejsapi=1"
+                  frameborder="0"
+                  class="lazyload"
+                  allow="encrypted-media"
+                  allowfullscreen
+                  title="{{ section.settings.heading | escape }}"
+                  tabindex="-1"
+                ></iframe>
+              {%- else -%}
+                <iframe
+                  data-src="https://player.vimeo.com/video/{{ video.id }}?background=1"
+                  frameborder="0"
+                  class="lazyload"
+                  allow="encrypted-media"
+                  allowfullscreen
+                  title="{{ section.settings.heading | escape }}"
+                  tabindex="-1"
+                ></iframe>
+              {%- endif -%}
             {%- endif -%}
+          {%- else -%}
+            {{ video_hosted | video_tag: autoplay: false, loop: true, controls: false, muted: true }}
           {%- endif -%}
-        {%- else -%}
-          {{ video_hosted | video_tag: autoplay: true, loop: true, controls: false, muted: true }}
-        {%- endif -%}
-      </div>
+        </div>
+      {%- endif -%}
       <div
         class="background-video__overlay"
         style="--overlay-color-rgb: {{ overlay_color.rgb | replace: " ", "," }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.00 }}"
@@ -122,7 +124,7 @@
                       {%- if video_hosted == blank -%}
                         {%- if video.type == 'youtube' -%}
                           <iframe
-                            data-src="https://www.youtube.com/embed/{{ video.id }}?enablejsapi=1"
+                            data-src="https://www.youtube.com/embed/{{ video.id }}?{% if autoplay_lightbox %}autoplay=1&mute=1&{% endif %}enablejsapi=1"
                             class="js-youtube lazyload"
                             allow="autoplay; encrypted-media"
                             allowfullscreen
@@ -136,7 +138,7 @@
                           ></iframe>
                         {%- endif -%}
                       {%- else -%}
-                        {{ video_hosted | video_tag: autoplay: false, loop: false, controls: true }}
+                        {{ video_hosted | video_tag: autoplay: true, loop: false, controls: true }}
                       {%- endif -%}
                     </div>
                   </div>
@@ -238,6 +240,12 @@
       "type": "checkbox",
       "id": "video_controls",
       "label": "Display video controls",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_lightbox",
+      "label": "Autoplay in popup",
       "default": true
     },
     {
