@@ -53,7 +53,7 @@
 				</div>
 			{%- endif -%}
 			<div class="thb-filter-count" id="ProductCount">
-				<span class="facets__label">
+				{% comment %} <span class="facets__label">
 					{%- if results.results_count -%}
 						{{ 'search.results_with_count' | t: terms: results.terms, count: results.results_count }}
 					{%- elsif results.products_count == results.all_products_count -%}
@@ -61,7 +61,7 @@
 					{%- else -%}
 						{{ 'products.facets.product_count' | t: product_count: results.products_count, count: results.all_products_count }}
 					{%- endif -%}
-				</span>
+				</span> {% endcomment %}
 				<span class="loading-overlay">
 					{% render 'svg-icons' with 'thb-loading' %}
 				</span>
