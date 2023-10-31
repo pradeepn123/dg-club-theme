@@ -220,9 +220,13 @@
     /* custom button */
 .list-collections .section-header .button {
   height: 52px;
+  width: 136px;
   font-size: 18px;
   font-weight: 600;
   line-height: 116.433%;
   text-transform: capitalize;
   border-radius: 60px;
+}
+.list-collections .section-header {
+  row-gap: 16px;
 }
