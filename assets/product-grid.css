@@ -311,6 +311,9 @@
   display: block;
   margin-bottom: 5px;
 }
+.product-card .product-card-title:hover{
+  color: #000;
+}
  @media (max-width: 1023px){
   .product-card-title{
     font-size: 16px !important;

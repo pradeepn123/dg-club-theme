@@ -174,7 +174,6 @@
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
         "height": "adapt",
-        "mobile_image_width": "adapt",
         "desktop_image_width": "medium",
         "full_width": false,
         "layout": "text_first",
