@@ -292,7 +292,7 @@
       "login": "Login",
       "login_description": "If you have an account with us, please log in.",
       "create_account": "Create an account",
-      "create_account_description": "Enter your information below to proceed. If you already have an account, please log in instead.",
+      "create_account_description": "Enter your information below to proceed.",
       "email": "Email address*",
       "forgot_password": "Forgot your password?",
       "dont_have_an_account": "Don’t have an account?",

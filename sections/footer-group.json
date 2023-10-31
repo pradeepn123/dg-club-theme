@@ -24,7 +24,7 @@
           "settings": {
             "column_size": "small",
             "title": "Company",
-            "menu": "main-menu"
+            "menu": "footer-secondary-menu"
           }
         },
         "055d0c35-3f11-4f51-9e3d-eab55edb7a9b": {
@@ -32,7 +32,7 @@
           "settings": {
             "column_size": "small",
             "title": "Resources",
-            "menu": "main-menu"
+            "menu": "resources"
           }
         },
         "2ab8345e-9f63-4c80-b028-f4edae3633b5": {

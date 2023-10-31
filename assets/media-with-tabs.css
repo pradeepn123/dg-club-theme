@@ -110,6 +110,13 @@
       width: 15px;
       height: 15px;
       fill: var(--color-text); }
+      .media-with-tabs--button img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 24px;
+        height: 24px;
+        fill: var(--color-text); }
       [dir="rtl"] .media-with-tabs--button svg {
         left: auto;
         right: 0; }

@@ -1,0 +1,424 @@
+{{- 'video-list.css' | asset_url | stylesheet_tag -}}
+<script src="{{ 'background-video.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign section_heading = section.settings.heading
+  assign marker_style = section.settings.marker_style
+  assign section_description = section.settings.description
+  assign mobile_swipe = section.settings.mobile_swipe
+
+  assign marker_color = section.settings.marker_color
+  assign text_color = section.settings.text_color
+  assign overlay_color = section.settings.overlay_color
+  assign overlay_opacity = section.settings.overlay_opacity
+
+  assign button_text = section.settings.button_text
+  assign button_link = section.settings.button_link
+
+  assign disable_top_spacing = section.settings.disable_top_spacing
+  assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+
+  assign columns = section.settings.columns
+
+  assign desktop_height = section.settings.desktop_height
+  assign full_width = section.settings.full_width
+  assign autoplay_lightbox = section.settings.autoplay_lightbox
+  assign disable_top_spacing = section.settings.disable_top_spacing
+  assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+-%}
+
+<div class="row">
+  <div class="small-12 columns">
+    <div
+      class="video-list section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}"
+      style="--collection-text-color: {{ text_color }};"
+    >
+      {%- if section_heading != blank or section_description != blank -%}
+        <div class="section-header">
+          <div class="section-header--content">
+            {%- if section_heading -%}
+              <h3 class="section-header--title">
+                {% render 'animated-marker-heading',
+                  heading: section_heading,
+                  style: marker_style,
+                  color: marker_color
+                %}
+              </h3>
+            {%- endif -%}
+            {%- if section_description != blank -%}
+              <div class="section-header--description rte">
+                {{ section_description }}
+              </div>
+            {%- endif -%}
+          </div>
+          <a
+            class="button accent"
+            href="{{ button_link }}"
+            role="button"
+            title="{{ button_text | escape }}"
+            {{ block.shopify_attributes }}
+          >
+            {{- button_text -}}
+          </a>
+        </div>
+      {% endif %}
+      <div
+        class="video-list--inner{% if mobile_swipe %} swipe-on-mobile{% endif %}"
+        style="--video-columns: {{ section.settings.columns }};"
+      >
+        {% for block in section.blocks %}
+          {% if block.type == 'video' %}
+            {%- liquid
+              assign video = block.settings.video
+              assign video_hosted = block.settings.video_hosted
+              assign video_text = block.settings.video_text
+              if video_hosted == blank
+                assign video_type = video.type
+              else
+                assign video_type = 'hosted'
+              endif
+            -%}
+            <div class="video_block">
+                <background-video class="background-video background-video--full-width-{{ full_width }} {{ desktop_height }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+                {%- if block.settings.fallback_image != blank -%}
+                    <div class="background-video__fallback-img">
+                    <img
+                        data-src="{{ block.settings.fallback_image | image_url }}"
+                        class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}"
+                    >
+                    <noscript>
+                        <img
+                        src="{{ block.settings.fallback_image | image_url }}"
+                        >
+                    </noscript>
+                    <div class="video-list--content">
+                        {{ video_text }}
+                        </div>
+                    </div>
+                {%- else -%}
+                    <div class="background-video__iframe" data-provider="{{ video_type }}">
+                    {%- if video_hosted == blank -%}
+                        {%- if video != blank -%}
+                        {%- if video.type == 'youtube' -%}
+                            <iframe
+                            data-src="https://www.youtube.com/embed/{{ video.id }}?loop=1&autoplay=0&mute=1&playlist={{ video.id }}&iv_load_policy=3&disablekb=1&controls=0&playsinline=1&enablejsapi=1"
+                            frameborder="0"
+                            class="lazyload"
+                            allow="encrypted-media"
+                            allowfullscreen
+                            title="{{ section.settings.heading | escape }}"
+                            tabindex="-1"
+                            ></iframe>
+                        {%- else -%}
+                            <iframe
+                            data-src="https://player.vimeo.com/video/{{ video.id }}?background=1"
+                            frameborder="0"
+                            class="lazyload"
+                            allow="encrypted-media"
+                            allowfullscreen
+                            title="{{ section.settings.heading | escape }}"
+                            tabindex="-1"
+                            ></iframe>
+                        {%- endif -%}
+                        {%- endif -%}
+                    {%- else -%}
+                        {{ video_hosted | video_tag: autoplay: false, loop: true, controls: false, muted: true }}
+                    {%- endif -%}
+                    </div>
+                {%- endif -%}
+                <div
+                    class="background-video__overlay"
+                    style="--overlay-color-rgb: {{ overlay_color.rgb | replace: " ", "," }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.00 }}"
+                ></div>
+                <div class="background-video__content-wrap">
+                    <div class="background-video__content">
+                        <modal-opener
+                            class="video-lightbox-modal__opener no-js-hidden"
+                            data-modal="#VideoLightbox-{{ block.id }}"
+                        >
+                            <button
+                            id="VideoLightboxToggle-{{ block.id }}"
+                            class="video-lightbox-modal__button"
+                            type="button"
+                            aria-haspopup="dialog"
+                            >
+                            {% render 'svg-icons' with 'play-button' %}
+                            </button>
+                        </modal-opener>
+                        <a href="{{ video.url }}" class="video-lightbox-modal__button no-js" target="_blank">
+                            {% render 'svg-icons' with 'play-button' %}
+                        </a>
+                        <modal-dialog id="VideoLightbox-{{ block.id }}" class="video-lightbox-modal">
+                            <div
+                            role="dialog"
+                            aria-modal="true"
+                            class="video-lightbox-modal__content"
+                            tabindex="-1"
+                            >
+                            <button
+                                id="ModalClose-{{ block.id }}"
+                                type="button"
+                                class="video-lightbox-modal__toggle"
+                                aria-label="{{ 'accessibility.close' | t }}"
+                            >
+                                {% render 'svg-icons' with 'close' %}
+                            </button>
+                            <div class="video-lightbox-modal__content-info">
+                                {%- if video_hosted == blank -%}
+                                {%- if video.type == 'youtube' -%}
+                                    <iframe
+                                    data-src="https://www.youtube.com/embed/{{ video.id }}?{% if autoplay_lightbox %}autoplay=1&mute=1&{% endif %}enablejsapi=1"
+                                    class="js-youtube lazyload"
+                                    allow="autoplay; encrypted-media"
+                                    allowfullscreen
+                                    ></iframe>
+                                {%- else -%}
+                                    <iframe
+                                    data-src="https://player.vimeo.com/video/{{ video.id }}"
+                                    class="js-vimeo lazyload"
+                                    allow="autoplay; encrypted-media"
+                                    allowfullscreen
+                                    ></iframe>
+                                {%- endif -%}
+                                {%- else -%}
+                                {{ video_hosted | video_tag: autoplay: true, loop: false, controls: true }}
+                                {%- endif -%}
+                            </div>
+                            </div>
+                        </modal-dialog>
+                    </div>
+                </div>
+                </background-video>
+                <div class="rte" {{ block.shopify_attributes }}>
+                    {{ block.settings.video_text }}
+                </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Video list",
+  "class": "video-list-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Video List",
+      "info": "Wrap your text between | to add animated markers. For example: Animated |marker| will underline marker text."
+    },
+    {
+      "type": "select",
+      "id": "marker_style",
+      "options": [
+        {
+          "value": "style1",
+          "label": "Basic"
+        },
+        {
+          "value": "style2",
+          "label": "Double"
+        },
+        {
+          "value": "style3",
+          "label": "Squiggle"
+        },
+        {
+          "value": "style4",
+          "label": "Zigzag"
+        }
+      ],
+      "default": "style1",
+      "label": "Marker"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Add a short description for your video list</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "small",
+      "label": "Collection heading size"
+    },
+    {
+        "type": "range",
+        "id": "columns",
+        "min": 2,
+        "max": 6,
+        "step": 1,
+        "label": "Number of columns on desktop",
+        "default": 6
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_swipe",
+      "default": true,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "marker_color",
+      "label": "Marker",
+      "default": "#FD6262"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#2C2D2E"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_top_spacing",
+      "default": false,
+      "label": "Remove top spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "default": false,
+      "label": "Remove bottom spacing"
+    },
+    {
+      "type": "select",
+      "id": "desktop_height",
+      "label": "Image height",
+      "options": [
+        {
+          "value": "desktop-height-auto",
+          "label": "Adapt to content"
+        },
+        {
+          "value": "desktop-height-small",
+          "label": "small"
+        },
+        {
+          "value": "desktop-height-550",
+          "label": "550px"
+        },
+        {
+          "value": "desktop-height-650",
+          "label": "650px"
+        },
+        {
+          "value": "desktop-height-750",
+          "label": "750px"
+        },
+        {
+          "value": "desktop-height-full",
+          "label": "Full screen"
+        }
+      ],
+      "default": "desktop-height-small"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Make section full width",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay_lightbox",
+      "label": "Autoplay in popup",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay",
+      "default": "transparent"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 25
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+            "type": "video_url",
+            "id": "video",
+            "label": "Video URL",
+            "accept": ["youtube", "vimeo"],
+            "placeholder": "Use a YouTube or Vimeo URL",
+            "default": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+            "info": "Video plays in a lightbox."
+        },
+        {
+            "type": "video",
+            "id": "video_hosted",
+            "label": "Shopify-hosted video",
+            "info": "Overrides the Video URL setting."
+        },
+        {
+            "type": "image_picker",
+            "id": "fallback_image",
+            "label": "Fallback image",
+            "info": "1920 x 1080 px .jpg recommended."
+        },
+        {
+            "type": "text",
+            "id": "video_text",
+            "label": "Title"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Video list"
+    }
+  ]
+}
+{% endschema %}
