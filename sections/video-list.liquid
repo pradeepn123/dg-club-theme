@@ -142,11 +142,11 @@
                             type="button"
                             aria-haspopup="dialog"
                             >
-                            {% render 'play-button' %}
+                            {% render 'svg-icons' with 'play-button' %}
                             </button>
                         </modal-opener>
                         <a href="{{ video.url }}" class="video-lightbox-modal__button no-js" target="_blank">
-                            {% render 'play-button' %}
+                            {% render 'svg-icons' with 'play-button' %}
                         </a>
                         <modal-dialog id="VideoLightbox-{{ block.id }}" class="video-lightbox-modal">
                             <div
