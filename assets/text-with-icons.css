@@ -6,7 +6,7 @@
   margin-right: auto; }
   @media only screen and (min-width: 768px) {
     .text-with-icons__inner {
-      margin: 0 50px; } }
+      padding: 0 50px; } }
 
 .text-with-icons {
   background: var(--color-bg); }
@@ -144,15 +144,13 @@
   }
   @media only screen and (max-width: 768px){
     .text-with-icons__inner {
-      grid-gap: 20px;
-    }
+		  grid-gap: 20px;
+		}
     .text-with-icons.swipe-on-mobile .text-with-icons__inner {
       overflow-x: auto;
       justify-content: flex-start;
       scroll-snap-type: x mandatory;
       grid-auto-flow: column;
-      grid-auto-columns: minmax(132px, 300px);
-      grid-template-columns: repeat(auto-fill, minmax(132px, 300px));
       scrollbar-width: none;
     }
     .text-with-icons.swipe-on-mobile .text-with-icons__inner::-webkit-scrollbar {
