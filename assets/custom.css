@@ -1,0 +1,19 @@
+@media only screen and (max-width: 767px) {
+    .mobile-height-360 {
+      min-height: 360px;
+    }
+}
+.button {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 116.433%;
+}
+.text-button {
+    color: #4444E1;
+}
+a:hover, a:focus {
+    color: #4444E1;
+}
+.section-header {
+    row-gap: 27px;
+}

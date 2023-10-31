@@ -226,7 +226,7 @@
           box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.16); }
       
 .list-collections_custom .section-header .section-header--content h3 {
-    font-size: var(--font-size-heading-desktop);
+    font-size: var(--font-size-title-desktop);
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
 }
@@ -237,8 +237,7 @@
 }
 @media only screen and (max-width: 678px) {
     .list-collections_custom .section-header .section-header--content h3 {
-        font-size: var(--font-size-heading-mobile);
-        font-weight: var(--font-weight-text-bold);
+        font-size: var(--font-size-title-mobile);
     }
 }
 .list-collections_custom .flickity-nav {
