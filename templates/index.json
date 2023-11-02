@@ -174,7 +174,8 @@
               "priya-singhania",
               "siddharth-sharma"
             ],
-            "title": "Photo Gifts"
+            "title": "Photo Gifts",
+            "handle": "photo-gifts"
           }
         },
         "template--21508546429228__8ca0f2be-52f0-4ad3-bd68-49f432322085-collection-2": {
@@ -185,7 +186,8 @@
               "priya-singhania",
               "siddharth-sharma"
             ],
-            "title": "Decor Prints"
+            "title": "Decor Prints",
+            "handle": "decor-prints"
           }
         }
       },
@@ -194,16 +196,12 @@
         "template--21508546429228__8ca0f2be-52f0-4ad3-bd68-49f432322085-collection-2"
       ],
       "settings": {
-        "heading": "|Customize| products",
+        "heading": "Customize products",
         "marker_style": "style2",
         "heading_size": "medium",
         "image_ratio": "square",
-        "collection_layout": "carousel",
         "style": "style1",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "show_progress_bar": false,
-        "mobile_swipe": true,
+        "columns_desktop": 5,
         "heading_position": "bottom-center",
         "marker_color": "#fd6262",
         "text_color": "#000000",
