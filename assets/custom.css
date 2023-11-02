@@ -1,5 +1,5 @@
 @media only screen and (max-width: 767px) {
-    .mobile-height-360 {
+    .mobile-height-small {
       min-height: 360px;
     }
 }
@@ -17,3 +17,13 @@ a:hover, a:focus {
 .section-header {
     row-gap: 27px;
 }
+
+.column-spacing--large {
+    grid-gap: 16px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .column-spacing--large {
+      grid-gap: 40px;
+    }
+  }

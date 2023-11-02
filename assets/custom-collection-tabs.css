@@ -230,16 +230,25 @@
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
 }
-.list-collections_custom .section-header .btns button {
+.collection-tabs__list-link {
     font-size: var(--font-size-text-mobile);
     font-weight: var(--font-weight-text-bold);
     line-height: 162.5%;
 }
-@media only screen and (max-width: 678px) {
+@media only screen and (max-width: 768px) {
     .list-collections_custom .section-header .section-header--content h3 {
         font-size: var(--font-size-title-mobile);
     }
 }
 .list-collections_custom .flickity-nav {
     top: 45%;
+}
+.list-collections_custom.section-spacing {
+  margin-top: 45px;
+}
+@media only screen and (min-width: 768px) {
+  .list-collections_custom .products.row .columns,
+  .list-collections_custom .products.row .column {
+    padding: 0 18px;
+  }
 }

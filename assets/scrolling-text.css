@@ -152,3 +152,12 @@
     transform: translateX(0%); 
   } 
 }
+@media only screen and (max-width: 768px) {
+  .scrolling-text .scrolling-text--inner .scrolling-text--svg {
+    width: 15px;
+    height: 15px;
+  }
+  .scrolling-text .scrolling-text--inner span {
+    font-size: 36px;
+  }
+}

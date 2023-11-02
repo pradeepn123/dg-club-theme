@@ -166,7 +166,7 @@
   font-weight: var(--font-weight-text-normal);
   line-height: var(--line-height-text);
 }
-@media only screen and (max-width: 678px) {
+@media only screen and (max-width: 768px) {
   .toggle-boxes .section-header--content h3 {
     font-size: var(--font-size-title-mobile);
   }
