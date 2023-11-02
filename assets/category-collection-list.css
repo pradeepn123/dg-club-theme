@@ -28,4 +28,8 @@
     .collection-card--content span{
         font-size: 16px;
     }
+    .section-header .section-header--title{
+        font-size: 32px;
+        font-weight: 600;
+    }
 }
