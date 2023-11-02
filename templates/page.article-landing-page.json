@@ -50,7 +50,7 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0,
         "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "disable_bottom_spacing": true
       }
     },
     "110feccb-e777-4ed9-a10d-aae212558ba3": {
@@ -126,7 +126,7 @@
       ],
       "settings": {
         "desktop_height": "desktop-height-650",
-        "mobile_height": "mobile-height-400",
+        "mobile_height": "mobile-height-360",
         "height": "small",
         "desktop_layout": "text_first",
         "color_bg": "#ffffff",
@@ -134,7 +134,7 @@
         "color_link": "#2c2d2e",
         "color_border": "#000000",
         "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "disable_bottom_spacing": true
       }
     },
     "4a57c2ab-e0eb-4725-bf36-d2a4df43fd14": {
@@ -245,7 +245,16 @@
         "color_heading": "#1a1c1d",
         "color_text": "#2c2d2e",
         "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "disable_bottom_spacing": true
+      }
+    },
+    "e24a9ad3-0c38-4fb7-9f64-65cc0ca90dbd": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 60,
+        "spacer_desktop": 80,
+        "border_separator": true,
+        "border_separator_full": false
       }
     },
     "51b89402-2ce8-4ad9-b346-d75d09144c29": {
@@ -320,8 +329,8 @@
         "color_subheading": "#000000",
         "color_text": "#000000",
         "color_links": "#2c2d2e",
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
       }
     },
     "4e066c11-d1b4-4343-aa01-8259c03e597c": {
@@ -354,7 +363,7 @@
         "overlay_color": "rgba(0,0,0,0)",
         "overlay_opacity": 0,
         "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "disable_bottom_spacing": true
       }
     },
     "2285a342-f2cc-46d9-961f-f70a82b4c9a7": {
@@ -482,6 +491,7 @@
     "110feccb-e777-4ed9-a10d-aae212558ba3",
     "4a57c2ab-e0eb-4725-bf36-d2a4df43fd14",
     "6dbba4e5-3b58-47a4-bad3-61c22163544f",
+    "e24a9ad3-0c38-4fb7-9f64-65cc0ca90dbd",
     "51b89402-2ce8-4ad9-b346-d75d09144c29",
     "4e066c11-d1b4-4343-aa01-8259c03e597c",
     "2285a342-f2cc-46d9-961f-f70a82b4c9a7",
