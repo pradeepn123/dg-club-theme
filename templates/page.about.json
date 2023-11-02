@@ -42,7 +42,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Frame_486.jpg",
         "mobile_image": "shopify:\/\/shop_images\/Group_410.jpg",
-        "use_video": true,
+        "use_video": false,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
         "height": "adapt",
