@@ -17,7 +17,6 @@
 
 	assign disable_top_spacing = section.settings.disable_top_spacing
 	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
-	assign is_carousel = false	
 
 	assign columns_class = 'medium-6 large-4'
 	case columns_desktop
@@ -63,7 +62,8 @@
 				>
 					{%- for block in section.blocks -%}
 						{%- assign mainloop = forloop -%}
-						{%- for collection in block.settings.collection_list -%}
+						{%- assign collection_list = block.settings.collection_list -%}
+						{%- for collection in collection_list -%}
 							<div
 								class="{{ columns_class }} columns{% if mainloop.first == true %} carousel__slide{% endif %}"
 								data-collection="{{ block.settings.handle }}"
@@ -72,7 +72,7 @@
 							</div>
 						{%- endfor -%}
 						
-						{%- if block.settings.collection_list.count > columns_desktop -%}
+						{%- if collection_list.count > columns_desktop -%}
 							<div class="flickity-nav flickity-prev" tabindex="0">{% render 'svg-icons' with 'carousel-prev' %}</div>
 							<div class="flickity-nav flickity-next" tabindex="0">{% render 'svg-icons' with 'carousel-next' %}</div>
 						{%- endif -%}

@@ -122,3 +122,15 @@
   z-index: 2; }
   .media-grid--content > *:last-child {
     margin-bottom: 0; }
+
+.media-grid--inner .media-grid--item .h2 {
+  font-size: var(--font-size-heading-desktop);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-heading);
+}
+@media only screen and (max-width: 768px) {
+  .media-grid--inner .media-grid--item .h2 {
+    font-size: var(--font-size-text-desktop);
+    font-weight: var(--font-weight-text-bold);
+  }
+}

@@ -196,7 +196,7 @@
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-title);
 }
-@media only screen and (max-width: 678px) {
+@media only screen and (max-width: 768px) {
   .customer-reviews .section-header--content h3 {
     font-size: var(--font-size-title-mobile);
   }
