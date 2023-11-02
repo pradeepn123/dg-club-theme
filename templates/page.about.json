@@ -42,9 +42,6 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/Frame_486.jpg",
         "mobile_image": "shopify:\/\/shop_images\/Group_410.jpg",
-        "use_video": false,
-        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "video_autoplay": true,
         "height": "adapt",
         "mobile_image_width": "landscape",
         "desktop_image_width": "small",
@@ -157,12 +154,23 @@
             "heading": "Monetizing skills",
             "text": "<p>Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
           }
+        },
+        "3d94adcd-faee-4362-a253-3ce889d350a7": {
+          "type": "box",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_138_2.jpg",
+            "image_link": "",
+            "open": false,
+            "heading": "Heading",
+            "text": "<p>Pair text with an image to focus on your chosen image<\/p>"
+          }
         }
       },
       "block_order": [
         "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-1",
         "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-2",
-        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-3"
+        "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-3",
+        "3d94adcd-faee-4362-a253-3ce889d350a7"
       ],
       "settings": {
         "heading": "DG Club is for..",
