@@ -1,5 +1,8 @@
 {{- 'facets.css' | asset_url | stylesheet_tag -}}
 {%- liquid
+	assign section_heading = section.settings.heading
+	assign marker_style = section.settings.marker_style
+	
 	assign enable_filtering = section.settings.enable_filtering
 	assign enable_sorting = section.settings.enable_sorting
 	assign show_counts = section.settings.show_counts
@@ -8,15 +11,26 @@
 	assign products_per_page = section.settings.products_per_page
 	assign columns_desktop = section.settings.columns_desktop
 	assign facets_desktop = section.settings.facets_desktop
-
+	
 	unless enable_filtering
 		assign facets_desktop = 'drawer'
 	endunless
 -%}
 {%- for filter in collection.filters limit: 1 -%}{%- endfor -%}{%- comment -%} This is just to get rid of the "this theme does not support filters" message in the shopify admin {%- endcomment -%}
 {%- render 'facets-mobile', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, show_counts: show_counts, filter_color_swatches: filter_color_swatches -%}
-<div class="row">
+<div class="row main-collection">
 	<div class="small-12 columns">
+		{%- if section_heading != blank -%}
+			<div class="section-header">
+				<div class="section-header--content">
+					{%- if section_heading -%}
+						<h1 class="section-header--title">
+							{% render 'animated-marker-heading', heading: section_heading, style: marker_style %}
+						</h1>
+					{%- endif -%}
+				</div>
+			</div>
+		{% endif %}
 		{%- paginate collection.products by products_per_page -%}
 			<div class="collection-container section-spacing-bottom">
 				<div id="ProductGridContainer">
@@ -83,12 +97,52 @@
 {{ 'nouislider.js' | asset_url | script_tag }}
 <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
+{{- 'collection-page.css' | asset_url | stylesheet_tag -}}
 
 {% schema %}
   {
     "name": "Product grid",
     "settings": [
-			{
+		{
+			"type": "header",
+			"content": "Heading"
+		},
+		{
+			"type": "text",
+			"id": "heading",
+			"label": "Heading",
+			"default": "Shop by Category",
+			"info": "Wrap your text between | to add animated markers. For example: Animated |marker| will underline marker text."
+		},
+		{
+			"type": "select",
+			"id": "marker_style",
+			"options": [
+				{
+					"value": "style1",
+					"label": "Basic"
+				},
+				{
+					"value": "style2",
+					"label": "Double"
+				},
+				{
+					"value": "style3",
+					"label": "Squiggle"
+				},
+				{
+					"value": "style4",
+					"label": "Zigzag"
+				}
+			],
+			"default": "style1",
+			"label": "Marker"
+		},
+		{
+			"type": "header",
+			"content": "Product grid"
+		},
+		{
         "type": "range",
         "id": "products_per_page",
         "min": 2,

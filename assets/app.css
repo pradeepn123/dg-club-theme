@@ -5203,7 +5203,7 @@ select.resize-select {
   background: var(--color-badge-sale, #c62a32);
   color: var(--color-badge-text, #fff);
   border-radius: var(--badge-corner-radius, 50px);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 500;
   height: 28px;
   padding: 8px 12px;
@@ -5259,7 +5259,7 @@ select.resize-select {
 }
 
 .price .amount.discounted {
-  color: var(--color-price-discounted, #ee3b45);
+  color: var(--color-price-discounted, #4444E1);
 }
 
 .price .unit-price {
