@@ -5204,7 +5204,7 @@ select.resize-select {
   color: var(--color-badge-text, #fff);
   border-radius: var(--badge-corner-radius, 50px);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   height: 28px;
   padding: 8px 12px;
   line-height: 0;
