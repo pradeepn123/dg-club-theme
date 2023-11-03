@@ -1,0 +1,114 @@
+/* Dashboard */
+.dashboard_wrapper{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+}
+.dashboard{
+    flex-basis: 25%;
+    min-height: 400px;
+    min-width: 305px;
+    background: #fff;
+    border-radius: 12px 12px 0px 0px;
+}
+.dashboard .dashboard_list{
+    list-style: none;
+    position: relative;
+    height: 100%;
+    margin: 20px 9px;
+}
+.dashboard_tabs{
+    display: flex;
+    padding: 23px 13px;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.dashboard_tabs.active{
+    background: #4444E1;
+    border-radius: 12px;
+    color: #fff;
+}
+.dashboard_tabs.active svg path{
+    stroke: #fff;
+}
+.dashboard_tabs.logout{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    padding: 0;
+}
+.dashboard_tabs.logout a{
+    padding: 23px 0;
+    margin: 0 13px;
+    width: 100%;
+    border-top: 1px solid #E4E4E4;
+    display: flex;
+    gap: 8px;
+}
+
+/* Content */
+.dashboard_content{
+    border-radius: 12px 12px 0 0;
+    flex-basis: 100%;
+    min-height: 400px;
+}
+.dashboard_tabs_content{
+    display: none;
+}
+.dashboard_tabs_content.showTab{
+    display: block;
+    height: 100%;
+}
+.dashboard_tabs_content .tab_title{
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 22px 32px 18px;
+    background: #4444E1;
+    color: #fff;
+    margin-bottom: 0;
+    border-radius: 12px 12px 0 0;
+}
+.dashboard_tabs_content .order_details_content{
+    background: #fff;
+    padding: 22px 32px;
+    height: 100%;
+}
+@media (max-width: 767px){
+    .account{
+        width: 100vw;
+        padding: 0;
+    }
+    .account .columns{
+        padding: 0;
+    }
+    .dashboard_wrapper{
+        flex-direction: column;
+    }
+    .dashboard{
+        border-radius: 0;
+    }
+    .dashboard_list{
+        display: flex;
+        overflow: auto;
+        gap: 8px;
+        padding: 20px 9px;
+        margin: 0 !important;
+    }
+    .dashboard_tabs svg{
+        display: none;
+    }
+    .dashboard_tabs{
+        padding: 10px 16px;
+        white-space: nowrap;
+        border-radius: 60px !important;
+        background: #ECECEC;
+        color: #8F8F8F;
+    }
+    .dashboard_tabs.logout{
+        display: none;
+    }
+}
