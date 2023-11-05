@@ -234,18 +234,30 @@
             "author": "ARYAN.M",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4_3.svg"
           }
+        },
+        "586a0a3b-4e4d-4531-841b-964979e542ec": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "heading": "Review heading",
+            "text": "Add your customer review here to showcase them.",
+            "author": "Review author",
+            "author_image": "shopify:\/\/shop_images\/Ellipse_4_3.svg"
+          }
         }
       },
       "block_order": [
         "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-1",
         "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-2",
         "template--21508546920748__157d79ff-0e6c-48ee-b95d-67487dcdda4c-review-3",
-        "1dbb0978-7e6f-49c1-92db-fe44d1a79610"
+        "1dbb0978-7e6f-49c1-92db-fe44d1a79610",
+        "586a0a3b-4e4d-4531-841b-964979e542ec"
       ],
       "settings": {
         "heading": "What customers think",
         "description": "",
-        "columns": 4,
+        "columns": 5,
         "autoplay": true,
         "autoplay_length": 5,
         "color_bg": "#ffffff",
