@@ -257,7 +257,7 @@
       "settings": {
         "heading": "What customers think",
         "description": "",
-        "columns": 5,
+        "columns": 4,
         "autoplay": true,
         "autoplay_length": 5,
         "color_bg": "#ffffff",
