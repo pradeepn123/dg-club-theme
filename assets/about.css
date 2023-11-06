@@ -36,7 +36,8 @@
         position: relative;
         width: 100%;
         overflow: hidden;
-        padding-bottom: var(--ratio-percent); }
+        padding-bottom: var(--ratio-percent);
+        height: 100%; }
         .image-with-text--image-media_about.aspect-ratio--small {
           padding-bottom: 75%; }
         .image-with-text--image-media_about.aspect-ratio--large {
@@ -62,7 +63,7 @@
           grid-area: content; } }
       @media only screen and (min-width: 1068px) {
         .image-with-text--content_about {
-          padding: 80px; } }
+          padding: px; } }
       .image-with-text--content--inner_about {
         max-width: 600px;
         margin: 0 auto; }
@@ -135,6 +136,7 @@
 }
 .image-with-text--image-media_about.aspect-ratio img {
     display: block;
+    object-position: left !important;
 }
 .image-with-text--image-media_about.aspect-ratio .mobile_image img{
     display: none;
