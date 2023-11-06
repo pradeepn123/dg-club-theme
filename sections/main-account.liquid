@@ -37,7 +37,104 @@
 			<div class="dashboard_content">
 				<div class="dashboard_tabs_content order_details showTab">
 					<p class="tab_title">Order history</p>
-					<div class="order_details_content"></div>
+					<div class="order_details_content desktop">
+						{% paginate customer.orders by 20 %}
+						{%- if customer.orders.size > 0 -%}
+							<table class="no-borders">
+								<thead>
+									<tr>
+											  <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+								<th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+								<th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+								<th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
+								<th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+								  </tr>
+							  </thead>
+							  <tbody role="rowgroup">
+								{% for order in customer.orders %}
+										  <tr role="row">
+								<td
+								  id="RowOrder"
+								  role="cell"
+								  headers="ColumnOrder"
+								  data-label="{{ 'customer.orders.order_number' | t }}"
+								>
+								  <a href="{{ order.customer_url }}" class="text-button" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
+									{{ order.name }}
+								  </a>
+								</td>
+								<td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+								  {{ order.created_at | time_tag: format: 'date' }}
+								</td>
+								<td headers="RowOrder ColumnPayment" role="cell" data-label="{{ 'customer.orders.payment_status' | t }}">
+								  {{ order.financial_status_label }}
+								</td>
+								<td headers="RowOrder ColumnFulfillment" role="cell" data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+								  {{ order.fulfillment_status_label }}
+								</td>
+								<td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+								  {{ order.total_price | money_with_currency }} INR</td>
+							  </tr>
+								{% endfor %}
+							  </tbody>
+							</table>
+							  {%- else -%}
+						 <p>{{ 'customer.orders.none' | t }}</p>
+						   {%- endif -%}
+							  {% render 'pagination', paginate: paginate, pagination_type: 'paginated' %}
+					   {% endpaginate %}
+					</div>
+
+					<div class="order_details_content mobile">
+						{% paginate customer.orders by 20 %}
+							{%- if customer.orders.size > 0 -%}
+								<table class="no-borders">
+								
+									{% for order in customer.orders %}
+										<tbody role="rowgroup" class="rowgroup">
+											{% comment %} <tr role="row" class="row"> {% endcomment %}
+												<tr>
+													<th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+													<td id="RowOrder" role="cell" headers="ColumnOrder" data-label="{{ 'customer.orders.order_number' | t }}">
+														<a href="{{ order.customer_url }}" class="text-button" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
+															{{ order.name }}
+														</a>
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+													<td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+														{{ order.created_at | time_tag: format: 'date' }}
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+													<td headers="RowOrder ColumnPayment" role="cell" data-label="{{ 'customer.orders.payment_status' | t }}">
+														{{ order.financial_status_label }}
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
+													<td headers="RowOrder ColumnFulfillment" role="cell" data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+														{{ order.fulfillment_status_label }}
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+													<td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+														{{ order.total_price | money_with_currency }} INR</td>
+												</tr>
+											</tr>
+										</tbody>
+									{% endfor %}
+								
+								</table>
+							{%- else -%}
+								<p>{{ 'customer.orders.none' | t }}</p>
+							{%- endif -%}
+							{% render 'pagination', paginate: paginate, pagination_type: 'paginated' %}
+						{% endpaginate %}
+					</div>
 				</div>
 				<div class="dashboard_tabs_content address_details">
 					<p class="tab_title">addresses</p>

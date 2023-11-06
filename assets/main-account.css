@@ -26,6 +26,14 @@
     font-weight: 600;
     cursor: pointer;
 }
+.dashboard_tabs a{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.dashboard_tabs a:hover{
+    color: #000;
+}
 .dashboard_tabs.active{
     background: #4444E1;
     border-radius: 12px;
@@ -95,6 +103,9 @@
 .my-address .my_address_index{
     border-bottom: 1px solid #E4E4E4;
     padding: 0 18px 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 address{
     padding: 18px 15px;
@@ -131,7 +142,38 @@ address{
     border-radius: 4px;
     border: 1px solid #4444E1;
 }
-@media (max-width: 767px){
+.address-default{
+    position: absolute;
+    right: 0;
+    padding: 5px 16px;
+    text-transform: capitalize;
+    background: #4444E1;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* Order details */
+.order_details_content.mobile{
+    display: none;
+}
+.order_details_content.desktop{
+    display: block;
+}
+.order_details_content th{
+    font-size: 16px;
+    font-weight: 600;
+}
+.order_details_content td{
+    font-size: 16px;
+    font-weight: 400;
+}
+.order_details_content.desktop td:first-child a{
+    text-decoration: none;
+}
+
+@media (max-width: 1023px){
     .account{
         width: 100vw;
         padding: 0;
@@ -151,6 +193,7 @@ address{
         gap: 8px;
         padding: 20px 9px;
         margin: 0 !important;
+        justify-content: center;
     }
     .dashboard_tabs svg{
         display: none;
@@ -160,9 +203,61 @@ address{
         white-space: nowrap;
         border-radius: 60px !important;
         background: #ECECEC;
+    }
+    .dashboard_tabs, .dashboard_tabs a{
         color: #8F8F8F;
     }
     .dashboard_tabs.logout{
+        display: none;
+    }
+
+    /* Addresses */
+    .dashboard_tabs_content.showTab{
+        padding: 0 15px;
+    }
+    .customer-addresses{
+        justify-content: center;
+    }
+    .customer-addresses .address{
+        flex-basis: 100%;
+    }
+
+    /* Order details */
+    .order_details_content.mobile{
+        display: block;
+        padding: 0;
+    }
+    .order_details_content{
+        background: none !important;
+    }
+    .order_details_content.mobile .no-borders{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        width: 100%;
+        margin: 24px 0 40px 0;
+    }
+    .order_details_content.mobile .rowgroup{
+        background: #fff;
+        padding: 0 20px;
+        border-radius: 12px;
+    }
+    .order_details_content.mobile .rowgroup tr td{
+        padding-right: 24 0;
+    }
+    .order_details_content.mobile .rowgroup td{
+        white-space: nowrap;
+    }
+    .order_details_content.mobile .rowgroup tr:last-child, .order_details_content.mobile .no-borders th, .order_details_content.mobile .no-borders td{
+        border-bottom: 0 !important;
+    }
+    .order_details_content.mobile .rowgroup tr{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #C6C6C6;
+    }
+    .order_details_content.desktop{
         display: none;
     }
 }
