@@ -101,9 +101,9 @@
       .customer-reviews--carousel .flickity-viewport {
         overflow: visible; } }
     .customer-reviews--carousel .flickity-nav.flickity-prev {
-      left: -6px; }
+      left: 0px; }
     .customer-reviews--carousel .flickity-nav.flickity-next {
-      right: -6px; }
+      right: 0px; }
   .customer-reviews--product {
     margin-bottom: 20px;
     overflow: hidden;
@@ -155,7 +155,9 @@
       margin-bottom: 8px; }
     .customer-reviews--review p {
       font-size: var(--font-size-text-mobile);
-      line-height: 1.5; }
+      line-height: 1.5;
+      overflow: auto;
+      height: 72px; }
     .customer-reviews--review > *:last-child {
       margin-bottom: 0; }
     .customer-reviews--review:hover .customer-reviews--quick-view {
@@ -203,4 +205,16 @@
   .customer-reviews--content h6 {
     font-size: var(--font-size-text-mobile);
   }
+}
+
+.customer-reviews--carousel .columns:not(:first-child) {
+  padding-left: 12.5px;
+}
+.customer-reviews--carousel .columns {
+  padding-right: 12.5px;
+}
+@media only screen and (min-width: 768px){
+.customer-reviews--carousel .columns {
+  padding: 0 12.5px;
+}
 }

@@ -46,6 +46,10 @@
         padding-bottom: 75%; }
       .image-with-text--image-media.aspect-ratio--large {
         padding-bottom: 100%; }
+        @media only screen and (min-width: 768px) and (max-width: 1199px) {
+          .image-with-text--image-media.aspect-ratio--large {
+            height: 100%; }
+        }
       .image-with-text--image-media iframe,
       .image-with-text--image-media video {
         position: absolute;

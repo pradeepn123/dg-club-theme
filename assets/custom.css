@@ -27,3 +27,7 @@ a:hover, a:focus {
       grid-gap: 40px;
     }
   }
+
+.section-header {
+  padding: 0 0 32px;
+}

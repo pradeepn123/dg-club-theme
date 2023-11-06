@@ -36,7 +36,8 @@
         position: relative;
         width: 100%;
         overflow: hidden;
-        padding-bottom: var(--ratio-percent); }
+        padding-bottom: var(--ratio-percent);
+        height: 100%; }
         .image-with-text--image-media_about.aspect-ratio--small {
           padding-bottom: 75%; }
         .image-with-text--image-media_about.aspect-ratio--large {
@@ -135,6 +136,7 @@
 }
 .image-with-text--image-media_about.aspect-ratio img {
     display: block;
+    object-position: left !important;
 }
 .image-with-text--image-media_about.aspect-ratio .mobile_image img{
     display: none;
