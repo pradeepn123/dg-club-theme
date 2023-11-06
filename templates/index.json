@@ -698,7 +698,7 @@
           "type": "section",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_139.jpg",
-            "badge": "",
+            "badge": "bhjh",
             "heading": "Step 3",
             "subheading": "Sub Heading",
             "marker_style": "style1",
@@ -788,6 +788,17 @@
             "author": "Review author",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
           }
+        },
+        "ff055e2d-d826-4de5-b974-fca2d59a708a": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "",
+            "heading": "Review heading",
+            "text": "Add your customer review here to showcase them.",
+            "author": "Review author",
+            "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
+          }
         }
       },
       "block_order": [
@@ -795,7 +806,8 @@
         "bb2ca63a-1470-47a5-b774-d5b7d1e70308",
         "018af719-2b38-43f2-8174-9d7e9dd734a7",
         "8701e09a-7c91-460f-9ec4-4b761f9b8bd0",
-        "c1ccdfb8-f6fe-4c44-aa08-c5541cd20d26"
+        "c1ccdfb8-f6fe-4c44-aa08-c5541cd20d26",
+        "ff055e2d-d826-4de5-b974-fca2d59a708a"
       ],
       "settings": {
         "heading": "What customers think",
