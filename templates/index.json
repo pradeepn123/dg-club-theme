@@ -201,7 +201,7 @@
         "heading_size": "medium",
         "image_ratio": "square",
         "style": "style1",
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "heading_position": "bottom-center",
         "marker_color": "#fd6262",
         "text_color": "#000000",
