@@ -412,7 +412,7 @@
           "siddharth-sharma"
         ],
         "image_ratio": "square",
-        "collection_layout": "carousel",
+        "collection_layout": "grid",
         "style": "style1",
         "columns_desktop": 4,
         "columns_mobile": "2",
