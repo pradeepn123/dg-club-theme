@@ -462,7 +462,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_306.jpg",
-            "slide_link": "shopify:\/\/pages\/contact",
+            "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
