@@ -1249,20 +1249,4 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   
-    const dashboardTabs = document.querySelectorAll('.dashboard_tabs');
-    function showDashboardTabContent(formId){
-      document.querySelectorAll('.dashboard_tabs_content').forEach(elem => elem.classList.remove('showTab'));
-      document.querySelector(`.${formId}`).classList.add('showTab')
-    }
-    dashboardTabs.forEach( tab => {
-      if(!tab.classList.contains('logout')){
-        tab.addEventListener('click', () => {
-          dashboardTabs.forEach(tabItem => {
-            tabItem.classList.remove('active');
-          })
-          tab.classList.add('active');
-          showDashboardTabContent(tab.getAttribute('data-tab'))
-        })
-      }
-    })
 });
