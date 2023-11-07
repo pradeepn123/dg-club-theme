@@ -74,3 +74,9 @@
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-title);  
 }
+@media only screen and (max-width: 767px) {
+  .rich-text__inner .h2 {
+    font-size: var(--font-size-title-mobile);
+    line-height: 41.6px;
+  }
+}

@@ -1,7 +1,7 @@
 {
   "current": {
     "heading_font": "inter_n6",
-    "heading_font_letter_spacing": -20,
+    "heading_font_letter_spacing": 0,
     "body_font": "roboto_n4",
     "navigation_uppercase": false,
     "product_title_font_scale": 125,
