@@ -315,8 +315,8 @@
           "type": "section",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_126.jpg",
-            "badge": "step 4",
-            "heading": "Heading",
+            "badge": "",
+            "heading": "step 4",
             "subheading": "subheading",
             "marker_style": "style1",
             "heading_size": "small",
