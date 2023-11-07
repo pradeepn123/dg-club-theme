@@ -20,7 +20,7 @@
 }
 .dashboard_tabs{
     display: flex;
-    padding: 23px 13px;
+    padding: 16px 13px;
     gap: 8px;
     font-size: 16px;
     font-weight: 600;
@@ -173,6 +173,71 @@ address{
     text-decoration: none;
 }
 
+
+.order_details .myaccount-content, .billing_shipping_address .billing_address, .billing_shipping_address .shipping_address{
+    background: #fff;
+}
+.order_details_container{
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+.order_details_container .myaccount-sidebar{
+    padding-left: 0;
+    flex-basis: 35%;
+}
+.order_details_container .myaccount-content{
+    height: fit-content;
+    padding: 13px 23px;
+    border-radius: 12px;
+    flex-basis: 65%;
+}
+.order_details_container .myaccount-content table{
+    margin: 30px 0;
+}
+.order_details_container .myaccount-content table tbody tr:last-child{
+    border-bottom: 0;
+}
+.order_details_container .myaccount-content p{
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #E4E4E4;
+    padding-bottom: 17px;
+    margin-bottom: 0;
+}
+.order_details_container .myaccount-content .no-borders th{
+    font-size: 16px;
+    font-weight: 600;
+}
+.billing_shipping_address{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.billing_shipping_address .myaccount-sidebar--address{
+    margin: 0;
+}
+.billing_shipping_address .myaccount-sidebar--address h4{
+    font-size: 16px;
+    font-weight: 600;
+    border-bottom: 1px solid #E4E4E4;
+    padding: 0 15px;
+}
+.billing_shipping_address .myaccount-sidebar--address .payment_status{
+    font-size: 16px;
+    padding: 0 15px;
+}
+.billing_shipping_address .myaccount-sidebar--address .payment_status strong{
+    font-weight: 600;
+}
+.billing_shipping_address .myaccount-sidebar--address address{
+    margin-bottom: 0;
+    padding: 0 15px;
+}
+.billing_address, .shipping_address{
+    padding: 23px 13px;
+    border-radius: 12px;
+}
 @media (max-width: 1023px){
     .account{
         width: 100vw;
@@ -193,7 +258,7 @@ address{
         gap: 8px;
         padding: 20px 9px;
         margin: 0 !important;
-        justify-content: center;
+        /* justify-content: center; */
     }
     .dashboard_tabs svg{
         display: none;
@@ -259,5 +324,58 @@ address{
     }
     .order_details_content.desktop{
         display: none;
+    }
+
+
+    .order_details_container{
+        flex-direction: column;
+        margin: 32px 0;
+    }
+    .order_details_container .myaccount-content p{
+        border-bottom: 0;
+        padding-bottom: 32px;
+    }
+    .order_details_container .myaccount-content .order-details{
+        margin-top: 0;
+    }
+    .order-details, .order-details tbody{
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    .order_details .myaccount-content{
+        background: none;
+        padding: 0;
+    }
+    .order_details .myaccount-content table tr{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .order_details .myaccount-content tbody tr td:last-child{
+        border-bottom: 0 !important;
+    }
+    .order_details .myaccount-content tbody tr:last-child td{
+        border-bottom: 1px solid #C6C6C6;
+    }
+    .order_details .myaccount-content tbody tr a{
+        font-weight: 400 !important;
+    }
+    .order-details tbody tr, .order-details tfoot{
+        background: #fff;
+        padding: 0 24px;
+        border-radius: 12px;
+    }
+    .order_details .myaccount-content tfoot tr:first-child{
+        height: unset !important;
+        border-top: 0;
+    }
+    .order_details .myaccount-content table tr td:before{
+        font-size: 16px;
+        font-weight: 600;
+        text-transform: unset;
+    }
+    .order_details .myaccount-content table tr td{
+        font-size: 16px;
+        font-weight: 400;
     }
 }
