@@ -87,7 +87,7 @@
             "content_position": "middle-center",
             "text_alignment": "center",
             "content_size": "medium",
-            "color_slidebg": "transparent",
+            "color_slidebg": "rgba(0,0,0,0)",
             "color_slidebg_opacity": 0,
             "color_slidebg_blur": 20,
             "color_text": "#2c2d2e",
@@ -371,7 +371,7 @@
             "heading_size": "h3",
             "content": "Our program is your gateway to turning artistic passion into a thriving business. With no upfront costs, we provide the tools, support, and expertise you need to launch your own brand in the world of Print on Demand. Start today and let your creativity flourish",
             "button_text": "Learn More",
-            "button_link": "",
+            "button_link": "https:\/\/google.com",
             "artists_image": "shopify:\/\/shop_images\/Frame_228.png",
             "artists_info": "<p>+3K Artists have enrolled<\/p>",
             "color_bg": "#d5bff1",
@@ -385,7 +385,7 @@
       ],
       "settings": {
         "mobile_height": "mobile-height-400",
-        "desktop_height": "desktop-height-650",
+        "desktop_height": "desktop-height-custom",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "content_position": "text-left",
@@ -415,9 +415,9 @@
         "image_ratio": "square",
         "collection_layout": "grid",
         "style": "style1",
-        "columns_desktop": 4,
+        "columns_desktop": 5,
         "columns_mobile": "2",
-        "show_progress_bar": true,
+        "show_progress_bar": false,
         "mobile_swipe": true,
         "heading_position": "bottom-center",
         "marker_color": "#fd6262",
@@ -494,7 +494,7 @@
             "row": 1,
             "subheading": "",
             "heading": "Monsoon Collection",
-            "heading_size": "h3",
+            "heading_size": "h2",
             "button_text": "",
             "button_link": "",
             "content_position": "middle-center",
@@ -518,7 +518,7 @@
             "row": 1,
             "subheading": "",
             "heading": "Birthday",
-            "heading_size": "h3",
+            "heading_size": "h2",
             "button_text": "",
             "button_link": "",
             "content_position": "bottom-center",
@@ -542,7 +542,7 @@
             "row": 1,
             "subheading": "",
             "heading": "Animals",
-            "heading_size": "h3",
+            "heading_size": "h2",
             "button_text": "",
             "button_link": "",
             "content_position": "top-center",
@@ -564,7 +564,7 @@
       ],
       "settings": {
         "desktop_height": 300,
-        "mobile_height": 220,
+        "mobile_height": 175,
         "column_spacing": "medium",
         "color_bg": "#ffffff",
         "color_text": "#3a474e",
@@ -823,6 +823,15 @@
         "disable_bottom_spacing": true
       }
     },
+    "4bd468d5-771a-4085-baa6-6321530986dc": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 10,
+        "spacer_desktop": 30,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
     "079614df-346b-471f-b6f5-d223ec6e6680": {
       "type": "logo-list-with-text",
       "blocks": {
@@ -895,6 +904,7 @@
     "d17c9fda-c778-4cae-8662-16c275ddedf1",
     "09fbaadd-eaad-4e04-9edb-42de8cc123f0",
     "bbe1b14c-ffcc-46f3-8d0a-a83a6122cbc4",
+    "4bd468d5-771a-4085-baa6-6321530986dc",
     "079614df-346b-471f-b6f5-d223ec6e6680"
   ]
 }

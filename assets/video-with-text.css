@@ -30,6 +30,12 @@
     font-weight: 600;
     line-height: 20.958px;
 }
+@media screen and (hover: hover) {
+    .video-section--inner a.button:hover {
+        background: var(--solid-button-background-hover, var(--color-accent));
+        color: var(--solid-button-label, #fff);
+    }
+}
 @media only screen and (min-width: 768px) {
     .full-width-row-full .video-section--inner {
         padding: 0 50px; 

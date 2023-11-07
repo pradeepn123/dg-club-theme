@@ -43,7 +43,7 @@
       grid-auto-columns: minmax(160px, 300px);
       grid-template-columns: repeat(auto-fill, minmax(160px, 300px)); }
       .text-with-icons__inner {
-        grid-gap: 20px;}
+        grid-gap: 40px;}
       .text-with-icons.swipe-on-mobile .text-with-icons__inner::-webkit-scrollbar {
         display: none; } }
   .text-with-icons__block {
@@ -133,7 +133,7 @@
     .text-with-icons.icon-top .text-with-icons__icon {
       margin-bottom: 35px; }
   }
-  @media only screen and (min-width: 768px) and (max-width: 1025px) {
+  @media only screen and (min-width: 768px) and (max-width: 1200px) {
     .text-with-icons__block-content h6 {
       letter-spacing: 0.001rem; }
     .text-with-icons.heading-large h6 {

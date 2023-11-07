@@ -101,9 +101,16 @@
       .customer-reviews--carousel .flickity-viewport {
         overflow: visible; } }
     .customer-reviews--carousel .flickity-nav.flickity-prev {
-      left: 0px; }
+      left: -9px; }
     .customer-reviews--carousel .flickity-nav.flickity-next {
-      right: 0px; }
+      right: -9px; }
+      @media only screen and (max-width: 767px) {
+        .customer-reviews--carousel .flickity-nav.flickity-prev {
+          left: 0px; }
+        .customer-reviews--carousel .flickity-nav.flickity-next {
+          right: 0px; }
+      }
+
   .customer-reviews--product {
     margin-bottom: 20px;
     overflow: hidden;
@@ -157,7 +164,7 @@
       font-size: var(--font-size-text-mobile);
       line-height: 1.5;
       overflow: auto;
-      height: 72px; }
+      height: 69px; }
     .customer-reviews--review > *:last-child {
       margin-bottom: 0; }
     .customer-reviews--review:hover .customer-reviews--quick-view {
