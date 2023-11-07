@@ -79,7 +79,7 @@
                   <h6>{{ block.settings.heading }}</h6>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
-                  <div>{{ block.settings.text | newline_to_br }}</div>
+                  <p>{{ block.settings.text | newline_to_br }}</p>
                 {%- endif -%}
                 {%- if block.settings.author != blank -%}
                   <div class="customer-reviews--author">
