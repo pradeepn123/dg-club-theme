@@ -310,10 +310,10 @@
           "repeater": "{{ product.metafields.custom.product_customer_reviews.value }}",
           "settings": {
             "product_handle": "{{ block.repeater.product.value }}",
-            "stars": "4",
+            "stars": "4.5",
             "star_rating": "{{ block.repeater.star_rating.value }}",
             "heading": "{{ block.repeater.heading.value }}",
-            "text": "<p>{{ block.repeater.description_content | metafield_tag }}<\/p>",
+            "text": "{{ block.repeater.description_content | metafield_tag }}",
             "author": "{{ block.repeater.author_name.value }}",
             "author_image": "{{ block.repeater.author_avatar.value }}"
           }
