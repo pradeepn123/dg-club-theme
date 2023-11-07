@@ -94,7 +94,7 @@
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-2": {
           "type": "tab",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
+            "image": "shopify:\/\/shop_images\/Rectangle_179.jpg",
             "use_video": false,
             "icons_image": "shopify:\/\/shop_images\/Vector.svg",
             "heading_icon": "none",
@@ -170,9 +170,6 @@
       "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
-        "use_video": false,
-        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "video_autoplay": true,
         "height": "adapt",
         "mobile_image_width": "adapt",
         "desktop_image_width": "medium",
