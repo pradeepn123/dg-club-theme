@@ -110,6 +110,7 @@
       "unavailable": "Unavailable",
       "price": {
         "from_price_html": "<span class=\"from\">From<\/span> {{ price }}",
+        "price": "Price",
         "regular_price": "Regular price",
         "sale_price": "Sale price",
         "unit_price": "Unit price"
