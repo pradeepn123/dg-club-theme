@@ -385,7 +385,7 @@
       ],
       "settings": {
         "mobile_height": "mobile-height-400",
-        "desktop_height": "desktop-height-650",
+        "desktop_height": "desktop-height-custom",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "content_position": "text-left",
