@@ -81,7 +81,7 @@
   .thb-form-container .thb-login-form,
   .thb-form-container .thb-register-form {
     /* padding: 0 30px; */
-    padding: 52px 109px;
+    padding: 52px 100px;
   }
   .thb-form-container .thb-login-form .login_title{
     font-size: 40px;
@@ -130,7 +130,7 @@
 }
 
 .thb-form-container input {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .thb-form-container .button {
@@ -207,6 +207,41 @@
 .customer_form .fields .field,
 .creator_form .fields .field{
   width: 100%;
+}
+.creator_form .file-to-upload{
+  border: 1px dashed #1F5199;
+  border-radius: 8px;
+  height: 120px;
+  background: #FAFBFB;
+  position: relative;
+  margin-bottom: 32px;
+}
+#file-input{
+  display: none;
+}
+label[for="file-input"]{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+label[for="file-input"] span:first-child{
+  color: #1F5199;
+  background-color: #E5EFFD;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 4px 6px;
+  width: fit-content;
+  margin: auto;
+}
+label[for="file-input"] span:last-child{
+  font-size: 12px;
+  font-weight: 400;
+  color: #6D7175;
+  white-space: pre;
 }
 .field_label{
   font-size: 14px;
