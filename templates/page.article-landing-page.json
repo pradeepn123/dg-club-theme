@@ -322,9 +322,9 @@
             "heading_size": "small",
             "content": "<p>Add a descriptive text here for your slide.<\/p>",
             "description_size": "medium",
-            "button_text": "Shop Now",
+            "button_text": "",
             "button_link": "",
-            "marker_color": "#FD6262",
+            "marker_color": "#fd6262",
             "color_bg_badge": "#3f72e5",
             "color_badge": "#ffffff"
           }
