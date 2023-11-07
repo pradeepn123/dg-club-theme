@@ -78,7 +78,9 @@
                 {%- if block.settings.heading != blank -%}
                   <h6>{{ block.settings.heading }}</h6>
                 {%- endif -%}
-                <p>{{ block.settings.text | newline_to_br }}</p>
+                {%- if block.settings.text != blank -%}
+                  <div>{{ block.settings.text | newline_to_br }}</div>
+                {%- endif -%}
                 {%- if block.settings.author != blank -%}
                   <div class="customer-reviews--author">
                     {%- if block.settings.author_image != blank -%}
@@ -218,8 +220,7 @@
         {
           "type": "richtext",
           "id": "text",
-          "label": "Text",
-          "default": "<p>Add your customer review here to showcase them.</p>"
+          "label": "Text"          
         },
         {
           "type": "header",
