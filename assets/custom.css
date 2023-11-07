@@ -31,3 +31,11 @@ a:hover, a:focus {
 .section-header {
   padding: 0 0 32px;
 }
+
+.custom-select--list {
+  right: -75px;
+}
+
+.template-header--content {
+  justify-content: center;
+}

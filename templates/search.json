@@ -2,13 +2,19 @@
   "sections": {
     "breadcrumbs": {
       "type": "breadcrumbs",
+      "disabled": true,
       "settings": {
       }
     },
     "template-header": {
       "type": "template-header",
       "settings": {
-        "show_subcollections": true
+        "show_collection_image": false,
+        "show_collection_description": true,
+        "show_subcollections": true,
+        "color_subcollection_bg": "#ffffff",
+        "color_subcollection_text": "#000000",
+        "display_description": true
       }
     },
     "main-search": {
@@ -17,7 +23,7 @@
         "products_per_page": 12,
         "columns_desktop": 4,
         "pagination_type": "paginated",
-        "enable_filtering": true,
+        "enable_filtering": false,
         "enable_sorting": true,
         "facets_desktop": "drawer",
         "image_ratio": "square",
