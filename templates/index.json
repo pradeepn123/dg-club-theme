@@ -371,7 +371,7 @@
             "heading_size": "h3",
             "content": "Our program is your gateway to turning artistic passion into a thriving business. With no upfront costs, we provide the tools, support, and expertise you need to launch your own brand in the world of Print on Demand. Start today and let your creativity flourish",
             "button_text": "Learn More",
-            "button_link": "#",
+            "button_link": "",
             "artists_image": "shopify:\/\/shop_images\/Frame_228.png",
             "artists_info": "<p>+3K Artists have enrolled<\/p>",
             "color_bg": "#d5bff1",
@@ -385,7 +385,7 @@
       ],
       "settings": {
         "mobile_height": "mobile-height-400",
-        "desktop_height": "desktop-height-custom",
+        "desktop_height": "desktop-height-650",
         "desktop_image_width": "medium",
         "layout": "text_first",
         "content_position": "text-left",
@@ -415,9 +415,9 @@
         "image_ratio": "square",
         "collection_layout": "grid",
         "style": "style1",
-        "columns_desktop": 5,
+        "columns_desktop": 4,
         "columns_mobile": "2",
-        "show_progress_bar": false,
+        "show_progress_bar": true,
         "mobile_swipe": true,
         "heading_position": "bottom-center",
         "marker_color": "#fd6262",
@@ -494,7 +494,7 @@
             "row": 1,
             "subheading": "",
             "heading": "Monsoon Collection",
-            "heading_size": "h2",
+            "heading_size": "h3",
             "button_text": "",
             "button_link": "",
             "content_position": "middle-center",
@@ -518,7 +518,7 @@
             "row": 1,
             "subheading": "",
             "heading": "Birthday",
-            "heading_size": "h2",
+            "heading_size": "h3",
             "button_text": "",
             "button_link": "",
             "content_position": "bottom-center",
@@ -542,7 +542,7 @@
             "row": 1,
             "subheading": "",
             "heading": "Animals",
-            "heading_size": "h2",
+            "heading_size": "h3",
             "button_text": "",
             "button_link": "",
             "content_position": "top-center",
@@ -740,8 +740,9 @@
           "settings": {
             "product_handle": "",
             "stars": "4",
+            "star_rating": "",
             "heading": "Top-notch",
-            "text": "“Go-to place for personalized gifts. They have a impressive range of products”",
+            "text": "<p>“Go-to place for personalized gifts. They have a impressive range of products”<\/p>",
             "author": "Sarah.R vhg",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
           }
@@ -751,8 +752,9 @@
           "settings": {
             "product_handle": "",
             "stars": "4.5",
+            "star_rating": "",
             "heading": "Game-changer",
-            "text": "“As a part of 'Entrepreneurship for Creative Minds', I've learned to turn my art into a thriving business.”",
+            "text": "<p>“As a part of 'Entrepreneurship for Creative Minds', I've learned to turn my art into a thriving business.”<\/p>",
             "author": "Review author",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
           }
@@ -762,8 +764,9 @@
           "settings": {
             "product_handle": "",
             "stars": "4.5",
+            "star_rating": "",
             "heading": "Moments into timeless",
-            "text": "“Their user-friendly design editor makes it a breeze to create something truly unique.”",
+            "text": "<p>“Their user-friendly design editor makes it a breeze to create something truly unique.”<\/p>",
             "author": "Review author",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
           }
@@ -773,8 +776,9 @@
           "settings": {
             "product_handle": "",
             "stars": "5",
+            "star_rating": "",
             "heading": "Fantastic Platform",
-            "text": "“It's not just about printing; it's about building a brand.for anyone looking to turn their passion into profit.\"",
+            "text": "<p>“It's not just about printing; it's about building a brand.for anyone looking to turn their passion into profit.\"<\/p>",
             "author": "Review author",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
           }
@@ -784,8 +788,9 @@
           "settings": {
             "product_handle": "",
             "stars": "4.5",
+            "star_rating": "",
             "heading": "Review heading",
-            "text": "Add your customer review here to showcase them.",
+            "text": "<p>Add your customer review here to showcase them.<\/p>",
             "author": "Review author",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
           }
@@ -795,8 +800,9 @@
           "settings": {
             "product_handle": "",
             "stars": "",
+            "star_rating": "",
             "heading": "Review heading",
-            "text": "Add your customer review here to showcase them.",
+            "text": "<p>Add your customer review here to showcase them.<\/p>",
             "author": "Review author",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
           }
@@ -821,15 +827,6 @@
         "color_text": "#303c43",
         "disable_top_spacing": false,
         "disable_bottom_spacing": true
-      }
-    },
-    "4bd468d5-771a-4085-baa6-6321530986dc": {
-      "type": "spacer",
-      "settings": {
-        "spacer_mobile": 10,
-        "spacer_desktop": 30,
-        "border_separator": false,
-        "border_separator_full": false
       }
     },
     "079614df-346b-471f-b6f5-d223ec6e6680": {
@@ -904,7 +901,6 @@
     "d17c9fda-c778-4cae-8662-16c275ddedf1",
     "09fbaadd-eaad-4e04-9edb-42de8cc123f0",
     "bbe1b14c-ffcc-46f3-8d0a-a83a6122cbc4",
-    "4bd468d5-771a-4085-baa6-6321530986dc",
     "079614df-346b-471f-b6f5-d223ec6e6680"
   ]
 }
