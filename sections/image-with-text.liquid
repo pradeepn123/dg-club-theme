@@ -36,82 +36,90 @@
 -%}
 <div class="row{% if full_width %} full-width-row{% endif %}">
 	<div class="small-12 columns">
-		<div class="image-with-text column-spacing--{{ column_spacing }} grid--image-{{ desktop_image_width }} {{ desktop_layout }} {{ content_position }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--color-bg:{{ color_bg }};--color-text:{{ color_text }};--color-text-rgb: {{ color_text.rgb | replace: ' ' , ',' }}; --solid-button-background: {{ color_text }}; --solid-button-background-hover: {{ color_text | color_darken: 7 }}; --solid-button-label: {{ color_bg }};--bg-body: {{ color_bg }};--color-border: {{ color_border }}">
-			<div class="image-with-text--image image-with-text--inner">
-				<div class="image-with-text--image-media aspect-ratio aspect-ratio--{{ height }}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
-					{%- if use_video -%}
-						{%- if video_hosted != blank -%}
-							{{ video_hosted | video_tag: autoplay: video_autoplay, loop: true, controls: true, muted: video_autoplay, image_size: '630x' }}
-						{%- elsif video != blank -%}
-							{%- if video.type == 'youtube' -%}
-								<iframe data-src="https://www.youtube.com/embed/{{ video.id }}?loop=1{%- if video_autoplay -%}&autoplay=1&mute=1{%- endif -%}&playlist={{ video.id }}&iv_load_policy=3&disablekb=1&controls=1&playsinline=1" frameborder="0" class="lazyload" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.heading | escape }}" tabindex="-1"></iframe>
-							{%- else -%}
-								<iframe data-src="https://player.vimeo.com/video/{{ video.id }}{%- if video_autoplay -%}?background=1{%- endif -%}" frameborder="0" class="lazyload" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.heading | escape }}" tabindex="-1"></iframe>
+		{%- if image != blank or use_video != blank -%}
+			<div class="image-with-text column-spacing--{{ column_spacing }} grid--image-{{ desktop_image_width }} {{ desktop_layout }} {{ content_position }} section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--color-bg:{{ color_bg }};--color-text:{{ color_text }};--color-text-rgb: {{ color_text.rgb | replace: ' ' , ',' }}; --solid-button-background: {{ color_text }}; --solid-button-background-hover: {{ color_text | color_darken: 7 }}; --solid-button-label: {{ color_bg }};--bg-body: {{ color_bg }};--color-border: {{ color_border }}">			
+				<div class="image-with-text--image image-with-text--inner">
+					<div class="image-with-text--image-media aspect-ratio aspect-ratio--{{ height }}" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+						{%- if use_video -%}
+							{%- if video_hosted != blank -%}
+								{{ video_hosted | video_tag: autoplay: video_autoplay, loop: true, controls: true, muted: video_autoplay, image_size: '630x' }}
+							{%- elsif video != blank -%}
+								{%- if video.type == 'youtube' -%}
+									<iframe data-src="https://www.youtube.com/embed/{{ video.id }}?loop=1{%- if video_autoplay -%}&autoplay=1&mute=1{%- endif -%}&playlist={{ video.id }}&iv_load_policy=3&disablekb=1&controls=1&playsinline=1" frameborder="0" class="lazyload" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.heading | escape }}" tabindex="-1"></iframe>
+								{%- else -%}
+									<iframe data-src="https://player.vimeo.com/video/{{ video.id }}{%- if video_autoplay -%}?background=1{%- endif -%}" frameborder="0" class="lazyload" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.heading | escape }}" tabindex="-1"></iframe>
+								{%- endif -%}
 							{%- endif -%}
-						{%- endif -%}
-					{%- elsif image != blank -%}
-						{%- liquid
-							assign small_height = image.src.height | times: '690' | divided_by: image.src.width
-							assign mid_height = image.src.height | times: '1280' | divided_by: image.src.width
-							assign master_width = image.src.width | append: 'x' | append: image.src.height
-							assign width = '690x' | append: small_height | append: ',' | append: '1280x' | append: mid_height | append: ',' | append: master_width
-
-							render 'responsive-image', image: image, sizes: width
-						-%}
-					{%- else -%}
-						{{ 'image' | placeholder_svg_tag: 'placeholder_svg_tag' }}
-					{%- endif -%}
-				</div>
-			</div>
-			<div class="image-with-text--content image-with-text--inner">
-				<div class="image-with-text--content--inner">
-					{%- for block in section.blocks -%}
-						{%- case block.type -%}
-							{%- when 'image' -%}
-								<div class="image-with-text--content--image" {{ block.shopify_attributes }}>
-									{%- if block.settings.image != blank -%}
-										{% assign image = block.settings.image %}
-										{% assign master_width = image.src.width | append: 'x' | append: image.src.height %}
-										{%- render 'responsive-image', image: image, sizes: master_width, retina: true -%}
-									{%- else -%}
-										{{ 'image' | placeholder_svg_tag: 'placeholder_svg_tag' }}
-									{%- endif -%}
-								</div>
-							{%- when 'subheading' -%}
-								<p class="subheading" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
-							{%- when 'heading' -%}
+						{%- elsif image != blank -%}
 							{%- liquid
-								assign marker_style = block.settings.marker_style
-								assign marker_color = block.settings.marker_color
-								assign text = block.settings.text | newline_to_br
+								assign small_height = image.src.height | times: '690' | divided_by: image.src.width
+								assign mid_height = image.src.height | times: '1280' | divided_by: image.src.width
+								assign master_width = image.src.width | append: 'x' | append: image.src.height
+								assign width = '690x' | append: small_height | append: ',' | append: '1280x' | append: mid_height | append: ',' | append: master_width
+
+								render 'responsive-image', image: image, sizes: width
 							-%}
-								<h3 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{% render 'animated-marker-heading', heading: text, style: marker_style, color: marker_color %}</h3>
-							{%- when 'text' -%}
-								<div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
-							{%- when 'button' -%}
-								{% if block.settings.button_text != blank %}
-									<a class="button" href="{{ block.settings.button_link }}" role="button" title="{{ block.settings.button_text | escape }}" {{ block.shopify_attributes }}><span>{{ block.settings.button_text }}</span></a>
-								{% endif %}
-							{% when 'space' %}
-		            <div style="height: {{ block.settings.height | append: 'px' }}" {{ block.shopify_attributes }}></div>
-							{% when 'collapsible_tab' %}
-								<collapsible-row class="accordion" {{ block.shopify_attributes }}>
-									<details id="Details-{{ block.id }}-{{ section.id }}" {% if block.settings.open %}open{% endif %}>
-										<summary>
-											{{ block.settings.heading | default: block.settings.page.title }}
-											<span></span>
-										</summary>
-										<div class="collapsible__content accordion__content rte" id="Accordion-{{ block.id }}-{{ section.id }}">
-											{{ block.settings.content }}
-											{{ block.settings.page.content }}
-										</div>
-									</details>
-								</collapsible-row>
-						{%- endcase -%}
-					{%- endfor -%}
+						{%- else -%}
+							{{ 'image' | placeholder_svg_tag: 'placeholder_svg_tag' }}
+						{%- endif -%}
+					</div>
+				</div>			
+				<div class="image-with-text--content image-with-text--inner">
+					<div class="image-with-text--content--inner">
+						{%- for block in section.blocks -%}
+							{%- case block.type -%}
+								{%- when 'image' -%}
+									<div class="image-with-text--content--image" {{ block.shopify_attributes }}>
+										{%- if block.settings.image != blank -%}
+											{% assign image = block.settings.image %}
+											{% assign master_width = image.src.width | append: 'x' | append: image.src.height %}
+											{%- render 'responsive-image', image: image, sizes: master_width, retina: true -%}
+										{%- else -%}
+											{{ 'image' | placeholder_svg_tag: 'placeholder_svg_tag' }}
+										{%- endif -%}
+									</div>
+								
+								{%- when 'subheading' -%}
+									<p class="subheading" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+								
+								{%- when 'heading' -%}
+								{%- liquid
+									assign marker_style = block.settings.marker_style
+									assign marker_color = block.settings.marker_color
+									assign text = block.settings.text | newline_to_br
+								-%}
+									<h3 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{% render 'animated-marker-heading', heading: text, style: marker_style, color: marker_color %}</h3>
+								
+								{%- when 'text' -%}
+									<div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+								
+								{%- when 'button' -%}
+									{% if block.settings.button_text != blank %}
+										<a class="button" href="{{ block.settings.button_link }}" role="button" title="{{ block.settings.button_text | escape }}" {{ block.shopify_attributes }}><span>{{ block.settings.button_text }}</span></a>
+									{% endif %}
+								
+								{% when 'space' %}
+								<div style="height: {{ block.settings.height | append: 'px' }}" {{ block.shopify_attributes }}></div>
+								
+								{% when 'collapsible_tab' %}
+									<collapsible-row class="accordion" {{ block.shopify_attributes }}>
+										<details id="Details-{{ block.id }}-{{ section.id }}" {% if block.settings.open %}open{% endif %}>
+											<summary>
+												{{ block.settings.heading | default: block.settings.page.title }}
+												<span></span>
+											</summary>
+											<div class="collapsible__content accordion__content rte" id="Accordion-{{ block.id }}-{{ section.id }}">
+												{{ block.settings.content }}
+												{{ block.settings.page.content }}
+											</div>
+										</details>
+									</collapsible-row>
+							{%- endcase -%}
+						{%- endfor -%}
+					</div>
 				</div>
 			</div>
-		</div>
+		{%- endif -%}
 	</div>
 </div>
 
