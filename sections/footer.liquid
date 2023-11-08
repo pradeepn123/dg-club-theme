@@ -184,9 +184,11 @@
       <div class="footer_secondary__wrapper">
         <div class="small-12 medium-4 columns">
           <p>
-            &copy; {{ 'now' | date: '%Y' }}
-            {{ shop.name }}, {{ copyright_text }}
-          </p>
+            {% comment %} &copy;  {% endcomment %}
+            <span class="copy_right_date">{{ 'now' | date: '%Y' }}</span>
+            <span class="copy_right_shopname">{{ shop.name }}</span> 
+            - Main <span class="copy_right_text">{{ copyright_text }}</span>
+          </p>     
         </div>
         <div class="small-12 medium-4 columns footer_secondary__social_media">
           <ul class="social-links{% if show_label %} social-links--has-label{% endif %}">

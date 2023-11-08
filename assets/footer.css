@@ -92,7 +92,7 @@
   margin: 0 auto; 
 }
 .footer .widget--text .rte {
-  max-width: 450px; 
+  max-width: 450px;
 }
 .footer .widget--text .rte.text-size--large {
   max-width: 600px; 
@@ -100,7 +100,7 @@
 .footer .widget--text p {
   font-size: 16px;
   font-weight: 400;
-  line-height: inherit; 
+  line-height: inherit;  
 }
 .footer .widget--text .social-links li {
   display: inline-flex; 
@@ -139,6 +139,16 @@
 }
 .footer .thb-widget-title.collapsible span svg path {
   stroke: var(--color-footer-heading, #fff); 
+}
+
+.sub-footer .footer_secondary__wrapper p{
+  font-size: 16px;
+}
+.footer_secondary__wrapper .copy_right_shopname{
+  text-transform: uppercase;
+}
+.footer_secondary__wrapper .copy_right_text{
+  text-transform: lowercase;
 }
 
 @media only screen and (min-width: 768px) {
@@ -291,8 +301,13 @@
     text-align: right; } }
 
 @media only screen and (min-width: 1068px) {
+  .footer .widget--text .rte p{
+    max-width: 286px;
+  }
   .footer-payment-icons {
-    padding: 15px 0 0; } }
+    padding: 15px 0 0; 
+  } 
+}
 
 .footer-payment-icons figure {
   display: inline-flex;
