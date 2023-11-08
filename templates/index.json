@@ -832,7 +832,7 @@
     "5b8d5dae-43ac-4c86-a9b9-821c0b6a6072": {
       "type": "spacer",
       "settings": {
-        "spacer_mobile": 0,
+        "spacer_mobile": 10,
         "spacer_desktop": 30,
         "border_separator": false,
         "border_separator_full": false
