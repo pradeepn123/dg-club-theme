@@ -829,6 +829,15 @@
         "disable_bottom_spacing": true
       }
     },
+    "5b8d5dae-43ac-4c86-a9b9-821c0b6a6072": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 0,
+        "spacer_desktop": 30,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
     "079614df-346b-471f-b6f5-d223ec6e6680": {
       "type": "logo-list-with-text",
       "blocks": {
@@ -901,6 +910,7 @@
     "d17c9fda-c778-4cae-8662-16c275ddedf1",
     "09fbaadd-eaad-4e04-9edb-42de8cc123f0",
     "bbe1b14c-ffcc-46f3-8d0a-a83a6122cbc4",
+    "5b8d5dae-43ac-4c86-a9b9-821c0b6a6072",
     "079614df-346b-471f-b6f5-d223ec6e6680"
   ]
 }
