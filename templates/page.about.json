@@ -196,8 +196,9 @@
           "settings": {
             "product_handle": "",
             "stars": "5",
+            "star_rating": "",
             "heading": "Top-notch",
-            "text": "“Go-to place for personalized gifts. They have a impressive range of products”",
+            "text": "<p>“Go-to place for personalized gifts. They have a impressive range of products “Go-to place for personalized gifts. They have a impressive range of products”<\/p>",
             "author": "Sarah.R",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
           }
@@ -207,8 +208,9 @@
           "settings": {
             "product_handle": "",
             "stars": "5",
+            "star_rating": "",
             "heading": "Game-changer",
-            "text": "“As a part of 'Entrepreneurship for Creative Minds', I've learned to turn my art into a thriving business.”",
+            "text": "<p>“As a part of 'Entrepreneurship for Creative Minds', I've learned to turn my art into a thriving business.”<\/p>",
             "author": "Rajesh K.",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4_1.svg"
           }
@@ -218,8 +220,9 @@
           "settings": {
             "product_handle": "",
             "stars": "5",
+            "star_rating": "",
             "heading": "Moments into timeless",
-            "text": "“Their user-friendly design editor makes it a breeze to create something truly unique.”",
+            "text": "<p>“Their user-friendly design editor makes it a breeze to create something truly unique.”<\/p>",
             "author": "PRIYA.S",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4_2.svg"
           }
@@ -229,8 +232,9 @@
           "settings": {
             "product_handle": "",
             "stars": "5",
+            "star_rating": "",
             "heading": "Fantastic Platform",
-            "text": "“It's not just about printing; it's about building a brand.for anyone looking to turn their passion into profit.\"",
+            "text": "<p>“It's not just about printing; it's about building a brand.for anyone looking to turn their passion into profit.\"<\/p>",
             "author": "ARYAN.M",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4_3.svg"
           }
@@ -240,8 +244,9 @@
           "settings": {
             "product_handle": "",
             "stars": "5",
+            "star_rating": "",
             "heading": "Review heading",
-            "text": "Add your customer review here to showcase them.",
+            "text": "<p>Add your customer review here to showcase them.<\/p>",
             "author": "Review author",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4_3.svg"
           }
@@ -271,7 +276,7 @@
       "type": "spacer",
       "settings": {
         "spacer_mobile": 50,
-        "spacer_desktop": 40,
+        "spacer_desktop": 80,
         "border_separator": false,
         "border_separator_full": false
       }
