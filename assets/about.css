@@ -15,7 +15,8 @@
         grid-template-areas: "content media"; } }
     .image-with-text--image_about {
         background: var(--color-bg, #fff);
-        width: 100%; }
+        width: 100%;
+        margin-left: -1px; }
       @media only screen and (min-width: 991px) {
         .image-with-text--image_about {
           grid-area: media; } }
@@ -137,6 +138,11 @@
 .image-with-text--image-media_about.aspect-ratio img {
     display: block;
     object-position: left !important;
+}
+@media only screen and (max-width: 991px) {
+  .image-with-text--image-media_about.aspect-ratio img {
+    object-position: right !important;
+  }
 }
 .image-with-text--image-media_about.aspect-ratio .mobile_image img{
     display: none;
