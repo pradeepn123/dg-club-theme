@@ -41,7 +41,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/Frame_486.jpg",
-        "mobile_image": "shopify:\/\/shop_images\/Group_410.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Group_410_1.jpg",
         "height": "adapt",
         "mobile_image_width": "landscape",
         "desktop_image_width": "small",
@@ -198,7 +198,7 @@
             "stars": "5",
             "star_rating": "",
             "heading": "Top-notch",
-            "text": "<p>“Go-to place for personalized gifts. They have a impressive range of products “Go-to place for personalized gifts. They have a impressive range of products”<\/p>",
+            "text": "<p>“Go-to place for personalized gifts. They have a impressive range of products”<\/p>",
             "author": "Sarah.R",
             "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
           }

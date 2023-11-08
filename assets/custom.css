@@ -45,3 +45,9 @@ a:hover, a:focus {
     min-height: 360px;
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .flickity-nav {
+    opacity: 1 !important;
+  }
+}
