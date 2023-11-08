@@ -94,12 +94,12 @@
 }
 
 .logo-list--logo .logo_text {
-    margin-bottom: 29px;
+    margin-bottom: 25px;
     margin-top: 5px;
     font-size: 64px;
     font-style: normal;
     font-weight: 800;
-    line-height: 100%;
+    line-height: 75%;
     text-transform: capitalize;
     color: #4444E1;
 }
