@@ -63,7 +63,7 @@
 							{% endif %}
 							
 							{% if block.settings.button_text != blank %}
-								<a class="button" role="button" title="{{ block.settings.button_text | escape }}"{% if block.settings.button_link == blank %} aria-disabled="true"{% else %} href="{{ block.settings.button_link }}"{% endif %}>{{ block.settings.button_text }}</a>
+								<a class="button" role="button" title="{{ block.settings.button_text | escape }}" href="{{ block.settings.button_link }}">{{ block.settings.button_text }}</a>
 			        		{% endif %}
 
 							<div class="artists_enrolled_info">
