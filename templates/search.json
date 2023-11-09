@@ -23,7 +23,7 @@
         "products_per_page": 12,
         "columns_desktop": 4,
         "pagination_type": "paginated",
-        "enable_filtering": false,
+        "enable_filtering": true,
         "enable_sorting": true,
         "facets_desktop": "drawer",
         "image_ratio": "square",

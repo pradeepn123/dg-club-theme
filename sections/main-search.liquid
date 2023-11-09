@@ -21,9 +21,9 @@
 					{%- if search.results.size == 0 -%}
 						<div class="collection-empty">
 							{% render 'svg-icons' with 'thb-no-products' %}
-		          <p>
-		            {{ 'search.no_results' | t: terms: search.terms }}
-		          </p>
+							<p>
+								{{ 'search.no_results' | t: terms: search.terms }}
+							</p>
 						</div>
 					{%- else -%}
 						{%- paginate search.results by products_per_page -%}
@@ -37,7 +37,7 @@
 											{%- render 'facets-bar', results: search, enable_filtering: enable_filtering, enable_sorting: enable_sorting -%}
 											<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}">
 												{%- for item in search.results -%}
-													<li class="column">
+													<li class="column {% if item.object_type == 'page'%}hide__pages_search{% endif %}">														
 														{%- case item.object_type -%}
 															{%- when 'product' -%}
 																{% render 'product-card', product_card_product: item %}
@@ -61,9 +61,9 @@
 		</div>
 	</div>
 	{%- if enable_filtering -%}
-	{{ 'facets.css' | asset_url | stylesheet_tag }}
-	{{ 'nouislider.js' | asset_url | script_tag }}
-	<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+		{{ 'facets.css' | asset_url | stylesheet_tag }}
+		{{ 'nouislider.js' | asset_url | script_tag }}
+		<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 	{%- endif -%}
 {%- endif -%}
 

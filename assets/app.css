@@ -2534,6 +2534,26 @@ table.no-borders tfoot td:first-child {
   background: transparent;
 }
 
+.side-panel.search-drawer .side-panel-content--inner .side-panel-content--tab-panel .product-card-small--image {
+  flex-shrink: 0;
+  width: 70px;
+  margin-right: 20px;
+  border-radius: calc(var(--block-border-radius, 16px) / 2);
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  z-index: 5;
+  padding-bottom: 12%;
+}
+.side-panel.search-drawer .side-panel-content--inner .side-panel-content--tab-panel .product-card-small--image img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .side-panel.product-drawer {
   z-index: 92;
   width: auto;
@@ -3757,9 +3777,9 @@ h6,
   width: 8px;
 }
 
-.thb-secondary-area-item.thb-secondary-cart .thb-secondary-item-icon {
+/* .thb-secondary-area-item.thb-secondary-cart .thb-secondary-item-icon {
   transform: translateY(2px);
-}
+} */
 
 .thb-secondary-area-item svg {
   pointer-events: none;

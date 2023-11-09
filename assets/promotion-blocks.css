@@ -110,3 +110,12 @@
     padding: 15px 12px;
   }
 }
+@media only screen and (max-width: 320px) {
+  .promotion-blocks--item{
+    flex-direction: column;
+  }
+  .promotion-blocks--text{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
