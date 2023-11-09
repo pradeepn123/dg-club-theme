@@ -2,28 +2,239 @@
   "sections": {
     "breadcrumbs": {
       "type": "breadcrumbs",
+      "disabled": true,
       "settings": {
+      }
+    },
+    "8f24dd5c-cf24-434a-bef6-9f3f030c01ad": {
+      "type": "rich-text",
+      "blocks": {
+        "template--21508546691372__8f24dd5c-cf24-434a-bef6-9f3f030c01ad-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Welcome to Creators Directory",
+            "marker_style": "style1",
+            "size": "h2",
+            "marker_color": "#fd6262"
+          }
+        },
+        "template--21508546691372__8f24dd5c-cf24-434a-bef6-9f3f030c01ad-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Explore the latest seasonal collections, shop directly from your favorite creator profiles<\/p>",
+            "size": "text-size-regular"
+          }
+        }
+      },
+      "block_order": [
+        "template--21508546691372__8f24dd5c-cf24-434a-bef6-9f3f030c01ad-heading-1",
+        "template--21508546691372__8f24dd5c-cf24-434a-bef6-9f3f030c01ad-text-1"
+      ],
+      "settings": {
+        "text_width": "large",
+        "text_position": "left",
+        "text_alignment": "left",
+        "color_bg": "rgba(0,0,0,0)",
+        "color_heading": "#1a1c1d",
+        "color_text": "#2c2d2e",
+        "color_links": "#2c2d2e",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": true
+      }
+    },
+    "1ac5564c-08ed-45e4-8a61-a455eaa42e6b": {
+      "type": "media-grid",
+      "blocks": {
+        "template--21508546691372__1ac5564c-08ed-45e4-8a61-a455eaa42e6b-media-1": {
+          "type": "media",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_306.jpg",
+            "slide_link": "",
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 2,
+            "row": 2,
+            "subheading": "",
+            "heading": "Happy Halloween 2023",
+            "heading_size": "h2",
+            "button_text": "",
+            "button_link": "",
+            "content_position": "bottom-center",
+            "text_alignment": "center",
+            "color_bg": "#ffe2b6",
+            "color_bg_gradient": "",
+            "color_text": "#8e7144",
+            "color_link": "#3f72e5",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "template--21508546691372__1ac5564c-08ed-45e4-8a61-a455eaa42e6b-media-2": {
+          "type": "media",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_307.jpg",
+            "slide_link": "",
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 2,
+            "row": 1,
+            "subheading": "",
+            "heading": "Monsoon Collection",
+            "heading_size": "h2",
+            "button_text": "",
+            "button_link": "",
+            "content_position": "middle-center",
+            "text_alignment": "left",
+            "color_bg": "#ffffff",
+            "color_bg_gradient": "",
+            "color_text": "#458d81",
+            "color_link": "#3f72e5",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "template--21508546691372__1ac5564c-08ed-45e4-8a61-a455eaa42e6b-media-3": {
+          "type": "media",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_308.jpg",
+            "slide_link": "",
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 1,
+            "row": 1,
+            "subheading": "",
+            "heading": "Birthday",
+            "heading_size": "h2",
+            "button_text": "",
+            "button_link": "",
+            "content_position": "bottom-center",
+            "text_alignment": "center",
+            "color_bg": "#ffffff",
+            "color_bg_gradient": "",
+            "color_text": "#ffffff",
+            "color_link": "#3f72e5",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "dcd6b26c-107d-435f-8d05-8ce7d99b0dc1": {
+          "type": "media",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_309.jpg",
+            "slide_link": "",
+            "use_video": false,
+            "video_autoplay": true,
+            "column": 1,
+            "row": 1,
+            "subheading": "",
+            "heading": "Animals",
+            "heading_size": "h2",
+            "button_text": "",
+            "button_link": "",
+            "content_position": "top-center",
+            "text_alignment": "center",
+            "color_bg": "#ffffff",
+            "color_bg_gradient": "",
+            "color_text": "#92764c",
+            "color_link": "#3f72e5",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0
+          }
+        }
+      },
+      "block_order": [
+        "template--21508546691372__1ac5564c-08ed-45e4-8a61-a455eaa42e6b-media-1",
+        "template--21508546691372__1ac5564c-08ed-45e4-8a61-a455eaa42e6b-media-2",
+        "template--21508546691372__1ac5564c-08ed-45e4-8a61-a455eaa42e6b-media-3",
+        "dcd6b26c-107d-435f-8d05-8ce7d99b0dc1"
+      ],
+      "settings": {
+        "desktop_height": 300,
+        "mobile_height": 175,
+        "column_spacing": "medium",
+        "color_bg": "#ffffff",
+        "color_text": "#000000",
+        "color_link": "#000000",
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
+    "173cf25b-d7f5-49b9-9521-4d105e2c7857": {
+      "type": "collection-list",
+      "settings": {
+        "heading": "Featured Creators",
+        "marker_style": "style1",
+        "description": "",
+        "button_enabled": false,
+        "button_text": "",
+        "button_link": "",
+        "heading_size": "small",
+        "collection_list": [
+          "aarav-kapoor",
+          "framed-prints",
+          "nandini-patel",
+          "priya-singhania",
+          "siddharth-sharma"
+        ],
+        "image_ratio": "square",
+        "collection_layout": "grid",
+        "style": "style1",
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "show_progress_bar": false,
+        "mobile_swipe": true,
+        "heading_position": "bottom-center",
+        "marker_color": "#FD6262",
+        "text_color": "#000000",
+        "overlay_color": "transparent",
+        "overlay_opacity": 0,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": true
+      }
+    },
+    "46807f68-5a4e-4460-bc80-b91f97b9eb0a": {
+      "type": "new-list-collcetions",
+      "settings": {
+        "heading": "Shop by Category",
+        "marker_style": "style1",
+        "image_ratio": "square",
+        "products_per_page": 4,
+        "columns_desktop": 4,
+        "pagination_type": "loadmore",
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "show_counts": true,
+        "filter_color_swatches": true,
+        "facets_desktop": "sidebar"
       }
     },
     "main": {
       "type": "main-list-collections",
+      "disabled": true,
       "settings": {
-        "heading": "Shop by category",
-        "description": "<p>Add a short description for your collections<\/p>",
+        "heading": "Shop by Creators",
+        "description": "",
+        "heading_size": "small",
         "sort": "date",
         "image_ratio": "square",
-        "style": "style2",
-        "columns_desktop": 3,
-        "collection_list_pagination_num": 12,
+        "style": "style1",
+        "columns_desktop": 5,
+        "collection_list_pagination_num": 5,
+        "heading_position": "bottom-center",
+        "text_color": "#2c2d2e",
         "overlay_color": "#000000",
         "overlay_opacity": 0,
-        "disable_top_spacing": true,
+        "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
     }
   },
   "order": [
     "breadcrumbs",
+    "8f24dd5c-cf24-434a-bef6-9f3f030c01ad",
+    "1ac5564c-08ed-45e4-8a61-a455eaa42e6b",
+    "173cf25b-d7f5-49b9-9521-4d105e2c7857",
+    "46807f68-5a4e-4460-bc80-b91f97b9eb0a",
     "main"
   ]
 }
