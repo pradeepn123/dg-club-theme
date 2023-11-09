@@ -58,7 +58,7 @@ if (!customElements.get('pagination')) {
       base.observer.observe(base);
     }
     loadProducts() {
-      let totalPages = parseInt($('[data-total-pages]').val());
+      let totalPages = parseInt(document.querySelector('[data-total-pages]').value);
       let base = this,
         url = document.location.pathname + base.addUrlParam(document.location.search, 'page');
       if (base.getAttribute('loading')) {

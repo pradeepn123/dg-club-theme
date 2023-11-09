@@ -65,9 +65,6 @@
 	</div>
 </div>
 
-{{- 'collection-page.css' | asset_url | stylesheet_tag -}}
-{{- 'list-collections.css' | asset_url | stylesheet_tag -}}
-
 {% schema %}
   {
     "name": "Custom Collection list",
@@ -82,38 +79,6 @@
 			"label": "Heading",
 			"default": "Shop by Category",
 			"info": "Wrap your text between | to add animated markers. For example: Animated |marker| will underline marker text."
-		},
-		{
-			"type": "select",
-			"id": "sort",
-			"options": [
-			  {
-				"value": "alphabetical",
-				"label": "Alphabetically, A-Z"
-			  },
-			  {
-				"value": "alphabetical_reversed",
-				"label": "Alphabetically, Z-A"
-			  },
-			  {
-				"value": "date_reversed",
-				"label": "Date, new to old"
-			  },
-			  {
-				"value": "date",
-				"label": "Date, old to new"
-			  },
-			  {
-				"value": "products_high",
-				"label": "Product count, high to low"
-			  },
-			  {
-				"value": "products_low",
-				"label": "Product count, low to high"
-			  }
-			],
-			"default": "alphabetical",
-			"label": "Sort collections by:"
 		},
 		{
 			"type": "header",
@@ -226,132 +191,6 @@
 	      "default": true,
 	      "label": "Enable sorting"
 	    }
-    ],
-		"blocks": [
-      {
-        "type": "promotion",
-        "name": "Promotion",
-        "settings": [
-          {
-            "type": "collection",
-            "id": "promotion_collection",
-            "label": "Collection",
-						"info": "Show on specific collection only"
-          },
-					{
-		        "type": "range",
-		        "id": "promotion_position",
-		        "min": 1,
-		        "max": 24,
-		        "step": 1,
-		        "label": "Show in position",
-		        "default": 1
-		      },
-					{
-            "type": "image_picker",
-            "id": "image",
-            "label": "Image"
-          },
-					{
-						"type": "text",
-						"id": "title",
-						"default": "Promotion",
-						"label": "Heading"
-					},
-					{
-						"type": "textarea",
-						"id": "text",
-						"default": "Advertise a promotion or a sale",
-						"label": "Description"
-					},
-					{
-            "id": "link_label",
-            "type": "text",
-            "label": "Button label",
-            "default": "Explore",
-						"info": "Leave the label blank to hide the button."
-          },
-					{
-						 "type": "select",
-						 "id": "content_position",
-						 "label": "Content position",
-						 "options": [
-							 { "value": "top-left", "label": "Top left" },
-							 { "value": "top-center", "label": "Top center" },
-							 { "value": "top-right", "label": "Top right" },
-							 { "value": "middle-left", "label": "Middle left" },
-							 { "value": "middle-center", "label": "Middle center" },
-							 { "value": "middle-right", "label": "Middle right" },
-							 { "value": "bottom-left", "label": "Bottom left" },
-							 { "value": "bottom-center", "label": "Bottom center" },
-							 { "value": "bottom-right", "label": "Bottom right" }
-						 ],
-						 "default": "bottom-left"
-					},
-					{
-						"type": "select",
-						"id": "text_alignment",
-						"options": [
-							{
-								"value": "left",
-								"label": "Left"
-							},
-							{
-								"value": "center",
-								"label": "Center"
-							},
-							{
-								"value": "right",
-								"label": "Right"
-							}
-						],
-						"default": "left",
-						"label": "Content alignment"
-					},
-          {
-            "id": "link",
-            "type": "url",
-            "label": "Button link"
-          },
-					{
-						 "type": "checkbox",
-						 "id": "use_text_button",
-						 "label": "Use text button",
-						 "default": false
-					},
-					{
-            "id": "block_link",
-            "type": "url",
-            "label": "Link",
-						"info": "This will allow you to set a link to the promotion"
-          },
-					{
-			      "type": "header",
-			      "content": "Colors"
-			    },
-					{
-						"type": "color",
-						"id": "overlay_color",
-						"label": "Overlay",
-						"default": "#000000"
-					},
-					{
-						"type": "range",
-						"id": "overlay_opacity",
-						"min": 0,
-						"max": 100,
-						"step": 1,
-						"unit": "%",
-						"label": "Overlay opacity",
-						"default": 70
-					}
-				]
-			}
-		],
-        "presets": [
-            {
-                "name": "Custom Collection list"
-            }
-        ]
+    ]
   }
 {% endschema %}
