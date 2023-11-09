@@ -24,6 +24,14 @@
         "template--21608791802156__5ba91645-a867-48e4-915f-fe702de01b99-heading-1",
         "template--21608791802156__5ba91645-a867-48e4-915f-fe702de01b99-text-1"
       ],
+      "custom_css": [
+        ".rich-text.text-width-large .rich-text__inner {max-width: 626px;}",
+        ".rich-text__inner .text-size-regular p {max-width: 507px; font-size: 20px; font-weight: 400; line-height: 27px;}",
+        ".rich-text .rte {margin-bottom: 24px;}",
+        ".rich-text__inner .h2 {margin-bottom: 24px; }",
+        "@media only screen and (max-width: 767px) {.rich-text__inner .text-size-regular p {font-size: 16px; line-height: 24px; }}",
+        "@media only screen and (max-width: 390px) {.rich-text.text-width-large .rich-text__inner {max-width: 300px; }}"
+      ],
       "settings": {
         "text_width": "large",
         "text_position": "left",
