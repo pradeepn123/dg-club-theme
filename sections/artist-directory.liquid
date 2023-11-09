@@ -1,4 +1,4 @@
-{{- 'custom-list-collections.css' | asset_url | stylesheet_tag -}}
+{{- 'artist-directory.css' | asset_url | stylesheet_tag -}}
 {{- 'facets.css' | asset_url | stylesheet_tag -}}
 {%- liquid
 	assign section_heading = section.settings.heading
@@ -67,7 +67,7 @@
 
 {% schema %}
   {
-    "name": "Custom Collection list",
+    "name": "Artist Directory list",
     "settings": [
 		{
 			"type": "header",

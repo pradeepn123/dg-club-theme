@@ -196,7 +196,7 @@
       }
     },
     "main": {
-      "type": "new-list-collections",
+      "type": "artist-directory",
       "settings": {
         "heading": "Shop by Category",
         "image_ratio": "square",
