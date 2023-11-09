@@ -230,3 +230,7 @@
     min-height: 568px;
   }
 }
+
+.image-with-text-slideshow--content-content div .button:hover {
+  color: white;
+}
