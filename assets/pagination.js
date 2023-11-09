@@ -58,6 +58,7 @@ if (!customElements.get('pagination')) {
       base.observer.observe(base);
     }
     loadProducts() {
+      let totalPages = parseInt(document.querySelector('[data-total-pages]').value);
       let base = this,
         url = document.location.pathname + base.addUrlParam(document.location.search, 'page');
       if (base.getAttribute('loading')) {
@@ -74,6 +75,14 @@ if (!customElements.get('pagination')) {
           dispatchCustomEvent('pagination:page-changed', {
             url: url
           });
+          let paramString = url.split('?')[1];
+          let queryString = new URLSearchParams(paramString);
+          for (let pair of queryString.entries()) {
+            if(totalPages == pair[1])
+            {
+              this.button.style.display = "none";
+            }
+          }
         });
     }
     renderProducts(html, url) {

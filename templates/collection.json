@@ -23,9 +23,9 @@
       "settings": {
         "heading": "{{ collection.title }}",
         "marker_style": "style1",
-        "products_per_page": 12,
+        "products_per_page": 4,
         "columns_desktop": 4,
-        "pagination_type": "paginated",
+        "pagination_type": "loadmore",
         "enable_filtering": false,
         "enable_sorting": false,
         "show_counts": false,

@@ -72,8 +72,9 @@
 .rich-text__inner .h2 {
   font-size: var(--font-size-title-desktop);
   font-weight: var(--font-weight-heading);
-  line-height: var(--line-height-title);  
+  line-height: 45px;  
 }
+
 @media only screen and (max-width: 767px) {
   .rich-text__inner .h2 {
     font-size: var(--font-size-title-mobile);
