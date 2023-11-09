@@ -699,3 +699,7 @@
   grid-gap: 5px;
   flex-wrap: wrap;
 }
+
+#product-grid .column.hide__pages_search{
+  display: none;
+}

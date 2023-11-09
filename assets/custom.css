@@ -36,9 +36,9 @@ a:hover, a:focus {
   right: -75px;
 }
 
-.template-header--content {
+/* .template-header--content {
   justify-content: center;
-}
+} */
 
 @media only screen and (max-width: 767px) {
   .mobile-height-360 {
