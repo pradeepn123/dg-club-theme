@@ -55,6 +55,14 @@
             <input type="url" name="creator_url" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" />
             <label for="creator_url">Portfolio link</label>
           </div>
+          <div class="file-to-upload">
+              <label for="file-input">
+                <span>Add files</span>
+                <span>Accepts .jpg, .png & .pdf</span>
+              </label>
+              
+              <input id="file-input" type="file" multiple/>
+          </div>
           <span class="field_label">By submitting this form, you confirm that you accept the <a href="#">Terms of Service.</a></span>
           <button type="submit" class="button full"><span>Send request</span></button>
         </form>
