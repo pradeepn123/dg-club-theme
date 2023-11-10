@@ -102,10 +102,17 @@
   display: block;
   margin-bottom: 0;
   color: var(--collection-text-color, var(--color-body, #2c2d2e));
-  font-size: 1.0625rem;
-  line-height: 1.2;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 26px;
   width: 100%;
+}
+
+@media only screen and (max-width: 676px) {
+  .collection-card--link {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
 }
 
 .collection-card--link:hover {
