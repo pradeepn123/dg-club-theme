@@ -167,7 +167,7 @@
           "type": "collection",
           "settings": {
             "collection_list": [
-              "aarav-kapoor",
+              "aarav-sharma",
               "framed-prints",
               "frontpage",
               "nandini-patel",
@@ -338,8 +338,6 @@
             "content": "Our program is your gateway to turning artistic passion into a thriving business. With no upfront costs, we provide the tools, support, and expertise you need to launch your own brand in the world of Print on Demand. Start today and let your creativity flourish",
             "button_text": "Learn More",
             "button_link": "",
-            "artists_image": "shopify:\/\/shop_images\/Frame_228.png",
-            "artists_info": "<p>+3K Artists have enrolled<\/p>",
             "color_bg": "#d5bff1",
             "color_text": "#4444e1",
             "color_button": "#4444e1"
@@ -370,7 +368,7 @@
         "heading_size": "small",
         "collection_list": [
           "framed-prints",
-          "aarav-kapoor",
+          "aarav-sharma",
           "nandini-patel",
           "priya-singhania",
           "siddharth-sharma"

@@ -84,7 +84,6 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
             "use_video": false,
-            "icons_image": "shopify:\/\/shop_images\/Shuffle.svg",
             "heading_icon": "none",
             "heading": "Diverse Opportunities",
             "description": "DG Club welcomes artists from all backgrounds, whether you work with traditional mediums like paint and canvas, digital tools such as tablets, or even AI-generated art. We celebrate and support artistic diversity.",
@@ -96,7 +95,6 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
             "use_video": false,
-            "icons_image": "shopify:\/\/shop_images\/Vector.svg",
             "heading_icon": "none",
             "heading": "Free Advertisement",
             "description": "Add a short description for this tab",
@@ -108,7 +106,6 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
             "use_video": false,
-            "icons_image": "shopify:\/\/shop_images\/Vector_b9284a62-1e68-4a17-ab02-1f1abe04af1c.svg",
             "heading_icon": "none",
             "heading": "Competitive Commissions",
             "description": "Add a short description for this tab",
@@ -328,12 +325,9 @@
         "heading": "Featured Creators",
         "marker_style": "style1",
         "description": "",
-        "button_enabled": true,
-        "button_text": "Join Now",
-        "button_link": "shopify:\/\/pages\/artist-landing-page",
         "heading_size": "small",
         "collection_list": [
-          "aarav-kapoor",
+          "aarav-sharma",
           "nandini-patel",
           "siddharth-sharma",
           "priya-singhania",
@@ -487,4 +481,3 @@
     "bf01160e-e21c-4638-9bc0-4a66949fb0e5"
   ]
 }
-
