@@ -32,6 +32,12 @@
 		  grid-template-columns: repeat(auto-fill, minmax(130px, 300px));
 		}
 	}
+	@media only screen and (max-width: 375px){
+		.text-with-icons.swipe-on-mobile .text-with-icons__inner {
+		  grid-auto-columns: minmax(115px, 300px);
+		  grid-template-columns: repeat(auto-fill, minmax(115px, 300px));
+		}
+	}
 {% else %}
 	@media only screen and (max-width: 768px){
 		.text-with-icons.swipe-on-mobile .text-with-icons__inner {
