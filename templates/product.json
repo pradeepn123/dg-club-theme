@@ -97,23 +97,25 @@
             "custom_liquid": "{{product.description}}"
           }
         },
-        "386f7e4a-6127-4141-928b-9cb4614ee18c": {
+        "d56924f2-0137-4e3b-8c33-49b1f28391c6": {
           "type": "collapsible_tab",
+          "source": "{{ product.metafields.custom.product_highlights.value }}",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "Product Highlights",
             "open": false,
-            "content": "<p>Row content<\/p>",
-            "page": "",
+            "content": "{{ product.metafields.custom.product_highlights.value.row_content | metafield_tag }}",
+            "page": "{{ product.metafields.custom.product_highlights.value.row_content_from_page.value }}",
             "custom_liquid": ""
           }
         },
-        "d56924f2-0137-4e3b-8c33-49b1f28391c6": {
+        "386f7e4a-6127-4141-928b-9cb4614ee18c": {
           "type": "collapsible_tab",
+          "source": "{{ product.metafields.custom.shipping_returns.value }}",
           "settings": {
-            "heading": "Compatibility",
+            "heading": "Shipping & Returns",
             "open": false,
-            "content": "<p>Row content<\/p>",
-            "page": "",
+            "content": "{{ product.metafields.custom.shipping_returns.value.row_content | metafield_tag }}",
+            "page": "{{ product.metafields.custom.shipping_returns.value.row_content_from_page.value }}",
             "custom_liquid": ""
           }
         },
@@ -143,13 +145,13 @@
         "buy_buttons",
         "0b3e272b-c86a-4dba-946c-c6912251371c",
         "b8d7b096-c0d8-4bf8-b5bd-4e6d3d570291",
-        "386f7e4a-6127-4141-928b-9cb4614ee18c",
         "d56924f2-0137-4e3b-8c33-49b1f28391c6",
+        "386f7e4a-6127-4141-928b-9cb4614ee18c",
         "4fd23485-293f-46a0-8a4c-34d0e25ea41b",
         "fc6da228-45eb-4a6e-aa68-d6ec477bec34"
       ],
       "settings": {
-        "enable_sticky_add_to_cart": true,
+        "enable_sticky_add_to_cart": false,
         "show_taxes_included": true,
         "thumbnail_position": "left",
         "media_aspect_ratio": "adapt",
