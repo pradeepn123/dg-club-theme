@@ -80,7 +80,7 @@
     margin-bottom: 0;
     border-radius: 12px 12px 0 0;
 }
-.dashboard_tabs_content .order_details_content{
+.dashboard_tabs_content .order_details_content,.dashboard_tabs_content .artist_directory_content{
     background: #fff;
     padding: 22px 32px;
     min-height: 25rem;
@@ -238,6 +238,43 @@ address{
     padding: 23px 13px;
     border-radius: 12px;
 }
+
+/* Artist Dashboard */
+/* .artist_dashboard_table{
+    border-top: 1px solid var(--color-border, #dadce0);
+    border: 0;
+} */
+.artist_dashboard_table td, .artist_dashboard_table th{
+    /* border: 0; */
+    padding: 18px;
+}
+.artist_dashboard_table th{
+    font-size: 16px;
+    font-weight: 600;
+}
+.artist_dashboard_table td{
+    font-size: 16px;
+    font-weight: 400;
+}
+.artist_dashboard_data td:first-child{
+    display: flex;
+}
+.artist_dashboard_table td img{
+    width: 49px;
+    height: 49px;
+    border-radius: 4px;
+    margin-right: 18px;
+}
+.artist_dashboard_table td:last-child, .artist_dashboard_table th:last-child{
+    text-align: end;
+}
+.artist_dashboard_header{
+    border-bottom: 1px solid var(--color-border, #dadce0);
+    border-top: 1px solid var(--color-border, #dadce0);
+}
+.artist_dashboard_data td{
+    border-bottom: 1px solid var(--color-border, #dadce0);
+}
 @media (max-width: 1023px){
     .account{
         width: 100vw;
@@ -377,5 +414,44 @@ address{
     .order_details .myaccount-content table tr td{
         font-size: 16px;
         font-weight: 400;
+    }
+
+    /* Artist dashboard */
+    .dashboard_tabs_content .artist_directory_content{
+        background: none;
+    }
+    .artist_directory_content .earnings table thead{
+        display: none;
+    }
+    .artist_directory_content .earnings table tbody tr{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .artist_directory_content .earnings table tbody tr td{
+        background: #fff;
+        display: grid;
+    }
+    .artist_directory_content .earnings table tbody tr td::before{
+        content: attr(data-label);
+    }
+    .artist_dashboard_table thead{
+        display: none;
+    }
+    .artist_dashboard_data{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .artist_dashboard_data tr{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+    }
+    .artist_dashboard_data tr td:last-child{
+        border-bottom: 0;
+    }
+    .artist_dashboard_data td::before{
+        content: attr(data-label);
     }
 }

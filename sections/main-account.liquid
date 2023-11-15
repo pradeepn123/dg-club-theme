@@ -35,7 +35,7 @@
 				</ul>
 			</div>
 			<div class="dashboard_content">
-				<div class="dashboard_tabs_content showTab">
+				<div class="dashboard_tabs_content order_details">
 					<p class="tab_title">Order history</p>
 					<div class="order_details_content desktop">
 						{% paginate customer.orders by 20 %}
@@ -139,8 +139,59 @@
 				<div class="dashboard_tabs_content address_details">
 					<p class="tab_title">addresses</p>
 				</div>
-				<div class="dashboard_tabs_content artist_details">
-					<p class="tab_title">Artist</p>
+				<div class="dashboard_tabs_content artist_details showTab">
+					<p class="tab_title">Artist Directory</p>
+					<div class="artist_directory_content">
+						<div class="earnings">
+							<table class="no-borders">
+								<thead>
+									<tr>
+										<th id="ColumnOrder" scope="col" role="columnheader">Total earnings</th>
+										<th id="ColumnDate" scope="col" role="columnheader">Current Month</th>
+									</tr>
+							  	</thead>
+								<tbody role="rowgroup">
+									<td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Total earnings">
+										$ 5,780.00
+									  </td>
+									  <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Current Month">
+										$ 100.00
+									  </td>
+								</tbody>
+							</table>
+						</div>
+						<div class="earning_details">
+							<div>
+								<p></p>
+								<div>Sort</div>
+							</div>
+							<table class="artist_dashboard_table no-borders">
+								<thead class="artist_dashboard_header">
+									<th>Product Name</th>
+									<th>Qty Sold</th>
+									<th>Commission earned</th>
+								</thead>
+								<tbody class="artist_dashboard_data">
+										{% assign customerName = customer.name %}
+										{% for product in collections[customerName].products %}
+											<tr>
+												<td data-label="Product Name">
+													{%- render 'responsive-image', image: product.featured_image, sizes: '300x250,600x500' -%}
+													<p>{{ product.title }}</p>
+												</td>
+												<td data-label="Qty Sold">
+													15
+												</td>
+												<td data-label="Commission earned">
+													{{ product.price | money }}
+												</td>
+											</tr>
+										{% endfor %}
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

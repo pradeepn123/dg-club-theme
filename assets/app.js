@@ -1248,4 +1248,19 @@ document.addEventListener('DOMContentLoaded', () => {
         showTabContent(tab.getAttribute('data-form-tab'))
       })
     })
+
+    const accountTablinks = document.querySelectorAll('.dashboard_tabs');
+    function showAccountTabContent(formId){
+      document.querySelectorAll('.dashboard_tabs_content').forEach(elem => elem.classList.remove('showTab'))
+      document.querySelector(`.${formId}`).classList.add('showTab')
+    }
+    accountTablinks.forEach(tab => {
+      tab.addEventListener('click', () => {
+        accountTablinks.forEach(tabItem => {
+          tabItem.classList.remove('active');
+        })
+        tab.classList.add('active');
+        showAccountTabContent(tab.getAttribute('data-tab'))
+      })
+    })
 });
