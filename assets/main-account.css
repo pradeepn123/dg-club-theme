@@ -68,6 +68,7 @@
 }
 .dashboard_tabs_content.showTab{
     display: block;
+    margin-bottom: 60px;
     /* height: 100%; */
 }
 .dashboard_tabs_content .tab_title{
@@ -84,6 +85,7 @@
     background: #fff;
     padding: 22px 32px;
     min-height: 25rem;
+    border-radius: 0 0 12px 12px;
 }
 
 /* Addresses */
@@ -240,10 +242,14 @@ address{
 }
 
 /* Artist Dashboard */
-/* .artist_dashboard_table{
-    border-top: 1px solid var(--color-border, #dadce0);
-    border: 0;
-} */
+.artist_directory_content .earnings thead th{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left !important;
+}
+.artist_directory_content .earnings tbody tr td{
+    text-align: left !important;
+}
 .artist_dashboard_table td, .artist_dashboard_table th{
     /* border: 0; */
     padding: 18px;
@@ -419,6 +425,7 @@ address{
     /* Artist dashboard */
     .dashboard_tabs_content .artist_directory_content{
         background: none;
+        padding: 22px 0;
     }
     .artist_directory_content .earnings table thead{
         display: none;
@@ -431,9 +438,17 @@ address{
     .artist_directory_content .earnings table tbody tr td{
         background: #fff;
         display: grid;
+        padding: 21px;
+        border-radius: 12px;
+    }
+    .artist_directory_content .earnings table tbody tr td{
+        text-align: left;
     }
     .artist_directory_content .earnings table tbody tr td::before{
         content: attr(data-label);
+        border-bottom: 1px solid #E4E4E4;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
     }
     .artist_dashboard_table thead{
         display: none;
@@ -443,15 +458,43 @@ address{
         flex-direction: column;
         gap: 16px;
     }
+    .artist_dashboard_data td img{
+        display: none;
+    }
+    .artist_dashboard_data tr td{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    .artist_dashboard_data tr:last-child td{
+        border-bottom: 1px solid var(--color-border, #dadce0) !important;
+    }
+    .artist_dashboard_data tr:last-child td:last-child{
+        border-bottom: 0 !important;
+    }
+    .artist_dashboard_data tr td p{
+        text-align: end;
+        margin-bottom: 0;
+    }
     .artist_dashboard_data tr{
         display: flex;
         flex-direction: column;
         background: #fff;
+        padding: 20px;
+        border-radius: 12px;
     }
     .artist_dashboard_data tr td:last-child{
         border-bottom: 0;
+        padding-bottom: 0;
+    }
+    .artist_dashboard_data tr td:first-child{
+        padding-top: 0;
     }
     .artist_dashboard_data td::before{
         content: attr(data-label);
+        font-size: 16px;
+        font-weight: 600 !important;
+        white-space: nowrap;
+        margin-right: 20px;
     }
 }
