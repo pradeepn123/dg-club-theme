@@ -279,7 +279,7 @@
                 <input type="checkbox" class="custom-checkbox" form="{{ product_form_id }}" name="{{ line_item_input_name }}" value="{{ block.settings.checkbox_checked_value | escape }}" id="{{ line_item_input_id }}" {% if required %}required{% endif %}>
 
             {% when 'multiple' %}
-              {%- assign custom_options = block.settings.multiple_options | newline_to_br | strip_newlines | split: '<br />' -%}
+              {%- assign custom_options = block.settings.multiple_options | strip_html | newline_to_br | strip_newlines | split: '<br />' -%}
 
               {% if block.settings.multiple_style == 'dropdown' %}
                 <div class="select">
