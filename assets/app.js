@@ -1263,4 +1263,20 @@ document.addEventListener('DOMContentLoaded', () => {
         showAccountTabContent(tab.getAttribute('data-tab'))
       })
     })
+
+    document.getElementById('dropdownBtnSort').addEventListener('click', () => {
+      showArtistDashboardSortDropDown()
+    })
+    function showArtistDashboardSortDropDown(){
+      const dropDownOptions = document.getElementById('dropdownSortOptions');
+      dropDownOptions.classList.toggle('activeFilter');
+      const sortOptions = document.querySelectorAll('#dropdownSortOptions .sortOption')
+      sortOptions.forEach(sortOption => {
+        sortOption.addEventListener('click', () => {
+          sortOptions.forEach(elem => elem.removeAttribute('selected'));
+          dropDownOptions.classList.remove('activeFilter');          
+          sortOption.setAttribute('selected', '');
+        })
+      })
+    } 
 });
