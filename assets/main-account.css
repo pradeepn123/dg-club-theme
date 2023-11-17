@@ -267,6 +267,7 @@ address{
     padding: 8px 12px;
     font-size: 14px;
     font-weight: 500;
+    background: #fff;
     align-items: center;
 }
 .artist_directory_content .earning_header .sortDropdown .dropdownSortOptions{
