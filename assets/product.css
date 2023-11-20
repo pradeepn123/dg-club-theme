@@ -2461,3 +2461,27 @@ h6,
 .product--icon-list-image svg path {
   fill: var(--color-body, #2c2d2e);
 }
+
+
+/* Custom option variant css here */
+variant-selects .product-form__input .form__group_custom{
+  display: flex;
+  gap: 10px;
+}
+
+variant-selects .product-form__input .form__group_custom .form__group {
+  display: inline-grid;
+}
+variant-selects .product-form__input .form__group_custom .form__group input{
+  border-radius: 6px;
+  border: 1px solid #D3D3D3;
+  background: #FFF;  
+  height: 42px;
+}
+variant-selects .product-form__input .form__group_custom label.form__label_custom {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #626262;
+  padding-bottom: 6px;
+}
