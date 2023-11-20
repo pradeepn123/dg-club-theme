@@ -58,6 +58,11 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
+@media only screen and (min-width: 1200px) {
+  .add_to_cart_holder--multi {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
 
 .single-add-to-cart-button[disabled]+.shopify-payment-button {
   display: none;
