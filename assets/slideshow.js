@@ -63,7 +63,7 @@ if (!customElements.get('slide-show')) {
         args.adaptiveHeight = true;
       }
       if (slideshow.classList.contains('customer-reviews--carousel')) {
-        args.wrapAround = false;
+        args.wrapAround = true;
         args.adaptiveHeight = false;
         args.resize = true;
         args.on.ready = function () {
