@@ -80,7 +80,7 @@
 					{%- for tab in tabs -%}
 					<div class="media-with-tabs--tab{% if forloop.index == 1 %} active{% endif -%}" {{ tab.shopify_attributes }}>
 						<button class="media-with-tabs--button{% if tab.settings.heading_icon or tab.settings.icons_image != 'none' %} has-icon{% endif -%}">{% render 'svg-icons-inline', icon: tab.settings.heading_icon %}<img src="{{ tab.settings.icons_image | image_url }}"/>{{ tab.settings.heading }}</button>
-						<div class="media-with-tabs--text{% if tab.settings.heading_icon or tab.settings.icons_image != 'none' %} has-icon{% endif -%}">{{ tab.settings.description }}</div>
+						<div class="media-with-tabs--text">{{ tab.settings.description }}</div>
 					</div>
 					{%- endfor -%}
 				{%- endif -%}
@@ -123,6 +123,10 @@
 				"id": "mobile_height",
 				"label": "Mobile height",
 				"options": [
+					{
+						"value": "mobile-height-small",
+						"label": "Small"
+					},
 					{
 						"value": "mobile-height-400",
 						"label": "400px"

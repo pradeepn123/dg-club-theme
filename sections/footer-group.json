@@ -8,7 +8,7 @@
         "ebdaaa5c-c47c-42ac-a830-30a799694755": {
           "type": "text",
           "settings": {
-            "column_size": "large",
+            "column_size": "medium",
             "text_alignment": "left",
             "title": "",
             "image": "shopify:\/\/shop_images\/Logo.png",
@@ -22,7 +22,7 @@
         "d402e6d5-9d79-43ad-900a-cfaddc6cd9f8": {
           "type": "menu",
           "settings": {
-            "column_size": "small",
+            "column_size": "medium",
             "title": "Company",
             "menu": "footer-secondary-menu"
           }
@@ -30,7 +30,7 @@
         "055d0c35-3f11-4f51-9e3d-eab55edb7a9b": {
           "type": "menu",
           "settings": {
-            "column_size": "small",
+            "column_size": "medium",
             "title": "Resources",
             "menu": "resources"
           }
@@ -38,7 +38,7 @@
         "2ab8345e-9f63-4c80-b028-f4edae3633b5": {
           "type": "signup",
           "settings": {
-            "column_size": "large",
+            "column_size": "medium",
             "title": "Subscribe to our newsletter",
             "text": "<p>Signup for our newsletter and receive 10% off of your first order!<\/p>"
           }

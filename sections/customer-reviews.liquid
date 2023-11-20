@@ -71,13 +71,16 @@
                 </div>
               {%- endif -%}
               <div class="customer-reviews--content">
+                {% assign star_rating = block.settings.star_rating | default: block.settings.stars %}
                 {%- if block.settings.stars and block.settings.stars != '' -%}
-                  <div class="star-rating" style="--star-rating: {{ block.settings.stars }};"></div>
+                  <div class="star-rating" style="--star-rating: {{star_rating}};"></div>
                 {%- endif -%}
                 {%- if block.settings.heading != blank -%}
                   <h6>{{ block.settings.heading }}</h6>
                 {%- endif -%}
-                <p>{{ block.settings.text | newline_to_br }}</p>
+                {%- if block.settings.text != blank -%}
+                  <p>{{ block.settings.text | newline_to_br }}</p>
+                {%- endif -%}
                 {%- if block.settings.author != blank -%}
                   <div class="customer-reviews--author">
                     {%- if block.settings.author_image != blank -%}
@@ -204,16 +207,20 @@
           "label": "Star rating"
         },
         {
+          "id": "star_rating",
+          "type": "text",
+          "label": "Product Star Rating"          
+        },
+        {
           "id": "heading",
           "type": "text",
           "label": "Heading",
           "default": "Review heading"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "text",
-          "label": "Text",
-          "default": "Add your customer review here to showcase them."
+          "label": "Text"          
         },
         {
           "type": "header",

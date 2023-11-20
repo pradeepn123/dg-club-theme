@@ -164,10 +164,9 @@
   .product-card-spacing-medium .products.row .product-card {
     margin-bottom: 20px;
   }
-
-  .product-card-spacing-medium .products.row+.pagination {
-    margin-top: 10px;
-  }
+}
+.product-card-spacing-medium .products.row+.pagination {
+  margin-top: 48px;
 }
 
 .product-card-spacing-medium .products.row .flickity-nav.flickity-prev {
@@ -698,4 +697,8 @@
   display: flex;
   grid-gap: 5px;
   flex-wrap: wrap;
+}
+
+#product-grid .column.hide__pages_search{
+  display: none;
 }

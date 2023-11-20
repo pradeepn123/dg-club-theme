@@ -1,72 +1,148 @@
-{{ 'customer.css' | asset_url | stylesheet_tag }}
-<div class="section-spacing-bottom">
-	<div class="row">
-	  <div class="small-12 large-8 columns myaccount-content">
-			<h4>{{ 'customer.orders.title' | t }}</h4>
-			{% paginate customer.orders by 20 %}
-	      {%- if customer.orders.size > 0 -%}
-		      <table class="no-borders">
-		      	<thead>
-		      		<tr>
-								<th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
-	              <th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
-	              <th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
-	              <th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
-	              <th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
-		      	  </tr>
-		        </thead>
-		        <tbody role="rowgroup">
-		          {% for order in customer.orders %}
-							<tr role="row">
-	              <td
-	                id="RowOrder"
-	                role="cell"
-	                headers="ColumnOrder"
-	                data-label="{{ 'customer.orders.order_number' | t }}"
-	              >
-	                <a href="{{ order.customer_url }}" class="text-button" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
-	                  {{ order.name }}
-	                </a>
-	              </td>
-	              <td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
-	                {{ order.created_at | time_tag: format: 'date' }}
-	              </td>
-	              <td headers="RowOrder ColumnPayment" role="cell" data-label="{{ 'customer.orders.payment_status' | t }}">
-	                {{ order.financial_status_label }}
-	              </td>
-	              <td headers="RowOrder ColumnFulfillment" role="cell" data-label="{{ 'customer.orders.fulfillment_status' | t }}">
-	                {{ order.fulfillment_status_label }}
-	              </td>
-	              <td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
-	                {{ order.total_price | money_with_currency }}</td>
-	            </tr>
-		          {% endfor %}
-		        </tbody>
-		      </table>
-				{%- else -%}
-	       <p>{{ 'customer.orders.none' | t }}</p>
-	     	{%- endif -%}
-				{% render 'pagination', paginate: paginate, pagination_type: 'paginated' %}
-		 {% endpaginate %}
-	  </div>
-	  <div class="small-12 large-4 columns myaccount-sidebar">
-	    <h4>{{ 'customer.account.details' | t }}</h4>
-			{% if customer.default_address %}
-			<label>{{ 'customer.account.default_address' | t }}</label>
-			<address>
-				{{ customer.default_address.address1 }}<br />
-			{% if customer.default_address.address2 != "" %}
-				{{ customer.default_address.address2 }}<br />
-			{% endif %}
-				{{ customer.default_address.city }}, {% if address.default_address.province_code %}{{ customer.default_address.province_code }}, {% endif %}{{ customer.default_address.country }}<br />
-				{{ customer.default_address.zip }}<br />
-				{{ customer.default_address.phone }}
-			</address>
-			{% endif %}
-			{%- capture text_button_title -%}
-			 {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
-			{%- endcapture -%}
-			{%- render 'text-button', url: routes.account_addresses_url, title: text_button_title -%}
-	  </div>
+{{ 'main-account.css' | asset_url | stylesheet_tag }}
+<div class="flex-container row account ">
+	<div class="columns">
+		<div class="dashboard_wrapper">
+			<div class="dashboard">
+				<ul class="dashboard_list">
+					<li class="dashboard_tabs order_history active" data-tab="order_details">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M9 8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8M3 16.8002V7.2002C3 6.08009 3 5.51962 3.21799 5.0918C3.40973 4.71547 3.71547 4.40973 4.0918 4.21799C4.51962 4 5.08009 4 6.2002 4H17.8002C18.9203 4 19.4796 4 19.9074 4.21799C20.2837 4.40973 20.5905 4.71547 20.7822 5.0918C21 5.5192 21 6.07899 21 7.19691V16.8036C21 17.9215 21 18.4805 20.7822 18.9079C20.5905 19.2842 20.2837 19.5905 19.9074 19.7822C19.48 20 18.921 20 17.8031 20H6.19691C5.07899 20 4.5192 20 4.0918 19.7822C3.71547 19.5905 3.40973 19.2842 3.21799 18.9079C3 18.4801 3 17.9203 3 16.8002Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						Order History
+					</li>
+					<li class="dashboard_tabs addresses " data-tab="address_details">
+						<a href="/account/addresses">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M4 11.4522V16.8002C4 17.9203 4 18.4807 4.21799 18.9086C4.40973 19.2849 4.71547 19.5906 5.0918 19.7823C5.5192 20.0001 6.07899 20.0001 7.19691 20.0001H16.8031C17.921 20.0001 18.48 20.0001 18.9074 19.7823C19.2837 19.5906 19.5905 19.2849 19.7822 18.9086C20 18.4811 20 17.9216 20 16.8037V11.4522C20 10.9179 19.9995 10.6506 19.9346 10.4019C19.877 10.1816 19.7825 9.97307 19.6546 9.78464C19.5102 9.57201 19.3096 9.39569 18.9074 9.04383L14.1074 4.84383C13.3608 4.19054 12.9875 3.86406 12.5674 3.73982C12.1972 3.63035 11.8026 3.63035 11.4324 3.73982C11.0126 3.86397 10.6398 4.19014 9.89436 4.84244L5.09277 9.04383C4.69064 9.39569 4.49004 9.57201 4.3457 9.78464C4.21779 9.97307 4.12255 10.1816 4.06497 10.4019C4 10.6506 4 10.9179 4 11.4522Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Addresses
+						</a>
+					</li>
+					<li class="dashboard_tabs artist_dashboard " data-tab="artist_details">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+							<path d="M19 21C19 17.134 15.866 14 12 14C8.13401 14 5 17.134 5 21M12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7C16 9.20914 14.2091 11 12 11Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
+						Artist Dashboard
+					</li>
+					<li class="dashboard_tabs logout">
+						<a href="{{ routes.account_logout_url }}">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M12 15L15 12M15 12L12 9M15 12H4M4 7.24802V7.2002C4 6.08009 4 5.51962 4.21799 5.0918C4.40973 4.71547 4.71547 4.40973 5.0918 4.21799C5.51962 4 6.08009 4 7.2002 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H7.19691C6.07899 20 5.5192 20 5.0918 19.7822C4.71547 19.5905 4.40973 19.2839 4.21799 18.9076C4 18.4798 4 17.9201 4 16.8V16.75" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Logout
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="dashboard_content">
+				<div class="dashboard_tabs_content showTab">
+					<p class="tab_title">Order history</p>
+					<div class="order_details_content desktop">
+						{% paginate customer.orders by 20 %}
+						{%- if customer.orders.size > 0 -%}
+							<table class="no-borders">
+								<thead>
+									<tr>
+											  <th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+								<th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+								<th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+								<th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
+								<th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+								  </tr>
+							  </thead>
+							  <tbody role="rowgroup">
+								{% for order in customer.orders %}
+										  <tr role="row">
+								<td
+								  id="RowOrder"
+								  role="cell"
+								  headers="ColumnOrder"
+								  data-label="{{ 'customer.orders.order_number' | t }}"
+								>
+								  <a href="{{ order.customer_url }}" class="text-button" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
+									{{ order.name }}
+								  </a>
+								</td>
+								<td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+								  {{ order.created_at | time_tag: format: 'date' }}
+								</td>
+								<td headers="RowOrder ColumnPayment" role="cell" data-label="{{ 'customer.orders.payment_status' | t }}">
+								  {{ order.financial_status_label }}
+								</td>
+								<td headers="RowOrder ColumnFulfillment" role="cell" data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+								  {{ order.fulfillment_status_label }}
+								</td>
+								<td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+								  {{ order.total_price | money_with_currency }} INR</td>
+							  </tr>
+								{% endfor %}
+							  </tbody>
+							</table>
+							  {%- else -%}
+						 <p>{{ 'customer.orders.none' | t }}</p>
+						   {%- endif -%}
+							  {% render 'pagination', paginate: paginate, pagination_type: 'paginated' %}
+					   {% endpaginate %}
+					</div>
+
+					<div class="order_details_content mobile">
+						{% paginate customer.orders by 20 %}
+							{%- if customer.orders.size > 0 -%}
+								<table class="no-borders">
+								
+									{% for order in customer.orders %}
+										<tbody role="rowgroup" class="rowgroup">
+											{% comment %} <tr role="row" class="row"> {% endcomment %}
+												<tr>
+													<th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+													<td id="RowOrder" role="cell" headers="ColumnOrder" data-label="{{ 'customer.orders.order_number' | t }}">
+														<a href="{{ order.customer_url }}" class="text-button" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
+															{{ order.name }}
+														</a>
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnDate" scope="col" role="columnheader">{{ 'customer.orders.date' | t }}</th>
+													<td headers="RowOrder ColumnDate" role="cell" data-label="{{ 'customer.orders.date' | t }}">
+														{{ order.created_at | time_tag: format: 'date' }}
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnPayment" scope="col" role="columnheader">{{ 'customer.orders.payment_status' | t }}</th>
+													<td headers="RowOrder ColumnPayment" role="cell" data-label="{{ 'customer.orders.payment_status' | t }}">
+														{{ order.financial_status_label }}
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnFulfillment" scope="col" role="columnheader">{{ 'customer.orders.fulfillment_status' | t }}</th>
+													<td headers="RowOrder ColumnFulfillment" role="cell" data-label="{{ 'customer.orders.fulfillment_status' | t }}">
+														{{ order.fulfillment_status_label }}
+													</td>
+												</tr>
+												<tr>
+													<th id="ColumnTotal" scope="col" role="columnheader">{{ 'customer.orders.total' | t }}</th>
+													<td headers="RowOrder ColumnTotal" role="cell" data-label="{{ 'customer.orders.total' | t }}">
+														{{ order.total_price | money_with_currency }} INR</td>
+												</tr>
+											</tr>
+										</tbody>
+									{% endfor %}
+								
+								</table>
+							{%- else -%}
+								<p>{{ 'customer.orders.none' | t }}</p>
+							{%- endif -%}
+							{% render 'pagination', paginate: paginate, pagination_type: 'paginated' %}
+						{% endpaginate %}
+					</div>
+				</div>
+				<div class="dashboard_tabs_content address_details">
+					<p class="tab_title">addresses</p>
+				</div>
+				<div class="dashboard_tabs_content artist_details">
+					<p class="tab_title">Artist</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>

@@ -22,34 +22,9 @@
 		assign media_aspect_percentage = 100 | divided_by: grid_collection_image.aspect_ratio | append: '%'
   endif
 
-	assign mobile_columns_class = 'small-12'
-	if is_carousel
-		if columns_mobile == '2'
-			assign mobile_columns_class = 'small-6'
-		endif
-		assign columns_class = 'medium-6 large-4'
-		case columns_desktop
-			when 2
-				assign columns_class = 'medium-6'
-			when 3
-				assign columns_class = 'medium-4'
-			when 4
-				assign columns_class = 'medium-6 large-3'
-			when 5
-				assign columns_class = 'medium-1/5 large-1/5'
-			when 6
-				assign columns_class = 'medium-3 large-2'
-		endcase
-		assign columns_class = columns_class | append: ' carousel__slide columns'
-	endif
-
-	if settings.block_shadows
-		assign collection_card_shadow_class = 'collection-card--has-shadow'
-	endif
-	assign collection_image_shadow_class = 'has-shadow--true'
 -%}
-<div class="{{ mobile_columns_class }} {{ columns_class }}">
-	<div class="collection-card {{ style }} {{ collection_card_shadow_class }}">
+<div class="collection-list__item-cards">
+	<div class="collection-card {{ style }}">
 		<div class="collection-card--image media-aspect-{{ media_aspect_ratio }} {{ collection_image_shadow_class }}" style="--var-media-aspect-ratio: {{ media_aspect_percentage }}">
 			<a href="{{ grid_collection_url }}" class="collection-card--link" title="{{ grid_collection_title | escape }}">
 				{% if grid_collection == empty %}
@@ -65,9 +40,6 @@
 		</div>
 		<div class="collection-card--content">
 			<a href="{{ grid_collection_url }}" class="collection-card--link collection-card--link-{{ heading_size }} collection-card--link-{{ heading_position }}" title="{{ grid_collection_title | escape }}"><span>{{ grid_collection_title }}</span></a>
-			{% if products_count %}
-				<p class="collection-card--product-count collection-card--link-{{ heading_size }} collection-card--link-{{ heading_position }}"><span>{{ grid_collection.all_products_count }} Artworks</span></p>
-			{% endif %}
 		</div>
 	</div>
 </div>

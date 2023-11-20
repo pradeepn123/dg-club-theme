@@ -1,16 +1,14 @@
 
 {{- 'custom-collection-tabs.css' | asset_url | stylesheet_tag -}}
+
 {%- liquid
 	assign section_heading = section.settings.heading
 	assign marker_style = section.settings.marker_style
 	assign heading_size = section.settings.heading_size
 	assign columns_desktop = section.settings.columns_desktop
-	assign columns_mobile = section.settings.columns_mobile
-	assign show_progress_bar = section.settings.show_progress_bar
-	assign mobile_swipe = section.settings.mobile_swipe
+	
 	assign style = section.settings.style
 	assign heading_position = section.settings.heading_position
-	assign collection_layout = section.settings.collection_layout
 
 	assign marker_color = section.settings.marker_color
 	assign text_color = section.settings.text_color
@@ -19,85 +17,84 @@
 
 	assign disable_top_spacing = section.settings.disable_top_spacing
 	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
-	assign is_carousel = false
 
-	assign tag = 'div'
-	if collection_layout == 'carousel'
-	assign tag = 'slide-show'
-		assign is_carousel = true
-		assign carousel_class = 'carousel'
-	endif
+	assign columns_class = 'medium-6 large-4'
+	case columns_desktop
+		when 2
+			assign columns_class = 'medium-6'
+		when 3
+			assign columns_class = 'medium-4'
+		when 4
+			assign columns_class = 'medium-6 large-3'
+		when 5
+			assign columns_class = 'medium-3 large-1/5'
+		when 6
+			assign columns_class = 'medium-3 large-2'
+	endcase
 -%}
-<div class="row">
-	<div class="small-12 columns">
-		<div class="list-collections_custom section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--overlay-color-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}; --var-collection-list-columns:{{ columns_desktop }}; --collection-text-color: {{ text_color }}">
-			<div class="section-header">
-                <div class="section-header--content">
-                    {%- if section_heading -%}
-                        <h3 class="section-header--title">
-                            {% render 'animated-marker-heading', heading: section_heading, style: marker_style, color: marker_color %}
-                        </h3>
-                    {%- endif -%}
-                </div>
-                <div class="btns">
-                {%- for block in section.blocks -%}
-                    {%- if block.settings.title != blank -%}
-                        <button type="button" class="tablink collection-tabs__list-link{% if forloop.first == true %} active{% endif %}" {{ block.shopify_attributes }} onclick="openTab('display--{{ forloop.index }}', this)">{{ block.settings.title }}</button>
-                    {%- endif -%}
-                {%- endfor -%}
-                </div>
-            </div>
-            {%- for block in section.blocks -%}
-                <{{ tag }} class="collection-grid collection-grid__{{ collection_layout }} {{ carousel_class }}{% if mobile_swipe %} swipe-on-mobile{% endif %} mobile-columns--{{ columns_mobile | default: 1 }} tabcontent" id="display--{{ forloop.index }}">
-                    {%- for collection in block.settings.collection_list -%}
-                        {%- render 'collection-card', grid_collection: collection, media_aspect_ratio: section.settings.image_ratio, style: style, layout: collection_layout, index: forloop.index, is_carousel: is_carousel, columns_desktop: columns_desktop, columns_mobile: columns_mobile, heading_position: heading_position, heading_size: heading_size -%}
-                    {%- endfor -%}
-                    {%- if collection_layout == 'carousel' -%}
-                        {%- if block.settings.collection_list.count > columns_desktop -%}
-                            <div class="flickity-nav flickity-prev" tabindex="0">{% render 'svg-icons' with 'carousel-prev' %}</div>
-                            <div class="flickity-nav flickity-next" tabindex="0">{% render 'svg-icons' with 'carousel-next' %}</div>
-                        {%- endif -%}
-                    {%- endif -%}
-                </{{ tag }}>
-            {%- endfor -%}
-			{%- if collection_layout == 'carousel' and show_progress_bar -%}
-			<div class="flickity-progress">
-				<div class="flickity-progress--bar"></div>
+<div class="collection-tabs">
+	<div class="row">
+		<div class="small-12 columns">
+			<div class="list-collections_custom section-spacing{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" style="--overlay-color-rgb: {{ overlay_color.rgb | replace: ' ' , ',' }}; --overlay-opacity: {{ overlay_opacity | divided_by: 100.0 }}; --var-collection-list-columns:{{ columns_desktop }}; --collection-text-color: {{ text_color }}">
+				<div class="section-header">
+					<div class="section-header--content">
+						{%- if section_heading -%}
+							<h3 class="section-header--title">
+								{% render 'animated-marker-heading', heading: section_heading, style: marker_style, color: marker_color %}
+							</h3>
+						{%- endif -%}
+					</div>				
+					<scroll-shadow>
+						<collection-tabs class="collection-tabs__list" data-target="product-grid-{{ section.id }}">
+							{%- for block in section.blocks -%}
+								{%- if block.settings.title != blank -%}
+									<button type="button" data-collection="{{ block.settings.handle }}" class="collection-tabs__list-link{% if forloop.first == true %} active{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.title }}</button>								
+								{%- endif -%}
+							{%- endfor -%}
+						</collection-tabs>
+					</scroll-shadow>
+				</div>
+			
+				<slide-show
+					id="product-grid-{{ section.id }}"
+					data-id="{{ section.id }}"
+					class="products carousel row small-up-2 medium-up-{{ columns_desktop }}"
+				>
+					{%- for block in section.blocks -%}
+						{%- assign mainloop = forloop -%}
+						{%- assign collection_list = block.settings.collection_list -%}
+						{%- for collection in collection_list -%}
+							<div
+								class="{{ columns_class }} columns{% if mainloop.first == true %} carousel__slide{% endif %}"
+								data-collection="{{ block.settings.handle }}"
+							>
+								{%- render 'collection-card-tab', grid_collection: collection, media_aspect_ratio: section.settings.image_ratio, style: style, index: forloop.index, heading_position: heading_position, heading_size: heading_size -%}
+							</div>
+						{%- endfor -%}
+						
+						{%- if collection_list.count > columns_desktop -%}
+							<div class="flickity-nav flickity-prev" tabindex="0">{% render 'svg-icons' with 'carousel-prev' %}</div>
+							<div class="flickity-nav flickity-next" tabindex="0">{% render 'svg-icons' with 'carousel-next' %}</div>
+						{%- endif -%}
+					
+					{%- endfor -%}
+				</slide-show>
+
+				{% comment %} {%- if show_progress_bar -%}
+				<div class="flickity-progress">
+					<div class="flickity-progress--bar"></div>
+				</div>
+				{%- endif -%} {% endcomment %}
 			</div>
-			{%- endif -%}
 		</div>
 	</div>
 </div>
-
-<script>
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    tablinks = document.getElementsByClassName("tablink");
-    function openTab(tabName,elmnt) {
-        document.querySelector('.tablink.active').classList.remove('active');
-        elmnt.classList.add('active');
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        {% if collection_layout == 'carousel' %}
-            document.getElementById(tabName).style.display = "flex";
-        {% else %}
-            document.getElementById(tabName).style.display = "grid";
-        {% endif %}
-    }
-
-    document.addEventListener('DOMContentLoaded', ()=>{
-        for (i = 1; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-    });
-
-</script>
+<script src="{{ 'collection-tabs.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
   {
     "name": "Custom collection tabs",
-	"class": "collection-list-section",
+	"class": "section-collection-tabs",
     "settings": [
 		{
 			"type": "text",
@@ -170,24 +167,7 @@
 	      	"default": "portrait",
 	      	"label": "Image ratio",
 	      	"info": "Add images by editing your collections. [Learn more](https://help.shopify.com/en/manual/products/collections)"
-	    },
-		{
-			"type": "select",
-			"id": "collection_layout",
-			"options": [
-				{
-					"value": "grid",
-					"label": "Grid"
-				},
-				{
-					"value": "carousel",
-					"label": "Carousel"
-				}
-			],
-			"default": "grid",
-			"label": "Layout",
-			"info": "Save the settings and let the window load properly."
-		},
+	    },		
 		{
 			"type": "select",
 			"id": "style",
@@ -212,43 +192,15 @@
 			"step": 1,
 			"default": 4,
 	      	"label": "Number of columns on desktop"
-	    },
-		{
-			"type": "select",
-			"id": "columns_mobile",
-			"options": [
-				{
-					"value": "1",
-					"label": "One column"
-				},
-				{
-					"value": "2",
-					"label": "Two Columns"
-				}
-			],
-			"default": "1",
-			"label": "Number of columns on mobile"
-		},
+	    },		
 		{
         	"type": "header",
         	"content": "Carousel"
-      	},
-		{
-			"type": "checkbox",
-			"id": "show_progress_bar",
-			"label": "Show progress bar",
-			"default": true
-		},
+      	},		
 		{
         	"type": "header",
         	"content": "Grid"
-      	},
-		{
-			"type": "checkbox",
-			"id": "mobile_swipe",
-			"default": true,
-			"label": "Enable swipe on mobile"
-		},
+      	},		
 		{
         	"type": "header",
         	"content": "Over image"
@@ -334,6 +286,11 @@
                     "type": "text",
                     "id": "title",
                     "label": "Heading"
+                },
+                {
+                    "type": "text",
+                    "id": "handle",
+                    "label": "collection handle"
                 }
             ]
         }

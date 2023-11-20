@@ -30,15 +30,35 @@
 	<fieldset class="product-form__input product-form__input--block" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
 		<div class="form__label">{{ option.name }}: <span class="form__label__value">{{ option.selected_value }}</span>{{ sizing_link }}</div>
 		{%- for value in option.values -%}
-			<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
-						name="{{ option.name | append: appended }}"
-						value="{{ value | escape }}"
-						form="{{ product_form_id }}"
-						{% if option.selected_value == value %}checked{% endif %}
-			>
-			<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
-				<span>{{ value }}</span>
-			</label>
+			{%- if option.name == 'Size' and value == 'Custom' -%}
+				<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+					name="{{ option.name | append: appended }}"
+					value="{{ value | escape }}"
+					form="{{ product_form_id }}"
+					{% if option.selected_value == value %}checked{% endif %}
+					style="display:none";
+				>
+				<div class="form__group_custom">
+					<div class="form__group">
+						<label class="form__label_custom" for="default">Width</label>
+						<input class="form__input_width" id="custom_width" name="width" type="number" placeholder="Width" aria-invalid="false"/>
+					</div>
+					<div class="form__group">
+						<label class="form__label_custom" for="default">Height</label>
+						<input class="form__input_height" id="custom_height" name="height" type="number" placeholder="Height" aria-invalid="false"/>
+					</div>
+				</div>
+			{%- else -%}
+				<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+					name="{{ option.name | append: appended }}"
+					value="{{ value | escape }}"
+					form="{{ product_form_id }}"
+					{% if option.selected_value == value %}checked{% endif %}
+				>
+				<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
+					<span>{{ value }}</span>
+				</label>
+			{%- endif -%}
 		{%- endfor -%}
 	</fieldset>
 {%- when 'color' -%}

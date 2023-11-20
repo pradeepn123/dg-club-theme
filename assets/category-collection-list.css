@@ -1,0 +1,35 @@
+.list-collections{
+    margin: 62px 0 80px 0;
+}
+.section-header{
+    padding: 0 0 56px;
+}
+.section-header .section-header--title{
+    font-size: 40px;
+    font-weight: 700;
+}
+.collection-grid{
+    grid-gap: 40px 19px;
+}
+.collection-card--content span{
+    font-size: 20px;
+    font-weight: 600;
+}
+@media (max-width: 767px){
+    .list-collections{
+        margin: 49px 0 63px 0;
+    }
+    .section-header{
+        padding: 0 0 32px;
+    }
+    .collection-grid{
+        grid-gap: 24px 20px;
+    }
+    .collection-card--content span{
+        font-size: 16px;
+    }
+    .section-header .section-header--title{
+        font-size: 32px;
+        font-weight: 700;
+    }
+}

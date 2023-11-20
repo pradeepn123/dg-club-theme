@@ -1248,5 +1248,4 @@ document.addEventListener('DOMContentLoaded', () => {
         showTabContent(tab.getAttribute('data-form-tab'))
       })
     })
-  
 });

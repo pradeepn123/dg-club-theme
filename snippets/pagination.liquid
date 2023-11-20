@@ -18,6 +18,7 @@
 		  </div>
 			{%- else -%}
 			<button class="load-more button">
+				<input type="hidden" value="{{ paginate.pages }}" data-total-pages>
 				<span>{{ 'sections.collection_template.load_more' | t }}</span>
 				<span class="loading-overlay">
 					{% render 'svg-icons' with 'thb-loading' %}

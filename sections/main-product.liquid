@@ -377,6 +377,19 @@
 				}
 			]
     },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "product_price",
+          "default": true,
+          "label": "Show Product price"
+        }        
+      ]
+    },
 		{
       "type": "inventory_level",
       "name": "Inventory level",
@@ -698,7 +711,21 @@
 				{
 					"type": "paragraph",
 					"content": "The selector is automatically hidden if all variants are sold out. When at least one variant is available, the selector is always visible to prevent the page from moving when switching variants."
-				}
+				},
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "default": true,
+          "label": "Show dynamic checkout buttons",
+          "info": "Using the payment methods available on your store, customers see their preferred option, like PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_gift_card_recipient",
+          "default": false,
+          "label": "Show recipient form for gift card products",
+          "info": "When enabled, gift card products can optionally be sent to a recipient with a personal message."
+        }
       ]
     },
 		{
@@ -2343,10 +2370,10 @@
           ]
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "multiple_options",
           "label": "Options",
-          "default": "Option 1\nOption 2\nOption 3",
+          "default": "<p>Option 1\nOption 2\nOption 3</p>",
           "info": "One option on each line"
         }
       ]

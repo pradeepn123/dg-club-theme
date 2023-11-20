@@ -34,9 +34,9 @@
 		<div class="product-card-small--add-to-cart">
 			{% render 'product-price', product: product_small %}
 			{% if is_purchasable %}
-			<button class="product-card-small--add-to-cart-button"><span class="product-card-small--add-to-cart-icon">{%- render 'svg-icons' with 'thb-add-to-cart' %}<span class="loading-overlay">{% render 'svg-icons' with 'thb-loading' %}</span></span> <span class="product-card-small--add-to-cart-text">{{ 'products.product.add_to_cart' | t }}</span></button>
+				<button class="product-card-small--add-to-cart-button"><span class="product-card-small--add-to-cart-icon">{%- render 'svg-icons' with 'thb-add-to-cart' %}<span class="loading-overlay">{% render 'svg-icons' with 'thb-loading' %}</span></span> <span class="product-card-small--add-to-cart-text">{{ 'products.product.add_to_cart' | t }}</span></button>
 			{% else %}
-			<quick-view class="product-card-small--add-to-cart-button" data-product-handle="{{ product_small.handle }}"><span class="product-card-small--add-to-cart-icon">{%- render 'svg-icons' with 'thb-add-to-cart' %}<span class="loading-overlay">{% render 'svg-icons' with 'thb-loading' %}</span></span> <span class="product-card-small--add-to-cart-text">	{{ 'products.product.choose_options' | t }}</span></quick-view>
+				<quick-view class="product-card-small--add-to-cart-button" data-product-handle="{{ product_small.handle }}"><span class="product-card-small--add-to-cart-icon">{%- render 'svg-icons' with 'thb-add-to-cart' %}<span class="loading-overlay">{% render 'svg-icons' with 'thb-loading' %}</span></span> <span class="product-card-small--add-to-cart-text">	{{ 'products.product.choose_options' | t }}</span></quick-view>
 			{% endif %}
 		</div>
 	</div>

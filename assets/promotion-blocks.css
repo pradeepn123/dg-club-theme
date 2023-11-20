@@ -25,6 +25,13 @@
   width: 100%;
   padding-bottom: 10px; 
 }
+.promotion-blocks--text h6 {
+  margin-bottom: 10px;
+  color: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 120%;
+}
 @media only screen and (min-width: 768px) {
   .promotion-blocks--inner {
     grid-template-columns: repeat(var(--column-size, 3), 1fr); 
@@ -32,6 +39,7 @@
   .promotion-blocks--text h6 {
     font-size: 20px;  
     font-weight: 600;
+    line-height: 130%;
   }
   .promotion-blocks--text .text-button {
     font-size: 16px; 
@@ -59,12 +67,13 @@
   flex-direction: column;
   width: 60%; 
 }
-.promotion-blocks--text h6 {
-  margin-bottom: 10px;
-  color: inherit; 
-}
+
 .promotion-blocks--text .text-button {
-  margin-top: auto; 
+  margin-top: auto;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 116.433%;
+  text-transform: capitalize;
 }
 
 .promotion-blocks--image {
@@ -98,5 +107,15 @@
   } 
   .promotion-blocks--text{
     width: 100%;
+    padding: 15px 12px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .promotion-blocks--item{
+    flex-direction: column;
+  }
+  .promotion-blocks--text{
+    padding-left: 0;
+    padding-right: 0;
   }
 }

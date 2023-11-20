@@ -11,6 +11,7 @@
 	assign color_text = section.settings.color_text
 	assign disable_top_spacing = section.settings.disable_top_spacing
 	assign disable_bottom_spacing = section.settings.disable_bottom_spacing
+	assign mobile_block_spacing = section.settings.mobile_block_spacing
 	assign has_bg = false
 
 	if color_bg != 'rgba(0,0,0,0)'
@@ -23,6 +24,27 @@
 .text-with-icons__icon img {
 	box-shadow: 0px 4px 8px 0px rgba(50, 50, 71, 0.06), 0px 4px 4px 0px rgba(50, 50, 71, 0.08);
 }
+{% endif %}
+{% if mobile_block_spacing == 'small' %}
+	@media only screen and (max-width: 768px){
+		.text-with-icons.swipe-on-mobile .text-with-icons__inner {
+		  grid-auto-columns: minmax(130px, 300px);
+		  grid-template-columns: repeat(auto-fill, minmax(130px, 300px));
+		}
+	}
+	@media only screen and (max-width: 375px){
+		.text-with-icons.swipe-on-mobile .text-with-icons__inner {
+		  grid-auto-columns: minmax(115px, 300px);
+		  grid-template-columns: repeat(auto-fill, minmax(115px, 300px));
+		}
+	}
+{% else %}
+	@media only screen and (max-width: 768px){
+		.text-with-icons.swipe-on-mobile .text-with-icons__inner {
+		  grid-auto-columns: minmax(270px, 300px);
+		  grid-template-columns: repeat(auto-fill, minmax(270px, 300px));
+		}
+	}
 {% endif %}
 
 {%- endstyle -%}
@@ -148,6 +170,22 @@
 				"id": "mobile_swipe",
 				"default": true,
 				"label": "Enable swipe on mobile"
+			},
+			{
+				"type": "select",
+				"id": "mobile_block_spacing",
+				"options": [
+					{
+						"value": "small",
+						"label": "Small"
+					},
+					{
+						"value": "medium",
+						"label": "Medium"
+					}
+				],
+				"default": "small",
+				"label": "Mobile Block Spacing"
 			},
 			{
 				"type": "checkbox",
