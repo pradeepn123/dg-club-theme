@@ -2,7 +2,6 @@
   "sections": {
     "breadcrumbs": {
       "type": "breadcrumbs",
-      "disabled": true,
       "settings": {
       }
     },
@@ -28,11 +27,6 @@
             "show_products_rating": true
           }
         },
-        "79138d00-6ea5-4eff-be06-5dd9d8c17b14": {
-          "type": "separator",
-          "settings": {
-          }
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -45,7 +39,7 @@
             "sizing_guide_page": ""
           }
         },
-        "a6f0cfae-bc90-40f3-b853-a9b4a83f778b": {
+        "0fc5e1fc-7fc2-4083-b277-86b31cbec8a3": {
           "type": "custom_option",
           "repeater": "{{ product.metafields.custom.custom_options.value }}",
           "settings": {
@@ -57,17 +51,6 @@
             "checkbox_unchecked_value": "No",
             "multiple_style": "radio",
             "multiple_options": "<p>{{ block.repeater.variant_options | metafield_tag }}<\/p>"
-          }
-        },
-        "61e8a46f-8896-45ec-9c62-8eba47d168f5": {
-          "type": "separator",
-          "settings": {
-          }
-        },
-        "91eb4087-bd4b-4c80-9833-6882dc3e3dae": {
-          "type": "price",
-          "settings": {
-            "product_price": true
           }
         },
         "quantity": {
@@ -84,41 +67,33 @@
             "show_gift_card_recipient": false
           }
         },
-        "0b3e272b-c86a-4dba-946c-c6912251371c": {
-          "type": "description",
-          "disabled": true,
-          "settings": {
-          }
-        },
-        "b8d7b096-c0d8-4bf8-b5bd-4e6d3d570291": {
+        "bde6dede-da85-48c9-9a0d-2b666343a507": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Description",
             "open": false,
             "content": "",
             "page": "",
-            "custom_liquid": "{{product.description}}"
-          }
-        },
-        "d56924f2-0137-4e3b-8c33-49b1f28391c6": {
-          "type": "collapsible_tab",
-          "source": "{{ product.metafields.custom.product_highlights.value }}",
-          "settings": {
-            "heading": "Product Highlights",
-            "open": false,
-            "content": "{{ product.metafields.custom.product_highlights.value.row_content | metafield_tag }}",
-            "page": "{{ product.metafields.custom.product_highlights.value.row_content_from_page.value }}",
-            "custom_liquid": ""
+            "custom_liquid": "{{ product.description }}"
           }
         },
         "386f7e4a-6127-4141-928b-9cb4614ee18c": {
           "type": "collapsible_tab",
-          "source": "{{ product.metafields.custom.shipping_returns.value }}",
           "settings": {
             "heading": "Shipping & Returns",
             "open": false,
-            "content": "{{ product.metafields.custom.shipping_returns.value.row_content | metafield_tag }}",
-            "page": "{{ product.metafields.custom.shipping_returns.value.row_content_from_page.value }}",
+            "content": "<p>Row content<\/p>",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
+        "d56924f2-0137-4e3b-8c33-49b1f28391c6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Compatibility",
+            "open": false,
+            "content": "<p>Row content<\/p>",
+            "page": "",
             "custom_liquid": ""
           }
         },
@@ -139,17 +114,13 @@
         "2b609eea-6cce-4efe-b447-c5560de1d797",
         "e431a79e-9c7b-4a53-a79a-0cb918617ecf",
         "title",
-        "79138d00-6ea5-4eff-be06-5dd9d8c17b14",
         "variant_picker",
-        "a6f0cfae-bc90-40f3-b853-a9b4a83f778b",
-        "61e8a46f-8896-45ec-9c62-8eba47d168f5",
-        "91eb4087-bd4b-4c80-9833-6882dc3e3dae",
+        "0fc5e1fc-7fc2-4083-b277-86b31cbec8a3",
         "quantity",
         "buy_buttons",
-        "0b3e272b-c86a-4dba-946c-c6912251371c",
-        "b8d7b096-c0d8-4bf8-b5bd-4e6d3d570291",
-        "d56924f2-0137-4e3b-8c33-49b1f28391c6",
+        "bde6dede-da85-48c9-9a0d-2b666343a507",
         "386f7e4a-6127-4141-928b-9cb4614ee18c",
+        "d56924f2-0137-4e3b-8c33-49b1f28391c6",
         "4fd23485-293f-46a0-8a4c-34d0e25ea41b",
         "fc6da228-45eb-4a6e-aa68-d6ec477bec34"
       ],
@@ -164,10 +135,10 @@
         "enable_video_looping": false
       }
     },
-    "7a6aa4f2-3b31-4be9-8151-a89cc0c71385": {
+    "121b694d-73bd-46b1-ba0a-76619d6230fe": {
       "type": "text-with-icons",
       "blocks": {
-        "template--21547391844652__7a6aa4f2-3b31-4be9-8151-a89cc0c71385-icon-1": {
+        "template--21655905468716__121b694d-73bd-46b1-ba0a-76619d6230fe-icon-1": {
           "type": "icon",
           "settings": {
             "icon": "ruler",
@@ -176,16 +147,16 @@
             "text": ""
           }
         },
-        "template--21547391844652__7a6aa4f2-3b31-4be9-8151-a89cc0c71385-icon-2": {
+        "template--21655905468716__121b694d-73bd-46b1-ba0a-76619d6230fe-icon-2": {
           "type": "icon",
           "settings": {
             "icon": "ruler",
             "image": "shopify:\/\/shop_images\/Frame_488.jpg",
-            "heading": "Secure <br> Payment",
+            "heading": "Secure  <br> Payment",
             "text": ""
           }
         },
-        "template--21547391844652__7a6aa4f2-3b31-4be9-8151-a89cc0c71385-icon-3": {
+        "template--21655905468716__121b694d-73bd-46b1-ba0a-76619d6230fe-icon-3": {
           "type": "icon",
           "settings": {
             "icon": "ruler",
@@ -194,7 +165,7 @@
             "text": ""
           }
         },
-        "53606554-04d6-4fff-ac8b-53a5ab764113": {
+        "65c29470-c215-4365-a148-71e2e27d6299": {
           "type": "icon",
           "settings": {
             "icon": "ruler",
@@ -205,10 +176,10 @@
         }
       },
       "block_order": [
-        "template--21547391844652__7a6aa4f2-3b31-4be9-8151-a89cc0c71385-icon-1",
-        "template--21547391844652__7a6aa4f2-3b31-4be9-8151-a89cc0c71385-icon-2",
-        "template--21547391844652__7a6aa4f2-3b31-4be9-8151-a89cc0c71385-icon-3",
-        "53606554-04d6-4fff-ac8b-53a5ab764113"
+        "template--21655905468716__121b694d-73bd-46b1-ba0a-76619d6230fe-icon-1",
+        "template--21655905468716__121b694d-73bd-46b1-ba0a-76619d6230fe-icon-2",
+        "template--21655905468716__121b694d-73bd-46b1-ba0a-76619d6230fe-icon-3",
+        "65c29470-c215-4365-a148-71e2e27d6299"
       ],
       "settings": {
         "text_alignment": "center",
@@ -225,10 +196,10 @@
         "disable_bottom_spacing": false
       }
     },
-    "4afb846a-0ad6-405f-bf78-2a61d8ffd8f6": {
+    "9f9cb1c3-49eb-4250-b0a1-dde83af20f76": {
       "type": "image-with-text",
       "blocks": {
-        "template--21547391844652__4afb846a-0ad6-405f-bf78-2a61d8ffd8f6-heading-1": {
+        "5fe3ccc0-d875-4277-8061-aee3156196c8": {
           "type": "heading",
           "settings": {
             "text": "{{ product.metafields.custom.image_with_text.value.heading.value }}",
@@ -237,7 +208,7 @@
             "marker_color": "#fd6262"
           }
         },
-        "template--21547391844652__4afb846a-0ad6-405f-bf78-2a61d8ffd8f6-text-1": {
+        "29e40007-2a15-4887-89bc-81e4a07a59d6": {
           "type": "text",
           "settings": {
             "text": "<p>{{ product.metafields.custom.image_with_text.value.description | metafield_tag }}<\/p>"
@@ -245,11 +216,52 @@
         }
       },
       "block_order": [
-        "template--21547391844652__4afb846a-0ad6-405f-bf78-2a61d8ffd8f6-heading-1",
-        "template--21547391844652__4afb846a-0ad6-405f-bf78-2a61d8ffd8f6-text-1"
+        "5fe3ccc0-d875-4277-8061-aee3156196c8",
+        "29e40007-2a15-4887-89bc-81e4a07a59d6"
       ],
       "settings": {
         "image": "{{ product.metafields.custom.image_with_text.value.image.value }}",
+        "use_video": false,
+        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_autoplay": true,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "full_width": false,
+        "layout": "image_first",
+        "content_position": "text-left",
+        "column_spacing": "medium",
+        "color_bg": "#d5bff1",
+        "color_text": "#4444e1",
+        "color_border": "#e2e2e2",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
+    "97b1f58a-4303-45e2-a664-8fcd17b84e5c": {
+      "type": "image-with-text",
+      "blocks": {
+        "a45bf03b-e74c-47c9-8cb8-a959dee7fd8e": {
+          "type": "heading",
+          "settings": {
+            "text": "{{ product.metafields.custom.image_with_text_second.value.heading.value }}",
+            "marker_style": "style1",
+            "heading_size": "h3",
+            "marker_color": "#fd6262"
+          }
+        },
+        "fbc828dc-8183-4ad9-a5cd-7fdf5af7667b": {
+          "type": "text",
+          "settings": {
+            "text": "<p>{{ product.metafields.custom.image_with_text_second.value.description | metafield_tag }}<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "a45bf03b-e74c-47c9-8cb8-a959dee7fd8e",
+        "fbc828dc-8183-4ad9-a5cd-7fdf5af7667b"
+      ],
+      "settings": {
+        "image": "{{ product.metafields.custom.image_with_text_second.value.image.value }}",
         "use_video": false,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
@@ -262,35 +274,35 @@
         "color_bg": "#d5bff1",
         "color_text": "#4444e1",
         "color_border": "#e2e2e2",
-        "disable_top_spacing": false,
+        "disable_top_spacing": true,
         "disable_bottom_spacing": false
       }
     },
-    "b6a97e04-48ea-4a12-b822-f76d89ba4bd9": {
+    "dc509c68-05ab-4f80-aae5-843592e643e8": {
       "type": "image-with-text",
       "blocks": {
-        "template--21547391844652__b6a97e04-48ea-4a12-b822-f76d89ba4bd9-heading-1": {
+        "190b9064-f425-45b8-ae38-7571bed7e3c3": {
           "type": "heading",
           "settings": {
-            "text": "{{ product.metafields.custom.image_with_text_second.value.heading.value }}",
+            "text": "{{ product.metafields.custom.image_with_text_third.value.heading.value }}",
             "marker_style": "style1",
             "heading_size": "h3",
-            "marker_color": "#fd6262"
+            "marker_color": "#FD6262"
           }
         },
-        "template--21547391844652__b6a97e04-48ea-4a12-b822-f76d89ba4bd9-text-1": {
+        "template--21670752026924__dc509c68-05ab-4f80-aae5-843592e643e8-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>{{ product.metafields.custom.image_with_text_second.value.description | metafield_tag }}<\/p>"
+            "text": "<p>{{ product.metafields.custom.image_with_text_third.value.description | metafield_tag }}<\/p>"
           }
         }
       },
       "block_order": [
-        "template--21547391844652__b6a97e04-48ea-4a12-b822-f76d89ba4bd9-heading-1",
-        "template--21547391844652__b6a97e04-48ea-4a12-b822-f76d89ba4bd9-text-1"
+        "190b9064-f425-45b8-ae38-7571bed7e3c3",
+        "template--21670752026924__dc509c68-05ab-4f80-aae5-843592e643e8-text-1"
       ],
       "settings": {
-        "image": "{{ product.metafields.custom.image_with_text_second.value.image.value }}",
+        "image": "{{ product.metafields.custom.image_with_text_third.value.image.value }}",
         "use_video": false,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
@@ -307,81 +319,25 @@
         "disable_bottom_spacing": false
       }
     },
-    "74a6ac4a-6f4b-4d57-86aa-fb322bd39f87": {
+    "111e2c31-55ff-41f1-8b42-97bde9967203": {
       "type": "customer-reviews",
       "blocks": {
-        "template--21547391844652__74a6ac4a-6f4b-4d57-86aa-fb322bd39f87-review-1": {
+        "template--21655905468716__111e2c31-55ff-41f1-8b42-97bde9967203-review-1": {
           "type": "review",
           "repeater": "{{ product.metafields.custom.product_customer_reviews.value }}",
           "settings": {
             "product_handle": "{{ block.repeater.product.value }}",
-            "stars": "4.5",
+            "stars": "",
             "star_rating": "{{ block.repeater.star_rating.value }}",
             "heading": "{{ block.repeater.heading.value }}",
             "text": "{{ block.repeater.description_content | metafield_tag }}",
             "author": "{{ block.repeater.author_name.value }}",
             "author_image": "{{ block.repeater.author_avatar.value }}"
           }
-        },
-        "template--21547391844652__74a6ac4a-6f4b-4d57-86aa-fb322bd39f87-review-2": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "product_handle": "",
-            "stars": "",
-            "star_rating": "",
-            "heading": "Game-changer",
-            "text": "<p>“As a part of 'Entrepreneurship for Creative Minds', I've learned to turn my art into a thriving business.”<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4_3.svg"
-          }
-        },
-        "template--21547391844652__74a6ac4a-6f4b-4d57-86aa-fb322bd39f87-review-3": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "product_handle": "",
-            "stars": "",
-            "star_rating": "",
-            "heading": "Moments into timeless",
-            "text": "<p>“Their user-friendly design editor makes it a breeze to create something truly unique.”<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4_1.svg"
-          }
-        },
-        "a512a275-cd67-4bc2-8e82-aa9a4fcdf0c9": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "product_handle": "",
-            "stars": "",
-            "star_rating": "",
-            "heading": "Fantastic Platform",
-            "text": "<p>“It's not just about printing; it's about building a brand.for anyone looking to turn their passion into profit.\"<\/p>",
-            "author": "Review",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4_3.svg"
-          }
-        },
-        "bc74d0a6-8a4f-43b6-bfe6-2bad2e35b424": {
-          "type": "review",
-          "disabled": true,
-          "settings": {
-            "product_handle": "",
-            "stars": "",
-            "star_rating": "",
-            "heading": "Review heading",
-            "text": "<p>Add your customer review here to showcase them.<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
-          }
         }
       },
       "block_order": [
-        "template--21547391844652__74a6ac4a-6f4b-4d57-86aa-fb322bd39f87-review-1",
-        "template--21547391844652__74a6ac4a-6f4b-4d57-86aa-fb322bd39f87-review-2",
-        "template--21547391844652__74a6ac4a-6f4b-4d57-86aa-fb322bd39f87-review-3",
-        "a512a275-cd67-4bc2-8e82-aa9a4fcdf0c9",
-        "bc74d0a6-8a4f-43b6-bfe6-2bad2e35b424"
+        "template--21655905468716__111e2c31-55ff-41f1-8b42-97bde9967203-review-1"
       ],
       "settings": {
         "heading": "What customers think",
@@ -412,10 +368,11 @@
   "order": [
     "breadcrumbs",
     "main-product",
-    "7a6aa4f2-3b31-4be9-8151-a89cc0c71385",
-    "4afb846a-0ad6-405f-bf78-2a61d8ffd8f6",
-    "b6a97e04-48ea-4a12-b822-f76d89ba4bd9",
-    "74a6ac4a-6f4b-4d57-86aa-fb322bd39f87",
+    "121b694d-73bd-46b1-ba0a-76619d6230fe",
+    "9f9cb1c3-49eb-4250-b0a1-dde83af20f76",
+    "97b1f58a-4303-45e2-a664-8fcd17b84e5c",
+    "dc509c68-05ab-4f80-aae5-843592e643e8",
+    "111e2c31-55ff-41f1-8b42-97bde9967203",
     "product-recommendations"
   ]
 }

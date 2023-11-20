@@ -174,40 +174,41 @@
       </side-panel-links>
 
     {%- when 'quantity' -%}
-      {%- if product.available -%}
-      <div
-        id="quantity-{{ section.id }}"
-        {{ block.shopify_attributes }}
-      >
-        <label class="form__label quantity__label">{{ 'products.product.quantity.label' | t }}</label>
-        <quantity-selector class="quantity">
-          <button class="minus" type="button" aria-label="{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}">
-            {% render 'svg-icons' with 'minus' %}
-          </button>
-          <input
-            type="number"
-            id="Quantity-{{ section.id }}"
-            name="quantity"
-            class="qty quantity__input"
-            value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-            data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-            min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
-            {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
-              data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-              max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
-            {% endif %}
-            step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
-            form="{{ product_form_id }}"
-            aria-label="{{ 'products.product.quantity.input_label' | t: product: product.title | escape }}"
+      <div class="quantity__add_to_cart_btn {% if product.available == false %}addition__padding{% endif %}">
+        {%- if product.available -%}
+          <div
+            id="quantity-{{ section.id }}"
+            {{ block.shopify_attributes }}
           >
-          <button class="plus" type="button" aria-label="{{ 'products.product.quantity.increase' | t: product: product.title | escape }}">{% render 'svg-icons' with 'plus' %}</button>
-        </quantity-selector>
-      </div>
-      {%- endif -%}
-
-    {%- when 'buy_buttons' -%}
+            <label class="form__label quantity__label">{{ 'products.product.quantity.label' | t }}</label>
+            <quantity-selector class="quantity">
+              <button class="minus" type="button" aria-label="{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}">
+                {% render 'svg-icons' with 'minus' %}
+              </button>
+              <input
+                type="number"
+                id="Quantity-{{ section.id }}"
+                name="quantity"
+                class="qty quantity__input"
+                value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                data-min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                min="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                {% if product.selected_or_first_available_variant.quantity_rule.max != null %}
+                  data-max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                  max="{{ product.selected_or_first_available_variant.quantity_rule.max }}"
+                {% endif %}
+                step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
+                form="{{ product_form_id }}"
+                aria-label="{{ 'products.product.quantity.input_label' | t: product: product.title | escape }}"
+              >
+              <button class="plus" type="button" aria-label="{{ 'products.product.quantity.increase' | t: product: product.title | escape }}">{% render 'svg-icons' with 'plus' %}</button>
+            </quantity-selector>
+          </div>
+        {%- endif -%}        
+        
         {% render 'product-add-to-cart', product: product, form: form, product_form_id: product_form_id, block: block, pickup: pickup %}
-    
+      </div>
+
     {%- when 'share' -%}
         {% render 'social-share', share_label: true, share_title: product.title, share_permalink: product.url, share_image: product.featured_image %}
     
