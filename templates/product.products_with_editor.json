@@ -35,9 +35,9 @@
             "color_picker": true,
             "variant_is_disabled": true,
             "sizing_guide_variant": "Size",
-            "sizing_guide_text": "",
-            "sizing_guide_icon": "ruler",
-            "sizing_guide_page": ""
+            "sizing_guide_text": "Pricing",
+            "sizing_guide_icon": "none",
+            "sizing_guide_page": "pricing"
           }
         },
         "0fc5e1fc-7fc2-4083-b277-86b31cbec8a3": {
@@ -302,7 +302,7 @@
             "text": "{{ product.metafields.custom.image_with_text_third.value.heading.value }}",
             "marker_style": "style1",
             "heading_size": "h3",
-            "marker_color": "#FD6262"
+            "marker_color": "#fd6262"
           }
         },
         "template--21670752026924__dc509c68-05ab-4f80-aae5-843592e643e8-text-1": {
