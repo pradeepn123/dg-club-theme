@@ -275,6 +275,11 @@
   <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M6.75 1.5L3.75 4.5L0.75 1.5" stroke="var(--color-body)" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
+
+  {%- when 'thb-collections-select' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none">
+      <path d="M11 1L6 6L1 1" stroke="#4444E1" stroke-width="2"/>
+    </svg>
   
   {%- when 'thb-dropdown-bottom' -%}
   <svg width="8" height="6" viewBox="0 0 8 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -376,4 +381,9 @@
   <svg xmlns="http://www.w3.org/2000/svg" width="8" height="12" viewBox="0 0 8 12" fill="none">
     <path d="M7 1L2 6L7 11" stroke="black" stroke-width="2"/>
   </svg>
+
+  {%- when 'share' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M10.6295 5.70981C4.11095 6.72314 1.93811 12.3246 1.6665 14.9987C4.92576 10.9454 8.99984 10.495 10.6295 10.7765V14.1543L16.3332 8.24314L10.6295 2.33203V5.70981Z" stroke="#4444E1" stroke-width="1.5"/>
+    </svg>
 {%- endcase -%}

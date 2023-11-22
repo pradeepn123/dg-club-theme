@@ -1,0 +1,100 @@
+{%- liquid
+	assign show_collection_image = section.settings.show_collection_image
+	assign show_collection_description = section.settings.show_collection_description
+
+	assign show_collection_banner = section.settings.show_collection_banner
+	assign show_collection_share = section.settings.show_collection_share
+
+	assign heading = collection.title
+	if show_collection_description
+		assign description = collection.description
+	endif
+-%}
+{{ 'collection-header.css' | asset_url | stylesheet_tag }}
+<div class="template-header {% if request.page_type == 'search' %}reduce_padding_bottom{% endif %}">
+	{% assign banner_image = collection.metafields.custom.image_banner %}
+	{% assign profile_image = collection.metafields.custom.image_banner %}
+	{%- if show_collection_banner -%}
+	<div class="template-header--banner">
+		<img class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}" data-sizes="auto" src="{{- banner_image | image_url -}}" alt="{{ banner_image.alt | escape }}"/>
+	</div>
+	{%- endif -%}
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="template-header--content">
+        {% assign profile_image = collection.metafields.custom.profile_image %}
+        {%- if show_collection_image -%}
+          <div class="template-header--image">
+            <img class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}" data-sizes="auto" src="{{- profile_image | image_url -}}" alt="{{ profile_image.alt | escape }}"/>
+          </div>
+        {%- endif -%}
+        <div class="template_header">
+          <h1 class="template-header--title h2">{{ heading }}</h1>
+          {%- if description != blank and description != '' -%}
+            <div class="template-header--description">
+				<p class="template-header--description-title">BIO</p>
+				<p class="template-header--description-text">{{ description }}</p>
+            </div>
+          {%- endif -%}
+        </div>
+		{%- if show_collection_share -%}
+			<a class="template_header--share">{% render 'svg-icons' with 'share' %}Share product portfolio</a>
+		{%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+	var temp = document.createElement("input");
+	var url = window.location.href;
+
+	document.querySelector('.template_header--share').addEventListener('click', function() {
+		document.body.appendChild(temp);
+		temp.value = url;
+		temp.select();
+		document.execCommand("copy");
+		document.body.removeChild(temp);
+		console.log("Link Copied!!");
+	});
+
+</script>
+
+{% schema %}
+  {
+    "name": "Collection header",
+	"class": "section-collection-header",
+    "settings": [
+		{
+			"type": "header",
+			"content": "Collection page",
+			"info": "These settings are only used on collection pages."
+		},
+		{
+	      	"type": "checkbox",
+	      	"id": "show_collection_image",
+	      	"default": false,
+	      	"label": "Show collection profile image"
+	    },
+        {
+            "type": "checkbox",
+            "id": "show_collection_banner",
+            "default": false,
+            "label": "Show collection banner"
+        },
+		{
+            "type": "checkbox",
+            "id": "show_collection_share",
+            "default": false,
+            "label": "Show collection share button"
+        },
+		{
+	      	"type": "checkbox",
+	      	"id": "show_collection_description",
+	      	"default": true,
+	      	"label": "Show collection description"
+	    }
+    ]
+  }
+{% endschema %}
