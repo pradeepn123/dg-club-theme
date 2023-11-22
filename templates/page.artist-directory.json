@@ -75,7 +75,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_307.jpg",
-            "slide_link": "shopify:\/\/blogs\/news",
+            "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
