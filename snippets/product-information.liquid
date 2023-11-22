@@ -100,6 +100,7 @@
 
               assign sizing_guide_variant = block.settings.sizing_guide_variant | default: 'Size' | downcase
             -%}
+            
             {%- if option_slug == sizing_guide_variant -%}
               {%- if block.settings.sizing_guide_text != empty -%}
                   {%- capture sizing_link -%}
@@ -292,9 +293,9 @@
                   <div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
                 </div>
               {% else %}
-                {% for option in custom_options %}
-                  <label class="label">
-                    <input type="radio" form="{{ product_form_id }}" name="{{ line_item_input_name }}" value="{{ option | escape }}"{% if forloop.first %} checked{% endif %}>
+                {% for option in custom_options %}                         
+                  <input type="radio" id="{{ block.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}" form="{{ product_form_id }}" name="{{ line_item_input_name }}" value="{{ option | escape }}"{% if forloop.first %} checked{% endif %}>
+                  <label class="label" for="{{ block.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
                     <span class="label__text-beside-input">{{ option | escape }}</span>
                   </label>
                 {% endfor %}
