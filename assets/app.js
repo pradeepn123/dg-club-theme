@@ -1234,6 +1234,12 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof FooterMenuToggle !== 'undefined') {
     new FooterMenuToggle();
   }
+
+  document.getElementById('file-input').addEventListener('change', (e) => {
+    var files = e.target.files;
+        document.querySelector('.uploaded_files').innerHTML = `<p>${files.length}</p>`;
+    });
+
   const tablinks = document.querySelectorAll('.tab');
     function showTabContent(formId){
       document.querySelectorAll('.thb-register-form form').forEach(elem => elem.classList.remove('showForm'))
@@ -1279,4 +1285,5 @@ document.addEventListener('DOMContentLoaded', () => {
         })
       })
     } 
+    
 });

@@ -17,12 +17,12 @@
 					{% endif %}
 					<div class="fields">
             <div class="field">
-              <input type="text" name="customer[first_name]" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" />
-	            <label for="first_name">{{ 'customer.login_page.first_name' | t }}</label>
+              <input type="text" name="customer[first_name]" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required/>
+	            <label for="first_name">{{ 'customer.login_page.first_name' | t }}*</label>
             </div>
             <div class="field">
-              <input type="text" name="customer[last_name]" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" />
-	            <label for="last_name">{{ 'customer.login_page.last_name' | t }}</label>
+              <input type="text" name="customer[last_name]" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required/>
+	            <label for="last_name">{{ 'customer.login_page.last_name' | t }}*</label>
             </div>
 					</div>
           <div class="field">
@@ -38,12 +38,12 @@
         <form class="creator_form">
           <div class="fields">
             <div class="field">
-              <input type="text" name="customer[first_name]" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" />
-	            <label for="first_name">{{ 'customer.login_page.first_name' | t }}</label>
+              <input type="text" name="customer[first_name]" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required/>
+	            <label for="first_name">{{ 'customer.login_page.first_name' | t }}*</label>
             </div>
             <div class="field">
-              <input type="text" name="customer[last_name]" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" />
-	            <label for="last_name">{{ 'customer.login_page.last_name' | t }}</label>
+              <input type="text" name="customer[last_name]" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required/>
+	            <label for="last_name">{{ 'customer.login_page.last_name' | t }}*</label>
             </div>
 					</div>
           <div class="field">
@@ -62,6 +62,7 @@
               </label>
               
               <input id="file-input" type="file" multiple/>
+              <div class="uploaded_files"></div>
           </div>
           <span class="field_label">By submitting this form, you confirm that you accept the <a href="#">Terms of Service.</a></span>
           <button type="submit" class="button full"><span>Send request</span></button>
