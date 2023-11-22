@@ -207,7 +207,7 @@
     "main": {
       "type": "artist-directory",
       "settings": {
-        "heading": "Shop by Category",
+        "heading": "Shop by Creators",
         "image_ratio": "square",
         "collection_list_pagination_num": 4,
         "columns_desktop": 4,
