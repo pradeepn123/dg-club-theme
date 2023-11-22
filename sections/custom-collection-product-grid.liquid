@@ -42,8 +42,8 @@
 						{%- endif -%}
 						<div>
                         <div class="sidebar-container--tabbed-filters">
-                            {% if collection.all_tags.size > 0 %}
                                 <button id="tag-filters" class="tag-filters__item {% unless current_tags %}active{% endunless %}">{{ 'All' | link_to_tag: collection.url }}</button>
+							{% if collection.all_tags.size > 0 %}
                                 {% for tag in collection.all_tags %}
                                 {% assign tag = tag | replace: ' ', '_' %}
                                 {% assign Ntag = tag | remove: "category" %}
@@ -52,6 +52,13 @@
                                     {% endif %}
                                 {% endfor %}
                             {% endif %}
+							{% for product in collections.all.products %}   
+								{% if product.tags contains "category_decor_prints" %}
+									{% assign tag = product.tags | replace: '_', '' %}
+                                	{% assign Etag = tag | remove: "category" %}
+									<button id="tag-filters" class="tag-filters__item ">{{ 'Decor Prints' | link_to_tag: tag }}</button>
+								{% endif %}
+							{% endfor %}
                         </div>
                         
 						{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
@@ -126,7 +133,7 @@
 
 {% schema %}
   {
-    "name": "Product grid",
+    "name": "Custom Product grid",
     "settings": [
 		{
 			"type": "header",
