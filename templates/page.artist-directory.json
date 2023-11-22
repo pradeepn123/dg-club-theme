@@ -51,7 +51,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_306.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/pages\/contact",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
