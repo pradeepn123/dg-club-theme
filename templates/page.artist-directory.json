@@ -1,5 +1,14 @@
 {
   "sections": {
+    "38be3b0c-be42-433b-8d02-fb652ef787d3": {
+      "type": "spacer",
+      "settings": {
+        "spacer_mobile": 0,
+        "spacer_desktop": 20,
+        "border_separator": false,
+        "border_separator_full": false
+      }
+    },
     "5ba91645-a867-48e4-915f-fe702de01b99": {
       "type": "rich-text",
       "blocks": {
@@ -37,7 +46,7 @@
         "text_position": "left",
         "text_alignment": "left",
         "color_bg": "rgba(0,0,0,0)",
-        "color_heading": "#1a1c1d",
+        "color_heading": "#000000",
         "color_text": "#000000",
         "color_links": "#000000",
         "disable_top_spacing": false,
@@ -137,7 +146,7 @@
             "text_alignment": "center",
             "color_bg": "#ffffff",
             "color_bg_gradient": "",
-            "color_text": "#8e7144",
+            "color_text": "#92764c",
             "color_link": "#3f72e5",
             "overlay_color": "#000000",
             "overlay_opacity": 0
@@ -179,14 +188,15 @@
         "button_enabled": false,
         "button_text": "",
         "button_link": "",
-        "heading_size": "small",
+        "heading_size": "medium",
         "collection_list": [
-          "nandini-patel",
           "aarav-sharma",
           "priya-singhania",
-          "siddharth-sharma",
           "framed-prints",
-          "printed-curtain-zebra-style"
+          "printed-curtain-zebra-style",
+          "nandini-patel",
+          "designer-pattern-wallpaper",
+          "frontpage"
         ],
         "image_ratio": "square",
         "collection_layout": "carousel",
@@ -220,6 +230,7 @@
     }
   },
   "order": [
+    "38be3b0c-be42-433b-8d02-fb652ef787d3",
     "5ba91645-a867-48e4-915f-fe702de01b99",
     "1700aaa0-fd0c-429c-81a0-cd6c8b741f3b",
     "3b8a03fe-c923-4552-8b66-d19bc8ff45ba",

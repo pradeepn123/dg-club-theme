@@ -83,3 +83,6 @@
       content: none; }
   .page-numbers .current:after {
     background: var(--color-accent); }
+.load-more {
+  border-radius: 60px;
+}
