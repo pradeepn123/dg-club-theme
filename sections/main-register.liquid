@@ -61,11 +61,11 @@
                 <span>Accepts .jpg, .png & .pdf</span>
               </label>
               
-              <input id="file-input" type="file" multiple/>
+              <input id="file-input" type="file" multiple onchange="updateList()" />
               <div class="uploaded_files"></div>
           </div>
           <span class="field_label">By submitting this form, you confirm that you accept the <a href="#">Terms of Service.</a></span>
-          <button type="submit" class="button full"><span>Send request</span></button>
+          <button type="submit" class="button full creator_form_button"><span>Send request</span></button>
         </form>
 				<div class="switch-login-section">
 					{{ 'customer.login_page.already_have_an_account' | t }} 

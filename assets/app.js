@@ -1235,10 +1235,19 @@ document.addEventListener('DOMContentLoaded', () => {
     new FooterMenuToggle();
   }
 
-  document.getElementById('file-input').addEventListener('change', (e) => {
-    var files = e.target.files;
-        document.querySelector('.uploaded_files').innerHTML = `<p>${files.length}</p>`;
-    });
+  updateList = function() {
+    var input = document.getElementById('file-input');
+    var output = document.querySelector('.uploaded_files');
+    var children = "";
+    if(input.files.length > 1){
+      document.querySelector('.file-to-upload').classList.add('has_files')
+    }
+    for (var i = 0; i < input.files.length; ++i) {
+        children += '<li>' + input.files.item(i).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+  }
+  
 
   const tablinks = document.querySelectorAll('.tab');
     function showTabContent(formId){

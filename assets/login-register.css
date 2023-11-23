@@ -220,6 +220,31 @@
   position: relative;
   margin-bottom: 32px;
 }
+.creator_form .file-to-upload.has_files{
+  height: fit-content;
+}
+.creator_form .file-to-upload.has_files label{
+  position: relative;
+  left: 0;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  transform: none;
+}
+.creator_form .file-to-upload.has_files ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1.25rem;
+}
+.creator_form .file-to-upload.has_files ul li{
+  font-size: 14px;
+  font-weight: 400;
+  list-style: none;
+  background: #ECECEC;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
 #file-input{
   display: none;
 }
