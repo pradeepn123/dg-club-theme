@@ -158,7 +158,11 @@
 {% render 'photoswipe' %}
 <link rel="stylesheet" href="{{ 'photoswipe.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
-<script src="{{ 'product.js' | asset_url }}" defer="defer"></script>
+{% if product.template_suffix == 'products_without_editor' %}
+	<script src="{{ 'dynamic-product.js' | asset_url }}" defer="defer"></script>
+{% else %}
+	<script src="{{ 'product.js' | asset_url }}" defer="defer"></script>
+{% endif %}
 
 {%- if first_3d_model -%}
   <script type="application/json" id="ProductJSON-{{ product.id }}">

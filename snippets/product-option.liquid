@@ -67,14 +67,40 @@
 						>
 						<div class="form__group_custom">
 							<div class="form__group">
-								<label class="form__label_custom" for="default">Width</label>
-								<input class="form__input_width" id="custom_width" name="width" type="number" placeholder="Width" aria-invalid="false"/>
+								<label class="form__label_custom" for="custom_width">Width</label>
+								<input
+									class="form__input_width"
+									id="custom_width"
+									name="properties[Width]"
+									type="number"
+									placeholder="Width"
+									min="1"
+									required
+									form="{{ product_form_id }}"
+								/>
 							</div>
 							<div class="form__group">
-								<label class="form__label_custom" for="default">Height</label>
-								<input class="form__input_height" id="custom_height" name="height" type="number" placeholder="Height" aria-invalid="false"/>
+								<label class="form__label_custom" for="custom_height">Height</label>
+								<input
+									class="form__input_height"
+									id="custom_height"
+									name="properties[Height]"
+									type="number"
+									placeholder="Height"
+									min="1"
+									required
+									form="{{ product_form_id }}"
+								/>
 							</div>
+							<input
+								type="hidden"
+								form="{{ product_form_id }}"
+								id="custom_area"
+								required
+								name="properties[Total Area]"
+							/>
 						</div>
+						{% break %}			
 					{%- else -%}
 						<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
 							name="{{ option.name | append: appended }}"
