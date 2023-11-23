@@ -183,11 +183,12 @@
           "type": "collection",
           "settings": {
             "collection_list": [
-              "nandini-patel",
               "priya-singhania",
               "siddharth-sharma",
-              "aarav-sharma",
-              "designer-pattern-wallpaper"
+              "designer-pattern-wallpaper",
+              "nandini-patel",
+              "mural-wallpapers",
+              "frontpage"
             ],
             "title": "Decor Prints",
             "handle": "decor-prints"
