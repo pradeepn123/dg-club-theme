@@ -28,7 +28,7 @@
         "marker_color": "#fd6262",
         "text_color": "#2c2d2e",
         "overlay_color": "rgba(0,0,0,0)",
-        "overlay_opacity": 30,
+        "overlay_opacity": 0,
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
