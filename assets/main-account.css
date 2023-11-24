@@ -34,7 +34,7 @@
 .dashboard_tabs a:hover{
     color: #000;
 }
-.dashboard_tabs.active{
+.dashboard_tabs.active, .dashboard_tabs.active a{
     background: #4444E1;
     border-radius: 12px;
     color: #fff;

@@ -1248,8 +1248,8 @@ document.addEventListener('DOMContentLoaded', () => {
     output.innerHTML = '<ul>'+children+'</ul>';
   }
   
-
   const tablinks = document.querySelectorAll('.tab');
+  
     function showTabContent(formId){
       document.querySelectorAll('.thb-register-form form').forEach(elem => elem.classList.remove('showForm'))
       document.querySelector(`.${formId}`).classList.add('showForm')
@@ -1263,6 +1263,22 @@ document.addEventListener('DOMContentLoaded', () => {
         showTabContent(tab.getAttribute('data-form-tab'))
       })
     })
+    const artistDashboardTab = document.querySelector('.dashboard_tabs.artist_dashboard');
+    
+    
+    // redirectToArtistDashboard = function(){
+    //   if(window.location.pathname == '/account/addresses'){
+    //     window.location.pathname = '/account';
+    //     artistDashboardTab.click();
+    //   }
+    // }
+    // showArtistDashboard = function(){
+    //   tablinks.forEach(tabItem => {
+    //     tabItem.classList.remove('active');
+    //   })
+    //   artistDashboardTab.classList.add('active');
+    //   showAccountTabContent(tab.getAttribute('data-form-tab'))
+    // }
 
     const accountTablinks = document.querySelectorAll('.dashboard_tabs');
     function showAccountTabContent(formId){
