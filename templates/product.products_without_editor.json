@@ -39,6 +39,12 @@
             "sizing_guide_page": ""
           }
         },
+        "171460ad-3d60-42ee-862a-6dfbf7d92cab": {
+          "type": "price",
+          "settings": {
+            "product_price": true
+          }
+        },
         "quantity": {
           "type": "quantity",
           "settings": {
@@ -103,6 +109,7 @@
         "e431a79e-9c7b-4a53-a79a-0cb918617ecf",
         "title",
         "variant_picker",
+        "171460ad-3d60-42ee-862a-6dfbf7d92cab",
         "quantity",
         "buy_buttons",
         "07544690-9dc8-42f6-8c27-5ba63dfb3be0",
@@ -112,7 +119,7 @@
         "fc6da228-45eb-4a6e-aa68-d6ec477bec34"
       ],
       "settings": {
-        "enable_sticky_add_to_cart": true,
+        "enable_sticky_add_to_cart": false,
         "show_taxes_included": true,
         "thumbnail_position": "left",
         "media_aspect_ratio": "adapt",

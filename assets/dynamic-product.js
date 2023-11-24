@@ -261,7 +261,7 @@ if (!customElements.get('variant-selects')) {
         option2: this.currentVariant.option2 == "Custom" ? `${custom_width}x${custom_height} sqft` : this.currentVariant.option2,
         option3: this.currentVariant.option3 == "Custom" ? `${custom_width}x${custom_height} sqft` : this.currentVariant.option3,
       }
-      return totalArea > 1
+      return totalArea >= 1
     }
 
     toggleAddButton(disable = true, text = false, modifyClass = true) {
