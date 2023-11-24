@@ -122,7 +122,8 @@ address{
 body.open-cc{
     overflow: hidden;
 }
-.edit-address .button{
+.edit-address .button,
+#Side-Panel-Add-Address .button{
     margin-top: 20px;
 }
 .edit-address-button, .delete-address-button{
