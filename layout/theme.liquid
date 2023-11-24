@@ -100,7 +100,9 @@
 			gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin);
 		</script>
 	{% endif %}
-	{{ 'product.js' | asset_url | script_tag }}
+	{% unless product.template_suffix == 'products_without_editor' %}
+		{{ 'product.js' | asset_url | script_tag }}
+	{% endunless %}
 	{{ 'slideshow.js' | asset_url | script_tag }}
 	{{ 'app.js' | asset_url | script_tag }}
 	<script type="module" src="{{ 'scroll-shadow.js' | asset_url }}" defer="defer"></script>
