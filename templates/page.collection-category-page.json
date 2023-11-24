@@ -16,14 +16,7 @@
         "button_text": "",
         "button_link": "",
         "heading_size": "small",
-        "collection_list": [
-          "aarav-sharma",
-          "frontpage",
-          "nandini-patel",
-          "framed-prints",
-          "priya-singhania",
-          "siddharth-sharma"
-        ],
+        "collection_list": "{{ page.metafields.custom.collection_list.value }}",
         "image_ratio": "square",
         "collection_layout": "grid",
         "style": "style1",
@@ -46,4 +39,3 @@
     "8e4e8a64-a152-4ed6-875a-addad3cdb812"
   ]
 }
-
