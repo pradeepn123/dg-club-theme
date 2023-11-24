@@ -101,6 +101,7 @@
     border-radius: 12px;
     padding: 22px 15px;
     flex-basis: calc(100% / 3 - 21px);
+    min-height: 19.438rem;
 }
 .my-address .my_address_index{
     border-bottom: 1px solid #E4E4E4;
@@ -117,6 +118,12 @@ address{
     display: flex;
     gap: 16px;
     padding: 0 15px;
+}
+body.open-cc{
+    overflow: hidden;
+}
+.edit-address .button{
+    margin-top: 20px;
 }
 .edit-address-button, .delete-address-button{
     padding: 8px 15px;
@@ -333,6 +340,11 @@ address{
 .artist_dashboard_data td{
     border-bottom: 1px solid var(--color-border, #dadce0);
 }
+@media (min-width: 1024px) and (max-width: 1199px){
+    .customer-addresses .address{
+        flex-basis: calc(100% / 2 - 21px);
+    }
+}
 @media (max-width: 1023px){
     .account{
         width: 100vw;
@@ -359,7 +371,7 @@ address{
         display: none;
     }
     .dashboard_tabs{
-        padding: 10px 16px;
+        padding: 7px 16px;
         white-space: nowrap;
         border-radius: 60px !important;
         background: #ECECEC;
@@ -369,6 +381,9 @@ address{
     }
     .dashboard_tabs.logout{
         display: none;
+    }
+    .dashboard_tabs_content .tab_title{
+        padding: 11px 32px 11px;
     }
 
     /* Addresses */

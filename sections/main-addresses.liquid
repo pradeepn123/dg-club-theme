@@ -166,15 +166,17 @@
 									</div>
 								</div>
 							</div>
+							
 						{%- for address in customer.addresses -%}
 							{% unless address == customer.default_address %}
 								<div class="address" data-address>
 									<div class="my-address">
 										<div class="my_address_index">
+											{% if forloop.index == 1 %}
 											<span class="address-index">Address {{ forloop.index | plus: 1 }}</span>
-											{%- if address == customer.default_address -%}
-												<span class="address-default">default</span>
-											{%- endif -%}
+											{% else %}
+											<span class="address-index">Address {{ forloop.index }}</span>
+											{% endif %}
 										</div>
 										<address>
 											{{ address | format_address }}

@@ -30,7 +30,7 @@
   margin-left: auto;
   max-width: 73%;
 }
-.template_header.accout__header_info{
+.template_header.account__header_info{
   display: flex;
   justify-content: space-between;
   align-items: center;
