@@ -42,7 +42,7 @@
   max-width: 640px;
   margin: 0 auto;
   background: #fff;
-  border: 1px solid #DBDBDB;
+  /* border: 1px solid #DBDBDB; */
   border-radius: 8px;
   padding: 40px 16px;
 }
@@ -62,6 +62,17 @@
 .thb-form-container .thb-login-form .field input{
   border-radius: 8px;
   border: 1px solid #DBDBDB;
+}
+.thb-form-container #login .field input[type="email"]:valid+label,
+.thb-form-container #login .field input[type="password"]:valid+label,
+.thb-form-container #create_customer .field input[type="email"]:valid+label,
+.thb-form-container #create_customer .field input[type="password"]:valid+label{
+  background-color: var(--bg-body, #f5f5f5);
+  font-size: 0.6875rem;
+  padding: 0 6px;
+  height: auto;
+  left: 11px;
+  transform: translateY(-50%);
 }
 .thb-form-container .thb-login-form .field [type=submit]{
   background: #4444E1;
@@ -118,14 +129,17 @@
 }
 
 .thb-form-container h4 {
-  margin-bottom: 10px;
+  margin-bottom: 28px;
   text-align: center;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
-
+.thb-form-container .thb-register-form p{
+  margin-top: 24px;
+  font-size: 18px;
+}
 .thb-form-container p {
   font-size: 0.875rem;
-  margin-bottom: 35px;
+  margin-bottom: 32px;
   text-align: center;
 }
 
@@ -183,6 +197,7 @@
   font-size: 16px;
   padding: 16px;
   font-weight: 600;
+  min-width: 130px;
 }
 
 .register_button_container .tab.active{
@@ -215,6 +230,31 @@
   background: #FAFBFB;
   position: relative;
   margin-bottom: 32px;
+}
+.creator_form .file-to-upload.has_files{
+  height: fit-content;
+}
+.creator_form .file-to-upload.has_files label{
+  position: relative;
+  left: 0;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  transform: none;
+}
+.creator_form .file-to-upload.has_files ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1.25rem;
+}
+.creator_form .file-to-upload.has_files ul li{
+  font-size: 14px;
+  font-weight: 400;
+  list-style: none;
+  background: #ECECEC;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 #file-input{
   display: none;

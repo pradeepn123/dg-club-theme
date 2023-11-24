@@ -4398,7 +4398,7 @@ h6,
   .shopify-payment-button__more-options:hover svg,
   .spr-summary-actions-newreview:hover svg,
   .text-button:hover svg {
-    animation: text-button-arrow 0.35s linear forwards 1;
+    animation: text-button-arrow 0.2s linear forwards 1;
   }
 }
 
@@ -4434,16 +4434,16 @@ h6,
 
 @keyframes text-button-arrow {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 
-  50% {
+  /* 50% {
     transform: translateX(100%);
   }
 
   51% {
     transform: translateX(-100%);
-  }
+  } */
 
   100% {
     transform: translateX(0%);
@@ -4819,6 +4819,7 @@ select.resize-select {
   top: 0;
   left: 0;
   width: auto;
+  font-size: 18px;
   line-height: 1;
   padding: 12px 17px;
   height: 50px;

@@ -10,7 +10,7 @@
 						</svg>
 						Order History
 					</li>
-					<li class="dashboard_tabs addresses " data-tab="address_details">
+					<li class="dashboard_tabs addresses" data-tab="address_details">
 						<a href="/account/addresses">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 								<path d="M4 11.4522V16.8002C4 17.9203 4 18.4807 4.21799 18.9086C4.40973 19.2849 4.71547 19.5906 5.0918 19.7823C5.5192 20.0001 6.07899 20.0001 7.19691 20.0001H16.8031C17.921 20.0001 18.48 20.0001 18.9074 19.7823C19.2837 19.5906 19.5905 19.2849 19.7822 18.9086C20 18.4811 20 17.9216 20 16.8037V11.4522C20 10.9179 19.9995 10.6506 19.9346 10.4019C19.877 10.1816 19.7825 9.97307 19.6546 9.78464C19.5102 9.57201 19.3096 9.39569 18.9074 9.04383L14.1074 4.84383C13.3608 4.19054 12.9875 3.86406 12.5674 3.73982C12.1972 3.63035 11.8026 3.63035 11.4324 3.73982C11.0126 3.86397 10.6398 4.19014 9.89436 4.84244L5.09277 9.04383C4.69064 9.39569 4.49004 9.57201 4.3457 9.78464C4.21779 9.97307 4.12255 10.1816 4.06497 10.4019C4 10.6506 4 10.9179 4 11.4522Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -18,7 +18,7 @@
 							Addresses
 						</a>
 					</li>
-					<li class="dashboard_tabs artist_dashboard " data-tab="artist_details">
+					<li class="dashboard_tabs artist_dashboard " data-tab="artist_details" onclick="showArtistDashboard();">
 						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
 							<path d="M19 21C19 17.134 15.866 14 12 14C8.13401 14 5 17.134 5 21M12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7C16 9.20914 14.2091 11 12 11Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
@@ -35,10 +35,10 @@
 				</ul>
 			</div>
 			<div class="dashboard_content">
-				<div class="dashboard_tabs_content showTab">
+				<div class="dashboard_tabs_content order_details showTab">
 					<p class="tab_title">Order history</p>
 					<div class="order_details_content desktop">
-						{% paginate customer.orders by 20 %}
+						{% paginate customer.orders by 6 %}
 						{%- if customer.orders.size > 0 -%}
 							<table class="no-borders">
 								<thead>
@@ -86,7 +86,7 @@
 					</div>
 
 					<div class="order_details_content mobile">
-						{% paginate customer.orders by 20 %}
+						{% paginate customer.orders by 6 %}
 							{%- if customer.orders.size > 0 -%}
 								<table class="no-borders">
 								
@@ -139,8 +139,73 @@
 				<div class="dashboard_tabs_content address_details">
 					<p class="tab_title">addresses</p>
 				</div>
-				<div class="dashboard_tabs_content artist_details">
-					<p class="tab_title">Artist</p>
+				<div class="dashboard_tabs_content artist_details" id="artistDashboard">
+					<p class="tab_title">Artist Directory</p>
+					<div class="artist_directory_content">
+						<div class="earnings">
+							<table class="no-borders">
+								<thead>
+									<tr>
+										<th id="ColumnOrder" scope="col" role="columnheader">Total earnings</th>
+										<th id="ColumnDate" scope="col" role="columnheader">Current Month</th>
+										<th id="ColumnDate" scope="col" role="columnheader">Total Payout</th>
+									</tr>
+							  	</thead>
+								<tbody role="rowgroup">
+									<td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Total earnings">
+										$ 5,780.00
+									  </td>
+									  <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Current Month">
+										$ 100.00
+									  </td>
+									  <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Total Payout">
+										$ 100.00
+									  </td>
+								</tbody>
+							</table>
+						</div>
+						<div class="earning_details">
+							<div class="earning_header">
+								<p>Commission History</p>
+								<div class="sortDropdown">
+									<button id="dropdownBtnSort"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+										<path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 2.29289C5.47386 2.11193 5.72386 2 6 2C6.27614 2 6.52614 2.11193 6.70711 2.29289L9.70711 5.29289C10.0976 5.68342 10.0976 6.31658 9.70711 6.70711C9.31658 7.09763 8.68342 7.09763 8.29289 6.70711L7 5.41421V13C7 13.5523 6.55228 14 6 14C5.44772 14 5 13.5523 5 13V5.41421L3.70711 6.70711C3.31658 7.09763 2.68342 7.09763 2.29289 6.70711C1.90237 6.31658 1.90237 5.68342 2.29289 5.29289L5.29289 2.29289ZM13 7C13 6.448 13.448 6 14 6C14.553 6 15 6.448 15 7V14.585L16.293 13.293C16.683 12.902 17.317 12.902 17.707 13.293C17.903 13.488 18 13.744 18 14.001C18 14.256 17.903 14.512 17.707 14.707L14.707 17.707C14.527 17.888 14.277 18 14 18C13.724 18 13.474 17.888 13.293 17.707L10.293 14.707C10.098 14.512 10 14.256 10 14.001C10 13.744 10.098 13.488 10.293 13.293C10.684 12.902 11.316 12.902 11.707 13.293L13 14.585V7Z" fill="#5C5F62"/>
+									  </svg> Sort By</button>
+									<div id="dropdownSortOptions" class="dropdownSortOptions" style="visibility: hidden;">
+									<a href="#" class="sortOption">Alphabetically, A-Z</a>
+									<a href="#" class="sortOption">Alphabetically, Z-A</a>
+									<a href="#" class="sortOption">Date, old to new</a>
+									<a href="#" class="sortOption">Date, new to old</a>
+									</div>
+								</div>
+							</div>
+							<table class="artist_dashboard_table no-borders">
+								<thead class="artist_dashboard_header">
+									<th>Product Name</th>
+									<th>Qty Sold</th>
+									<th>Commission earned</th>
+								</thead>
+								<tbody class="artist_dashboard_data">
+										{% assign customerName = customer.name %}
+										{% for product in collections[customerName].products %}
+											<tr>
+												<td data-label="Product Name">
+													{%- render 'responsive-image', image: product.featured_image, sizes: '300x250,600x500' -%}
+													<p>{{ product.title }}</p>
+												</td>
+												<td data-label="Qty Sold">
+													15
+												</td>
+												<td data-label="Commission earned">
+													{{ product.price | money }}
+												</td>
+											</tr>
+										{% endfor %}
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

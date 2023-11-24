@@ -20,14 +20,13 @@
 			          autocorrect="off"
 			          autocapitalize="off"
 			          autocomplete="email"
-								placeholder="{{ 'customer.login_page.email' | t | escape }}"
+								{% comment %} placeholder="{{ 'customer.login_page.email' | t | escape }}" {% endcomment %}
 			          {% if form.errors %}
 			            aria-invalid="true"
 			            aria-describedby="RecoverEmail-email-error"
 			            autofocus
 			          {% endif %}
 								class="full"
-			          placeholder="{{ 'customer.login_page.email' | t }}"
 			        >
 			        <label for="RecoverEmail">
 			          {{ 'customer.login_page.email' | t }}
@@ -51,7 +50,7 @@
 						{% endif %}
             <div class="field">
               <input type="email" name="customer[email]" class="full {% if form.errors contains 'form' %}invalid{% endif %}" value=""
-								autocomplete="email"
+								{% comment %} autocomplete="email" {% endcomment %}
 								autocorrect="off"
 								autocapitalize="off"
 								placeholder="{{ 'customer.login_page.email' | t }}"

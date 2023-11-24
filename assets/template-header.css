@@ -13,7 +13,7 @@
 
 .template-header--title {
   margin-bottom: 0;
-  font-size: 32px;
+  font-size: 32px !important;
   font-weight: 700;
 }
 
@@ -26,7 +26,7 @@
   flex-direction: column;
   grid-gap: 24px;
 }
-.template_header.accout__header_info{
+.template_header.account__header_info{
   display: flex;
   justify-content: space-between;
   align-items: center;
