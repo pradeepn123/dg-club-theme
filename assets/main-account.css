@@ -110,9 +110,15 @@
     display: flex;
     align-items: center;
 }
+.my-address .my_address_index .address-index{
+    font-size: 16px
+}
 address{
     padding: 18px 15px;
     font-style: normal;
+}
+address p{
+    font-size: 16px;
 }
 .address_button_block{
     display: flex;
