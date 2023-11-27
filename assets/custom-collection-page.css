@@ -136,18 +136,19 @@
     padding: 0;
 }
 .sidebar-container--tabbed-filters {
-    display: flex;
+    display: block;
     column-gap: 16px;
     margin-bottom: 48px;
 }
-.sidebar-container--tabbed-filters button {
+.sidebar-container--tabbed-filters .tag-filters__item {
     padding: 1px 16px;
     height: 40px;
     border-radius: 60px;
     background: #ECECEC;
     cursor: pointer;
 }
-.sidebar-container--tabbed-filters button a {
+.sidebar-container--tabbed-filters button a,
+.sidebar-container--tabbed-filters .tag-filters__item {
     font-family: inherit;
     font-size: 16px;
     font-weight: 600;
@@ -160,4 +161,14 @@
 }
 .sidebar-container--tabbed-filters button.active a {
     color: #fff;
+}
+
+.sidebar-container--tabbed-filters .tabs__controls{
+    margin-bottom: 65px;
+}
+.sidebar-container--tabbed-filters .tabs__controls .tag-filters__item{
+    margin-right: 16px;
+}
+.sidebar-container--tabbed-filters .tabs__controls .tag-filters__item:last-child{
+    margin-right: 0;
 }
