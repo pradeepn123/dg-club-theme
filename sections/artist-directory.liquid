@@ -1,196 +1,257 @@
 {{- 'artist-directory.css' | asset_url | stylesheet_tag -}}
-{{- 'facets.css' | asset_url | stylesheet_tag -}}
+
 {%- liquid
-	assign section_heading = section.settings.heading
-	assign marker_style = section.settings.marker_style
-	
-	assign pagination_type = section.settings.pagination_type
-	assign columns_desktop = section.settings.columns_desktop
-	assign collection_list_pagination_num = section.settings.collection_list_pagination_num
-	assign products_count = section.settings.products_count
-	assign heading_position = section.settings.heading_position
-	assign heading_size = section.settings.heading_size
+  assign section_heading = section.settings.heading
+  assign heading_size = section.settings.heading_size
+  assign columns_desktop = section.settings.columns_desktop
+  assign collection_list_pagination_num = section.settings.collection_list_pagination_num
+  assign style = section.settings.style
+  assign heading_position = section.settings.heading_position
+  assign text_color = section.settings.text_color
+  assign overlay_color = section.settings.overlay_color
+  assign overlay_opacity = section.settings.overlay_opacity
+  assign disable_top_spacing = section.settings.disable_top_spacing
+  assign disable_bottom_spacing = section.settings.disable_bottom_spacing
 
-	assign enable_sorting = section.settings.enable_sorting
-
+  assign products_count = section.settings.products_count
+  assign pagination_type = section.settings.pagination_type
 -%}
 
-<div class="row main-collection">
-	<div class="small-12 columns">
-		{%- if section_heading != blank -%}
-			<div class="section-header">
-				<div class="section-header--content">
-					<h1 class="section-header--title">
-						{% render 'animated-marker-heading', heading: section_heading, style: marker_style %}
-					</h1>
-				</div>
-				{% if enable_sorting %}
-					<div class="sort">
-						<select name="sort" id="sort">
-							<option value="alphabetical"> Alphabetically, A-Z </option>
-							<option value="alphabetical_reversed"> Alphabetically, Z-A </option>
-							<option value="date_reversed"> Date, new to old </option>
-							<option value="date"> Date, old to new </option>
-							<option value="products_high"> Product count, high to low </option>
-							<option value="products_low"> Product count, low to high </option>
-						</select>
-					</div>
-				{% endif %}
-			</div>
-		{% endif %}
-		{%- paginate collections by collection_list_pagination_num -%}
-			<div class="collection-container section-spacing-bottom">
-				<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collections == 0 %} collection--empty{%- endif -%}">
-					{%- if collections == 0 -%}
-						<div class="collection-empty">
-							{% render 'svg-icons' with 'thb-no-products' %}
-							<p>
-								{{ 'sections.collection_template.empty' | t }}<br>
-								{%- if collection.terms -%}
-								{{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url }}
-								{%- endif -%}
-							</p>
-						</div>
-					{%- else -%}
-						{%- for collection in collections -%}
-							<li class="column">
-								{% render 'collection-card', grid_collection: collection, media_aspect_ratio: section.settings.image_ratio, style: style, index: forloop.index, columns_desktop: columns_desktop, heading_position: heading_position, heading_size: heading_size, products_count: products_count %}
-							</li>
-						{%- endfor -%}
-					{%- endif -%}
-				</ul>
-				{% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}
-			</div>
-		{%- endpaginate -%}
-	</div>
+<div class="row main-collection artist-collection-grid">
+  <div class="small-12 columns">
+    {%- if section_heading != blank -%}
+      <div class="section-header">
+        <div class="section-header--content">
+          {%- if section_heading -%}
+            <h1 class="section-header--title">
+              {% render 'animated-marker-heading', heading: section_heading, style: marker_style %}
+            </h1>
+          {%- endif -%}
+        </div>
+      </div>
+    {% endif %}
+    {%- paginate collections by collection_list_pagination_num -%}
+      <div class="collection-container section-spacing-bottom">
+        <div id="ProductGridContainer">
+          <div class="sidebar-container results--{{ collections.size }}">
+            <div>
+              <ul
+                id="product-grid"
+                data-id="{{ section.id }}"
+                class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}"
+              >
+                {% for collection in collections %}
+                  <li class="column">
+                    {% render 'collection-card',
+                      grid_collection: collection,
+                      media_aspect_ratio: section.settings.image_ratio,
+                      style: style,
+                      index: forloop.index,
+                      columns_desktop: columns_desktop,
+                      heading_position: heading_position,
+                      heading_size: heading_size,
+                      products_count: products_count
+                    %}
+                  </li>
+                {%- endfor -%}
+              </ul>
+              {% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endpaginate -%}
+  </div>
 </div>
-
 {% schema %}
-  {
-    "name": "Artist Directory list",
-    "settings": [
-		{
-			"type": "header",
-			"content": "Heading"
-		},
-		{
-			"type": "text",
-			"id": "heading",
-			"label": "Heading",
-			"default": "Shop by Category",
-			"info": "Wrap your text between | to add animated markers. For example: Animated |marker| will underline marker text."
-		},
-		{
-			"type": "header",
-			"content": "Product grid"
-		},
-		{
-			"type": "select",
-			"id": "image_ratio",
-			"options": [
-			  {
-				"value": "adapt",
-				"label": "Adapt to image"
-			  },
-			  {
-				"value": "portrait",
-				"label": "Portrait"
-			  },
-			  {
-				"value": "square",
-				"label": "Square"
-			  }
-			],
-			"default": "square",
-			"label": "Image ratio",
-			"info": "Add images by editing your collections. [Learn more](https://help.shopify.com/en/manual/products/collections)"
-		  },
-		  {
-			"type": "range",
-			"id": "collection_list_pagination_num",
-			"min": 2,
-			"max": 30,
-			"step": 1,
-			"label": "Collections per page",
-			"default": 9
-		  },
-			{
-        "type": "range",
-        "id": "columns_desktop",
-        "min": 2,
-        "max": 5,
-        "step": 1,
-        "label": "Number of columns on desktop",
-        "default": 3
-      },
-			{
-	      "type": "select",
-	      "id": "pagination_type",
-	      "options": [
-	        {
-	          "value": "paginated",
-	          "label": "Paginated"
-	        },
-	        {
-	          "value": "loadmore",
-	          "label": "Click to load"
-	        },
-	        {
-	          "value": "infinite",
-	          "label": "Infinite"
-	        }
-	      ],
-	      "default": "paginated",
-	      "label": "Pagination",
-	      "info": "Choose how additional pages of products are navigated."
-	    },
-		{
-			"type": "checkbox",
-			"id": "products_count",
-			"default": false,
-			"label": "Show product count"
-		  },
-		  {
-			"type": "select",
-			"id": "heading_position",
-			"label": "Heading position",
-			"options": [
-				{ "value": "left", "label": "Left" },
-				{ "value": "center", "label": "Center" },
-				{ "value": "right", "label": "Right" }
-			],
-			"default": "center"
-	   },
-	   {
-		"type": "select",
-		"id": "heading_size",
-		"options": [
-			{
-				"value": "small",
-				"label": "Small"
-			},
-			{
-				"value": "medium",
-				"label": "Medium"
-			},
-			{
-				"value": "large",
-				"label": "Large"
-			}
-		],
-		"default": "small",
-		"label": "Collection heading size"
-	},
-	    {
-	      "type": "header",
-	      "content": "Sorting"
-	    },
-	    {
-	      "type": "checkbox",
-	      "id": "enable_sorting",
-	      "default": true,
-	      "label": "Enable sorting"
-	    }
-    ]
-  }
+{
+  "name": "Artist Directory list",
+  "class": "directory-collection-list-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop by category"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ],
+      "default": "small",
+      "label": "Collection heading size"
+    },
+    {
+      "type": "select",
+      "id": "pagination_type",
+      "options": [
+        {
+          "value": "paginated",
+          "label": "Paginated"
+        },
+        {
+          "value": "loadmore",
+          "label": "Click to load"
+        },
+        {
+          "value": "infinite",
+          "label": "Infinite"
+        }
+      ],
+      "default": "paginated",
+      "label": "Pagination",
+      "info": "Choose how additional pages of products are navigated."
+    },
+    {
+      "type": "checkbox",
+      "id": "products_count",
+      "default": false,
+      "label": "Show product count"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
+        },
+        {
+          "value": "square",
+          "label": "Square"
+        }
+      ],
+      "default": "square",
+      "label": "Image ratio",
+      "info": "Add images by editing your collections. [Learn more](https://help.shopify.com/en/manual/products/collections)"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "options": [
+        {
+          "value": "style1",
+          "label": "Underneath image"
+        },
+        {
+          "value": "style2",
+          "label": "Over image"
+        }
+      ],
+      "default": "style1",
+      "label": "Style"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4,
+      "label": "Number of columns on desktop"
+    },
+    {
+      "type": "range",
+      "id": "collection_list_pagination_num",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "label": "Collections per page",
+      "default": 9
+    },
+    {
+      "type": "header",
+      "content": "Over image"
+    },
+    {
+      "type": "select",
+      "id": "heading_position",
+      "label": "Heading position",
+      "options": [
+        { "value": "top-left", "label": "Top left" },
+        { "value": "top-center", "label": "Top center" },
+        { "value": "top-right", "label": "Top right" },
+        { "value": "middle-left", "label": "Middle left" },
+        { "value": "middle-center", "label": "Middle center" },
+        { "value": "middle-right", "label": "Middle right" },
+        { "value": "bottom-left", "label": "Bottom left" },
+        { "value": "bottom-center", "label": "Bottom center" },
+        { "value": "bottom-right", "label": "Bottom right" }
+      ],
+      "default": "bottom-center"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text",
+      "default": "#2C2D2E"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay",
+      "default": "transparent"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_top_spacing",
+      "default": true,
+      "label": "Remove top spacing"
+    },
+    {
+      "type": "checkbox",
+      "id": "disable_bottom_spacing",
+      "default": false,
+      "label": "Remove bottom spacing"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}

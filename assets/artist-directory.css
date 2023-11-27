@@ -64,40 +64,40 @@
 
 
 
-.collection-card--image {
+.artist-collection-grid .collection-card--image {
   isolation: isolate;
   border-radius: var(--block-border-radius, 16px); 
 }
 
-.collection-card--image {
+.artist-collection-grid .collection-card--image {
   box-shadow: var(--block-shadows); 
 }
 
-.collection-list-section .list-collections .section-header .section-header--content .section-header--title{
+.collection-list-section .artist-list-collections .section-header .section-header--content .section-header--title{
   font-size: var(--font-size-title-desktop);
   font-weight: var(--font-weight-heading);
   line-height: 52px;
 }
 @media only screen and (max-width: 767px) {
-  .collection-list-section .list-collections .section-header .section-header--content .section-header--title{
+  .collection-list-section .artist-list-collections .section-header .section-header--content .section-header--title{
     font-size: var(--font-size-title-mobile);
     line-height: 41.6px;
   }
 }
 
-.collection-grid {
+.artist-collection-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px 21px; 
 }
 @media only screen and (min-width: 768px) {
-  .collection-grid {
+  .artist-collection-grid {
     grid-template-columns: repeat(var(--var-collection-list-columns), 1fr);
     grid-gap: 30px; 
   } 
 }
 @media only screen and (max-width: 767px) {
-  .collection-grid.swipe-on-mobile {
+  .artist-collection-grid.swipe-on-mobile {
     display: grid;
     grid-auto-flow: column;
     grid-auto-columns: minmax(calc(90vw - 15px), 1fr);
@@ -109,88 +109,98 @@
     width: calc(100% + 30px);
     padding: 0 15px; 
   }
-  .collection-grid.swipe-on-mobile::-webkit-scrollbar {
+  .artist-collection-grid.swipe-on-mobile::-webkit-scrollbar {
     display: none; 
   }
-  .collection-grid.swipe-on-mobile .collection-card {
+  .artist-collection-grid.swipe-on-mobile .collection-card {
     margin-bottom: 10px; 
   }
 }
 @media only screen and (max-width: 767px) {
-  .collection-grid.swipe-on-mobile.mobile-columns--2 {
+  .artist-collection-grid.swipe-on-mobile.mobile-columns--2 {
     grid-auto-columns: minmax(calc(55vw - 30px), 1fr);
     grid-template-columns: repeat(auto-fill, minmax(calc(55vw - 30px), 1fr)); 
     padding-right: 60px;
   } 
 }
-.collection-grid__carousel {
+.artist-collection-grid__carousel {
   display: block;
   grid-gap: 0;
   overflow: visible; 
 }
-.collection-grid__carousel .columns {
+.artist-collection-grid__carousel .columns {
   width: 100%; 
 }
 @media only screen and (min-width: 768px) {
-  .collection-grid__carousel {
+  .artist-collection-grid__carousel {
     margin: 0 -15px; 
   } 
 }
 @media only screen and (max-width: 767px) {
-  .collection-grid__carousel .flickity-slider {
+  .artist-collection-grid__carousel .flickity-slider {
     margin: 0 -4px;
     width: calc(100% + 8px); 
   }
-  .collection-grid__carousel .flickity-viewport {
+  .artist-collection-grid__carousel .flickity-viewport {
     overflow: visible; 
   } 
 }
-.collection-grid__carousel .flickity-nav.flickity-prev {
+.artist-collection-grid__carousel .flickity-nav.flickity-prev {
   left: -9px;
   top: 43%;
 }
-.collection-grid__carousel .flickity-nav.flickity-next {
+.artist-collection-grid__carousel .flickity-nav.flickity-next {
   right: -9px; 
   top: 43%;
 }
 @media only screen and (max-width: 1200px) {
-  .collection-grid__carousel .flickity-nav.flickity-prev {
+  .artist-collection-grid__carousel .flickity-nav.flickity-prev {
     top: 40%;
   }
-  .collection-grid__carousel .flickity-nav.flickity-next {
+  .artist-collection-grid__carousel .flickity-nav.flickity-next {
     top: 40%;
   }
 }
 @media only screen and (max-width: 768px) {
-  .collection-grid__carousel .flickity-nav.flickity-prev {
+  .artist-collection-grid__carousel .flickity-nav.flickity-prev {
     top: 38%;
   }
-  .collection-grid__carousel .flickity-nav.flickity-next {
+  .artist-collection-grid__carousel .flickity-nav.flickity-next {
     top: 38%;
   }
 }
 
-.collection-card {
+.artist-collection-grid .collection-card {
   width: 100%;
   position: relative;
 }
 
-.collection-card--link {
+.artist-collection-grid .collection-card--link {
   display: block;
   margin-bottom: 0;
-  color: var(--collection-text-color, var(--color-body, #2c2d2e));
-  font-size: 1.0625rem;
-  line-height: 1.2;
-  font-weight: 500;
+  color: var(--collection-text-color, var(--color-body, #000));
+  line-height: 1.3;
   width: 100%;
+
+  font-family: inherit;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 768px) {
+  .artist-collection-grid .collection-card--link {
+    font-size: 16px;
+    line-height: 1.2;
+  }
 }
 
-.collection-card--link:hover {
+.artist-collection-grid .collection-card--link:hover {
   color: var(--collection-text-color, var(--color-body, #2c2d2e));
 }
 
 @media only screen and (min-width: 1068px) {
-  .collection-card--link-medium {
+  .artist-collection-grid .collection-card--link-medium {
     font-size: 20px;
     font-weight: 600;
     line-height: 26px;
@@ -199,26 +209,26 @@
 }
 
 @media only screen and (min-width: 1068px) {
-  .collection-card--link-large {
+  .artist-collection-grid .collection-card--link-large {
     font-size: 2rem;
   }
 }
 
 
-.collection-card--image {
+.artist-collection-grid .collection-card--image {
   position: relative;
   height: 0;
   overflow: hidden;
   z-index: 5;
 }
 
-.collection-card--image img {
+.artist-collection-grid .collection-card--image img {
   display: block;
   will-change: scale;
 }
 
-.collection-card--image img,
-.collection-card--image .thb-placeholder {
+.artist-collection-grid .collection-card--image img,
+.artist-collection-grid .collection-card--image .thb-placeholder {
   position: absolute;
   top: 0;
   left: 0;
@@ -227,19 +237,19 @@
   object-fit: cover;
 }
 
-.collection-card--image.media-aspect-square {
+.artist-collection-grid .collection-card--image.media-aspect-square {
   padding-bottom: 100%;
 }
 
-.collection-card--image.media-aspect-portrait {
+.artist-collection-grid .collection-card--image.media-aspect-portrait {
   padding-bottom: 125%;
 }
 
-.collection-card--image.media-aspect-adapt {
+.artist-collection-grid .collection-card--image.media-aspect-adapt {
   padding-bottom: var(--var-media-aspect-ratio);
 }
 
-.collection-card--image:after {
+.artist-collection-grid .collection-card--image:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -251,39 +261,39 @@
   background: rgba(var(--overlay-color-rgb), var(--overlay-opacity));
 }
 
-.collection-card.style1 .collection-card--image {
+.artist-collection-grid .collection-card.style1 .collection-card--image {
   margin-bottom: 20px;
 }
 
-.collection-card.style1 .collection-card--content {
-  text-align: center;
+.artist-collection-grid .collection-card.style1 .collection-card--content {
+  text-align: left;
 }
 
-.collection-card.style1 .collection-card--content .collection-card--link {
+.artist-collection-grid .collection-card.style1 .collection-card--content .collection-card--link {
   display: inline-block;
   margin: 0;
   height: auto;
 }
 
-.collection-card.style1:hover img,
-.collection-card.style1:focus img {
+.artist-collection-grid .collection-card.style1:hover img,
+.artist-collection-grid .collection-card.style1:focus img {
   transform: scale(1.05);
 }
 
-.collection-card .collection-card--content .collection-card--link-left {
+.artist-collection-grid .collection-card .collection-card--content .collection-card--link-left {
     text-align: left;
 }
 
-.collection-card .collection-card--content .collection-card--link-center {
+.artist-collection-grid .collection-card .collection-card--content .collection-card--link-center {
     text-align: center;
 }
 
-.collection-card .collection-card--content .collection-card--link-right {
+.artist-collection-grid .collection-card .collection-card--content .collection-card--link-right {
     text-align: right;
 }
 
 /* custom button */
-.list-collections .section-header .button {
+.artist-artist-list-collections .section-header .button {
   height: 52px;
   width: 136px;
   font-size: 18px;
@@ -292,43 +302,42 @@
   text-transform: capitalize;
   border-radius: 60px;
 }
-.list-collections .section-header {
+.artist-artist-list-collections .section-header {
   row-gap: 16px;
 }
 
 
-.collection-container .collection .column .collection-card {
+.collection-container .collection .column .artist-collection-grid .collection-card {
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.collection-container .collection .column .collection-card .collection-card--content .collection-card--link {
+.artist-collection-grid .collection-card--content .collection-card--link {
     font-size: 20px;
     font-weight: 600;
     line-height: 26px;
     text-transform: capitalize;
 }
 
-.collection-container .collection .column .collection-card .collection-card--content p {
-    margin-top: 16px;
+.artist-collection-grid .collection-card--content p {
     font-size: 18px;
     font-weight: 400;
     line-height: 17px;
 }
 
 @media only screen and (max-width: 767px) {
-  .collection-container .collection .column .collection-card {
+  .collection-container .collection .column .artist-collection-grid .collection-card {
     gap: 18px;
-}
-  .collection-container .collection .column .collection-card .collection-card--content .collection-card--link {
+  }
+  .artist-collection-grid .collection-card--content .collection-card--link {
     font-size: 16px;
     line-height: 19px;
   }
-  .collection-container .collection .column .collection-card .collection-card--content p {
-      margin-top: 9px;
-      font-size: 14px;
-      line-height: 17px;
+  .artist-collection-grid .collection-card--content p {
+    margin-top: 9px;
+    font-size: 14px;
+    line-height: 17px;
   }
 }
 
@@ -344,4 +353,17 @@
 
 .main-collection .section-header {
   row-gap: 24px;
+}
+
+.pagination {
+  margin-top: 48px;
+}
+
+.collection-card.style2 .collection-card--content {
+  flex-direction: column;
+}
+
+.collection-grid__carousel .flickity-nav.flickity-next,
+  .collection-grid__carousel .flickity-nav.flickity-prev {
+  top: 40%;
 }
