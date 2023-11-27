@@ -1350,6 +1350,14 @@ screen and (min-width: 48em) {
     max-width: 25%;
   }
 
+  @media only screen and (min-width: 768px) and (max-width: 990px) {
+    .medium-up-4>.column,
+    .medium-up-4>.columns {
+      flex: 0 0 33%;
+      max-width: 33%;
+    }
+  }
+
   .medium-up-5 {
     flex-wrap: wrap;
   }

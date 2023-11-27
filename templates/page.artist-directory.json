@@ -188,7 +188,7 @@
         "button_enabled": false,
         "button_text": "",
         "button_link": "",
-        "heading_size": "medium",
+        "heading_size": "small",
         "collection_list": [
           "aarav-sharma",
           "priya-singhania",
@@ -218,14 +218,19 @@
       "type": "artist-directory",
       "settings": {
         "heading": "Shop by Creators",
-        "image_ratio": "square",
-        "collection_list_pagination_num": 4,
-        "columns_desktop": 4,
+        "heading_size": "small",
         "pagination_type": "loadmore",
         "products_count": true,
-        "heading_position": "left",
-        "heading_size": "small",
-        "enable_sorting": true
+        "image_ratio": "square",
+        "style": "style1",
+        "columns_desktop": 4,
+        "collection_list_pagination_num": 8,
+        "heading_position": "top-left",
+        "text_color": "#000000",
+        "overlay_color": "rgba(0,0,0,0)",
+        "overlay_opacity": 0,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
       }
     }
   },
