@@ -228,9 +228,7 @@
         "heading_position": "top-left",
         "text_color": "#000000",
         "overlay_color": "rgba(0,0,0,0)",
-        "overlay_opacity": 0,
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "overlay_opacity": 0
       }
     }
   },
