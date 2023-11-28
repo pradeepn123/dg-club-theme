@@ -23,11 +23,15 @@
         "products_per_page": 12,
         "columns_desktop": 4,
         "pagination_type": "paginated",
-        "enable_filtering": false,
+        "photo_gift_heading": "Photo Gifts",
+        "photo_gift_collection": "photo-gifts",
+        "decor_print_heading": "Decor Prints",
+        "decor_collection": "aaarav-sharma",
+        "enable_filtering": true,
         "enable_sorting": true,
         "show_counts": true,
         "filter_color_swatches": false,
-        "facets_desktop": "sidebar"
+        "facets_desktop": "drawer"
       }
     },
     "9e57bc14-72e8-48b3-81d3-9b209e520fd0": {

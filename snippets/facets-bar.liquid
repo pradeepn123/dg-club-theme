@@ -39,12 +39,12 @@
 							<scroll-shadow>
 								<ul>
 									{%- for option in results.sort_options -%}
-				            <li class="custom-select--item" tabindex="-1">
-				              <button class="{% if option.value == sort_by %}custom-select--item-active{% endif %}" {% if option.value == sort_by %} aria-current="true"{% endif %} data-value="{{ option.value | escape }}">
+										<li class="custom-select--item" tabindex="-1">
+											<button class="{% if option.value == sort_by %}custom-select--item-active{% endif %}" {% if option.value == sort_by %} aria-current="true"{% endif %} data-value="{{ option.value | escape }}">
 												{{ option.name | escape }}
-				              </button>
-				            </li>
-				          {%- endfor -%}
+											</button>
+										</li>
+				          			{%- endfor -%}
 								</ul>
 							</scroll-shadow>
 						</div>

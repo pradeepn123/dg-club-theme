@@ -491,3 +491,51 @@
   position: relative;
   cursor: pointer;
   z-index: 4; }
+
+
+tabs-group {
+  display: block;
+}
+
+.tabs__controls button {
+  width: 100%;
+  padding: 8px 20px;
+  border: none;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  font-size: 18px;
+  transition: 0.4s;
+  cursor: pointer;
+  appearance: none;
+}
+
+.tabs__controls button:hover,
+.tabs__controls button:focus {
+	background: #4444E1;
+	color: #ffffff;
+}
+
+.tabs__controls button[aria-selected="true"] {
+  background: #4444E1;
+	color: #ffffff;
+}
+
+.tabs__panel__inner {
+  padding: 20px;
+  background: white;
+}
+
+
+@media screen and (min-width: 768px) {
+  .tabs__controls button {
+    width: auto;
+  }
+
+  .tabs__panel__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+  }
+  
+}

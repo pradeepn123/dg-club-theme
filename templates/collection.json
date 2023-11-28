@@ -25,11 +25,11 @@
         "products_per_page": 4,
         "columns_desktop": 4,
         "pagination_type": "loadmore",
-        "enable_filtering": false,
-        "enable_sorting": false,
-        "show_counts": false,
+        "enable_filtering": true,
+        "enable_sorting": true,
+        "show_counts": true,
         "filter_color_swatches": false,
-        "facets_desktop": "sidebar"
+        "facets_desktop": "drawer"
       }
     },
     "9e57bc14-72e8-48b3-81d3-9b209e520fd0": {
