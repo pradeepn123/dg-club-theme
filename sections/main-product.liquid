@@ -154,10 +154,12 @@
 	</div>
 </div>
 {%- endif -%}
+
 {%- if section.settings.lightbox != blank -%}
-{% render 'photoswipe' %}
-<link rel="stylesheet" href="{{ 'photoswipe.css' | asset_url }}" media="print" onload="this.media='all'">
+  {% render 'photoswipe' %}
+  <link rel="stylesheet" href="{{ 'photoswipe.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
+
 {% if product.template_suffix == 'products_without_editor' %}
 	<script src="{{ 'dynamic-product.js' | asset_url }}" defer="defer"></script>
 {% else %}
