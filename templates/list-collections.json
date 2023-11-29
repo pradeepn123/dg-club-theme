@@ -8,40 +8,22 @@
     "main": {
       "type": "main-list-collections",
       "settings": {
-        "heading": "Shop by Creators",
-        "description": "",
-        "heading_size": "small",
+        "heading": "Shop by category",
+        "description": "<p>Add a short description for your collections<\/p>",
         "sort": "date",
         "image_ratio": "square",
-        "style": "style1",
-        "columns_desktop": 4,
-        "collection_list_pagination_num": 6,
-        "heading_position": "bottom-center",
-        "text_color": "#2c2d2e",
+        "style": "style2",
+        "columns_desktop": 3,
+        "collection_list_pagination_num": 12,
         "overlay_color": "#000000",
         "overlay_opacity": 0,
-        "disable_top_spacing": false,
+        "disable_top_spacing": true,
         "disable_bottom_spacing": false
-      }
-    },
-    "4bea29f3-780a-4e57-8080-4051ff243227": {
-      "type": "new-list-collections",
-      "settings": {
-        "heading": "Shop by Creators",
-        "image_ratio": "square",
-        "collection_list_pagination_num": 4,
-        "columns_desktop": 4,
-        "pagination_type": "loadmore",
-        "products_count": true,
-        "heading_position": "left",
-        "heading_size": "small",
-        "enable_sorting": true
       }
     }
   },
   "order": [
     "breadcrumbs",
-    "main",
-    "4bea29f3-780a-4e57-8080-4051ff243227"
+    "main"
   ]
 }

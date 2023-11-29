@@ -47,7 +47,7 @@
 					{%- render 'responsive-image', image: image, sizes: '90x90,180x180' -%}
 				</div>
 				{%- endif -%}				
-				<div class="template_header {% if template contains 'customers' %}accout__header_info{% endif %}">
+				<div class="template_header {% if template contains 'customers' %}account__header_info{% endif %}">
 					<h1 class="template-header--title h2">{{ heading }}</h1>
 					{%- if template == 'search' -%}
 						<form role="search" method="get" class="searchform" action="{{ routes.search_url }}">

@@ -4,7 +4,8 @@
 }
 
 .template-header {
-  padding: 30px 0;
+  padding: 40px 0 30px 0;
+  position: relative;
 }
 
 .template-header.reduce_padding_bottom{
@@ -12,8 +13,8 @@
 }
 
 .template-header--title {
-  margin-bottom: 0;
-  font-size: 32px !important;
+  margin-bottom: 32px;
+  font-size: 32px;
   font-weight: 700;
 }
 
@@ -24,7 +25,10 @@
 .template-header--content {
   display: flex;
   flex-direction: column;
-  grid-gap: 24px;
+  justify-content: space-between;
+  margin-top: 32px;
+  margin-left: auto;
+  max-width: 73%;
 }
 .template_header.account__header_info{
   display: flex;
@@ -50,28 +54,23 @@
 }
 
 .template-header--image {
-  width: 90px;
+  width: 254px;
+  border: 20px solid #f5f5f5;
+  border-radius: 50%;
+  position: absolute;
+  top: -65%;
+  left: 5%;
+}
+@media only screen and (max-width: 1200px) {
+  .template-header--image {
+    width: 200px;
+    top: -42%;
+  }
 }
 
 .template-header--image img {
   border-radius: 50%;
-}
-
-.template-header--description {
-  font-size: 0.9375rem;
-}
-
-@media only screen and (min-width: 768px) {
-  .template-header--title{
-    font-size: 40px;
-    font-weight: 700;
-  }
-  .template-header--description {
-    font-size: 1.0625rem;
-  }
-  .myaccount--link{
-    display: none;
-  }
+  border: 4px solid #4444E1;
 }
 
 .template-header>*:last-child {
@@ -82,10 +81,6 @@
   max-width: 440px;
   margin-top: 25px;
   margin-bottom: 15px;
-}
-
-.template-header .searchform+.template-header--description {
-  font-size: 0.8125rem;
 }
 
 .template-header--subcollections {
@@ -148,4 +143,89 @@
   background: transparent;
   padding: 0;
   box-shadow: none;
+}
+
+.template-header--banner {
+  padding: 0 50px;
+  max-width: 1380px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.template-header--banner img{
+  border-radius: 16px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.template_header .template-header--title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: capitalize;
+}
+.template_header .template-header--description-title {
+  margin-bottom: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1; 
+}
+.template_header .template-header--description-text {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.template_header {
+  max-width: 600px;
+}
+.template_header--share {
+  height: fit-content;
+  position: relative;
+  padding-left: 25px;
+  color: #4444E1;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30px;
+  text-decoration-line: underline;
+}
+.template_header--share svg {
+  position: absolute;
+  left: 0;
+  top: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+  .template-header--banner {
+    padding: 0;
+  }
+  .template-header--banner img{
+    border-radius: 0;
+    height: 170px;
+  }
+  .template-header--image {
+    width: 132px;
+    top: -21%;
+    left: 2%;
+  }
+  .template-header--content {
+    margin-top: 90px;
+    max-width: 100%;
+  }
+  .template_header .template-header--title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+  .template_header .template-header--description-text {
+    margin-bottom: 30px;
+    font-size: 16px;
+  }
+  .template-header {
+    padding: 20px 0;
+  }
+}
+.template-header .row .columns{
+  position: relative;
 }

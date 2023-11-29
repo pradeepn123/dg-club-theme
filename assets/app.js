@@ -1234,7 +1234,22 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof FooterMenuToggle !== 'undefined') {
     new FooterMenuToggle();
   }
+
+  updateList = function() {
+    var input = document.getElementById('file-input');
+    var output = document.querySelector('.uploaded_files');
+    var children = "";
+    if(input.files.length > 1){
+      document.querySelector('.file-to-upload').classList.add('has_files')
+    }
+    for (var i = 0; i < input.files.length; ++i) {
+        children += '<li>' + input.files.item(i).name + '</li>';
+    }
+    output.innerHTML = '<ul>'+children+'</ul>';
+  }
+  
   const tablinks = document.querySelectorAll('.tab');
+  
     function showTabContent(formId){
       document.querySelectorAll('.thb-register-form form').forEach(elem => elem.classList.remove('showForm'))
       document.querySelector(`.${formId}`).classList.add('showForm')
@@ -1248,4 +1263,52 @@ document.addEventListener('DOMContentLoaded', () => {
         showTabContent(tab.getAttribute('data-form-tab'))
       })
     })
+    const artistDashboardTab = document.querySelector('.dashboard_tabs.artist_dashboard');
+    
+    
+    // redirectToArtistDashboard = function(){
+    //   if(window.location.pathname == '/account/addresses'){
+    //     window.location.pathname = '/account';
+    //     artistDashboardTab.click();
+    //   }
+    // }
+    // showArtistDashboard = function(){
+    //   tablinks.forEach(tabItem => {
+    //     tabItem.classList.remove('active');
+    //   })
+    //   artistDashboardTab.classList.add('active');
+    //   showAccountTabContent(tab.getAttribute('data-form-tab'))
+    // }
+
+    const accountTablinks = document.querySelectorAll('.dashboard_tabs');
+    function showAccountTabContent(formId){
+      document.querySelectorAll('.dashboard_tabs_content').forEach(elem => elem.classList.remove('showTab'))
+      document.querySelector(`.${formId}`).classList.add('showTab')
+    }
+    accountTablinks.forEach(tab => {
+      tab.addEventListener('click', () => {
+        accountTablinks.forEach(tabItem => {
+          tabItem.classList.remove('active');
+        })
+        tab.classList.add('active');
+        showAccountTabContent(tab.getAttribute('data-tab'))
+      })
+    })
+
+    document.getElementById('dropdownBtnSort').addEventListener('click', () => {
+      showArtistDashboardSortDropDown()
+    })
+    function showArtistDashboardSortDropDown(){
+      const dropDownOptions = document.getElementById('dropdownSortOptions');
+      dropDownOptions.classList.toggle('activeFilter');
+      const sortOptions = document.querySelectorAll('#dropdownSortOptions .sortOption')
+      sortOptions.forEach(sortOption => {
+        sortOption.addEventListener('click', () => {
+          sortOptions.forEach(elem => elem.removeAttribute('selected'));
+          dropDownOptions.classList.remove('activeFilter');          
+          sortOption.setAttribute('selected', '');
+        })
+      })
+    } 
+    
 });

@@ -11,7 +11,7 @@
         assign show_dynamic_checkout = true
       endif
     -%}
-  <product-form class="product-form" data-section="{{ section.id }}" data-hide-errors="{{ gift_card_recipient_feature_active }}">
+  <product-form class="product-form" data-section="{{ section.id }}" data-hide-errors="{{ gift_card_recipient_feature_active }}" data-template-suffix="{{ product.template_suffix }}">
 		<div class="product-form__error-message-wrapper form-notification error" role="alert" hidden>
       {% render 'svg-icons' with 'thb-error' %}
       <span class="product-form__error-message"></span>

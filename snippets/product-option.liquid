@@ -4,105 +4,161 @@
 	endif
 
 	assign handle = option.name | replace: ' ', '-' | downcase | escape
+
+	
+    assign option_slug = option.name | downcase
+    assign sizing_guide_variant = block.settings.sizing_guide_variant | default: 'Size' | downcase            
 -%}
+
 {%- case option_type -%}
-{%- when 'dropdown' -%}
-	<fieldset class="product-form__input product-form__input--dropdown" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
-		<div class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}">
-		  {{ option.name }}{{ sizing_link }}
-		</div>
-		<div class="select">
-		  <select
-				id="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}"
-				name="options[{{ option.name | escape | append: appended }}]"
-				form="{{ product_form_id }}"
-			>
-		    {%- for value in option.values -%}
-		      <option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
-		        {{ value }}
-		      </option>
-		    {%- endfor -%}
-		  </select>
-			<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
-		</div>
-	</fieldset>
-{%- when 'button' -%}
-	<fieldset class="product-form__input product-form__input--block" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
-		<div class="form__label">{{ option.name }}: <span class="form__label__value">{{ option.selected_value }}</span>{{ sizing_link }}</div>
-		{%- for value in option.values -%}
-			{%- if option.name == 'Size' and value == 'Custom' -%}
-				<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
-					name="{{ option.name | append: appended }}"
-					value="{{ value | escape }}"
+	{%- when 'dropdown' -%}
+		<fieldset class="product-form__input product-form__input--dropdown" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
+			<div class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}">
+			{{ option.name }}{{ sizing_link }}
+			</div>
+			<div class="select">
+			<select
+					id="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}"
+					name="options[{{ option.name | escape | append: appended }}]"
 					form="{{ product_form_id }}"
-					{% if option.selected_value == value %}checked{% endif %}
-					style="display:none";
 				>
-				<div class="form__group_custom">
-					<div class="form__group">
-						<label class="form__label_custom" for="default">Width</label>
-						<input class="form__input_width" id="custom_width" name="width" type="number" placeholder="Width" aria-invalid="false"/>
-					</div>
-					<div class="form__group">
-						<label class="form__label_custom" for="default">Height</label>
-						<input class="form__input_height" id="custom_height" name="height" type="number" placeholder="Height" aria-invalid="false"/>
-					</div>
+				{%- for value in option.values -%}
+				<option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+					{{ value }}
+				</option>
+				{%- endfor -%}
+			</select>
+				<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
+			</div>
+		</fieldset>
+	
+	{%- when 'button' -%}
+		{%- if option_slug == sizing_guide_variant and template.suffix == 'products_with_editor' -%}
+			<fieldset class="product-form__input product-form__input--dropdown" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
+				<div class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}">
+					{{ option.name }}{{ sizing_link }}
 				</div>
-			{%- else -%}
-				<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
-					name="{{ option.name | append: appended }}"
-					value="{{ value | escape }}"
-					form="{{ product_form_id }}"
-					{% if option.selected_value == value %}checked{% endif %}
-				>
-				<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
-					<span>{{ value }}</span>
-				</label>
-			{%- endif -%}
-		{%- endfor -%}
-	</fieldset>
-{%- when 'color' -%}
-	{%- liquid
-	assign custom_colors = settings.color_swatches | newline_to_br | split: '<br />'
-	assign key_array = ''
-	assign val_array = ''
-
-	for color in custom_colors
-		assign key = color | split: ':' | first | rstrip
-		assign value = color | split: ':' | last | lstrip
-		assign key_array = key_array | append: ',' | append: key
-		assign val_array = val_array | append: ',' | append: value
-	endfor
-
-	assign key_array = key_array | remove_first: ',' | strip_newlines | downcase | split: ','
-	assign val_array = val_array | remove_first: ',' | split: ','
-	-%}
-	<fieldset class="product-form__input product-form__input--color" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
-		<div class="form__label">{{ option.name }}: <span class="form__label__value">{{ option.selected_value }}</span>{{ sizing_link }}</div>
-		{%- for value in option.values -%}
-			<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
-						name="{{ option.name | append: appended }}"
-						value="{{ value | escape }}"
+				<div class="select">
+					<select
+						id="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}"
+						name="options[{{ option.name | escape | append: appended }}]"
 						form="{{ product_form_id }}"
-						{% if option.selected_value == value %}checked{% endif %}
-			>
-			{%- liquid
-				assign color_value = value | downcase | escape
+					>
+						{%- for value in option.values -%}
+						<option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+							{{ value }}
+						</option>
+						{%- endfor -%}
+					</select>
+					<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
+				</div>
+			</fieldset>
+		{% else %}
+			<fieldset class="product-form__input product-form__input--block" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
+				<div class="form__label">{{ option.name }}: <span class="form__label__value">{{ option.selected_value }}</span>{{ sizing_link }}</div>
+				{%- for value in option.values -%}
+					{%- if option.name == 'Size' and value == 'Custom' -%}
+						<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+							name="{{ option.name | append: appended }}"
+							value="{{ value | escape }}"
+							form="{{ product_form_id }}"
+							{% if option.selected_value == value %}checked{% endif %}
+							style="display:none";
+						>
+						<div class="form__group_custom">
+							<div class="form__group">
+								<label class="form__label_custom" for="custom_width">Width</label>
+								<input
+									class="form__input_width"
+									id="custom_width"
+									name="properties[Width]"
+									type="number"
+									placeholder="Width"
+									min="1"
+									required
+									form="{{ product_form_id }}"
+								/>
+							</div>
+							<div class="form__group">
+								<label class="form__label_custom" for="custom_height">Height</label>
+								<input
+									class="form__input_height"
+									id="custom_height"
+									name="properties[Height]"
+									type="number"
+									placeholder="Height"
+									min="1"
+									required
+									form="{{ product_form_id }}"
+								/>
+							</div>
+							<input
+								type="hidden"
+								form="{{ product_form_id }}"
+								id="custom_area"
+								required
+								name="properties[Total Area]"
+							/>
+						</div>
+						{% break %}			
+					{%- else -%}
+						<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+							name="{{ option.name | append: appended }}"
+							value="{{ value | escape }}"
+							form="{{ product_form_id }}"
+							{% if option.selected_value == value %}checked{% endif %}
+						>
+						<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
+							<span>{{ value }}</span>
+						</label>
+					{%- endif -%}
+				{%- endfor -%}
+			</fieldset>
+		{%- endif -%}
+		
+	
+	{%- when 'color' -%}
+		{%- liquid
+		assign custom_colors = settings.color_swatches | newline_to_br | split: '<br />'
+		assign key_array = ''
+		assign val_array = ''
 
-				for custom_color in key_array
-					if custom_color == color_value
-						assign color_value = val_array[forloop.index0]
+		for color in custom_colors
+			assign key = color | split: ':' | first | rstrip
+			assign value = color | split: ':' | last | lstrip
+			assign key_array = key_array | append: ',' | append: key
+			assign val_array = val_array | append: ',' | append: value
+		endfor
+
+		assign key_array = key_array | remove_first: ',' | strip_newlines | downcase | split: ','
+		assign val_array = val_array | remove_first: ',' | split: ','
+		-%}
+		<fieldset class="product-form__input product-form__input--color" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
+			<div class="form__label">{{ option.name }}: <span class="form__label__value">{{ option.selected_value }}</span>{{ sizing_link }}</div>
+			{%- for value in option.values -%}
+				<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+							name="{{ option.name | append: appended }}"
+							value="{{ value | escape }}"
+							form="{{ product_form_id }}"
+							{% if option.selected_value == value %}checked{% endif %}
+				>
+				{%- liquid
+					assign color_value = value | downcase | escape
+
+					for custom_color in key_array
+						if custom_color == color_value
+							assign color_value = val_array[forloop.index0]
+						endif
+					endfor
+					assign bg_value = empty
+					if color_value contains '.'
+						assign bg_value = color_value | file_url
+						assign color_value = 'var(--bg-body)'
 					endif
-				endfor
-				assign bg_value = empty
-				if color_value contains '.'
-					assign bg_value = color_value | file_url
-					assign color_value = 'var(--bg-body)'
-				endif
-			-%}
-			<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}" style="--option-color: {{ color_value | downcase | escape }}; {%- if bg_value -%} --option-color-image: url('{{ bg_value | escape }}');{%- endif -%}">
-				{{ value }}
-			</label>
-		{%- endfor -%}
-	</fieldset>
+				-%}
+				<label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}" style="--option-color: {{ color_value | downcase | escape }}; {%- if bg_value -%} --option-color-image: url('{{ bg_value | escape }}');{%- endif -%}">
+					{{ value }}
+				</label>
+			{%- endfor -%}
+		</fieldset>
 {%- endcase -%}

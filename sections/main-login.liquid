@@ -6,7 +6,9 @@
 					<h4>{{ 'customer.recover_password.title' | t }}</h4>
 					<p>{{ 'customer.recover_password.subtext' | t }}</p>
 					{%- form 'recover_customer_password' -%}
-
+						{% if form.posted_successfully? %}
+							<div class="recover_password_success_message">An e-mail has been sent to your email address with instructions to reset your password.</div>
+						{% else %}
 						{%- if form.errors -%}
 							<div class="form-notification error" id="RecoverEmail-email-error">
 			          {% render 'svg-icons' with 'thb-error' %} {{ form.errors.messages['form'] }}
@@ -20,14 +22,13 @@
 			          autocorrect="off"
 			          autocapitalize="off"
 			          autocomplete="email"
-								placeholder="{{ 'customer.login_page.email' | t | escape }}"
+								{% comment %} placeholder="{{ 'customer.login_page.email' | t | escape }}" {% endcomment %}
 			          {% if form.errors %}
 			            aria-invalid="true"
 			            aria-describedby="RecoverEmail-email-error"
 			            autofocus
 			          {% endif %}
 								class="full"
-			          placeholder="{{ 'customer.login_page.email' | t }}"
 			        >
 			        <label for="RecoverEmail">
 			          {{ 'customer.login_page.email' | t }}
@@ -38,6 +39,7 @@
 							{% assign text_button_title = 'customer.login_page.cancel' | t %}
 							{% render 'text-button', url: '#login', title: text_button_title %}
 						</div>
+					{% endif %}
 			    {%- endform -%}
 				</div>
         <div class="thb-login-form" id="login">
@@ -51,7 +53,7 @@
 						{% endif %}
             <div class="field">
               <input type="email" name="customer[email]" class="full {% if form.errors contains 'form' %}invalid{% endif %}" value=""
-								autocomplete="email"
+								{% comment %} autocomplete="email" {% endcomment %}
 								autocorrect="off"
 								autocapitalize="off"
 								placeholder="{{ 'customer.login_page.email' | t }}"

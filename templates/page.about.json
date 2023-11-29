@@ -21,7 +21,7 @@
         "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-heading-1": {
           "type": "heading",
           "settings": {
-            "text": "DG Club, Where Creativity Meets Commerce",
+            "text": "DG Club, Where Creativity meets e-Commerce",
             "marker_style": "style1",
             "heading_size": "h3",
             "marker_color": "#fd6262"
@@ -30,7 +30,7 @@
         "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>DG CLUB is a Print-On-Demand E-commerce Store, where creativity knows no bounds, and every design has the potential to become a masterpiece. Our mission is to bring your imagination to life, one print at a time. Our unwavering dedication to quality, innovation, and personalized expression sets us apart in the world of online shopping.<\/p>"
+            "text": "<p><strong>We are a print on demand marketplace, established and operated by a collective of seasoned artists and art entrepreneurs. With nearly a decade of rich experience in the art and business world, we have come together with a singular vision - to empower creative minds from diverse backgrounds.<\/strong><\/p><p><strong>At DG Club, we understand the challenges artists face in monetizing their talents. That’s why we’ve created a platform that not only celebrates creativity but also turns it into a sustainable source of income. Our goal is simple: to help you, the creator, build a scalable side income through the power of print on demand, without the typical hassles of managing a business.<\/strong><\/p><p><strong>We take pride in our commitment to ease and efficiency. As a member of DG Club, you'll experience the joy of creation without the burdens of business management. From product manufacturing to customer service, we handle it all, allowing you to focus solely on what you do best - creating beautiful art.<\/strong><\/p>"
           }
         }
       },
@@ -40,7 +40,7 @@
         "template--21508546920748__cd72b2f3-5040-437c-b460-413c1d2fdbdb-text-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Frame_486.jpg",
+        "image": "shopify:\/\/shop_images\/Copy_of_Top_Banner.jpg",
         "mobile_image": "shopify:\/\/shop_images\/Group_410_1.jpg",
         "height": "adapt",
         "mobile_image_width": "landscape",
@@ -77,7 +77,7 @@
         "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-1": {
           "type": "heading",
           "settings": {
-            "text": "Envisioning a world where your ideas and designs take center stage",
+            "text": "",
             "marker_style": "style3",
             "heading_size": "h2",
             "marker_color": "#1fd76c"
@@ -86,7 +86,7 @@
         "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-2": {
           "type": "text",
           "settings": {
-            "text": "<p>At our Print-On-Demand E-commerce Store, we believe that everyone has a unique story to tell, and we're here to turn those stories into stunning prints that resonate with you and your audience. From custom apparel to home decor, we're passionate about transforming your vision into tangible works of art.<\/p>"
+            "text": "<p>At our Print On Demand e-Commerce marketplace, we believe that everyone has a unique story to tell, and we are here to turn those stories into stunning prints that resonate with you and your audience. Our goal is to enrich the lives of millions of creators by harnessing the power of print on demand.<\/p>"
           }
         }
       },
@@ -96,7 +96,7 @@
         "template--17918040834330__8653503a-90e7-446a-8f99-8905e1d4a2ac-16769132332abda0ff-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rectangle_304.jpg",
+        "image": "shopify:\/\/shop_images\/Copy_of_Our_Vision.jpg",
         "use_video": false,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
@@ -128,31 +128,31 @@
         "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-1": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_196.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_DG_Club_is_for_1.jpg",
             "image_link": "",
             "open": false,
-            "heading": "Printing Your Memories",
-            "text": "<p>Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
+            "heading": "Personalized Products",
+            "text": "<p>Transform your cherished memories into tangible treasures. Whether it’s a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
           }
         },
         "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-2": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_196_1.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_DG_Club_is_for_2.jpg",
             "image_link": "",
             "open": false,
-            "heading": "Learning and Creating",
-            "text": "<p>Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
+            "heading": "Learning & Other resources",
+            "text": "<p>We offer an enriching environment for creators to learn and grow. Our extensive resources include a variety of learning features, from detailed tutorials on mastering print on demand techniques to comprehensive guides on market trends and design best practices. For traditional artists we offer free artwork digitization support, we have solutions for every creator from all backgrounds.<\/p>"
           }
         },
         "template--21508546920748__00f554c8-bdc2-4f23-9c8f-0d6d19f698ca-box-3": {
           "type": "box",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_196_2.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_DG_Club_is_for_3.jpg",
             "image_link": "",
             "open": false,
-            "heading": "Monetizing skills",
-            "text": "<p>Transform your cherished memories into tangible treasures. Whether it's a family photo, a special moment, or a unique artwork, we help you bring your memories to life with our customizable printing solutions.<\/p>"
+            "heading": "Monetize Your Creativity",
+            "text": "<p>Without any hassles of managing an online business we engage creators to monetize their creativity. An end to end print on demand solution for creators. We believe in creating sales for you, not just showcasing products. Bringing the best products from your designs.<\/p>"
           }
         }
       },

@@ -36,23 +36,25 @@
 
     {%- when 'price' -%}
       {%- if block.settings.product_price -%}
-        <label class="form__label quantity__label">{{ 'products.product.price.price' | t }}</label>
-        <div class="product-price-container">
-          <div class="no-js-hidden" id="price-{{ section.id }}">
-            {% render 'product-price', product: product, use_variant: true, show_badges: true %}
-          </div>
-          {%- if section.settings.show_taxes_included != blank -%}
-            {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
-              <div class="product__tax caption">
-                {%- if cart.taxes_included -%}
-                  {{ 'products.product.include_taxes' | t }}
-                {%- endif -%}
-                {%- if shop.shipping_policy.body != blank -%}
-                  {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                {%- endif -%}
-              </div>
+        <div class="product-price--container--main">
+          <label class="form__label quantity__label">{{ 'products.product.price.price' | t }}</label>
+          <div class="product-price-container">
+            <div class="no-js-hidden" id="price-{{ section.id }}">
+              {% render 'product-price', product: product, use_variant: true, show_badges: true, variant_rate: product.selected_or_first_available_variant.metafields.custom.per_sqft_rate.value %}
+            </div>
+            {%- if section.settings.show_taxes_included != blank -%}
+              {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+                <div class="product__tax caption">
+                  {%- if cart.taxes_included -%}
+                    {{ 'products.product.include_taxes' | t }}
+                  {%- endif -%}
+                  {%- if shop.shipping_policy.body != blank -%}
+                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
             {%- endif -%}
-          {%- endif -%}
+          </div>
         </div>
       {%- endif -%}
 
@@ -77,6 +79,7 @@
         data-url="{{ product.url }}"
         data-is-disabled="{{ is_disabled }}"
         data-hide-variants="{{ hide_variants }}"
+        data-product-id="{{ product.id }}"
       >
         <div class="variations" {{ block.shopify_attributes }}>
           {%- for option in product.options_with_values -%}
@@ -100,6 +103,7 @@
 
               assign sizing_guide_variant = block.settings.sizing_guide_variant | default: 'Size' | downcase
             -%}
+            
             {%- if option_slug == sizing_guide_variant -%}
               {%- if block.settings.sizing_guide_text != empty -%}
                   {%- capture sizing_link -%}
@@ -128,7 +132,7 @@
             {% render 'product-option', option_type: option_type, product: product, option: option, forloop: forloop, product_form_id: product_form_id, sizing_link: sizing_link %}
           {%- endfor -%}
         </div>
-        <script type="application/json">
+        <script type="application/json" id="product--data-variant-json-script-{{ section.id }}">
           {{ product.variants | json }}
         </script>
       </variant-selects>
@@ -292,9 +296,9 @@
                   <div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
                 </div>
               {% else %}
-                {% for option in custom_options %}
-                  <label class="label">
-                    <input type="radio" form="{{ product_form_id }}" name="{{ line_item_input_name }}" value="{{ option | escape }}"{% if forloop.first %} checked{% endif %}>
+                {% for option in custom_options %}                         
+                  <input type="radio" id="{{ block.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}" form="{{ product_form_id }}" name="{{ line_item_input_name }}" value="{{ option | escape }}"{% if forloop.first %} checked{% endif %}>
+                  <label class="label" for="{{ block.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}">
                     <span class="label__text-beside-input">{{ option | escape }}</span>
                   </label>
                 {% endfor %}

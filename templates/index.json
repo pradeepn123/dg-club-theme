@@ -6,15 +6,15 @@
         "template--17993467625754__8ba47ba3-de7f-4f0a-b30d-6f2a540748c3-16787035832bb7b6a4-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_44.jpg",
-            "mobile_image": "shopify:\/\/shop_images\/Rectangle_192.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Banner_1.jpg",
+            "mobile_image": "shopify:\/\/shop_images\/Copy_of_Banner_1.jpg",
             "slide_link": "",
             "video_background": false,
             "badge_text": "",
             "subheading": "",
-            "heading": "Bring You Digital Prints To Life",
+            "heading": "Print Your Creations",
             "heading_size": "h1",
-            "content": "Add descriptive text for your slide here.",
+            "content": "Customizable Wall Art Options for Your Unique Designs",
             "description_size": "small",
             "content_position": "middle-left",
             "text_alignment": "left",
@@ -30,7 +30,7 @@
             "overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
             "button_1_text": "Shop Now",
             "button_1_color": "accent",
-            "button_1_link": "",
+            "button_1_link": "shopify:\/\/collections\/photo-gifts",
             "use_text_button_1": false,
             "button_2_text": "",
             "button_2_color": "white",
@@ -41,14 +41,48 @@
         "template--17993467625754__8ba47ba3-de7f-4f0a-b30d-6f2a540748c3-16787035832bb7b6a4-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_44.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Banner_2.jpg",
             "slide_link": "",
             "video_background": false,
             "badge_text": "",
             "subheading": "",
-            "heading": "Slide Heading",
+            "heading": "Print Your Memories",
             "heading_size": "h1",
-            "content": "Add descriptive text for your slide here.",
+            "content": "Custom Photo Prints for Gifting and Décor",
+            "description_size": "medium",
+            "content_position": "middle-left",
+            "text_alignment": "left",
+            "content_size": "medium",
+            "color_slidebg": "rgba(0,0,0,0)",
+            "color_slidebg_opacity": 0,
+            "color_slidebg_blur": 0,
+            "color_text": "#ffffff",
+            "color_badge_bg": "#3f72e5",
+            "color_badge_text": "#ffffff",
+            "overlay_color": "#000000",
+            "overlay_opacity": 0,
+            "overlay_gradient": "linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
+            "button_1_text": "Shop Now",
+            "button_1_color": "accent",
+            "button_1_link": "shopify:\/\/collections\/photo-gifts",
+            "use_text_button_1": false,
+            "button_2_text": "",
+            "button_2_color": "white",
+            "button_2_link": "",
+            "use_text_button_2": false
+          }
+        },
+        "f4e4d55d-daaa-4b33-8c5c-a4c756ea6541": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Copy_of__Banner_3.jpg",
+            "slide_link": "",
+            "video_background": false,
+            "badge_text": "",
+            "subheading": "",
+            "heading": "Transform Your Space",
+            "heading_size": "h1",
+            "content": "Discover Mural Wallpapers from India's Rising Creators",
             "description_size": "medium",
             "content_position": "middle-left",
             "text_alignment": "left",
@@ -67,40 +101,6 @@
             "button_1_link": "",
             "use_text_button_1": false,
             "button_2_text": "",
-            "button_2_color": "white",
-            "button_2_link": "",
-            "use_text_button_2": false
-          }
-        },
-        "f4e4d55d-daaa-4b33-8c5c-a4c756ea6541": {
-          "type": "slide",
-          "disabled": true,
-          "settings": {
-            "slide_link": "",
-            "video_background": false,
-            "badge_text": "",
-            "subheading": "Add a tagline",
-            "heading": "Slide Heading",
-            "heading_size": "h1",
-            "content": "Add descriptive text for your slide here.",
-            "description_size": "medium",
-            "content_position": "middle-center",
-            "text_alignment": "center",
-            "content_size": "medium",
-            "color_slidebg": "rgba(0,0,0,0)",
-            "color_slidebg_opacity": 0,
-            "color_slidebg_blur": 20,
-            "color_text": "#2c2d2e",
-            "color_badge_bg": "#3f72e5",
-            "color_badge_text": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 70,
-            "overlay_gradient": "linear-gradient(180deg, rgba(0,0,0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
-            "button_1_text": "Shop Now",
-            "button_1_color": "accent",
-            "button_1_link": "",
-            "use_text_button_1": false,
-            "button_2_text": "Shop Now",
             "button_2_color": "white",
             "button_2_link": "",
             "use_text_button_2": false
@@ -130,18 +130,18 @@
         "55f7c68a-a8a2-4a5c-9d22-c648f5a90b07": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_119.png",
-            "title": "Discover framed prints, photo print wraps, and more!",
-            "button_text": "Shop now",
+            "image": "shopify:\/\/shop_images\/Copy_of_Promotion_Block_1.jpg",
+            "title": "Discover Our Fully Customizable Framed Prints, Acrylic Prints And Many More!",
+            "button_text": "",
             "button_link": ""
           }
         },
         "dbbd21fc-6396-4bee-a3ca-7cd24590466d": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_119.png",
-            "title": "Explore wallpapers, wall art,  and beyond!",
-            "button_text": "Shop now",
+            "image": "shopify:\/\/shop_images\/Copy_of_Promotion_Block_2.jpg",
+            "title": "Explore Wallpapers, Wall Arts And Beyond!",
+            "button_text": "",
             "button_link": ""
           }
         }
@@ -168,12 +168,11 @@
           "type": "collection",
           "settings": {
             "collection_list": [
-              "aarav-sharma",
               "framed-prints",
-              "frontpage",
-              "nandini-patel",
-              "priya-singhania",
-              "siddharth-sharma"
+              "canvas-print-wraps",
+              "mdf-base-print-wraps",
+              "acrylic-prints",
+              "photo-collage-prints"
             ],
             "title": "Photo Gifts",
             "handle": "photo-gifts"
@@ -183,9 +182,12 @@
           "type": "collection",
           "settings": {
             "collection_list": [
-              "nandini-patel",
               "priya-singhania",
-              "siddharth-sharma"
+              "siddharth-sharma",
+              "designer-pattern-wallpaper",
+              "nandini-patel",
+              "mural-wallpapers",
+              "frontpage"
             ],
             "title": "Decor Prints",
             "handle": "decor-prints"
@@ -212,96 +214,6 @@
         "disable_bottom_spacing": true
       }
     },
-    "35d10325-dd08-42f2-87e3-b3b5bfbb9efb": {
-      "type": "collection-list",
-      "disabled": true,
-      "settings": {
-        "heading": "Shop by Category",
-        "marker_style": "style1",
-        "description": "<p>Add a short description for your collections<\/p>",
-        "button_enabled": false,
-        "button_text": "",
-        "button_link": "",
-        "heading_size": "small",
-        "collection_list": [
-          "aarav-sharma",
-          "framed-prints",
-          "frontpage",
-          "nandini-patel",
-          "priya-singhania",
-          "siddharth-sharma"
-        ],
-        "image_ratio": "portrait",
-        "collection_layout": "carousel",
-        "style": "style1",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "show_progress_bar": true,
-        "mobile_swipe": true,
-        "heading_position": "bottom-center",
-        "marker_color": "#fd6262",
-        "text_color": "#2c2d2e",
-        "overlay_color": "rgba(0,0,0,0)",
-        "overlay_opacity": 30,
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
-      }
-    },
-    "16614195534fb74bc3": {
-      "type": "collection-tabs",
-      "blocks": {
-        "62cb3915-bc43-41ce-b3f3-2e48c9eefdd2": {
-          "type": "collection",
-          "settings": {
-            "collection": "framed-prints",
-            "enable_promotion": false,
-            "title": "Promotion",
-            "text": "Advertise a promotion or a sale",
-            "link_label": "Explore",
-            "content_position": "bottom-left",
-            "text_alignment": "left",
-            "link": "",
-            "use_text_button": false,
-            "block_link": "",
-            "overlay_color": "#000000",
-            "overlay_opacity": 70
-          }
-        },
-        "daf43de1-d4e8-41d4-b6ee-0d3a6da11a2e": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage",
-            "enable_promotion": false,
-            "title": "Promotion",
-            "text": "Advertise a promotion or a sale",
-            "link_label": "Explore",
-            "content_position": "bottom-left",
-            "text_alignment": "left",
-            "link": "",
-            "use_text_button": false,
-            "block_link": "",
-            "overlay_color": "#000000",
-            "overlay_opacity": 70
-          }
-        }
-      },
-      "block_order": [
-        "62cb3915-bc43-41ce-b3f3-2e48c9eefdd2",
-        "daf43de1-d4e8-41d4-b6ee-0d3a6da11a2e"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Collection tabs",
-        "marker_style": "style1",
-        "description": "<p>Collection tabs description<\/p>",
-        "product_limit": 8,
-        "columns_desktop": 5,
-        "show_progress_bar": true,
-        "marker_color": "#fd6262",
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": true
-      }
-    },
     "1661426105a80f3333": {
       "type": "scrolling-text",
       "blocks": {
@@ -309,7 +221,7 @@
           "type": "text",
           "settings": {
             "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
-            "text": "Our Canvas",
+            "text": "Print on Demand",
             "link": "",
             "outline_text": false
           }
@@ -327,7 +239,34 @@
           "type": "text",
           "settings": {
             "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
-            "text": "Your Journey",
+            "text": "Your Passion",
+            "link": "",
+            "outline_text": false
+          }
+        },
+        "c444aea2-5348-4c16-9a55-01181fa5ea59": {
+          "type": "text",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
+            "text": "Your Memories",
+            "link": "",
+            "outline_text": false
+          }
+        },
+        "3a5b6e6f-5473-4d89-af96-c82bbcf4de70": {
+          "type": "text",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
+            "text": "Your Imaginations",
+            "link": "",
+            "outline_text": false
+          }
+        },
+        "2a1f223a-608a-421a-968b-47276c82d57f": {
+          "type": "text",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
+            "text": "Our Canvas",
             "link": "",
             "outline_text": false
           }
@@ -336,7 +275,10 @@
       "block_order": [
         "1ca83ea2-5e93-4db4-a6e6-8fcf06ee541b",
         "26518d78-5502-4bdf-a933-0020b59a8d9e",
-        "c2cf6d75-da2e-4ba7-9791-6b681127eeff"
+        "c2cf6d75-da2e-4ba7-9791-6b681127eeff",
+        "c444aea2-5348-4c16-9a55-01181fa5ea59",
+        "3a5b6e6f-5473-4d89-af96-c82bbcf4de70",
+        "2a1f223a-608a-421a-968b-47276c82d57f"
       ],
       "settings": {
         "height": "height-auto",
@@ -365,11 +307,11 @@
         "8704fc3b-3e7d-4b1c-8a79-1bb391f43862": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_304.png",
-            "subheading": "PROGRAM",
-            "heading": "Entrepreneurship for Creative Minds' Program",
+            "image": "shopify:\/\/shop_images\/Copy_of_Program.jpg",
+            "subheading": "Start your own brand print on demand business",
+            "heading": "Entrepreneurship For Creative Minds",
             "heading_size": "h3",
-            "content": "Our program is your gateway to turning artistic passion into a thriving business. With no upfront costs, we provide the tools, support, and expertise you need to launch your own brand in the world of Print on Demand. Start today and let your creativity flourish",
+            "content": "Welcome to DG Club's \"Entrepreneurship for Creative Minds,\" a comprehensive program crafted to transform the aspirations of creative individuals and teams into a thriving online business reality. With a commitment to zero upfront costs, our program is an all-encompassing solution for artists looking to enter the world of print on demand.",
             "button_text": "Learn More",
             "button_link": "#",
             "artists_image": "shopify:\/\/shop_images\/Frame_228.png",
@@ -462,14 +404,14 @@
         "template--17918041129242__f896bcf0-40bd-4c23-8c79-b4d0863d7715-167639056582313b87-0": {
           "type": "media",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_306.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_1.jpg",
             "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
             "row": 2,
             "subheading": "",
-            "heading": "Happy Halloween 2023",
+            "heading": "",
             "heading_size": "h2",
             "button_text": "",
             "button_link": "",
@@ -486,14 +428,14 @@
         "template--17918041129242__f896bcf0-40bd-4c23-8c79-b4d0863d7715-167639056582313b87-1": {
           "type": "media",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_307.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_2.jpg",
             "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
             "row": 1,
             "subheading": "",
-            "heading": "Monsoon Collection",
+            "heading": "",
             "heading_size": "h2",
             "button_text": "",
             "button_link": "",
@@ -510,14 +452,14 @@
         "template--17918041129242__f896bcf0-40bd-4c23-8c79-b4d0863d7715-167639056582313b87-2": {
           "type": "media",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_308.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_3.jpg",
             "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
             "row": 1,
             "subheading": "",
-            "heading": "Birthday",
+            "heading": "",
             "heading_size": "h2",
             "button_text": "",
             "button_link": "",
@@ -534,14 +476,14 @@
         "3963f5c5-4bf4-4cd9-b70a-a4a9e5283569": {
           "type": "media",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_309.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_4.jpg",
             "slide_link": "",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
             "row": 1,
             "subheading": "",
-            "heading": "Animals",
+            "heading": "",
             "heading_size": "h2",
             "button_text": "",
             "button_link": "",
@@ -581,8 +523,8 @@
           "settings": {
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_247_2.svg",
-            "heading": "In-House  Manufacturing",
-            "text": "<p>We produce and sell our POD products directly, ensuring top-notch quality control.<\/p>"
+            "heading": "In House Manufacturing",
+            "text": "<p>We manufacture all products directly, ensuring top notch quality.<\/p>"
           }
         },
         "template--21508546429228__2081a2f1-fed7-416d-8c0c-100c4469fa89-icon-2": {
@@ -591,7 +533,7 @@
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_483.svg",
             "heading": "Timely Fulfillment",
-            "text": "<p>Our efficient processes guarantee not only timely order fulfillment but also delivers quality products<\/p>"
+            "text": "<p>Our efficient process and shipping network make sure quality products reach to customers on time<\/p>"
           }
         },
         "template--21508546429228__2081a2f1-fed7-416d-8c0c-100c4469fa89-icon-3": {
@@ -600,7 +542,7 @@
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_484.svg",
             "heading": "Competitive Pricing",
-            "text": "<p>We offer competitive pricing for our customers while ensuring good commissions for our artists.<\/p>"
+            "text": "<p>We offer best pricing for our end customers while ensuring good commission for creators collaborated with us<\/p>"
           }
         },
         "40014807-3392-4b0f-af7a-ff30a9ab579f": {
@@ -608,8 +550,8 @@
           "settings": {
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_485.svg",
-            "heading": "Entrepreneurship  Program",
-            "text": "<p>Our 'Entrepreneurship for Creative Minds' program supports artists in running POD businesses.<\/p>"
+            "heading": "Entrepreneurship Program",
+            "text": "<p>Our “Entrepreneurship for Creative Minds” program supports creators all the way to setting up a successful print on demand business<\/p>"
           }
         }
       },
@@ -637,15 +579,16 @@
     "d17c9fda-c778-4cae-8662-16c275ddedf1": {
       "type": "video-with-text",
       "settings": {
-        "heading": "Experience our user-friendly editor tool",
+        "heading": "Experience Our User-Friendly Editor Tool",
         "marker_style": "style1",
-        "description": "<p>to personalize and bring your ideas to life. Create unique, one-of-a-kind products with ease!<\/p>",
+        "description": "<p>To personalize and bring your ideas to life, create unique, one of a kind products with ease!<\/p>",
         "button_text": "Start Customizing",
         "heading_size": "h2",
         "button_link": "",
         "full_width": false,
         "video_first": true,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_hosted": "shopify:\/\/files\/videos\/editor_tool.mp4",
         "video_autoplay": true,
         "aspect_ratio": "16-9",
         "color_bg": "#d5bff1",
@@ -662,13 +605,13 @@
         "7dd63451-9849-436a-8d6f-6e1568fd6a0d": {
           "type": "section",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_138.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_choose_product_block.jpg",
             "badge": "",
             "heading": "Step 1",
-            "subheading": "Discover and Choose  Your Perfect Product",
+            "subheading": "Discover And Choose Your Perfect Product",
             "marker_style": "style1",
             "heading_size": "small",
-            "content": "<p>Explore our wide range of customizable photo gifts and décor prints. From mock-ups to reviews, we've got everything you need to make an informed choice. Supporting artists has never been this easy!<\/p>",
+            "content": "<p>Explore our wide range of customizable photo gifts and decor prints. From mockups to reviews, we have got everything you need to make an informed choice. Supporting creators has never been this easy.<\/p>",
             "description_size": "medium",
             "button_text": "",
             "button_link": "",
@@ -680,13 +623,13 @@
         "d364e04b-f192-401b-be30-5647164998ad": {
           "type": "section",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_137.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_editor_app_block.jpg",
             "badge": "",
             "heading": "Step 2",
-            "subheading": "Craft Your Vision  with Ease",
+            "subheading": "Craft Your Vision With Ease",
             "marker_style": "style1",
             "heading_size": "small",
-            "content": "<p>Design your masterpiece effortlessly using our intuitive editor. Upload photos, choose templates, and see your ideas come to life with live previews. Edit as much as you like, and when you're satisfied, proceed to checkout. It's all about making your vision a reality.<\/p>",
+            "content": "<p>Design your masterpiece effortlessly using our intuitive editor. Upload photos, choose templates, and see your ideas come to life with live preview, edit as much as you like, and when you are satisfied, proceed to checkout, it's all about making your vision reality.<\/p>",
             "description_size": "medium",
             "button_text": "",
             "button_link": "",
@@ -698,13 +641,13 @@
         "e7712faa-4bb2-424d-af95-93d14e9c13fd": {
           "type": "section",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_139.jpg",
-            "badge": "bhjh",
+            "image": "shopify:\/\/shop_images\/Copy_of_third_block.jpg",
+            "badge": "",
             "heading": "Step 3",
-            "subheading": "Sub Heading",
+            "subheading": "Seamless Checkout, Secure Payment",
             "marker_style": "style1",
             "heading_size": "small",
-            "content": "<p>We've streamlined the checkout process for your convenience. Collecting only essential data, we ensure a hassle-free experience. Plus, when you support us, you're also supporting artists worldwide.<\/p>",
+            "content": "<p>We have streamlined the checkout process for your convenience. Collecting only essential data, we ensure a hassle free experience. Plus when you support us, you're also supporting creators all over India.<\/p>",
             "description_size": "medium",
             "button_text": "",
             "button_link": "",
@@ -739,24 +682,22 @@
           "type": "review",
           "settings": {
             "product_handle": "",
-            "stars": "4",
+            "stars": "5",
             "star_rating": "",
-            "heading": "Top-notch",
-            "text": "<p>“Go-to place for personalized gifts. They have a impressive range of products”<\/p>",
-            "author": "Sarah.R vhg",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
+            "heading": "Stress-Free Online Store Setup",
+            "text": "<p>Setting up my store is very easy, and they handle everything. Now, I just want to make new designs and watch my earnings grow.<\/p>",
+            "author": "Anjal"
           }
         },
         "bb2ca63a-1470-47a5-b774-d5b7d1e70308": {
           "type": "review",
           "settings": {
             "product_handle": "",
-            "stars": "4.5",
+            "stars": "5",
             "star_rating": "",
-            "heading": "Game-changer",
-            "text": "<p>“As a part of 'Entrepreneurship for Creative Minds', I've learned to turn my art into a thriving business.”<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
+            "heading": "Best Platform For Creators",
+            "text": "<p>Very supportive and energetic team to work with<\/p>",
+            "author": "Abijith"
           }
         },
         "018af719-2b38-43f2-8174-9d7e9dd734a7": {
@@ -765,10 +706,9 @@
             "product_handle": "",
             "stars": "4.5",
             "star_rating": "",
-            "heading": "Moments into timeless",
-            "text": "<p>“Their user-friendly design editor makes it a breeze to create something truly unique.” “Their user-friendly design editor makes it a breeze to create something truly unique.”<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
+            "heading": "A Game Changer For All Artists",
+            "text": "<p>Wonderful team, they make sure your designs to broader audience<\/p>",
+            "author": "Anuraj CV"
           }
         },
         "8701e09a-7c91-460f-9ec4-4b761f9b8bd0": {
@@ -777,10 +717,9 @@
             "product_handle": "",
             "stars": "5",
             "star_rating": "",
-            "heading": "Fantastic Platform",
-            "text": "<p>“It's not just about printing; it's about building a brand.for anyone looking to turn their passion into profit.\"<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
+            "heading": "Print on Demand mad easy",
+            "text": "<p>I can focus on creating good designs, DG Club take care everything, all I need is to share best of my works to them<\/p>",
+            "author": "Shah"
           }
         },
         "c1ccdfb8-f6fe-4c44-aa08-c5541cd20d26": {
@@ -789,22 +728,64 @@
             "product_handle": "",
             "stars": "4.5",
             "star_rating": "",
-            "heading": "Review heading",
-            "text": "<p>Add your customer review here to showcase them.<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.png"
+            "heading": "Really supportive for artists",
+            "text": "<p>Traditional or digital artworks, this team is superb, they got everything to support every artist<\/p>",
+            "author": "Jibin Jose"
           }
         },
         "ff055e2d-d826-4de5-b974-fca2d59a708a": {
           "type": "review",
           "settings": {
             "product_handle": "",
-            "stars": "",
+            "stars": "4.5",
             "star_rating": "",
-            "heading": "Review heading",
-            "text": "<p>Add your customer review here to showcase them.<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
+            "heading": "Fabulous Quality Wallpapers",
+            "text": "<p>Loved designs ordered<\/p>",
+            "author": "Vineeth Verma"
+          }
+        },
+        "90165f8a-f297-4bf7-9ec4-6c537743daa7": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "4.5",
+            "star_rating": "",
+            "heading": "Wonderful Products",
+            "text": "<p>The product I received was very similar to what I was expecting<\/p>",
+            "author": "Prathima Chopda"
+          }
+        },
+        "072b7a43-e28d-4fab-bc9a-33e7d7b54f17": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "star_rating": "",
+            "heading": "Awesome Products",
+            "text": "<p>Worth paying every penny<\/p>",
+            "author": "Bharath Hegde"
+          }
+        },
+        "410abb62-f1f8-4d2d-8263-ba519180b0f3": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "star_rating": "",
+            "heading": "Highly Recommended",
+            "text": "<p>Excellent product range<\/p>",
+            "author": "Kumar LG"
+          }
+        },
+        "a1263ebc-b383-4e73-9fe4-8ffe60e6a682": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "star_rating": "",
+            "heading": "Good Quality Wall Decor Products",
+            "text": "<p>Best support team and provide installation support too<\/p>",
+            "author": "Sarvesh SP"
           }
         }
       },
@@ -814,7 +795,11 @@
         "018af719-2b38-43f2-8174-9d7e9dd734a7",
         "8701e09a-7c91-460f-9ec4-4b761f9b8bd0",
         "c1ccdfb8-f6fe-4c44-aa08-c5541cd20d26",
-        "ff055e2d-d826-4de5-b974-fca2d59a708a"
+        "ff055e2d-d826-4de5-b974-fca2d59a708a",
+        "90165f8a-f297-4bf7-9ec4-6c537743daa7",
+        "072b7a43-e28d-4fab-bc9a-33e7d7b54f17",
+        "410abb62-f1f8-4d2d-8263-ba519180b0f3",
+        "a1263ebc-b383-4e73-9fe4-8ffe60e6a682"
       ],
       "settings": {
         "heading": "What customers think",
@@ -844,33 +829,33 @@
         "5be22151-c32a-4fa2-b895-5cf0abddf222": {
           "type": "block-info",
           "settings": {
-            "logo_text": "3K+",
+            "logo_text": "500+",
             "link": "",
-            "heading": "Successful Artists  Nurtured"
+            "heading": "Creators Started Working To Launch Their Store Soon"
           }
         },
         "f10b9788-7aed-4a42-8ddf-20ea251ea71a": {
           "type": "block-info",
           "settings": {
-            "logo_text": "50+",
+            "logo_text": "100K+",
             "link": "",
-            "heading": "Shipping to Countries"
+            "heading": "Shipments Delivered"
           }
         },
         "01cd4e78-b102-4682-b405-ee98143bd728": {
           "type": "block-info",
           "settings": {
-            "logo_text": "2M+",
+            "logo_text": "400K+",
             "link": "",
-            "heading": "Products printed  on demand"
+            "heading": "Products Printed on Demand"
           }
         },
         "223af680-87a4-43b1-b5b5-74046e72b300": {
           "type": "block-info",
           "settings": {
-            "logo_text": "20+",
+            "logo_text": "1M+",
             "link": "",
-            "heading": "Products in Catlogue"
+            "heading": "Library Assets To Design Your Favorite Products"
           }
         }
       },
@@ -899,8 +884,6 @@
     "8ba47ba3-de7f-4f0a-b30d-6f2a540748c3",
     "a7802e0a-30f4-4485-bf29-8868a637ca3e",
     "8ca0f2be-52f0-4ad3-bd68-49f432322085",
-    "35d10325-dd08-42f2-87e3-b3b5bfbb9efb",
-    "16614195534fb74bc3",
     "1661426105a80f3333",
     "66e51d40-1da7-4a8a-8d7c-2e5b727c5f4c",
     "60ed2e7d-3f50-428a-b546-03274d862db0",

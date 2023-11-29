@@ -34,7 +34,7 @@
 .dashboard_tabs a:hover{
     color: #000;
 }
-.dashboard_tabs.active{
+.dashboard_tabs.active, .dashboard_tabs.active a{
     background: #4444E1;
     border-radius: 12px;
     color: #fff;
@@ -68,6 +68,7 @@
 }
 .dashboard_tabs_content.showTab{
     display: block;
+    margin-bottom: 60px;
     /* height: 100%; */
 }
 .dashboard_tabs_content .tab_title{
@@ -80,10 +81,11 @@
     margin-bottom: 0;
     border-radius: 12px 12px 0 0;
 }
-.dashboard_tabs_content .order_details_content{
+.dashboard_tabs_content .order_details_content,.dashboard_tabs_content .artist_directory_content{
     background: #fff;
     padding: 22px 32px;
     min-height: 25rem;
+    border-radius: 0 0 12px 12px;
 }
 
 /* Addresses */
@@ -99,6 +101,7 @@
     border-radius: 12px;
     padding: 22px 15px;
     flex-basis: calc(100% / 3 - 21px);
+    min-height: 19.438rem;
 }
 .my-address .my_address_index{
     border-bottom: 1px solid #E4E4E4;
@@ -107,14 +110,27 @@
     display: flex;
     align-items: center;
 }
+.my-address .my_address_index .address-index{
+    font-size: 16px
+}
 address{
     padding: 18px 15px;
     font-style: normal;
+}
+address p{
+    font-size: 16px;
 }
 .address_button_block{
     display: flex;
     gap: 16px;
     padding: 0 15px;
+}
+body.open-cc{
+    overflow: hidden;
+}
+.edit-address .button,
+#Side-Panel-Add-Address .button{
+    margin-top: 20px;
 }
 .edit-address-button, .delete-address-button{
     padding: 8px 15px;
@@ -238,6 +254,104 @@ address{
     padding: 23px 13px;
     border-radius: 12px;
 }
+
+/* Artist Dashboard */
+.artist_directory_content .earnings thead th{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: left !important;
+}
+.artist_directory_content .earnings tbody tr td{
+    text-align: left !important;
+}
+.artist_directory_content .earning_header{
+    display: flex;
+    justify-content: space-between;
+}
+.artist_directory_content .earning_header .sortDropdown{
+    text-align: end;
+    position: relative;
+}
+.artist_directory_content .earning_header .sortDropdown #dropdownBtnSort{
+    display: flex;
+    gap: 4px;
+    border: 1px solid #BABFC3;
+    border-radius: 4px;
+    box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    background: #fff;
+    align-items: center;
+}
+.artist_directory_content .earning_header .sortDropdown .dropdownSortOptions{
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    position: absolute;
+    min-width: 152px;
+    padding: 16px 21px;
+    right: 0;
+    text-align: center;
+    border-radius: 8px;
+    border: 0.5px solid #D7D7D7;
+    background: #FFF;
+    box-shadow: 0px 16px 24px 0px rgba(50, 50, 71, 0.08), 0px 12px 12px 0px rgba(50, 50, 71, 0.08);
+}
+.artist_directory_content .earning_header p{
+    font-size: 20px;
+    font-weight: 600;
+}
+.artist_directory_content .earning_header .sortDropdown .dropdownSortOptions .sortOption{
+    color: #6D7175;
+    font-size: 14px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+.artist_directory_content .earning_header .sortDropdown .dropdownSortOptions .sortOption[selected]{
+    color: blue;
+    text-decoration: underline;
+}
+.artist_directory_content .earning_details .sortDropdown .dropdownSortOptions.activeFilter{
+    visibility: visible !important;
+    height: fit-content;
+}
+.artist_dashboard_table td, .artist_dashboard_table th{
+    /* border: 0; */
+    padding: 18px;
+}
+.artist_dashboard_table th{
+    font-size: 16px;
+    font-weight: 600;
+}
+.artist_dashboard_table td{
+    font-size: 16px;
+    font-weight: 400;
+}
+.artist_dashboard_data td:first-child{
+    display: flex;
+}
+.artist_dashboard_table td img{
+    width: 49px;
+    height: 49px;
+    border-radius: 4px;
+    margin-right: 18px;
+}
+.artist_dashboard_table td:last-child, .artist_dashboard_table th:last-child{
+    text-align: end;
+}
+.artist_dashboard_header{
+    border-bottom: 1px solid var(--color-border, #dadce0);
+    border-top: 1px solid var(--color-border, #dadce0);
+}
+.artist_dashboard_data td{
+    border-bottom: 1px solid var(--color-border, #dadce0);
+}
+@media (min-width: 1024px) and (max-width: 1199px){
+    .customer-addresses .address{
+        flex-basis: calc(100% / 2 - 21px);
+    }
+}
 @media (max-width: 1023px){
     .account{
         width: 100vw;
@@ -264,7 +378,7 @@ address{
         display: none;
     }
     .dashboard_tabs{
-        padding: 10px 16px;
+        padding: 7px 16px;
         white-space: nowrap;
         border-radius: 60px !important;
         background: #ECECEC;
@@ -274,6 +388,9 @@ address{
     }
     .dashboard_tabs.logout{
         display: none;
+    }
+    .dashboard_tabs_content .tab_title{
+        padding: 11px 32px 11px;
     }
 
     /* Addresses */
@@ -377,5 +494,81 @@ address{
     .order_details .myaccount-content table tr td{
         font-size: 16px;
         font-weight: 400;
+    }
+
+    /* Artist dashboard */
+    .dashboard_tabs_content .artist_directory_content{
+        background: none;
+        padding: 22px 0;
+    }
+    .artist_directory_content .earnings table thead{
+        display: none;
+    }
+    .artist_directory_content .earnings table tbody tr{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .artist_directory_content .earnings table tbody tr td{
+        background: #fff;
+        display: grid;
+        padding: 21px;
+        border-radius: 12px;
+    }
+    .artist_directory_content .earnings table tbody tr td{
+        text-align: left;
+    }
+    .artist_directory_content .earnings table tbody tr td::before{
+        content: attr(data-label);
+        border-bottom: 1px solid #E4E4E4;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .artist_dashboard_table thead{
+        display: none;
+    }
+    .artist_dashboard_data{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .artist_dashboard_data td img{
+        display: none;
+    }
+    .artist_dashboard_data tr td{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0;
+    }
+    .artist_dashboard_data tr:last-child td{
+        border-bottom: 1px solid var(--color-border, #dadce0) !important;
+    }
+    .artist_dashboard_data tr:last-child td:last-child{
+        border-bottom: 0 !important;
+    }
+    .artist_dashboard_data tr td p{
+        text-align: end;
+        margin-bottom: 0;
+    }
+    .artist_dashboard_data tr{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .artist_dashboard_data tr td:last-child{
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+    .artist_dashboard_data tr td:first-child{
+        padding-top: 0;
+    }
+    .artist_dashboard_data td::before{
+        content: attr(data-label);
+        font-size: 16px;
+        font-weight: 600 !important;
+        white-space: nowrap;
+        margin-right: 20px;
     }
 }

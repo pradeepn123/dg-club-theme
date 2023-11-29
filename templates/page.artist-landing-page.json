@@ -38,7 +38,8 @@
         "template--21535618564396__28f936f9-b3bc-4116-aebe-58e204d94a21-button-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rectangle_187.jpg",
+        "image": "shopify:\/\/shop_images\/Copy_of_Top_banner_1.jpg",
+        "mobile_image": "shopify:\/\/shop_images\/Copy_of_Top_banner_1.jpg",
         "image_parallax": false,
         "desktop_height": "desktop-height-450",
         "mobile_height": "mobile-height-350",
@@ -82,33 +83,33 @@
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-1": {
           "type": "tab",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Below_banner.jpg",
             "use_video": false,
             "heading_icon": "none",
-            "heading": "Diverse Opportunities",
-            "description": "DG Club welcomes artists from all backgrounds, whether you work with traditional mediums like paint and canvas, digital tools such as tablets, or even AI-generated art. We celebrate and support artistic diversity.",
+            "heading": "Diverse Opportunities & Endless Possibilities",
+            "description": "DG Club welcomes creators from all backgrounds, whether you work with traditional medium like paint and canvas, digital tools such as graphic tablets, or even AI generated art, We celebrate and support artistic diversity. Decor and Gifting products, upcoming apparel and branding products range offers endless possibilities to creators.",
             "video_autoplay": true
           }
         },
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-2": {
           "type": "tab",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_179.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Below_banner.jpg",
             "use_video": false,
             "heading_icon": "none",
-            "heading": "Free Advertisement",
-            "description": "Add a short description for this tab",
+            "heading": "Free Online Store & Sell In Your Own Brand",
+            "description": "DG Club offers white labeling for all products sold through Creator store, a fully functioning online store with product customization app features and many more, zero investment and maintenance for life long.",
             "video_autoplay": true
           }
         },
         "template--21542075105580__110feccb-e777-4ed9-a10d-aae212558ba3-tab-3": {
           "type": "tab",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Below_banner.jpg",
             "use_video": false,
             "heading_icon": "none",
-            "heading": "Competitive Commissions",
-            "description": "Add a short description for this tab",
+            "heading": "Attractive Commission On Sales & Free Digital Marketing Support",
+            "description": "All products available through DG Club marketplace are directly manufactured to keep best quality standards, good commission for creators and best price for end customers. We do everything on backend to showcase your products with all kind of optimizations for search engines and social media platforms, free ad campaigns offered for selected products from creator store to drive more sales, thus more earning for creators.",
             "video_autoplay": true
           }
         }
@@ -233,6 +234,7 @@
         "icon_size": "xlarge",
         "heading_size": "large",
         "mobile_swipe": true,
+        "mobile_block_spacing": "small",
         "enable_image_shadow": true,
         "color_bg": "rgba(0,0,0,0)",
         "color_heading": "#1a1c1d",
@@ -256,13 +258,13 @@
         "template--21535618564396__51b89402-2ce8-4ad9-b346-d75d09144c29-section-1": {
           "type": "section",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_138_a6ffbce7-331e-4bc9-bd24-d7638d42413d.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Step_1.jpg",
             "badge": "",
             "heading": "Step 1",
             "subheading": "Register as a Creator",
             "marker_style": "style1",
             "heading_size": "small",
-            "content": "<p>Start your journey with DG Club by registering as an creator, sharing your profile information and creator preferences, and showcasing your existing artwork to create your personalized creator profile.<\/p>",
+            "content": "<p>Start your journey with DG Club by registering as a creator by sharing your profile information, showcasing your existing artworks to evaluate your style and create your personalized creator profile.<\/p>",
             "description_size": "medium",
             "button_text": "",
             "button_link": "",
@@ -274,13 +276,13 @@
         "template--21535618564396__51b89402-2ce8-4ad9-b346-d75d09144c29-section-2": {
           "type": "section",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_138_1.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Step_2.jpg",
             "badge": "",
             "heading": "Step 2",
-            "subheading": "Theme-Based Creation & Submission",
+            "subheading": "Theme Based Creation & Submission",
             "marker_style": "style1",
             "heading_size": "small",
-            "content": "<p>Unleash your creativity by crafting unique artworks based on DG Club's inspiring themes, using your preferred medium, be it traditional, digital, or AI-generated, and conveniently submit them through your artist profile for our review.<\/p>",
+            "content": "<p>Approved creators can submit more designs to add more products in their store, DG Club team will support creators with insight to print on demand design trends, this will help creators to focus on selling potential designs.<\/p>",
             "description_size": "medium",
             "button_text": "",
             "button_link": "",
@@ -292,13 +294,13 @@
         "template--21535618564396__51b89402-2ce8-4ad9-b346-d75d09144c29-section-3": {
           "type": "section",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_138_2.jpg",
+            "image": "shopify:\/\/shop_images\/Copy_of_Step_3.jpg",
             "badge": "",
             "heading": "Step 3",
-            "subheading": "Transforming Art into Commerce",
+            "subheading": "Transforming Artworks Into e-Commerce",
             "marker_style": "style1",
             "heading_size": "small",
-            "content": "<p>Watch your art come to life as our team selects exceptional pieces for conversion into high-quality products, prominently showcased on your artist profile, allowing you to earn commissions and be duly rewarded for your artistic talent with each sale.<\/p>",
+            "content": "<p>Watch your art come to life as our team selects exceptional pieces for conversion into high quality products, prominently showcased on your creator profile, allowing to earn commissions and be duly rewarded for your creativity with each sale<\/p>",
             "description_size": "medium",
             "button_text": "",
             "button_link": "",
@@ -332,6 +334,9 @@
         "heading": "Featured Creators",
         "marker_style": "style1",
         "description": "",
+        "button_enabled": true,
+        "button_text": "Join Now",
+        "button_link": "#",
         "heading_size": "small",
         "collection_list": [
           "aarav-sharma",

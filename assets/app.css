@@ -1350,6 +1350,14 @@ screen and (min-width: 48em) {
     max-width: 25%;
   }
 
+  @media only screen and (min-width: 768px) and (max-width: 990px) {
+    .medium-up-4>.column,
+    .medium-up-4>.columns {
+      flex: 0 0 33%;
+      max-width: 33%;
+    }
+  }
+
   .medium-up-5 {
     flex-wrap: wrap;
   }
@@ -2848,11 +2856,20 @@ table.no-borders tfoot td:first-child {
     -webkit-flex: 0 0 20%;
     -ms-flex: 0 0 20%;
     flex: 0 0 20%;
-    max-width: 20%;
+    max-width: 33.5%;
   }
 }
 
-@media only screen and (min-width: 1068px) {
+@media only screen and (min-width: 990px) {
+  .large-1\/5 {
+    -webkit-flex: 0 0 20%;
+    -ms-flex: 0 0 20%;
+    flex: 0 0 20%;
+    max-width: 25%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
   .large-1\/5 {
     -webkit-flex: 0 0 20%;
     -ms-flex: 0 0 20%;
@@ -4389,7 +4406,7 @@ h6,
   .shopify-payment-button__more-options:hover svg,
   .spr-summary-actions-newreview:hover svg,
   .text-button:hover svg {
-    animation: text-button-arrow 0.35s linear forwards 1;
+    animation: text-button-arrow 0.2s linear forwards 1;
   }
 }
 
@@ -4425,16 +4442,16 @@ h6,
 
 @keyframes text-button-arrow {
   0% {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 
-  50% {
+  /* 50% {
     transform: translateX(100%);
   }
 
   51% {
     transform: translateX(-100%);
-  }
+  } */
 
   100% {
     transform: translateX(0%);
@@ -4810,6 +4827,7 @@ select.resize-select {
   top: 0;
   left: 0;
   width: auto;
+  font-size: 18px;
   line-height: 1;
   padding: 12px 17px;
   height: 50px;

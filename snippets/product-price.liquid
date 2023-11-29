@@ -33,7 +33,7 @@
 	endunless
 -%}
 
-<span class="price">
+<span class="price" data-variant-rate="{{ variant_rate }}">
 	{%- unless product.price_varies == false and product.compare_at_price_varies %}
 		{% if compare_at_price != null and compare_at_price != 0 and price != compare_at_price %}
 			<del>
