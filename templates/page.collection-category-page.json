@@ -16,13 +16,7 @@
         "button_text": "",
         "button_link": "",
         "heading_size": "small",
-        "collection_list": [
-          "framed-prints",
-          "canvas-print-wraps",
-          "acrylic-prints",
-          "mdf-base-print-wraps",
-          "photo-collage-prints"
-        ],
+        "collection_list": "{{ page.metafields.custom.collection_list.value }}",
         "image_ratio": "square",
         "collection_layout": "grid",
         "style": "style1",
