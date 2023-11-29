@@ -15,7 +15,7 @@
         "custom_collection_description_title": "",
         "custom_collection_description": "",
         "collection_share_text": "",
-        "collection_share_link": "https:\/\/google.com",
+        "collection_share_link": "{{ collection.metafields.custom.collection_header.value.link.value }}",
         "show_collection_image": true,
         "show_collection_banner": true,
         "show_collection_share": true,
