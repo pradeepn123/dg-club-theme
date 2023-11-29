@@ -9,6 +9,13 @@
     "template-header": {
       "type": "collection-header",
       "settings": {
+        "banner_image": "{{ collection.metafields.custom.collection_header.value.collection_banner.value }}",
+        "profile_image": "{{ collection.metafields.custom.collection_header.value.collection_profile.value }}",
+        "custom_collection_title": "",
+        "custom_collection_description_title": "",
+        "custom_collection_description": "",
+        "collection_share_text": "",
+        "collection_share_link": "https:\/\/google.com",
         "show_collection_image": true,
         "show_collection_banner": true,
         "show_collection_share": true,
