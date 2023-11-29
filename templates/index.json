@@ -743,6 +743,17 @@
             "text": "<p>Loved designs ordered<\/p>",
             "author": "Vineeth Verma"
           }
+        },
+        "90165f8a-f297-4bf7-9ec4-6c537743daa7": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "4.5",
+            "star_rating": "",
+            "heading": "Wonderful Products",
+            "text": "<p>The product I received was very similar to what I was expecting<\/p>",
+            "author": "Prathima Chopda"
+          }
         }
       },
       "block_order": [
@@ -751,7 +762,8 @@
         "018af719-2b38-43f2-8174-9d7e9dd734a7",
         "8701e09a-7c91-460f-9ec4-4b761f9b8bd0",
         "c1ccdfb8-f6fe-4c44-aa08-c5541cd20d26",
-        "ff055e2d-d826-4de5-b974-fca2d59a708a"
+        "ff055e2d-d826-4de5-b974-fca2d59a708a",
+        "90165f8a-f297-4bf7-9ec4-6c537743daa7"
       ],
       "settings": {
         "heading": "What customers think",
