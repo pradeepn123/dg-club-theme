@@ -17,12 +17,11 @@
         "button_link": "",
         "heading_size": "small",
         "collection_list": [
-          "aarav-sharma",
-          "frontpage",
-          "nandini-patel",
           "framed-prints",
-          "priya-singhania",
-          "siddharth-sharma"
+          "canvas-print-wraps",
+          "acrylic-prints",
+          "mdf-base-print-wraps",
+          "photo-collage-prints"
         ],
         "image_ratio": "square",
         "collection_layout": "grid",
@@ -35,7 +34,7 @@
         "marker_color": "#fd6262",
         "text_color": "#2c2d2e",
         "overlay_color": "rgba(0,0,0,0)",
-        "overlay_opacity": 30,
+        "overlay_opacity": 0,
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
@@ -46,4 +45,3 @@
     "8e4e8a64-a152-4ed6-875a-addad3cdb812"
   ]
 }
-

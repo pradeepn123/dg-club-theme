@@ -168,12 +168,11 @@
           "type": "collection",
           "settings": {
             "collection_list": [
-              "aarav-sharma",
               "framed-prints",
-              "frontpage",
-              "nandini-patel",
-              "priya-singhania",
-              "siddharth-sharma"
+              "canvas-print-wraps",
+              "mdf-base-print-wraps",
+              "acrylic-prints",
+              "photo-collage-prints"
             ],
             "title": "Photo Gifts",
             "handle": "photo-gifts"
