@@ -215,96 +215,6 @@
         "disable_bottom_spacing": true
       }
     },
-    "35d10325-dd08-42f2-87e3-b3b5bfbb9efb": {
-      "type": "collection-list",
-      "disabled": true,
-      "settings": {
-        "heading": "Shop by Category",
-        "marker_style": "style1",
-        "description": "<p>Add a short description for your collections<\/p>",
-        "button_enabled": false,
-        "button_text": "",
-        "button_link": "",
-        "heading_size": "small",
-        "collection_list": [
-          "aarav-sharma",
-          "framed-prints",
-          "frontpage",
-          "nandini-patel",
-          "priya-singhania",
-          "siddharth-sharma"
-        ],
-        "image_ratio": "portrait",
-        "collection_layout": "carousel",
-        "style": "style1",
-        "columns_desktop": 4,
-        "columns_mobile": "2",
-        "show_progress_bar": true,
-        "mobile_swipe": true,
-        "heading_position": "bottom-center",
-        "marker_color": "#fd6262",
-        "text_color": "#2c2d2e",
-        "overlay_color": "rgba(0,0,0,0)",
-        "overlay_opacity": 30,
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
-      }
-    },
-    "16614195534fb74bc3": {
-      "type": "collection-tabs",
-      "blocks": {
-        "62cb3915-bc43-41ce-b3f3-2e48c9eefdd2": {
-          "type": "collection",
-          "settings": {
-            "collection": "framed-prints",
-            "enable_promotion": false,
-            "title": "Promotion",
-            "text": "Advertise a promotion or a sale",
-            "link_label": "Explore",
-            "content_position": "bottom-left",
-            "text_alignment": "left",
-            "link": "",
-            "use_text_button": false,
-            "block_link": "",
-            "overlay_color": "#000000",
-            "overlay_opacity": 70
-          }
-        },
-        "daf43de1-d4e8-41d4-b6ee-0d3a6da11a2e": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage",
-            "enable_promotion": false,
-            "title": "Promotion",
-            "text": "Advertise a promotion or a sale",
-            "link_label": "Explore",
-            "content_position": "bottom-left",
-            "text_alignment": "left",
-            "link": "",
-            "use_text_button": false,
-            "block_link": "",
-            "overlay_color": "#000000",
-            "overlay_opacity": 70
-          }
-        }
-      },
-      "block_order": [
-        "62cb3915-bc43-41ce-b3f3-2e48c9eefdd2",
-        "daf43de1-d4e8-41d4-b6ee-0d3a6da11a2e"
-      ],
-      "disabled": true,
-      "settings": {
-        "heading": "Collection tabs",
-        "marker_style": "style1",
-        "description": "<p>Collection tabs description<\/p>",
-        "product_limit": 8,
-        "columns_desktop": 5,
-        "show_progress_bar": true,
-        "marker_color": "#fd6262",
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": true
-      }
-    },
     "1661426105a80f3333": {
       "type": "scrolling-text",
       "blocks": {
@@ -312,7 +222,7 @@
           "type": "text",
           "settings": {
             "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
-            "text": "Our Canvas",
+            "text": "Print on Demand",
             "link": "",
             "outline_text": false
           }
@@ -330,7 +240,34 @@
           "type": "text",
           "settings": {
             "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
-            "text": "Your Journey",
+            "text": "Your Passion",
+            "link": "",
+            "outline_text": false
+          }
+        },
+        "c444aea2-5348-4c16-9a55-01181fa5ea59": {
+          "type": "text",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
+            "text": "Your Memories",
+            "link": "",
+            "outline_text": false
+          }
+        },
+        "3a5b6e6f-5473-4d89-af96-c82bbcf4de70": {
+          "type": "text",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
+            "text": "Your Imaginations",
+            "link": "",
+            "outline_text": false
+          }
+        },
+        "2a1f223a-608a-421a-968b-47276c82d57f": {
+          "type": "text",
+          "settings": {
+            "svg_code": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"21\" height=\"20\" viewbox=\"0 0 21 20\" fill=\"none\">\n  <rect x=\"0.5\" width=\"20\" height=\"20\"><\/rect>\n<\/svg>",
+            "text": "Our Canvas",
             "link": "",
             "outline_text": false
           }
@@ -339,7 +276,10 @@
       "block_order": [
         "1ca83ea2-5e93-4db4-a6e6-8fcf06ee541b",
         "26518d78-5502-4bdf-a933-0020b59a8d9e",
-        "c2cf6d75-da2e-4ba7-9791-6b681127eeff"
+        "c2cf6d75-da2e-4ba7-9791-6b681127eeff",
+        "c444aea2-5348-4c16-9a55-01181fa5ea59",
+        "3a5b6e6f-5473-4d89-af96-c82bbcf4de70",
+        "2a1f223a-608a-421a-968b-47276c82d57f"
       ],
       "settings": {
         "height": "height-auto",
@@ -902,8 +842,6 @@
     "8ba47ba3-de7f-4f0a-b30d-6f2a540748c3",
     "a7802e0a-30f4-4485-bf29-8868a637ca3e",
     "8ca0f2be-52f0-4ad3-bd68-49f432322085",
-    "35d10325-dd08-42f2-87e3-b3b5bfbb9efb",
-    "16614195534fb74bc3",
     "1661426105a80f3333",
     "66e51d40-1da7-4a8a-8d7c-2e5b727c5f4c",
     "60ed2e7d-3f50-428a-b546-03274d862db0",
