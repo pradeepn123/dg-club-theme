@@ -754,6 +754,17 @@
             "text": "<p>The product I received was very similar to what I was expecting<\/p>",
             "author": "Prathima Chopda"
           }
+        },
+        "072b7a43-e28d-4fab-bc9a-33e7d7b54f17": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "star_rating": "",
+            "heading": "Awesome Products",
+            "text": "<p>Worth paying every penny<\/p>",
+            "author": "Bharath Hegde"
+          }
         }
       },
       "block_order": [
@@ -763,7 +774,8 @@
         "8701e09a-7c91-460f-9ec4-4b761f9b8bd0",
         "c1ccdfb8-f6fe-4c44-aa08-c5541cd20d26",
         "ff055e2d-d826-4de5-b974-fca2d59a708a",
-        "90165f8a-f297-4bf7-9ec4-6c537743daa7"
+        "90165f8a-f297-4bf7-9ec4-6c537743daa7",
+        "072b7a43-e28d-4fab-bc9a-33e7d7b54f17"
       ],
       "settings": {
         "heading": "What customers think",
