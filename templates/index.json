@@ -524,8 +524,8 @@
           "settings": {
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_247_2.svg",
-            "heading": "In-House  Manufacturing",
-            "text": "<p>We produce and sell our POD products directly, ensuring top-notch quality control.<\/p>"
+            "heading": "In House Manufacturing",
+            "text": "<p>We manufacture all products directly, ensuring top notch quality.<\/p>"
           }
         },
         "template--21508546429228__2081a2f1-fed7-416d-8c0c-100c4469fa89-icon-2": {
@@ -534,7 +534,7 @@
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_483.svg",
             "heading": "Timely Fulfillment",
-            "text": "<p>Our efficient processes guarantee not only timely order fulfillment but also delivers quality products<\/p>"
+            "text": "<p>Our efficient process and shipping network make sure quality products reach to customers on time<\/p>"
           }
         },
         "template--21508546429228__2081a2f1-fed7-416d-8c0c-100c4469fa89-icon-3": {
@@ -543,7 +543,7 @@
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_484.svg",
             "heading": "Competitive Pricing",
-            "text": "<p>We offer competitive pricing for our customers while ensuring good commissions for our artists.<\/p>"
+            "text": "<p>We offer best pricing for our end customers while ensuring good commission for creators collaborated with us<\/p>"
           }
         },
         "40014807-3392-4b0f-af7a-ff30a9ab579f": {
@@ -551,8 +551,8 @@
           "settings": {
             "icon": "none",
             "image": "shopify:\/\/shop_images\/Frame_485.svg",
-            "heading": "Entrepreneurship  Program",
-            "text": "<p>Our 'Entrepreneurship for Creative Minds' program supports artists in running POD businesses.<\/p>"
+            "heading": "Entrepreneurship Program",
+            "text": "<p>Our “Entrepreneurship for Creative Minds” program supports creators all the way to setting up a successful print on demand business<\/p>"
           }
         }
       },
