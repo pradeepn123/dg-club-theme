@@ -1,0 +1,6 @@
+{%  layout none %} 
+[
+ {%  for product in collection.products %} 
+  {{ product | json }}
+ {%  endfor  %}
+]
