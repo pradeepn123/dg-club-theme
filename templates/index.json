@@ -765,6 +765,17 @@
             "text": "<p>Worth paying every penny<\/p>",
             "author": "Bharath Hegde"
           }
+        },
+        "410abb62-f1f8-4d2d-8263-ba519180b0f3": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "star_rating": "",
+            "heading": "Highly Recommended",
+            "text": "<p>Excellent product range<\/p>",
+            "author": "Kumar LG"
+          }
         }
       },
       "block_order": [
@@ -775,7 +786,8 @@
         "c1ccdfb8-f6fe-4c44-aa08-c5541cd20d26",
         "ff055e2d-d826-4de5-b974-fca2d59a708a",
         "90165f8a-f297-4bf7-9ec4-6c537743daa7",
-        "072b7a43-e28d-4fab-bc9a-33e7d7b54f17"
+        "072b7a43-e28d-4fab-bc9a-33e7d7b54f17",
+        "410abb62-f1f8-4d2d-8263-ba519180b0f3"
       ],
       "settings": {
         "heading": "What customers think",
