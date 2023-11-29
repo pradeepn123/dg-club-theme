@@ -130,18 +130,18 @@
         "55f7c68a-a8a2-4a5c-9d22-c648f5a90b07": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_119.png",
+            "image": "shopify:\/\/shop_images\/Copy_of_Promotion_Block_1.jpg",
             "title": "Discover Our Fully Customizable Framed Prints, Acrylic Prints And Many More!",
-            "button_text": "Shop now",
+            "button_text": "",
             "button_link": ""
           }
         },
         "dbbd21fc-6396-4bee-a3ca-7cd24590466d": {
           "type": "promotion",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_119.png",
+            "image": "shopify:\/\/shop_images\/Copy_of_Promotion_Block_2.jpg",
             "title": "Explore Wallpapers, Wall Arts And Beyond!",
-            "button_text": "Shop now",
+            "button_text": "",
             "button_link": ""
           }
         }
