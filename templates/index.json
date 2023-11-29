@@ -776,6 +776,17 @@
             "text": "<p>Excellent product range<\/p>",
             "author": "Kumar LG"
           }
+        },
+        "a1263ebc-b383-4e73-9fe4-8ffe60e6a682": {
+          "type": "review",
+          "settings": {
+            "product_handle": "",
+            "stars": "5",
+            "star_rating": "",
+            "heading": "Good Quality Wall Decor Products",
+            "text": "<p>Best support team and provide installation support too<\/p>",
+            "author": "Sarvesh SP"
+          }
         }
       },
       "block_order": [
@@ -787,7 +798,8 @@
         "ff055e2d-d826-4de5-b974-fca2d59a708a",
         "90165f8a-f297-4bf7-9ec4-6c537743daa7",
         "072b7a43-e28d-4fab-bc9a-33e7d7b54f17",
-        "410abb62-f1f8-4d2d-8263-ba519180b0f3"
+        "410abb62-f1f8-4d2d-8263-ba519180b0f3",
+        "a1263ebc-b383-4e73-9fe4-8ffe60e6a682"
       ],
       "settings": {
         "heading": "What customers think",
