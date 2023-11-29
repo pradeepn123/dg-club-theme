@@ -4,16 +4,29 @@
 
 	assign show_collection_banner = section.settings.show_collection_banner
 	assign show_collection_share = section.settings.show_collection_share
+	assign banner_image = section.settings.banner_image
+	assign profile_image = section.settings.profile_image
+	assign custom_collection_title = section.settings.custom_collection_title
+	assign custom_collection_description = section.settings.custom_collection_description
+	assign custom_collection_description_title = section.settings.custom_collection_description_title
+	assign collection_share_text = section.settings.collection_share_text
+	assign collection_share_link = section.settings.collection_share_link
 
 	assign heading = collection.title
 	if show_collection_description
 		assign description = collection.description
 	endif
 -%}
+{%- style -%}
+	{%- if profile_image == blank and collection.image == blank -%}
+	.template-header--content {
+		max-width: 100% !important;
+		margin-left: 0 !important;
+	}
+	{%- endif -%}
+{%- endstyle -%}
 {{ 'collection-header.css' | asset_url | stylesheet_tag }}
-<div class="template-header {% if request.page_type == 'search' %}reduce_padding_bottom{% endif %}">
-	{% assign banner_image = collection.metafields.custom.image_banner %}
-	{% assign profile_image = collection.metafields.custom.image_banner %}	
+<div class="template-header {%- if request.page_type == 'search' -%}reduce_padding_bottom{%- endif -%}">
 	{%- if show_collection_banner and banner_image != blank -%}
 		<div class="template-header--banner">
 			<img class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}" data-sizes="auto" src="{{- banner_image | image_url -}}" alt="{{ banner_image.alt | escape }}"/>
@@ -22,33 +35,59 @@
   	<div class="row">
 		<div class="small-12 columns">
 			<div class="template-header--content">
-				{% assign profile_image = collection.metafields.custom.profile_image %}
-				{%- if show_collection_image and profile_image != blank -%}
-					<div class="template-header--image">
-						<img class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}" data-sizes="auto" src="{{- profile_image | image_url -}}" alt="{{ profile_image.alt | escape }}"/>
-					</div>
+				{%- if show_collection_image -%}
+					{%- if profile_image != blank -%}
+						<div class="template-header--image">
+							<img class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}" data-sizes="auto" src="{{- profile_image | image_url -}}" alt="{{ profile_image.alt | escape }}"/>
+						</div>
+					{%- elsif collection.image != blank -%}
+					{% assign profile_image = collection.image %}
+						<div class="template-header--image">
+							<img class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}" data-sizes="auto" src="{{- profile_image | image_url -}}" alt="{{ profile_image.alt | escape }}"/>
+						</div>
+					{%- endif -%}
 				{%- endif -%}
 				<div class="template_header">
-					<h1 class="template-header--title h2">{{ heading }}</h1>
-					{%- if description != blank and description != '' -%}
-						<div class="template-header--description">
-							<p class="template-header--description-title">BIO</p>
-							<p class="template-header--description-text">{{ description }}</p>
-						</div>
+					<h1 class="template-header--title h2">{% if custom_collection_title != blank %}{{ custom_collection_title }}{% else %}{{ heading }}{% endif %}</h1>
+					{%- if description != blank -%}
+						{%- if custom_collection_description != '' -%}
+							<div class="template-header--description">
+								{%- if custom_collection_title != blank -%}
+									<p class="template-header--description-title">{{ custom_collection_description_title }}</p>
+								{%- else -%}
+									<p class="template-header--description-title">BIO</p>
+								{%- endif -%}
+								<p class="template-header--description-text">{{ custom_collection_description }}</p>
+							</div>
+						{%- elsif description != '' -%}
+							<div class="template-header--description">
+								{%- if custom_collection_title != blank -%}
+									<p class="template-header--description-title">{{ custom_collection_description_title }}</p>
+								{%- else -%}
+									<p class="template-header--description-title">BIO</p>
+								{%- endif -%}
+								<p class="template-header--description-text">{{ description }}</p>
+							</div>
+						{%- endif -%}
 					{%- endif -%}
 				</div>
 				{%- if show_collection_share -%}
-					<a class="template_header--share">{% render 'svg-icons' with 'share' %}Share product portfolio</a>
+					{%- if collection_share_text != blank -%}
+							<a class="template_header--share">{% render 'svg-icons' with 'share' %}{{ collection_share_text }}</a>
+					{%- else -%}
+							<a class="template_header--share">{% render 'svg-icons' with 'share' %}Share product portfolio</a>
+					{%- endif -%}
 				{%- endif -%}
 			</div>
 		</div>
   	</div>
 </div>
 
-<script>
 
+<script>
 	var temp = document.createElement("input");
-	var url = window.location.href;
+	var linkSuccess = document.querySelector(".template_header--share_success");
+	var url = {%- if collection_share_link != blank -%} '{{ collection_share_link }}'{%- else -%}window.location.href{%- endif -%};
 
 	document.querySelector('.template_header--share').addEventListener('click', function() {
 		document.body.appendChild(temp);
@@ -56,9 +95,8 @@
 		temp.select();
 		document.execCommand("copy");
 		document.body.removeChild(temp);
-		console.log("Link Copied!!");
+		this.innerHTML = "Link Copied !!";
 	});
-
 </script>
 
 {% schema %}
@@ -72,17 +110,52 @@
 			"info": "These settings are only used on collection pages."
 		},
 		{
-	      	"type": "checkbox",
-	      	"id": "show_collection_image",
-	      	"default": false,
-	      	"label": "Show collection profile image"
-	    },
-        {
-            "type": "checkbox",
-            "id": "show_collection_banner",
-            "default": false,
-            "label": "Show collection banner"
-        },
+			"type": "image_picker",
+			"id": "banner_image",
+			"label": "Banner Image"
+		},
+		{
+			"type": "image_picker",
+			"id": "profile_image",
+			"label": "Profile Image"
+		},
+		{
+			"type": "text",
+			"id": "custom_collection_title",
+			"label": "Collection Name"
+		},
+		{
+			"type": "text",
+			"id": "custom_collection_description_title",
+			"label": "Collection Description Title"
+		},
+		{
+			"type": "richtext",
+			"id": "custom_collection_description",
+			"label": "Collection Description"
+		},
+		{
+			"type": "text",
+			"id": "collection_share_text",
+			"label": "Collection Share Text"
+		},
+		{
+			"type": "url",
+			"id": "collection_share_link",
+			"label": "Share link"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_collection_image",
+			"default": false,
+			"label": "Show collection profile image"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_collection_banner",
+			"default": false,
+			"label": "Show collection banner"
+		},
 		{
             "type": "checkbox",
             "id": "show_collection_share",
