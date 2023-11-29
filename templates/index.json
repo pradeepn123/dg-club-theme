@@ -642,7 +642,7 @@
           "type": "section",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_third_block.jpg",
-            "badge": "bhjh",
+            "badge": "",
             "heading": "Step 3",
             "subheading": "Seamless Checkout, Secure Payment",
             "marker_style": "style1",
