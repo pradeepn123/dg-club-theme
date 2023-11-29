@@ -737,12 +737,11 @@
           "type": "review",
           "settings": {
             "product_handle": "",
-            "stars": "",
+            "stars": "4.5",
             "star_rating": "",
-            "heading": "Review heading",
-            "text": "<p>Add your customer review here to showcase them.<\/p>",
-            "author": "Review author",
-            "author_image": "shopify:\/\/shop_images\/Ellipse_4.svg"
+            "heading": "Fabulous Quality Wallpapers",
+            "text": "<p>Loved designs ordered<\/p>",
+            "author": "Vineeth Verma"
           }
         }
       },
