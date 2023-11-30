@@ -79,7 +79,7 @@
 				{%- if tabs -%}
 					{%- for tab in tabs -%}
 					<div class="media-with-tabs--tab{% if forloop.index == 1 %} active{% endif -%}" {{ tab.shopify_attributes }}>
-						<button class="media-with-tabs--button{% if tab.settings.heading_icon or tab.settings.icons_image != 'none' %} has-icon{% endif -%}">{% render 'svg-icons-inline', icon: tab.settings.heading_icon %}<img src="{{ tab.settings.icons_image | image_url }}"/>{{ tab.settings.heading }}</button>
+						<button class="media-with-tabs--button{% if tab.settings.heading_icon != 'none' and tab.settings.icons_image != 'blank' %} has-icon{% endif -%}">{% if tab.settings.icons_image %}<img src="{{ tab.settings.icons_image | image_url }}"/>{% else %}{% render 'svg-icons-inline', icon: tab.settings.heading_icon %}{% endif %}{{ tab.settings.heading }}</button>
 						<div class="media-with-tabs--text">{{ tab.settings.description }}</div>
 					</div>
 					{%- endfor -%}
