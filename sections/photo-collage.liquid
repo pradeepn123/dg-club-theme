@@ -15,7 +15,7 @@
     <div class="photo-collage-section">
         <div class="row">
             <div class="small-12 column">
-                {% assign product_url = canonical_url | split : '/products/' | last %}            
+                {% assign product_url = canonical_url | split : '/products/' | last %}
                 {% render 'section-header', section_heading: section_heading, section_description: section_description %}
                 <ul id="product-grid" data-id="{{ section.id }}" class="collage-products-wrap products collection row small-up-6 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}">
                     {%- for block in section.blocks -%}

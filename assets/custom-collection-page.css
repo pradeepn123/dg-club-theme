@@ -169,6 +169,10 @@
 .sidebar-container--tabbed-filters .tabs__controls .tag-filters__item{
     margin-right: 16px;
 }
+.sidebar-container--tabbed-filters .tabs__controls .tag-filters__item.active a,
+.sidebar-container--tabbed-filters .tabs__controls .tag-filters__item:hover a{
+    color: #ffffff;
+}
 .sidebar-container--tabbed-filters .tabs__controls .tag-filters__item:last-child{
     margin-right: 0;
 }
