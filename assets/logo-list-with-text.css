@@ -72,7 +72,7 @@
 }
 
 .logo-list--logo--has-bg {
-    padding: 40px 70px;
+    padding: 40px 20px;
     background: var(--logo-bg, #fff); 
 }
 
@@ -116,7 +116,7 @@
         padding: 28px 50px;
     }
     .logo-list--logo .logo_text {
-        font-size: 48px;
+        font-size: 42px;
         margin-bottom: 10px;
     }
     .logo-list--logo .heading {
@@ -129,11 +129,11 @@
         padding: 28px 18px;
     }
     .logo-list--logo .logo_text {
-        font-size: 36px;
+        font-size: 34px;
         margin-bottom: 10px;
     }
     .logo-list--logo .heading {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 

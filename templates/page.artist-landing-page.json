@@ -85,7 +85,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_Below_banner.jpg",
             "use_video": false,
-            "heading_icon": "none",
+            "icons_image": "shopify:\/\/shop_images\/Shuffle.svg",
+            "heading_icon": "apple",
             "heading": "Diverse Opportunities & Endless Possibilities",
             "description": "DG Club welcomes creators from all backgrounds, whether you work with traditional medium like paint and canvas, digital tools such as graphic tablets, or even AI generated art, We celebrate and support artistic diversity. Decor and Gifting products, upcoming apparel and branding products range offers endless possibilities to creators.",
             "video_autoplay": true
@@ -96,7 +97,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_Below_banner.jpg",
             "use_video": false,
-            "heading_icon": "none",
+            "icons_image": "shopify:\/\/shop_images\/Vector.svg",
+            "heading_icon": "apple",
             "heading": "Free Online Store & Sell In Your Own Brand",
             "description": "DG Club offers white labeling for all products sold through Creator store, a fully functioning online store with product customization app features and many more, zero investment and maintenance for life long.",
             "video_autoplay": true
@@ -107,7 +109,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_Below_banner.jpg",
             "use_video": false,
-            "heading_icon": "none",
+            "icons_image": "shopify:\/\/shop_images\/Vector_b9284a62-1e68-4a17-ab02-1f1abe04af1c.svg",
+            "heading_icon": "apple",
             "heading": "Attractive Commission On Sales & Free Digital Marketing Support",
             "description": "All products available through DG Club marketplace are directly manufactured to keep best quality standards, good commission for creators and best price for end customers. We do everything on backend to showcase your products with all kind of optimizations for search engines and social media platforms, free ad campaigns offered for selected products from creator store to drive more sales, thus more earning for creators.",
             "video_autoplay": true
@@ -168,9 +171,14 @@
       "disabled": true,
       "settings": {
         "image": "shopify:\/\/shop_images\/Rectangle_188.jpg",
+        "text_alignment": "center",
+        "desktop_height": "desktop-height-650",
+        "content_width": "medium",
+        "text_color": "#FFFFFF",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
         "height": "adapt",
         "mobile_image_width": "adapt",
-        "desktop_image_width": "medium",
         "full_width": false,
         "layout": "text_first",
         "content_position": "text-left",
@@ -376,33 +384,33 @@
         "template--21535618564396__2285a342-f2cc-46d9-961f-f70a82b4c9a7-block-info-1": {
           "type": "block-info",
           "settings": {
-            "logo_text": "3K+",
+            "logo_text": "500+",
             "link": "",
-            "heading": "Creators Onboarded"
+            "heading": "Creators Started Working To Launch Their Store Soon"
           }
         },
         "template--21535618564396__2285a342-f2cc-46d9-961f-f70a82b4c9a7-block-info-2": {
           "type": "block-info",
           "settings": {
-            "logo_text": "50+",
+            "logo_text": "100K+",
             "link": "",
-            "heading": "Products  Sold"
+            "heading": "Shipments Delivered"
           }
         },
         "template--21535618564396__2285a342-f2cc-46d9-961f-f70a82b4c9a7-block-info-3": {
           "type": "block-info",
           "settings": {
-            "logo_text": "2M+",
+            "logo_text": "400K+",
             "link": "",
-            "heading": "Comissions Earned"
+            "heading": "Products Printed on Demand"
           }
         },
         "template--21535618564396__2285a342-f2cc-46d9-961f-f70a82b4c9a7-block-info-4": {
           "type": "block-info",
           "settings": {
-            "logo_text": "20+",
+            "logo_text": "1M+",
             "link": "",
-            "heading": "Social Media Engagement"
+            "heading": "Library Assets To Design Your Favorite Products"
           }
         }
       },

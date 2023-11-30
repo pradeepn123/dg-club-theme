@@ -36,7 +36,7 @@
 				</div>
 			</div>
 		{% endif %}
-		{%- paginate photo_gift_collection.products by products_per_page -%}
+		{%- paginate collection.products by products_per_page -%}
 			<div class="collection-container section-spacing-bottom">
 				<div id="ProductGridContainer">
 					<div class="sidebar-container facets--{{ facets_desktop }} results--{{ collection.products.size }}">
@@ -45,13 +45,111 @@
 						{%- endif -%}
 
 						<tabs-group>
-							<div class="sidebar-container--tabbed-filters">
+							<div class="sidebar-container--tabbed-filters">	
 								<div role="tablist" class="tabs__controls">
-									<button role="tab" class="tag-filters__item" aria-selected="true">{{ section.settings.photo_gift_heading }}</button>
-									<button role="tab" class="tag-filters__item">{{ section.settings.decor_print_heading }}</button>
-								</div>								
+									{%- for block in section.blocks -%}
+										{%- case block.type -%}
+											{%- when 'collection_category' -%}
+											{% assign coll_handle = block.settings.category_collection %}
+
+											{% assign handle_url = canonical_url | split : '/collections/' | last %}
+											<button class="tag-filters__item {% if handle_url == coll_handle.handle %}active{% endif %}" {% if handle_url == coll_handle.handle %}aria-selected="true" {% endif %}>
+												<a href="{{coll_handle | handle}}">{{ block.settings.tab_heading }}</a>
+											</button>
+										{%- endcase -%}
+									{%- endfor -%}
+								</div>
+							</div>
+						<tabs-group>
+
+						{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
+
+							<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}">
+								{%- if collection.products.size == 0 -%}
+									<div class="collection-empty">
+										{% render 'svg-icons' with 'thb-no-products' %}
+										<p>
+											{{ 'sections.collection_template.empty' | t }}<br>
+											{%- if collection.terms -%}
+											{{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url }}
+											{%- endif -%}
+										</p>
+									</div>
+								{%- else -%}
+									{%- for product in collection.products -%}										
+										<li class="column">
+											{%- render 'product-card', product_card_product: product -%}
+										</li>
+									{%- endfor -%}
+								{%- endif -%}
+							</ul>
+						{% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}
+						
+						
+						
+						
+						{% comment %} 
+						{%- for block in section.blocks -%}
+                        	{%- case block.type -%}
+								{%- when 'collection_category' -%}
+									{% assign coll_handle = block.settings.category_collection %}									
+									<a href="/collections/{{coll_handle.handle}}">
+										<button role="tab" class="tag-filters__item" aria-selected="true">{{ block.settings.tab_heading }}</button>
+									</a>
+
+									<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}">										
+										{%- for product in coll_handle.products -%}
+											<li class="column">
+												{%- render 'product-card', product_card_product: product -%}
+											</li>
+										{%- endfor -%}
+									</ul>
+							{%- endcase -%}
+                    	{%- endfor -%} {% endcomment %}
+						
+
+
+
+						{% comment %} <tabs-group>
+							<div class="sidebar-container--tabbed-filters">								
+								<div role="tablist" class="tabs__controls">
+									{%- for block in section.blocks -%}
+                        				{%- case block.type -%}
+											{%- when 'collection_category' -%}
+											{% assign coll_handle = block.settings.category_collection %}
+
+											<button class="tag-filters__item" aria-selected="true">
+												<a href="{{coll_handle | handle}}">{{ block.settings.tab_heading }}</a>
+											</button>									
+										{%- endcase -%}
+                    				{%- endfor -%}
+								</div>
 								
-								<div role="tabpanel" class="tabs__panel">
+								
+
+								{%- for block in section.blocks -%}
+                        			{%- case block.type -%}
+										{%- when 'collection_category' -%}
+											{% assign coll_handle = block.settings.category_collection %}
+											<div role="tabpanel" class="tabs__panel">												
+												{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
+
+												<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}">										
+													{%- for product in coll_handle.products -%}														
+														{% if collection.handle == coll_handle.handle %}
+															<li class="column">
+																{%- render 'product-card', product_card_product: product -%}
+															</li>
+														{% endif %}
+													{%- endfor -%}
+												</ul>
+												{% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}
+												
+											</div>
+									{%- endcase -%}
+                    			{%- endfor -%}
+
+								 <div role="tabpanel" class="tabs__panel">
 									{%- render 'facets-bar', results: photo_gift_collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
 
 									<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}">
@@ -61,8 +159,8 @@
 											</li>
 										{%- endfor -%}
 									</ul>
-								</div>
-								<div role="tabpanel" class="tabs__panel" hidden>									
+								</div> 
+								 <div role="tabpanel" class="tabs__panel" hidden>									
 									{%- render 'facets-bar', results: decor_collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
 									
 									<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}">
@@ -74,11 +172,11 @@
 											{% endif %}
 										{%- endfor -%}
 									</ul>
-								</div>
+								</div> 
 								
 							</div>
-							{% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}
-						</tabs-group>									
+							
+						</tabs-group>									 {% endcomment %}
 
 					</div>
 				</div>
@@ -324,6 +422,28 @@
 			"label": "Desktop position",
 			"info": "Position of filters on desktop"
 	    }
-    ]	
+    ],
+	"blocks": [		
+		{
+			"type": "collection_category",
+			"name": "Collection Category",
+			"settings": [
+				{
+					"type": "header",
+					"content": "photo gift collections"
+				},
+				{
+					"type": "text",
+					"id": "tab_heading",
+					"label": "Tab Heading"
+				},
+				{
+					"type": "collection",
+					"id": "category_collection",
+					"label": "Select Collection"
+				}			
+			]
+      	}	
+    ]
 }
 {% endschema %}
