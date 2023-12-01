@@ -4264,6 +4264,7 @@ h6,
 
 .mega-menu-promotion--image {
   overflow: hidden;
+  border-radius: 12px;
 }
 
 .mega-menu-promotion--content {

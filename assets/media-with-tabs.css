@@ -57,7 +57,7 @@
 
 @media only screen and (min-width: 768px) {
   .media-with-tabs--content {
-    padding: 85px 53px;
+    padding: 75px 53px;
     grid-area: content;
   }
 }
@@ -129,9 +129,11 @@
 }
 
 .media-with-tabs--tab.active .media-with-tabs--text {
-  max-height: 200px;
+  max-height: 120px;
   padding-top: 0;
   margin-top: 24px;
+  overflow: auto;
+  padding-right: 5px;
 }
 
 /* .media-with-tabs--tab.active:after {
@@ -244,4 +246,18 @@
     width: 20px;
     height: 20px;
   }
+}
+
+/* Scrollbar */
+.media-with-tabs--text::-webkit-scrollbar {
+  width: 5px;
+}
+
+.media-with-tabs--text::-webkit-scrollbar-thumb {
+  background: #4444e1; 
+  border-radius: 10px;
+}
+
+.media-with-tabs--text::-webkit-scrollbar-thumb:hover {
+  background: #2f2fd8; 
 }
