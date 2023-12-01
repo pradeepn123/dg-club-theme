@@ -245,24 +245,34 @@
 .creator_form .file-to-upload.has_files label{
   position: relative;
   left: 0;
-  margin-top: 20px;
+  margin: 20px 0;
   justify-content: center;
   align-items: center;
   transform: none;
 }
-.creator_form .file-to-upload.has_files ul{
+.creator_form .uploaded_files ul{
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 1.25rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  /* margin: 1.25rem; */
 }
-.creator_form .file-to-upload.has_files ul li{
+.creator_form .uploaded_files li{
   font-size: 14px;
   font-weight: 400;
   list-style: none;
   background: #ECECEC;
   padding: 10px 20px;
   border-radius: 10px;
+  text-align: left;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.creator_form .uploaded_files li .file_name {
+  width: 100%;
 }
 #file-input{
   display: none;
@@ -308,4 +318,34 @@ label[for="file-input"] span:last-child{
   .creator_form .fields{
     flex-direction: column;
   }
+}
+
+.uploaded_files{
+  width: 100%;
+  text-align: center;
+  display: block;  
+}
+
+.file_loader { 
+  width:35px;
+  height:35px;
+  display:inline-block;
+  padding:0px;
+  border-radius:100%;
+  border:5px solid;
+  border-top-color:#4444E1;
+  border-bottom-color: #FFFFFF;
+  border-left-color: #4444E1;
+  border-right-color:#FFFFFF;
+  -webkit-animation: file_loader 1s ease-in-out infinite;
+  animation: file_loader 1s ease-in-out infinite;
+  margin: 0 auto;
+}
+@keyframes file_loader {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+@-webkit-keyframes file_loader {
+  from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(360deg);}
 }

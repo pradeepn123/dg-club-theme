@@ -1196,53 +1196,60 @@ if (!customElements.get('quick-view')) {
 if (!customElements.get('creator-form')) {
     class CreatorForm extends HTMLElement {
         constructor() {
-            super()
-            this.formElement = this.querySelector("form")
-            this.fileInput = this.querySelector("input[type='file']")
-            this.fileInputContainer = this.querySelector(".file-to-upload")
-            this.uploadedFileContainer = this.querySelector(".uploaded_files")
+          super()
+          this.formElement = this.querySelector("form")
+          this.fileInput = this.querySelector("input[type='file']")
+          this.fileInputContainer = this.querySelector(".file-to-upload")
+          this.uploadedFileContainer = this.querySelector(".uploaded_files ul")
+          this.thankYouMessage = this.querySelector("#creator_form")
+          this.ctaLoader = this.querySelector(".creator_form_button")
 
-            this.formElement.addEventListener("submit", this.handleSubmit.bind(this))
-            this.fileInput.addEventListener("change", this.handleFileUpload.bind(this))
-            this.uploadedFiles = []
-            console.log("HHS")
+          this.formElement.addEventListener("submit", this.handleSubmit.bind(this))
+          this.fileInput.addEventListener("change", this.handleFileUpload.bind(this))
+          this.uploadedFiles = []            
         }
 
         handleSubmit(evt) {
-            // Show Loader
-            evt.preventDefault()
-            const formData = new FormData(evt.target)
-            const payload = Object.fromEntries(formData)
-            payload.attachments = this.uploadedFiles
-            payload.store = 4
-            fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/creators/', {
-              method: 'POST',
-              body: JSON.stringify(payload),
-              headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-              },
-            })
-            .then(() => {
-              // Show Thankyou UI
-            })
-            .catch((err) => {
-              console.log(err)
-            })
-            .then(() => {
-              // Hide Loader
-            })
-            return false
+          // Show Loader
+          this.ctaLoader.innerHTML = `<div class="file_loader"></div>`
+          evt.preventDefault()
+          const formData = new FormData(evt.target)
+          const payload = Object.fromEntries(formData)
+          payload.attachments = this.uploadedFiles
+          payload.store = 4
+          fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/creators/', {
+            method: 'POST',
+            body: JSON.stringify(payload),
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+          })
+          .then(() => {
+            // Show Thankyou UI
+            this.thankYouMessage.innerHTML = `
+            <h3> Thank you for Account Request </h3>
+            <p>Your account request is being reviewed and it might take 24 - 48 hrs for the process to complete. You will recieve an email once the review process is completed.</p>
+            <button class="button full creator_form_button"><span>Back to homepage</span></button>`
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+          .then(() => {
+            // Hide Loader
+          })
+          return false
         }
 
         async handleFileUpload(evt) {
           // Show Loader
+          this.uploadedFileContainer.innerHTML = `<div class="file_loader"></div>`
           const { files } = evt.target
           const uploadFiles = Array.from(files).map(async (file) => await this.uploadFile(file))
           const fileResponse = await Promise.all(uploadFiles)
           this.uploadedFiles = this.uploadedFiles.concat(fileResponse)
           this.renderFiles()
-          // Hide Loader
+          // Hide Loader          
         }
 
         async uploadFile(file) {
@@ -1259,7 +1266,13 @@ if (!customElements.get('creator-form')) {
         renderFiles() {
           if(this.uploadedFiles.length > 0){
             this.fileInputContainer.classList.add('has_files')
-            this.uploadedFileContainer.innerHTML = this.uploadedFiles.map((file) => `<li>${file.name}</li>`).join("")
+            this.uploadedFileContainer.innerHTML = this.uploadedFiles.map((file) => `<li>
+              <div class="file_name">${file.name}</div>
+              <svg viewPort="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <line x1="1" y1="11" x2="11" y2="1" stroke="black" stroke-width="2"/>
+                <line x1="1" y1="1" x2="11" y2="11" stroke="black" stroke-width="2"/>
+              </svg>
+            </li>`).join("")
           } else {
             this.fileInputContainer.classList.remove('has_files')
             this.uploadedFileContainer.innerHTML = ''

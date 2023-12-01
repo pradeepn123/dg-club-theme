@@ -38,44 +38,44 @@
 
 
         <creator-form>
-        <form class="creator_form" id="creator_form">
-          
-          <div class="fields">
-            <div class="field">
-              <input type="text" name="first_name" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required/>
-	            <label for="first_name">{{ 'customer.login_page.first_name' | t }}*</label>
+          <form class="creator_form" id="creator_form">
+            
+            <div class="fields">
+              <div class="field">
+                <input type="text" name="first_name" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required/>
+                <label for="first_name">{{ 'customer.login_page.first_name' | t }}*</label>
+              </div>
+              <div class="field">
+                <input type="text" name="last_name" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required/>
+                <label for="last_name">{{ 'customer.login_page.last_name' | t }}*</label>
+              </div>
             </div>
+            
             <div class="field">
-              <input type="text" name="last_name" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required/>
-	            <label for="last_name">{{ 'customer.login_page.last_name' | t }}*</label>
+              <input type="email" name="email" class="full {% if form.errors contains 'email' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.email' | t }}" />
+              <label for="email">{{ 'customer.login_page.email' | t }}</label>
             </div>
-					</div>
-          
-          <div class="field">
-            <input type="email" name="email" class="full {% if form.errors contains 'email' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.email' | t }}" />
-            <label for="email">{{ 'customer.login_page.email' | t }}</label>
-          </div>
-          <span class="field_label">Share your works for us to review and approve your account* </span>
-          <div class="field">
-            <input type="url" name="portfolio_url" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" />
-            <label for="portfolio_url">Portfolio link</label>
-          </div>
-          
-          <div class="file-to-upload">
-              <label for="file-input">
-                <span>Add files</span>
-                <span>Accepts .jpg, .png & .pdf</span>
-              </label>
-              
-              <input id="file-input" type="file" multiple />
+            <span class="field_label">Share your works for us to review and approve your account* </span>
+            <div class="field">
+              <input type="url" name="portfolio_url" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" />
+              <label for="portfolio_url">Portfolio link</label>
+            </div>
+            
+            <div class="file-to-upload">
+                <label for="file-input">
+                  <span>Add files</span>
+                  <span>Accepts .jpg, .png & .pdf</span>
+                </label>                
+                <input id="file-input" type="file" multiple />
+            </div>
+            <div class="uploaded_files">
+              <ul></ul>
+            </div>
+            <span class="field_label">By submitting this form, you confirm that you accept the <a href="#">Terms of Service.</a></span>
 
-              <div class="uploaded_files"></div>
-          </div>
-          <span class="field_label">By submitting this form, you confirm that you accept the <a href="#">Terms of Service.</a></span>
+            <button type="submit" class="button full creator_form_button"><span>Send request</span></button>
 
-          <button type="submit" class="button full creator_form_button"><span>Send request</span></button>
-
-        </form>
+          </form>
         </creator-form>
 
 				<div class="switch-login-section">
