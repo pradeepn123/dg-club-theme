@@ -278,8 +278,8 @@ if (!customElements.get('variant-selects')) {
 
 
       if (variant_data) {
-
-        const selected_options = this.currentVariant.options.map((value, index) => {
+        // const selected_options = this.currentVariant.options.map((value, index) => {
+        const selected_options = this.options.map((value, index) => {
           return {
             value,
             index: `option${index + 1}`
