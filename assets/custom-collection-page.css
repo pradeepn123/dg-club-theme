@@ -156,6 +156,9 @@
     text-transform: capitalize;
     color: #8F8F8F;
 }
+.sidebar-container--tabbed-filters .tag-filters__item:focus a {
+    color: #fff;
+}
 .sidebar-container--tabbed-filters button.active {
     background: #4444E1;
 }

@@ -692,6 +692,12 @@
       },
       {
         "type": "checkbox",
+        "id": "show_products_label",
+        "label": "Show product label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
         "id": "show_products_swatches",
         "label": "Show color swatches",
         "default": true
