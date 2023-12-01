@@ -1193,6 +1193,88 @@ if (!customElements.get('quick-view')) {
   customElements.define('quick-view', QuickView);
 }
 
+if (!customElements.get('creator-form')) {
+    class CreatorForm extends HTMLElement {
+        constructor() {
+            super()
+            this.formElement = this.querySelector("form")
+            this.fileInput = this.querySelector("input[type='file']")
+            this.fileInputContainer = this.querySelector(".file-to-upload")
+            this.uploadedFileContainer = this.querySelector(".uploaded_files")
+
+            this.formElement.addEventListener("submit", this.handleSubmit.bind(this))
+            this.fileInput.addEventListener("change", this.handleFileUpload.bind(this))
+            this.uploadedFiles = []
+            console.log("HHS")
+        }
+
+        handleSubmit(evt) {
+            // Show Loader
+            evt.preventDefault()
+            const formData = new FormData(evt.target)
+            const payload = Object.fromEntries(formData)
+            payload.attachments = this.uploadedFiles
+            payload.store = 4
+            fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/creators/', {
+              method: 'POST',
+              body: JSON.stringify(payload),
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            })
+            .then(() => {
+              // Show Thankyou UI
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+            .then(() => {
+              // Hide Loader
+            })
+            return false
+        }
+
+        async handleFileUpload(evt) {
+          // Show Loader
+          const { files } = evt.target
+          const uploadFiles = Array.from(files).map(async (file) => await this.uploadFile(file))
+          const fileResponse = await Promise.all(uploadFiles)
+          this.uploadedFiles = this.uploadedFiles.concat(fileResponse)
+          this.renderFiles()
+          // Hide Loader
+        }
+
+        async uploadFile(file) {
+          const formData = new FormData();
+          formData.append("file", file)
+          let response = await fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/media-upload/', {
+            method: 'POST',
+            body: formData
+          })
+          response = await response.json()
+          return response
+        }
+
+        renderFiles() {
+          if(this.uploadedFiles.length > 0){
+            this.fileInputContainer.classList.add('has_files')
+            this.uploadedFileContainer.innerHTML = this.uploadedFiles.map((file) => `<li>${file.name}</li>`).join("")
+          } else {
+            this.fileInputContainer.classList.remove('has_files')
+            this.uploadedFileContainer.innerHTML = ''
+            this.uploadedFiles = []
+          }
+        }
+
+        handleFileRemove() {
+
+        }
+    }
+    customElements.define('creator-form', CreatorForm);
+}
+
+
 /**
  *  @class
  *  @function AnimatedMarkers
