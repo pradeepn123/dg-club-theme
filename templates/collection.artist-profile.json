@@ -47,7 +47,7 @@
       "settings": {
         "heading": "",
         "marker_style": "style1",
-        "products_per_page": 9,
+        "products_per_page": 8,
         "columns_desktop": 4,
         "pagination_type": "loadmore",
         "photo_gift_heading": "Photo Gifts",
