@@ -1230,7 +1230,7 @@ if (!customElements.get('creator-form')) {
             this.thankYouMessage.innerHTML = `
             <h3> Thank you for Account Request </h3>
             <p>Your account request is being reviewed and it might take 24 - 48 hrs for the process to complete. You will recieve an email once the review process is completed.</p>
-            <button class="button full creator_form_button"><span>Back to homepage</span></button>`
+            <a href="${window.location.origin}"><button class="button full creator_form_button"><span>Back to homepage</span></button></a>`
           })
           .catch((err) => {
             console.log(err)
@@ -1249,6 +1249,7 @@ if (!customElements.get('creator-form')) {
           const fileResponse = await Promise.all(uploadFiles)
           this.uploadedFiles = this.uploadedFiles.concat(fileResponse)
           this.renderFiles()
+          this.handleFileRemove()
           // Hide Loader          
         }
 
@@ -1281,7 +1282,7 @@ if (!customElements.get('creator-form')) {
         }
 
         handleFileRemove() {
-
+                    
         }
     }
     customElements.define('creator-form', CreatorForm);

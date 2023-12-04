@@ -320,6 +320,16 @@ label[for="file-input"] span:last-child{
   }
 }
 
+creator-form .creator_form h3{
+  font-size: 40px;
+  text-align: left;
+  font-weight: 700;
+  line-height: 1.2;
+}
+creator-form .creator_form p{
+  text-align: left;
+}
+
 .uploaded_files{
   width: 100%;
   text-align: center;
