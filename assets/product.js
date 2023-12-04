@@ -278,8 +278,9 @@ if (!customElements.get('variant-selects')) {
 
 
       if (variant_data) {
-
-        const selected_options = this.currentVariant.options.map((value, index) => {
+        // const selected_options = this.currentVariant.options.map((value, index) => {
+        const _this7 = this;
+        const selected_options = this.options.map((value, index) => {
           return {
             value,
             index: `option${index + 1}`
@@ -293,13 +294,21 @@ if (!customElements.get('variant-selects')) {
 
           if (fieldset_options) {
             if (fieldset.querySelector('select')) {
+              const selectField = fieldset.querySelector('select')
               fieldset_options.forEach((option, option_i) => {
+                const optionElement = fieldset.querySelector('option[value=' + JSON.stringify(option.value) + ']')
                 if (option.isUnavailable) {
-                  fieldset.querySelector('option[value=' + JSON.stringify(option.value) + ']').disabled = true;
+                  optionElement.disabled = true;
+                  optionElement.style.display = "none"
                 } else {
-                  fieldset.querySelector('option[value=' + JSON.stringify(option.value) + ']').disabled = false;
+                  optionElement.disabled = false;
+                  optionElement.style.display = ""
                 }
               });
+              if (selectField.querySelector("option:not(:disabled)") && selectField.options[selectField.options.selectedIndex].disabled) {
+                selectField.value = selectField.querySelector("option:not(:disabled)").value
+                setTimeout(() => _this7.onVariantChange(), 100)
+              }
             } else if (fieldset.querySelectorAll('input').length) {
               fieldset.querySelectorAll('input').forEach((input, input_i) => {
                 input.classList.toggle('is-disabled', fieldset_options[input_i].isUnavailable);
@@ -307,7 +316,6 @@ if (!customElements.get('variant-selects')) {
             }
           }
         });
-
       }
       return true;
     }
