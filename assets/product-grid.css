@@ -530,13 +530,13 @@
   font-size: 0.875rem;
 }
 
-.product-card:hover .product-card-swatches {
+/* .product-card:hover .product-card-swatches {
   transform: translateY(0%);
 }
 
 .product-card:hover .product-card-swatches--title {
   transform: translateY(-100%);
-}
+} */
 
 .product-card:hover .product-card-quickview {
   opacity: 1;
