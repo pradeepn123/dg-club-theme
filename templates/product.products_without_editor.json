@@ -306,6 +306,22 @@
         "disable_top_spacing": true,
         "disable_bottom_spacing": false
       }
+    },
+    "17016686142ff20515": {
+      "type": "apps",
+      "blocks": {
+        "b62510c7-7ef3-48c6-9f91-e45f3cbb22a2": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "@thedecorgiftgclub"
+          }
+        }
+      },
+      "block_order": [
+        "b62510c7-7ef3-48c6-9f91-e45f3cbb22a2"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -315,6 +331,7 @@
     "c58c790d-5d35-4477-8cec-515c80ffed03",
     "6aa73066-1d5c-4522-872d-35fee2810540",
     "4d45a3c5-b076-4b48-86c4-a786c6b45d31",
-    "product-recommendations"
+    "product-recommendations",
+    "17016686142ff20515"
   ]
 }
