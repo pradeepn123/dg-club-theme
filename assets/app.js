@@ -1243,14 +1243,26 @@ if (!customElements.get('creator-form')) {
 
         async handleFileUpload(evt) {
           // Show Loader
-          this.uploadedFileContainer.innerHTML = `<div class="file_loader"></div>`
+          let hasError = false;          
           const { files } = evt.target
+          for (let i = 0; i <= files.length - 1; i++) {              
+            const fsize = files[i].size;
+            const file = Math.round((fsize / 1024));
+            // The size of the file.
+            if (file >= 4096) {
+              hasError = true;
+            }
+          }
+          if (hasError ){
+            alert("Please select a file less than 4MB.")
+            return false;
+          }
+          this.uploadedFileContainer.innerHTML = `<div class="file_loader"></div>`
           const uploadFiles = Array.from(files).map(async (file) => await this.uploadFile(file))
           const fileResponse = await Promise.all(uploadFiles)
           this.uploadedFiles = this.uploadedFiles.concat(fileResponse)
           this.renderFiles()
-          this.handleFileRemove()
-          // Hide Loader          
+          // Hide Loader
         }
 
         async uploadFile(file) {
@@ -1265,49 +1277,34 @@ if (!customElements.get('creator-form')) {
         }
 
         renderFiles() {
-          if(this.uploadedFiles.length > 0){
-            for (const i = 0; i <= this.uploadedFiles.length - 1; i++) {
-         
-              debugger
-              const fsize = this.uploadedFiles.file.item(i).size;
-              const file = Math.round((fsize / 1024));
-              // The size of the file.
-              if (file >= 4096) {
-                  alert(
-                    "File too Big, please select a file less than 4mb");
-              } else if (file < 2048) {
-                  alert(
-                    "File too small, please select a file greater than 2mb");
-              } else {
-                  document.getElementById('size').innerHTML = '<b>'
-                  + file + '</b> KB';
-              }
-            }
-            // const fileSize = this.fileInput.files[0].size;            
-            // const fileMb = fileSize / 1024 ** 2;
-            // console.log(fileMb,'ki')
-            // if (fileMb >= 2) {
-            //   this.fileInputContainer.innerHTML = "Please select a file less than 2MB.";           
-            // } else {
-            //   this.fileInputContainer.innerHTML = "Success, your file is " + fileMb.toFixed(1) + "MB.";          
-            // }
+          if(this.uploadedFiles.length > 0){                        
             this.fileInputContainer.classList.add('has_files')
-            this.uploadedFileContainer.innerHTML = this.uploadedFiles.map((file) => `<li>
+            this.uploadedFileContainer.innerHTML = this.uploadedFiles.map((file,index) => `<li>
               <div class="file_name">${file.name}</div>
+              <div data-upload-remove data-index=${index}>
               <svg viewPort="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
                 <line x1="1" y1="11" x2="11" y2="1" stroke="black" stroke-width="2"/>
                 <line x1="1" y1="1" x2="11" y2="11" stroke="black" stroke-width="2"/>
-              </svg>
+              </svg></div>
             </li>`).join("")
           } else {
             this.fileInputContainer.classList.remove('has_files')
             this.uploadedFileContainer.innerHTML = ''
             this.uploadedFiles = []
           }
+          this.handleFileRemove();
         }
 
         handleFileRemove() {
-                    
+          const uploadedFiles = document.querySelectorAll('[data-upload-remove]')
+          if(uploadedFiles) {
+            uploadedFiles.forEach(item => item.addEventListener('click', () => {              
+              const selectedIndex = item.dataset.index;
+              const newUploadedFiles = this.uploadedFiles.filter((item, index) => {if(index != selectedIndex){return item}});
+              this.uploadedFiles = newUploadedFiles;
+              this.renderFiles();
+            }))
+          }
         }
     }
     customElements.define('creator-form', CreatorForm);
