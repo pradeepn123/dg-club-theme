@@ -306,6 +306,22 @@
         "disable_top_spacing": true,
         "disable_bottom_spacing": false
       }
+    },
+    "170167060601de35fc": {
+      "type": "apps",
+      "blocks": {
+        "d5e278ea-d839-48ca-9cd9-c6826ae24ddc": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "pr4eio8v0e21f"
+          }
+        }
+      },
+      "block_order": [
+        "d5e278ea-d839-48ca-9cd9-c6826ae24ddc"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
@@ -315,6 +331,7 @@
     "c58c790d-5d35-4477-8cec-515c80ffed03",
     "6aa73066-1d5c-4522-872d-35fee2810540",
     "4d45a3c5-b076-4b48-86c4-a786c6b45d31",
-    "product-recommendations"
+    "product-recommendations",
+    "170167060601de35fc"
   ]
 }
