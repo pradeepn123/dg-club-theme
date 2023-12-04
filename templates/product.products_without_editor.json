@@ -292,7 +292,7 @@
         "color_heading": "#1a1c1d",
         "color_text": "#2c2d2e",
         "disable_top_spacing": false,
-        "disable_bottom_spacing": false
+        "disable_bottom_spacing": true
       }
     },
     "product-recommendations": {
@@ -304,7 +304,7 @@
         "product_limit": 4,
         "columns_desktop": 4,
         "disable_top_spacing": true,
-        "disable_bottom_spacing": false
+        "disable_bottom_spacing": true
       }
     },
     "17016686142ff20515": {
@@ -320,7 +320,20 @@
       "block_order": [
         "b62510c7-7ef3-48c6-9f91-e45f3cbb22a2"
       ],
+      "disabled": true,
       "settings": {
+      }
+    },
+    "ef49b57b-1db9-4741-9051-845bd6bf4e93": {
+      "type": "tolstoy-carousel",
+      "settings": {
+        "publishId": "ohri63bh7kyen",
+        "section_background": "#f5f5f5",
+        "heading": "Follow Us",
+        "linkText": "@Thedecorgiftingclub",
+        "link": "https:\/\/www.instagram.com\/thedecorgiftingclub\/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
+        "sectionPadding": "large",
+        "text_align": "left"
       }
     }
   },
@@ -332,6 +345,7 @@
     "6aa73066-1d5c-4522-872d-35fee2810540",
     "4d45a3c5-b076-4b48-86c4-a786c6b45d31",
     "product-recommendations",
-    "17016686142ff20515"
+    "17016686142ff20515",
+    "ef49b57b-1db9-4741-9051-845bd6bf4e93"
   ]
 }
