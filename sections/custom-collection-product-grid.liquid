@@ -51,11 +51,12 @@
 										{%- case block.type -%}
 											{%- when 'collection_category' -%}
 											{% assign coll_handle = block.settings.category_collection %}
-
 											{% assign handle_url = canonical_url | split : '/collections/' | last %}
+											{% if coll_handle and block.settings.tab_heading != blank %}
 											<button class="tag-filters__item {% if handle_url == coll_handle.handle %}active{% endif %}" {% if handle_url == coll_handle.handle %}aria-selected="true" {% endif %}>
-												<a href="{{coll_handle | handle}}">{{ block.settings.tab_heading }}</a>
+												<a href="{{ coll_handle | handle }}">{{ block.settings.tab_heading }}</a>
 											</button>
+											{% endif %}
 										{%- endcase -%}
 									{%- endfor -%}
 								</div>
@@ -347,34 +348,6 @@
 	      	"default": "paginated",
 	      	"label": "Pagination",
 	      	"info": "Choose how additional pages of products are navigated."
-	    },
-		{
-			"type": "header",
-			"content": "photo gift collections"
-		},
-		{
-			"type": "text",
-			"id": "photo_gift_heading",
-			"label": "Tab Heading"
-		},
-		{
-	      	"type": "collection",
-	      	"id": "photo_gift_collection",
-	      	"label": "Select Collection"
-	    },
-		{
-			"type": "header",
-			"content": "Decor Print collections"
-		},
-		{
-			"type": "text",
-			"id": "decor_print_heading",
-			"label": "Tab Heading"
-		},
-		{
-	      	"type": "collection",
-	      	"id": "decor_collection",
-	      	"label": "Select Collection"
 	    },
 	    {
 	      	"type": "header",

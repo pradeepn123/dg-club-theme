@@ -55,16 +55,23 @@
 
 .template-header--image {
   width: 254px;
-  border: 10px solid #f5f5f5;
+  border: 20px solid #f5f5f5;
   border-radius: 50%;
   position: absolute;
   top: -65%;
   left: 5%;
 }
+
 @media only screen and (max-width: 1200px) {
   .template-header--image {
     width: 200px;
     top: -42%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .template-header--image {
+    border: 10px solid #f5f5f5;
   }
 }
 
