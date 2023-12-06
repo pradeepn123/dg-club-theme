@@ -28,7 +28,7 @@
 }
 @media (max-width: 767px){
     .main-collection{
-        margin-top:49px;
+        margin-top: 29px;
     }
     .main-collection .section-header{
         padding: 0 0 32px;
@@ -114,6 +114,11 @@
     border-radius: 12px;
     border: 1px solid #AFAFAF;
 }
+@media only screen and (max-width: 375px) {
+    .facets--bar .thb-filter-sort-count .thb-filter-sort .custom-select .custom-select--button {
+        width: 180px;
+    }
+}
 .facets--bar .thb-filter-sort-count .thb-filter-sort .custom-select .custom-select--button .custom-select--text {
     color: #000;
     font-family: inherit;
@@ -156,8 +161,11 @@
     text-transform: capitalize;
     color: #8F8F8F;
 }
+.sidebar-container--tabbed-filters .tag-filters__item:focus {
+    background: #ECECEC !important;
+}
 .sidebar-container--tabbed-filters .tag-filters__item:focus a {
-    color: #fff;
+    color: #8F8F8F !important;
 }
 .sidebar-container--tabbed-filters button.active {
     background: #4444E1;
@@ -168,11 +176,11 @@
 
 .sidebar-container--tabbed-filters .tabs__controls{
     margin-bottom: 65px;
+    display: flex;
 }
 .sidebar-container--tabbed-filters .tabs__controls .tag-filters__item{
     margin-right: 16px;
 }
-.sidebar-container--tabbed-filters .tabs__controls .tag-filters__item.active a,
 .sidebar-container--tabbed-filters .tabs__controls .tag-filters__item:hover a{
     color: #ffffff;
 }

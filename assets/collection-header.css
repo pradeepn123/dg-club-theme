@@ -55,7 +55,7 @@
 
 .template-header--image {
   width: 254px;
-  border: 20px solid #f5f5f5;
+  border: 10px solid #f5f5f5;
   border-radius: 50%;
   position: absolute;
   top: -65%;
@@ -161,7 +161,7 @@
 .template_header .template-header--title {
   font-size: 40px;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
   text-transform: capitalize;
 }
 .template_header .template-header--description-title {
@@ -190,6 +190,7 @@
   font-weight: 500;
   line-height: 30px;
   text-decoration-line: underline;
+  width: fit-content;
 }
 .template_header--share svg {
   position: absolute;
@@ -206,8 +207,8 @@
     height: 170px;
   }
   .template-header--image {
-    width: 132px;
-    top: -21%;
+    width: 153px;
+    top: -24%;
     left: 2%;
   }
   .template-header--content {

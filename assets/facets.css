@@ -509,7 +509,20 @@ tabs-group {
   appearance: none;
 }
 
-.tabs__controls button:hover,
+@media (hover: hover) {
+  .tabs__controls button:hover {
+    background: #4444E1;
+	  color: #ffffff;
+  }
+}
+
+@media (hover: none) {
+  .tabs__controls button:hover {
+    background: #ECECEC;
+	  color: #8F8F8F;
+  }
+}
+
 .tabs__controls button:focus {
 	background: #4444E1;
 	color: #ffffff;
