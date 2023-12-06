@@ -274,6 +274,9 @@
 .creator_form .uploaded_files li .file_name {
   width: 100%;
 }
+.creator_form .uploaded_files li svg{
+  cursor: pointer;
+}
 #file-input{
   display: none;
 }
