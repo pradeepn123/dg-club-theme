@@ -743,6 +743,11 @@ if (!customElements.get('product-form')) {
 
       formData.append('sections', this.getSectionsToRender().map((section) => section.section));
       formData.append('sections_url', window.location.pathname);
+      if (sessionStorage.getItem("creatorTracker")) {
+        let data = JSON.parse(sessionStorage.getItem("creatorTracker"))
+        formData.append("properties[_creatorId]", data.creatorId)
+        sessionStorage.removeItem("creatorTracker")
+      }
       config.body = formData;
 
       fetch(`${theme.routes.cart_add_url}`, config)

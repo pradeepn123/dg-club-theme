@@ -49,7 +49,7 @@
   	<figure class="product-featured-image {% if products_hover_images and product_card_product.images.size > 1 %}thb-hover{% endif %}">
 		{% render 'product-card-badge', product_card_product: product_card_product %}
 		<a href="{{ product_card_product.url | within: collection }}
-			{% if template.suffix == 'artist-profile' %}?q=creator_product={{product_card_product.id}}&creator_id={{collection.metafields.creator.creator_id.value}}{% endif %}"
+			{% if template.suffix == 'artist-profile' %}?creator_product={{product_card_product.id}}&creator_id={{collection.metafields.creator.creator_id.value}}{% endif %}"
 			title="{{ product_card_product.title | escape }}" 
 			class="product-featured-image-link aspect-ratio aspect-ratio--{{ settings.product_aspect_ratio }}" 
 			style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;"

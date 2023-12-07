@@ -1211,13 +1211,14 @@ if (!customElements.get('creator-form')) {
 
         handleSubmit(evt) {
           // Show Loader
+          const initialCTAContent = this.ctaLoader.innerHTML
           this.ctaLoader.innerHTML = `<div class="file_loader"></div>`
           evt.preventDefault()
           const formData = new FormData(evt.target)
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
           payload.store = 4
-          fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/creators/', {
+          fetch(`https://853c-106-214-92-144.ngrok-free.app/api/creators/?shop=${Shopify.shop}`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -1225,18 +1226,20 @@ if (!customElements.get('creator-form')) {
               'Content-Type': 'application/json'
             },
           })
-          .then(() => {
-            // Show Thankyou UI
+          .then(this.handleServerResponse)
+          .then(response => JSON.parse(response))
+          .then(responseJson => {
             this.thankYouMessage.innerHTML = `
             <h3> Thank you for Account Request </h3>
             <p>Your account request is being reviewed and it might take 24 - 48 hrs for the process to complete. You will recieve an email once the review process is completed.</p>
             <a href="${window.location.origin}"><button class="button full creator_form_button"><span>Back to homepage</span></button></a>`
           })
-          .catch((err) => {
-            console.log(err)
-          })
-          .then(() => {
-            // Hide Loader
+          .catch(response => {
+            let responseJson = JSON.parse(response)
+            if (responseJson.response.email) {
+              // Show Email error message
+              this.ctaLoader.innerHTML = initialCTAContent
+            }
           })
           return false
         }
@@ -1274,6 +1277,23 @@ if (!customElements.get('creator-form')) {
           })
           response = await response.json()
           return response
+        }
+
+        handleServerResponse(response) {
+          return response.json()
+            .then((json) => {
+            // Modify response to include status ok, success, and status text
+            let modifiedJson = {
+              success: response.ok,
+              status: response.status,
+              statusText: response.statusText ? response.statusText : json.error || '',
+              response: json
+            }
+            // If request failed, reject and return modified json string as error
+            if (! modifiedJson.success) return Promise.reject(JSON.stringify(modifiedJson))
+            // If successful, continue by returning modified json string
+            return JSON.stringify(modifiedJson)
+          })
         }
 
         renderFiles() {
@@ -1339,9 +1359,21 @@ class AnimatedMarkers {
       });
     });
   }
-
 }
+
+const creatorTracker = function () {
+  const url = new URL(window.location.href)
+  let data = JSON.parse(sessionStorage.getItem("creatorTracker") || "{}")
+  if (!data.pathname && url.searchParams.has("creator_id")) {
+    data = sessionStorage.setItem("creatorTracker", JSON.stringify({pathname: url.pathname, creatorId: url.searchParams.get("creator_id")}))
+  } else if (data.pathname != url.pathname) {
+    data = sessionStorage.removeItem("creatorTracker")
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
+  creatorTracker()
 
   if (typeof CartDrawer !== 'undefined') {
     new CartDrawer();
