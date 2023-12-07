@@ -50,13 +50,15 @@
 									{%- for block in section.blocks -%}
 										{%- case block.type -%}
 											{%- when 'collection_category' -%}
-											{% assign coll_handle = block.settings.category_collection %}
-											{% assign handle_url = canonical_url | split : '/collections/' | last %}
-											{% if coll_handle and block.settings.tab_heading != blank %}
-											<button class="tag-filters__item {% if handle_url == coll_handle.handle %}active{% endif %}" {% if handle_url == coll_handle.handle %}aria-selected="true" {% endif %}>
-												<a href="{{ coll_handle | handle }}">{{ block.settings.tab_heading }}</a>
-											</button>
-											{% endif %}
+												{% if block.settings.category_collection != blank %}
+													{% assign coll_handle = block.settings.category_collection.handle %}
+												{% else %}
+													{% assign coll_handle = collection.handle | replace : '-photo-gifts' | append : '-photo-gifts' %}
+												{% endif %}
+												{% assign handle_url = canonical_url | split : '/collections/' | last %}
+												<button class="tag-filters__item {% if handle_url == coll_handle %}active{% endif %}" {% if handle_url == coll_handle.handle %}aria-selected="true" {% endif %}>
+													<a href="{{coll_handle | handle}}">{{ block.settings.tab_heading }}</a>
+												</button>
 										{%- endcase -%}
 									{%- endfor -%}
 								</div>
