@@ -322,6 +322,11 @@
   margin-top: 18px;
   font-size: calc(var(--font-product-price-scale, 1) * 1rem);
 }
+@media (max-width: 768px){
+  .product-card .price {
+    margin-top: 10px;
+  }
+ }
 
 .product-card .price+.product-card-title {
   margin-top: 5px;
