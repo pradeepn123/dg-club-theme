@@ -362,3 +362,14 @@ creator-form .creator_form p{
   from {-webkit-transform: rotate(0deg);}
   to {-webkit-transform: rotate(360deg);}
 }
+
+.creator_form.showForm .field input[type="email"]{
+  margin-bottom: 0;
+}
+.email_id_error{
+  font-size: 12px !important;
+  display: block;
+  margin-top: 0 !important;
+  margin-bottom: 8px !important;
+  color: red;
+}

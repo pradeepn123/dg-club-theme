@@ -1206,7 +1206,7 @@ if (!customElements.get('creator-form')) {
 
           this.formElement.addEventListener("submit", this.handleSubmit.bind(this))
           this.fileInput.addEventListener("change", this.handleFileUpload.bind(this))
-          this.uploadedFiles = []            
+          this.uploadedFiles = []
         }
 
         handleSubmit(evt) {
@@ -1238,6 +1238,7 @@ if (!customElements.get('creator-form')) {
             let responseJson = JSON.parse(response)
             if (responseJson.response.email) {
               // Show Email error message
+              document.querySelector('.email_id_error').innerHTML = responseJson.response.email
               this.ctaLoader.innerHTML = initialCTAContent
             }
           })
@@ -1248,7 +1249,7 @@ if (!customElements.get('creator-form')) {
           // Show Loader
           let hasError = false;          
           const { files } = evt.target
-          for (let i = 0; i <= files.length - 1; i++) {              
+          for (let i = 0; i <= files.length - 1; i++) {
             const fsize = files[i].size;
             const file = Math.round((fsize / 1024));
             // The size of the file.
