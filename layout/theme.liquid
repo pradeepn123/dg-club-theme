@@ -59,10 +59,10 @@
 				backend_url: '{{ shop.metafields.backend.base_url.value }}'
 			},
 			variantStrings: {
-        addToCart: `{{ 'products.product.add_to_cart' | t }}`,
-        soldOut: `{{ 'products.product.sold_out' | t }}`,
-        unavailable: `{{ 'products.product.unavailable' | t }}`,
-      },
+        		addToCart: {% if product.template_suffix == "products_with_editor" %}"Customize design"{% else %}`{{ 'products.product.add_to_cart' | t }}`{% endif %},
+        		soldOut: `{{ 'products.product.sold_out' | t }}`,
+        		unavailable: `{{ 'products.product.unavailable' | t }}`,
+      		},
 			strings: {
 				requiresTerms: `{{ 'sections.cart.terms_confirm' | t }}`,
 			}
@@ -118,5 +118,8 @@
 		{{ 'theme-editor.js' | asset_url | script_tag }}
 	{%- endif -%}
 	{% render 'back-to-top' %}
+	{% if product.template_suffix == "products_with_editor" %}
+		<div id="backend-editor-container"></div>
+	{% endif %}
 </body>
 </html>

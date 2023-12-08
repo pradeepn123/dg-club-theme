@@ -1274,6 +1274,16 @@ if (!customElements.get("creator-information")) {
   customElements.define('creator-information', CreatorInformation);
 }
 
+if (!customElements.get('editor-container')) {
+  class EditorContainer extends HTMLElement {
+    constructor() {
+      super()
+    }
+  }
+
+  customElements.define('editor-container', EditorContainer);
+}
+
 if (!customElements.get('creator-form')) {
     class CreatorForm extends HTMLElement {
         constructor() {

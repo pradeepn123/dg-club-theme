@@ -697,10 +697,63 @@ if (!customElements.get('product-slider')) {
  */
 if (!customElements.get('product-form')) {
   customElements.define('product-form', class ProductForm extends HTMLElement {
+    SIZES = [
+      {
+        label: "12 Inch diameter",
+        value: "12",
+        shape: "circle"
+      }, {
+        label: "12 x 12 Inches",
+        value: "12x12",
+        shape: "square"
+      }, {
+        label: "18 Inch diameter",
+        value: "18",
+        shape: "circle"
+      }, {
+        label: "18 x 18 Inches",
+        value: "18x18",
+        shape: "square"
+      }, {
+        label: "6 Inch diameter",
+        value: "6",
+        shape: "circle"
+      }, {
+        label: "6 x 6 Inches",
+        value: "6x6",
+        shape: "square"
+      }, {
+        label: "8 Inch diameter",
+        value: "8",
+        shape: "circle"
+      }, {
+        label: "8x8 Inches",
+        value: "8x8",
+        shape: "square"
+      }, {
+        label: "A2 (16.5 x 23.4 Inches)",
+        value: "16.5x23.4",
+        shape: "rectangle"
+      }, {
+        label: "A3 (11.7 x 16.5 Inches)",
+        value: "11.7x16.5",
+        shape: "rectangle"
+      }, {
+        label: "A4 (8.3 x 11.7 Inches)",
+        value: "8.3x11.7",
+        shape: "rectangle"
+      }, {
+        label: "A5 (5.8 x 8.3 Inches)",
+        value: "5.8x8.3",
+        shape: "rectangle"
+      }
+    ]
+
     constructor() {
       super();
 
       this.sticky = this.dataset.sticky;
+      this.editorFlow = this.dataset.editorFlow == "true"
       this.form = document.getElementById(`product-form-${this.dataset.section}`);
       this.form.querySelector('[name=id]').disabled = false;
       if (!this.sticky) {
@@ -710,6 +763,10 @@ if (!customElements.get('product-form')) {
       this.body = document.body;
 
       this.hideErrors = this.dataset.hideErrors === 'true';
+      this.variantSelector = document.getElementById(`variant-selects-${this.dataset.section}`)
+      if (this.querySelector("[data-options]")) {
+        this.optionsInformation = JSON.parse(this.querySelector("[data-options]").innerHTML)
+      }
     }
 
     onSubmitHandler(evt) {
@@ -719,6 +776,42 @@ if (!customElements.get('product-form')) {
         return;
       }
 
+      if (this.editorFlow) {
+        return this.openEditor(evt)
+      }
+      return this.performOperation(evt)
+    }
+
+    openEditor(evt) {
+      const currentVariant = this.variantSelector.currentVariant
+      const sizePosition = this.optionsInformation.find((option) => option.name.toLowerCase() == "size").position
+      const size = this.SIZES.find(s => s.label.toLowerCase() == currentVariant[`option${sizePosition}`].toLowerCase())
+      const container = document.querySelector("#backend-editor-container")
+
+      container.innerHTML = `<digi-editor
+        integration="editor"
+        title="${currentVariant.name}"
+        size="${size.value}"
+        orientation="portrait"
+        shape="${size.shape}"
+        description=""
+        price=${currentVariant.price}
+        framecount=1
+        variantjson='${JSON.stringify(currentVariant)}'
+        formId=${this.form.getAttribute("id")}
+      ></digi-editor>`
+
+      document.addEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
+
+    }
+
+    handleCloseEditor = () => {
+      const container = document.querySelector("#backend-editor-container")
+      container.innerHTML = ''
+      document.removeEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
+    }
+
+    performOperation(evt) {
       const submitButtons = document.querySelectorAll('.single-add-to-cart-button');
 
       submitButtons.forEach((submitButton) => {
