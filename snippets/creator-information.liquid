@@ -1,0 +1,48 @@
+<div class="dashboard_tabs_content artist_details" id="artistDashboard">
+    <creator-information data-customer-id="{{ customer.id }}">
+        <p class="tab_title">Artist Directory</p>
+        <div class="artist_directory_content">
+            <div class="earnings">
+                <table class="no-borders">
+                    <thead>
+                        <tr>
+                            <th id="ColumnOrder" scope="col" role="columnheader">Total earnings</th>
+                            <th id="ColumnDate" scope="col" role="columnheader">Current Month</th>
+                            <th id="ColumnDate" scope="col" role="columnheader">Total Payout</th>
+                        </tr>
+                    </thead>
+                    <tbody role="rowgroup">
+                        <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Total earnings" data-total-earning >
+                            -
+                        </td>
+                        <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Current Month" data-current-month-earning>
+                            -
+                        </td>
+                        <td id="RowOrder" role="cell" headers="ColumnOrder" data-label="Total Payout" data-total-payout>
+                            -
+                        </td>
+                    </tbody>
+                </table>
+            </div>
+            <div class="earning_details">
+                <div class="earning_header">
+                    <p>Commission History</p>
+                </div>
+                <table class="artist_dashboard_table no-borders">
+                    <thead class="artist_dashboard_header">
+                        <th>Product Name</th>
+                        <th>Qty Sold</th>
+                        <th>Commission earned</th>
+                    </thead>
+                    <tbody class="artist_dashboard_data">
+                        <tr>
+                            <td colspan="3">
+                                <div class="file_loader"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </creator-information>
+</div>

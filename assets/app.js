@@ -1193,6 +1193,87 @@ if (!customElements.get('quick-view')) {
   customElements.define('quick-view', QuickView);
 }
 
+if (!customElements.get("creator-information")) {
+  class CreatorInformation extends HTMLElement {
+    constructor() {
+      super()
+      this.customerId = this.getAttribute("data-customer-id")
+      this.containers = {
+        earning: this.querySelector('[data-total-earning]'),
+        currentMonthEarning: this.querySelector('[data-current-month-earning]'),
+        totalPayout: this.querySelector('[data-total-payout]'),
+        tableBody: this.querySelector('.artist_dashboard_data')
+      }
+    }
+
+    connectedCallback() {
+      this.loadCustomerDetails()
+    }
+
+    loadCustomerDetails() {
+      fetch(`${theme.routes.backend_url}/api/customer-creator/?customer_id=${this.customerId}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      })
+      .then(this.handleServerResponse)
+      .then(response => JSON.parse(response))
+      .then(this.render.bind(this))
+      .catch(response => {
+        let responseJson = JSON.parse(response)
+        debugger;
+      })
+      return false
+    }
+
+    formatCurrency = function (amount) {
+      return formatMoney(amount * 100, window.theme.settings.money_with_currency_format)
+    }
+
+    render(data) {
+      this.containers.earning.innerHTML = this.formatCurrency(data.response.commission_amount)
+      this.containers.totalPayout.innerHTML = this.formatCurrency(data.response.total_payout)
+      this.containers.currentMonthEarning.innerHTML = this.formatCurrency(data.response.commission_amount)
+      this.containers.tableBody.innerHTML = data.response.products.map((product) => {
+        return `<tr>
+          <td data-label="Product Name">
+            <div class="creator-product-img-container">
+              <img src="${product.image}" />
+            </div>
+            <p>${product.title}</p>
+          </td>
+          <td data-label="Qty Sold">
+            ${product.quantity_sold}
+          </td>
+          <td data-label="Commission earned">
+            ${this.formatCurrency(product.commission)}
+          </td>
+        </tr>`
+      }).join("")
+    }
+
+    handleServerResponse(response) {
+      return response.json()
+      .then((json) => {
+      // Modify response to include status ok, success, and status text
+        let modifiedJson = {
+          success: response.ok,
+          status: response.status,
+          statusText: response.statusText ? response.statusText : json.error || '',
+          response: json
+        }
+        // If request failed, reject and return modified json string as error
+        if (! modifiedJson.success) return Promise.reject(JSON.stringify(modifiedJson))
+        // If successful, continue by returning modified json string
+        return JSON.stringify(modifiedJson)
+      })
+    }
+  }
+  customElements.define('creator-information', CreatorInformation);
+}
+
 if (!customElements.get('creator-form')) {
     class CreatorForm extends HTMLElement {
         constructor() {
@@ -1218,7 +1299,7 @@ if (!customElements.get('creator-form')) {
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
           payload.store = 4
-          fetch(`https://853c-106-214-92-144.ngrok-free.app/api/creators/?shop=${Shopify.shop}`, {
+          fetch(`${theme.routes.backend_url}/api/creators/?shop=${Shopify.shop}`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -1272,7 +1353,7 @@ if (!customElements.get('creator-form')) {
         async uploadFile(file) {
           const formData = new FormData();
           formData.append("file", file)
-          let response = await fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/media-upload/', {
+          let response = await fetch(`${theme.routes.backend_url}/api/media-upload/`, {
             method: 'POST',
             body: formData
           })
