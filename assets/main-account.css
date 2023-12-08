@@ -98,7 +98,7 @@
     padding-top: 23px;
     width: 100%;
 }
-.customer-addresses .address{
+.customer-addresses .address {
     background: #fff;
     border-radius: 12px;
     padding: 22px 15px;
@@ -380,10 +380,13 @@ body.open-cc{
         display: none;
     }
     .dashboard_tabs{
-        padding: 7px 16px;
         white-space: nowrap;
         border-radius: 60px !important;
         background: #ECECEC;
+    }
+
+    .dashboard_tabs a {
+        padding: 7px 16px;
     }
     .dashboard_tabs, .dashboard_tabs a{
         color: #8F8F8F;
