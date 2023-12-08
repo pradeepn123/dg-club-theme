@@ -5,10 +5,12 @@
 			<div class="dashboard">
 				<ul class="dashboard_list">
 					<li class="dashboard_tabs order_history active" data-tab="order_details">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-							<path d="M9 8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8M3 16.8002V7.2002C3 6.08009 3 5.51962 3.21799 5.0918C3.40973 4.71547 3.71547 4.40973 4.0918 4.21799C4.51962 4 5.08009 4 6.2002 4H17.8002C18.9203 4 19.4796 4 19.9074 4.21799C20.2837 4.40973 20.5905 4.71547 20.7822 5.0918C21 5.5192 21 6.07899 21 7.19691V16.8036C21 17.9215 21 18.4805 20.7822 18.9079C20.5905 19.2842 20.2837 19.5905 19.9074 19.7822C19.48 20 18.921 20 17.8031 20H6.19691C5.07899 20 4.5192 20 4.0918 19.7822C3.71547 19.5905 3.40973 19.2842 3.21799 18.9079C3 18.4801 3 17.9203 3 16.8002Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-						</svg>
-						Order History
+						<a href="javascript:void(0)">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path d="M9 8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8M3 16.8002V7.2002C3 6.08009 3 5.51962 3.21799 5.0918C3.40973 4.71547 3.71547 4.40973 4.0918 4.21799C4.51962 4 5.08009 4 6.2002 4H17.8002C18.9203 4 19.4796 4 19.9074 4.21799C20.2837 4.40973 20.5905 4.71547 20.7822 5.0918C21 5.5192 21 6.07899 21 7.19691V16.8036C21 17.9215 21 18.4805 20.7822 18.9079C20.5905 19.2842 20.2837 19.5905 19.9074 19.7822C19.48 20 18.921 20 17.8031 20H6.19691C5.07899 20 4.5192 20 4.0918 19.7822C3.71547 19.5905 3.40973 19.2842 3.21799 18.9079C3 18.4801 3 17.9203 3 16.8002Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							Order History
+						</a>
 					</li>
 					<li class="dashboard_tabs addresses" data-tab="address_details">
 						<a href="/account/addresses">
@@ -20,10 +22,12 @@
 					</li>
 					{% if customer.tags contains 'creator' %}
 						<li class="dashboard_tabs artist_dashboard " data-tab="artist_details" onclick="showArtistDashboard();">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-								<path d="M19 21C19 17.134 15.866 14 12 14C8.13401 14 5 17.134 5 21M12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7C16 9.20914 14.2091 11 12 11Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-							Artist Dashboard
+							<a href="javascript:void(0)">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M19 21C19 17.134 15.866 14 12 14C8.13401 14 5 17.134 5 21M12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7C16 9.20914 14.2091 11 12 11Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+								Artist Dashboard
+							</a>
 						</li>
 					{% endif %}
 					<li class="dashboard_tabs logout">
@@ -96,7 +100,9 @@
 										<tbody role="rowgroup" class="rowgroup">
 											{% comment %} <tr role="row" class="row"> {% endcomment %}
 												<tr>
-													<th id="ColumnOrder" scope="col" role="columnheader">{{ 'customer.orders.order_number' | t }}</th>
+													<th id="ColumnOrder" scope="col" role="columnheader">
+														{{ 'customer.orders.order_number' | t }}
+													</th>
 													<td id="RowOrder" role="cell" headers="ColumnOrder" data-label="{{ 'customer.orders.order_number' | t }}">
 														<a href="{{ order.customer_url }}" class="text-button" aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}">
 															{{ order.name }}
@@ -140,7 +146,9 @@
 				</div>
 				<div class="dashboard_tabs_content address_details">
 					<p class="tab_title">addresses</p>
-					<div class="file_loader"></div>
+					<div class="customer-addresses loader-container" data-customer-addresses>
+						<div class="file_loader"></div>
+					</div>
 				</div>
 				{% render 'creator-information' %}
 			</div>
