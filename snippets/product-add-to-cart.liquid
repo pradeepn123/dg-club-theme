@@ -23,6 +23,11 @@
   	data-template-suffix="{{ product.template_suffix }}"
   	data-editor-flow="{% if product.template_suffix == "products_with_editor" %}true{% else %}false{% endif %}"
   >
+  	<div data-template_ids style="display: none;">{
+  		{%- for variant in product.variants -%}
+  			"{{- variant.id -}}": {{- variant.metafields.backend.template_ids | default: "[]" -}}{%- unless forloop.last -%},{%- endunless -%}
+  		{%- endfor -%}
+  	}</div>
   	<div data-options style="display: none;">{{- product.options_with_values | json -}}</div>
 		<div class="product-form__error-message-wrapper form-notification error" role="alert" hidden>
       {% render 'svg-icons' with 'thb-error' %}
@@ -34,6 +39,9 @@
 				{%- render 'gift-card-recipient-form', product: product, form: form, section: section -%}
 			{%- endif -%}
 			<div class="product-add-to-cart-container">
+				{%- if product.selected_or_first_available_variant.available -%}
+
+				{%- endif -%}
 				<div class="form-notification error" style="display:none;"></div>
 				<div class="add_to_cart_holder{% if show_dynamic_checkout %} add_to_cart_holder--multi{%- endif -%}">
 					<button type="submit" name="add" id="AddToCart" class="single-add-to-cart-button button accent {% unless product.selected_or_first_available_variant.available %}sold-out{% endunless %}" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>

@@ -767,6 +767,9 @@ if (!customElements.get('product-form')) {
       if (this.querySelector("[data-options]")) {
         this.optionsInformation = JSON.parse(this.querySelector("[data-options]").innerHTML)
       }
+      if (this.querySelector("[data-template_ids]")) {
+        this.variantTemplateIds = JSON.parse(this.querySelector('[data-template_ids]').innerHTML)
+      }
     }
 
     onSubmitHandler(evt) {
@@ -794,6 +797,8 @@ if (!customElements.get('product-form')) {
         orientation = "landscape"
       }
 
+      currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
+
       container.innerHTML = `<digi-editor
         integration="editor"
         title="${currentVariant.name}"
@@ -801,10 +806,10 @@ if (!customElements.get('product-form')) {
         orientation="${orientation}"
         shape="${size.shape}"
         description=""
-        price=${currentVariant.price}
+        price="${currentVariant.price}"
         framecount=1
         variantjson='${JSON.stringify(currentVariant)}'
-        formId=${this.form.getAttribute("id")}
+        formId="${this.form.getAttribute("id")}"
       ></digi-editor>`
       document.addEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
     }
