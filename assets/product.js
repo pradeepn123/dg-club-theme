@@ -788,11 +788,17 @@ if (!customElements.get('product-form')) {
       const size = this.SIZES.find(s => s.label.toLowerCase() == currentVariant[`option${sizePosition}`].toLowerCase())
       const container = document.querySelector("#backend-editor-container")
 
+      let [width, height] = size.value.split("x")
+      let orientation = "portrait"
+      if (width && height && Number(width) > Number(height)) {
+        orientation = "landscape"
+      }
+
       container.innerHTML = `<digi-editor
         integration="editor"
         title="${currentVariant.name}"
         size="${size.value}"
-        orientation="portrait"
+        orientation="${orientation}"
         shape="${size.shape}"
         description=""
         price=${currentVariant.price}
@@ -800,9 +806,7 @@ if (!customElements.get('product-form')) {
         variantjson='${JSON.stringify(currentVariant)}'
         formId=${this.form.getAttribute("id")}
       ></digi-editor>`
-
       document.addEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
-
     }
 
     handleCloseEditor = () => {

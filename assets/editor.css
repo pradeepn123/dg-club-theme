@@ -36,3 +36,8 @@
      font-size: 15px;
 }
  
+.editor-layout input,
+.editor-layout select {
+    height: auto;
+    margin-bottom: unset;
+}
