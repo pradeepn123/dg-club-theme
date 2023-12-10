@@ -30,6 +30,15 @@
   			"{{- variant.id -}}": {{- variant.metafields.backend.template_ids | default: "[]" -}}{%- unless forloop.last -%},{%- endunless -%}
   		{%- endfor -%}
   	}</div>
+  	<div data-super-imposed-images style="display: none;">{
+  		{%- for variant in product.variants -%}
+  			"{{- variant.id -}}": [
+  				{%- for live_preview in variant.metafields.backend.live_preview.value -%}
+  					{{ live_preview | json }}{%- unless forloop.last -%},{%- endunless -%}
+  				{%- endfor -%}
+  			]{%- unless forloop.last -%},{%- endunless -%}
+  		{%- endfor -%}
+  	}</div>
   	<div data-options style="display: none;">{{- product.options_with_values | json -}}</div>
 		<div class="product-form__error-message-wrapper form-notification error" role="alert" hidden>
       {% render 'svg-icons' with 'thb-error' %}

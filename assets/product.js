@@ -770,6 +770,9 @@ if (!customElements.get('product-form')) {
       if (this.querySelector("[data-template_ids]")) {
         this.variantTemplateIds = JSON.parse(this.querySelector('[data-template_ids]').innerHTML)
       }
+      if (this.querySelector("[data-super-imposed-images]")) {
+        this.variantSuperImposedImages = JSON.parse(this.querySelector('[data-super-imposed-images]').innerHTML)
+      }
     }
 
     onSubmitHandler(evt) {
@@ -799,6 +802,7 @@ if (!customElements.get('product-form')) {
       }
 
       currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
+      currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
       container.innerHTML = `<digi-editor
         integration="editor"
         title="${currentVariant.name}"
