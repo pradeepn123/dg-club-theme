@@ -782,7 +782,8 @@ if (!customElements.get('product-form')) {
       if (this.editorFlow) {
         return this.openEditor(evt)
       }
-      return this.performOperation(evt)
+      let formData = new FormData(this.form);
+      return this.performOperation(formData)
     }
 
     openEditor(evt) {
@@ -798,7 +799,6 @@ if (!customElements.get('product-form')) {
       }
 
       currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
-
       container.innerHTML = `<digi-editor
         integration="editor"
         title="${currentVariant.name}"
@@ -806,12 +806,16 @@ if (!customElements.get('product-form')) {
         orientation="${orientation}"
         shape="${size.shape}"
         description=""
-        price="${currentVariant.price}"
-        framecount=1
+        price="${this.formatCurrency(currentVariant.price)}"
+        framecount="${this.getAttribute("data-frame-count") || 1}"
         variantjson='${JSON.stringify(currentVariant)}'
-        formId="${this.form.getAttribute("id")}"
+        formId="${this.form.getAttribute("id")}--product-form-element"
       ></digi-editor>`
       document.addEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
+    }
+
+    formatCurrency = function (amount) {
+      return formatMoney(amount, window.theme.settings.money_with_currency_format)
     }
 
     handleCloseEditor = () => {
@@ -820,7 +824,21 @@ if (!customElements.get('product-form')) {
       document.removeEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
     }
 
-    performOperation(evt) {
+    handleEditorAddToCart = (pdfFiles) => {
+      let formData = new FormData(this.form);
+      debugger;
+      if (pdfFiles.length > 1) {
+        let counter = pdfFiles.length
+        pdfFiles.forEach((file, index) => {
+          formData.append(`properties[Frame Design ${counter + 1}]`, file)
+        })
+      } else {
+        formData.append("properties[Design]", pdfFiles[0])
+      }
+      return this.performOperation(formData)
+    }
+
+    performOperation(formData) {
       const submitButtons = document.querySelectorAll('.single-add-to-cart-button');
 
       submitButtons.forEach((submitButton) => {
@@ -831,7 +849,6 @@ if (!customElements.get('product-form')) {
 
       this.handleErrorMessage();
 
-
       const config = {
         method: 'POST',
         headers: {
@@ -839,9 +856,6 @@ if (!customElements.get('product-form')) {
           'Accept': 'application/javascript'
         }
       };
-
-
-      let formData = new FormData(this.form);
 
       formData.append('sections', this.getSectionsToRender().map((section) => section.section));
       formData.append('sections_url', window.location.pathname);
@@ -852,7 +866,7 @@ if (!customElements.get('product-form')) {
       }
       config.body = formData;
 
-      fetch(`${theme.routes.cart_add_url}`, config)
+      return fetch(`${theme.routes.cart_add_url}`, config)
         .then((response) => response.json())
         .then((response) => {
           if (response.status) {
@@ -900,6 +914,7 @@ if (!customElements.get('product-form')) {
         selector: '.thb-item-count'
       }];
     }
+
     renderContents(parsedState) {
       this.getSectionsToRender().forEach((section => {
         if (!document.getElementById(section.id)) {
@@ -937,11 +952,13 @@ if (!customElements.get('product-form')) {
         dispatchCustomEvent('cart-drawer:open');
       }
     }
+
     getSectionInnerHTML(html, selector = '.shopify-section') {
       return new DOMParser()
         .parseFromString(html, 'text/html')
         .querySelector(selector).innerHTML;
     }
+
     handleErrorMessage(errorMessage = false) {
       if (this.hideErrors) return;
       this.errorMessageWrapper = this.errorMessageWrapper || this.querySelector('.product-form__error-message-wrapper');

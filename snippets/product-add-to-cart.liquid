@@ -22,6 +22,8 @@
   	data-hide-errors="{{ gift_card_recipient_feature_active }}"
   	data-template-suffix="{{ product.template_suffix }}"
   	data-editor-flow="{% if product.template_suffix == "products_with_editor" %}true{% else %}false{% endif %}"
+  	data-frame-count="{{ product.metafields.backend.frame_count.value | default : 1 }}"
+  	id="{{ product_form_id }}--product-form-element"
   >
   	<div data-template_ids style="display: none;">{
   		{%- for variant in product.variants -%}
