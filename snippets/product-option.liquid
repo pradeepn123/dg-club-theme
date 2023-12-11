@@ -33,7 +33,7 @@
 		</fieldset>
 	
 	{%- when 'button' -%}
-		{%- if option_slug == sizing_guide_variant and template.suffix == 'products_with_editor' -%}
+		{%- if option_slug == sizing_guide_variant and template.suffix == 'products_with_editor' or template.suffix == 'products_collage' -%}
 			<fieldset class="product-form__input product-form__input--dropdown" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
 				<div class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}">
 					{{ option.name }}{{ sizing_link }}

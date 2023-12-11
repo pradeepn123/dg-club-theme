@@ -1193,6 +1193,97 @@ if (!customElements.get('quick-view')) {
   customElements.define('quick-view', QuickView);
 }
 
+if (!customElements.get("creator-information")) {
+  class CreatorInformation extends HTMLElement {
+    constructor() {
+      super()
+      this.customerId = this.getAttribute("data-customer-id")
+      this.containers = {
+        earning: this.querySelector('[data-total-earning]'),
+        currentMonthEarning: this.querySelector('[data-current-month-earning]'),
+        totalPayout: this.querySelector('[data-total-payout]'),
+        tableBody: this.querySelector('.artist_dashboard_data')
+      }
+    }
+
+    connectedCallback() {
+      this.loadCustomerDetails()
+    }
+
+    loadCustomerDetails() {
+      fetch(`${theme.routes.backend_url}/api/customer-creator/?customer_id=${this.customerId}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      })
+      .then(this.handleServerResponse)
+      .then(response => JSON.parse(response))
+      .then(this.render.bind(this))
+      .catch(response => {
+        let responseJson = JSON.parse(response)
+        debugger;
+      })
+      return false
+    }
+
+    formatCurrency = function (amount) {
+      return formatMoney(amount * 100, window.theme.settings.money_with_currency_format)
+    }
+
+    render(data) {
+      this.containers.earning.innerHTML = this.formatCurrency(data.response.commission_amount)
+      this.containers.totalPayout.innerHTML = this.formatCurrency(data.response.total_payout)
+      this.containers.currentMonthEarning.innerHTML = this.formatCurrency(data.response.commission_amount)
+      this.containers.tableBody.innerHTML = data.response.products.map((product) => {
+        return `<tr>
+          <td data-label="Product Name">
+            <div class="creator-product-img-container">
+              <img src="${product.image}" />
+            </div>
+            <p>${product.title}</p>
+          </td>
+          <td data-label="Qty Sold">
+            ${product.quantity_sold}
+          </td>
+          <td data-label="Commission earned">
+            ${this.formatCurrency(product.commission)}
+          </td>
+        </tr>`
+      }).join("")
+    }
+
+    handleServerResponse(response) {
+      return response.json()
+      .then((json) => {
+      // Modify response to include status ok, success, and status text
+        let modifiedJson = {
+          success: response.ok,
+          status: response.status,
+          statusText: response.statusText ? response.statusText : json.error || '',
+          response: json
+        }
+        // If request failed, reject and return modified json string as error
+        if (! modifiedJson.success) return Promise.reject(JSON.stringify(modifiedJson))
+        // If successful, continue by returning modified json string
+        return JSON.stringify(modifiedJson)
+      })
+    }
+  }
+  customElements.define('creator-information', CreatorInformation);
+}
+
+if (!customElements.get('editor-container')) {
+  class EditorContainer extends HTMLElement {
+    constructor() {
+      super()
+    }
+  }
+
+  customElements.define('editor-container', EditorContainer);
+}
+
 if (!customElements.get('creator-form')) {
     class CreatorForm extends HTMLElement {
         constructor() {
@@ -1206,18 +1297,19 @@ if (!customElements.get('creator-form')) {
 
           this.formElement.addEventListener("submit", this.handleSubmit.bind(this))
           this.fileInput.addEventListener("change", this.handleFileUpload.bind(this))
-          this.uploadedFiles = []            
+          this.uploadedFiles = []
         }
 
         handleSubmit(evt) {
           // Show Loader
+          const initialCTAContent = this.ctaLoader.innerHTML
           this.ctaLoader.innerHTML = `<div class="file_loader"></div>`
           evt.preventDefault()
           const formData = new FormData(evt.target)
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
           payload.store = 4
-          fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/creators/', {
+          fetch(`${theme.routes.backend_url}/api/creators/?shop=${Shopify.shop}`, {
             method: 'POST',
             body: JSON.stringify(payload),
             headers: {
@@ -1225,18 +1317,21 @@ if (!customElements.get('creator-form')) {
               'Content-Type': 'application/json'
             },
           })
-          .then(() => {
-            // Show Thankyou UI
+          .then(this.handleServerResponse)
+          .then(response => JSON.parse(response))
+          .then(responseJson => {
             this.thankYouMessage.innerHTML = `
             <h3> Thank you for Account Request </h3>
             <p>Your account request is being reviewed and it might take 24 - 48 hrs for the process to complete. You will recieve an email once the review process is completed.</p>
             <a href="${window.location.origin}"><button class="button full creator_form_button"><span>Back to homepage</span></button></a>`
           })
-          .catch((err) => {
-            console.log(err)
-          })
-          .then(() => {
-            // Hide Loader
+          .catch(response => {
+            let responseJson = JSON.parse(response)
+            if (responseJson.response.email) {
+              // Show Email error message
+              document.querySelector('.email_id_error').innerHTML = responseJson.response.email
+              this.ctaLoader.innerHTML = initialCTAContent
+            }
           })
           return false
         }
@@ -1245,7 +1340,7 @@ if (!customElements.get('creator-form')) {
           // Show Loader
           let hasError = false;          
           const { files } = evt.target
-          for (let i = 0; i <= files.length - 1; i++) {              
+          for (let i = 0; i <= files.length - 1; i++) {
             const fsize = files[i].size;
             const file = Math.round((fsize / 1024));
             // The size of the file.
@@ -1268,12 +1363,29 @@ if (!customElements.get('creator-form')) {
         async uploadFile(file) {
           const formData = new FormData();
           formData.append("file", file)
-          let response = await fetch('https://digiapp-a1524492c4ed.herokuapp.com/api/media-upload/', {
+          let response = await fetch(`${theme.routes.backend_url}/api/media-upload/`, {
             method: 'POST',
             body: formData
           })
           response = await response.json()
           return response
+        }
+
+        handleServerResponse(response) {
+          return response.json()
+            .then((json) => {
+            // Modify response to include status ok, success, and status text
+            let modifiedJson = {
+              success: response.ok,
+              status: response.status,
+              statusText: response.statusText ? response.statusText : json.error || '',
+              response: json
+            }
+            // If request failed, reject and return modified json string as error
+            if (! modifiedJson.success) return Promise.reject(JSON.stringify(modifiedJson))
+            // If successful, continue by returning modified json string
+            return JSON.stringify(modifiedJson)
+          })
         }
 
         renderFiles() {
@@ -1339,9 +1451,21 @@ class AnimatedMarkers {
       });
     });
   }
-
 }
+
+const creatorTracker = function () {
+  const url = new URL(window.location.href)
+  let data = JSON.parse(sessionStorage.getItem("creatorTracker") || "{}")
+  if (!data.pathname && url.searchParams.has("creator_id")) {
+    data = sessionStorage.setItem("creatorTracker", JSON.stringify({pathname: url.pathname, creatorId: url.searchParams.get("creator_id")}))
+  } else if (data.pathname != url.pathname) {
+    data = sessionStorage.removeItem("creatorTracker")
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
+  creatorTracker()
 
   if (typeof CartDrawer !== 'undefined') {
     new CartDrawer();

@@ -25,17 +25,24 @@
     "product-grid": {
       "type": "custom-collection-product-grid",
       "blocks": {
-        "5ee26f09-1d5e-432f-95fc-199e572a5a87": {
+        "e150967a-64e5-44f5-97d6-003ea4ddbc10": {
           "type": "collection_category",
-          "repeater": "{{ collection.metafields.custom.trial.value }}",
           "settings": {
-            "tab_heading": "{{ block.repeater.tab_title.value }}",
-            "category_collection": "{{ block.repeater.category_collection.value }}"
+            "tab_heading": "Decor",
+            "category_collection": ""
+          }
+        },
+        "3ad0452f-90b3-4689-87cd-51bef5d0aba8": {
+          "type": "collection_category",
+          "settings": {
+            "tab_heading": "Photo Gifts",
+            "category_collection": ""
           }
         }
       },
       "block_order": [
-        "5ee26f09-1d5e-432f-95fc-199e572a5a87"
+        "e150967a-64e5-44f5-97d6-003ea4ddbc10",
+        "3ad0452f-90b3-4689-87cd-51bef5d0aba8"
       ],
       "settings": {
         "heading": "",
