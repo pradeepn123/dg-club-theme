@@ -1222,8 +1222,7 @@ if (!customElements.get("creator-information")) {
       .then(response => JSON.parse(response))
       .then(this.render.bind(this))
       .catch(response => {
-        let responseJson = JSON.parse(response)
-        debugger;
+        let responseJson = JSON.parse(response)       
       })
       return false
     }
