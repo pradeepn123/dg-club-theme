@@ -727,7 +727,7 @@ if (!customElements.get('product-form')) {
         value: "8",
         shape: "circle"
       }, {
-        label: "8x8 Inches",
+        label: "8 x 8 Inches",
         value: "8x8",
         shape: "square"
       }, {
@@ -829,8 +829,7 @@ if (!customElements.get('product-form')) {
     }
 
     handleEditorAddToCart = (pdfFiles) => {
-      let formData = new FormData(this.form);
-      debugger;
+      let formData = new FormData(this.form);      
       if (pdfFiles.length > 1) {
         let counter = pdfFiles.length
         pdfFiles.forEach((file, index) => {
