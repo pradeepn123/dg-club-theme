@@ -322,6 +322,11 @@
   margin-top: 18px;
   font-size: calc(var(--font-product-price-scale, 1) * 1rem);
 }
+@media (max-width: 768px){
+  .product-card .price {
+    margin-top: 10px;
+  }
+ }
 
 .product-card .price+.product-card-title {
   margin-top: 5px;
@@ -530,13 +535,13 @@
   font-size: 0.875rem;
 }
 
-.product-card:hover .product-card-swatches {
+/* .product-card:hover .product-card-swatches {
   transform: translateY(0%);
 }
 
 .product-card:hover .product-card-swatches--title {
   transform: translateY(-100%);
-}
+} */
 
 .product-card:hover .product-card-quickview {
   opacity: 1;

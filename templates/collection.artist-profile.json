@@ -25,35 +25,31 @@
     "product-grid": {
       "type": "custom-collection-product-grid",
       "blocks": {
-        "40572918-2ed6-482f-bca6-98b253f69c2a": {
+        "e150967a-64e5-44f5-97d6-003ea4ddbc10": {
+          "type": "collection_category",
+          "settings": {
+            "tab_heading": "Decor",
+            "category_collection": ""
+          }
+        },
+        "3ad0452f-90b3-4689-87cd-51bef5d0aba8": {
           "type": "collection_category",
           "settings": {
             "tab_heading": "Photo Gifts",
-            "category_collection": "aarav-sharma-photo-gifts"
-          }
-        },
-        "5ee26f09-1d5e-432f-95fc-199e572a5a87": {
-          "type": "collection_category",
-          "settings": {
-            "tab_heading": "Decor Prints",
-            "category_collection": "aarav-sharma"
+            "category_collection": ""
           }
         }
       },
       "block_order": [
-        "40572918-2ed6-482f-bca6-98b253f69c2a",
-        "5ee26f09-1d5e-432f-95fc-199e572a5a87"
+        "e150967a-64e5-44f5-97d6-003ea4ddbc10",
+        "3ad0452f-90b3-4689-87cd-51bef5d0aba8"
       ],
       "settings": {
         "heading": "",
         "marker_style": "style1",
-        "products_per_page": 6,
+        "products_per_page": 8,
         "columns_desktop": 4,
         "pagination_type": "loadmore",
-        "photo_gift_heading": "Photo Gifts",
-        "photo_gift_collection": "photo-gifts",
-        "decor_print_heading": "Decor Prints",
-        "decor_collection": "aaarav-sharma",
         "enable_filtering": true,
         "enable_sorting": true,
         "show_counts": true,

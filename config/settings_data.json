@@ -41,6 +41,7 @@
     "product_aspect_ratio": "square",
     "enable_quick_view": false,
     "show_products_vendor": false,
+    "show_products_label": false,
     "product_label_1": "custom.product_label_1",
     "product_label_2": "custom.product_label_2",
     "product_label_3": "custom.product_label_3",

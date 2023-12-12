@@ -7,6 +7,7 @@
       "blocks": {
         "955bb93b-7a65-4933-8023-83a64ee46bc2": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "icon": "none",
             "text": "Become an Creators and start earning commisions",
@@ -19,7 +20,7 @@
           "type": "text",
           "settings": {
             "icon": "none",
-            "text": "Add campaign text here.",
+            "text": "Create, Print, Earn with DG Club Print on Demand",
             "link": "",
             "color_bg": "#3f72e5",
             "color_text": "#ffffff"

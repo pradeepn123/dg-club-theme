@@ -6,10 +6,13 @@
   padding: 0 15px;
   max-width: 1380px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto; 
+}
   @media only screen and (min-width: 768px) {
     .breadcrumbs {
-      padding: 0 50px; } }
+      padding: 0 50px; 
+    } 
+  }
 
 .breadcrumbs-section + .product-section .thb-product-detail {
   margin-top: 0; }
@@ -26,14 +29,18 @@
   padding: 15px 0;
   display: inline-flex;
   width: 100%;
-  white-space: nowrap;
+  white-space: wrap;
   max-width: 100vw;
   text-align: left;
-  scrollbar-width: none; }
-  @media only screen and (min-width: 768px) {
-    .breadcrumbs {
-      padding: 15px 0;
-      overflow-x: hidden; } }
+  scrollbar-width: none; 
+}
+@media only screen and (min-width: 768px) {
+  .breadcrumbs {
+    padding: 15px 0;
+    overflow-x: hidden; 
+    white-space: nowrap;
+  } 
+}
   .breadcrumbs::-webkit-scrollbar {
     display: none; }
   .breadcrumbs i {

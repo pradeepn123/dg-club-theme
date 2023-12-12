@@ -18,7 +18,7 @@
 	endif
 -%}
 {%- style -%}
-	{%- if profile_image == blank and collection.image == blank -%}
+	{%- if profile_image == blank and banner_image == blank -%}
 	.template-header--content {
 		max-width: 100% !important;
 		margin-left: 0 !important;
@@ -35,7 +35,7 @@
   	<div class="row">
 		<div class="small-12 columns">
 			<div class="template-header--content">
-				{%- if show_collection_image -%}
+				{%- if show_collection_image and banner_image -%}
 					{%- if profile_image != blank -%}
 						<div class="template-header--image">
 							<img class="lazyload{% unless settings.lazy_loading %} no-blur{% endunless %}" data-sizes="auto" src="{{- profile_image | image_url -}}" alt="{{ profile_image.alt | escape }}"/>

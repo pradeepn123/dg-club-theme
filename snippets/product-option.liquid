@@ -14,26 +14,26 @@
 	{%- when 'dropdown' -%}
 		<fieldset class="product-form__input product-form__input--dropdown" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
 			<div class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}">
-			{{ option.name }}{{ sizing_link }}
+				{{ option.name }}{{ sizing_link }}
 			</div>
 			<div class="select">
-			<select
+				<select
 					id="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}"
 					name="options[{{ option.name | escape | append: appended }}]"
 					form="{{ product_form_id }}"
 				>
-				{%- for value in option.values -%}
-				<option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
-					{{ value }}
-				</option>
-				{%- endfor -%}
-			</select>
+					{%- for value in option.values -%}
+						<option value="{{ value | escape }}" {% if option.selected_value == value %}selected="selected"{% endif %}>
+							{{ value }}
+						</option>
+					{%- endfor -%}
+				</select>
 				<div class="select-arrow">{%- render 'svg-icons' with 'thb-select' -%}</div>
 			</div>
 		</fieldset>
 	
 	{%- when 'button' -%}
-		{%- if option_slug == sizing_guide_variant and template.suffix == 'products_with_editor' -%}
+		{%- if option_slug == sizing_guide_variant and template.suffix == 'products_with_editor' or template.suffix == 'products_collage' -%}
 			<fieldset class="product-form__input product-form__input--dropdown" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
 				<div class="form__label" for="Option-{{ section.id }}-{{ forloop.index0 }}{{ appended }}">
 					{{ option.name }}{{ sizing_link }}
@@ -63,7 +63,7 @@
 							value="{{ value | escape }}"
 							form="{{ product_form_id }}"
 							{% if option.selected_value == value %}checked{% endif %}
-							style="display:none";
+							style="display: none";
 						>
 						<div class="form__group_custom">
 							<div class="form__group">
@@ -92,6 +92,10 @@
 									form="{{ product_form_id }}"
 								/>
 							</div>
+							<div class="form__group">
+								<label class="form__label_custom"></label>
+								<label class="custom_label_inches">Inches</label>
+							</div>							
 							<input
 								type="hidden"
 								form="{{ product_form_id }}"
@@ -102,7 +106,9 @@
 						</div>
 						{% break %}			
 					{%- else -%}
-						<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
+						<input
+							type="radio"
+							id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"
 							name="{{ option.name | append: appended }}"
 							value="{{ value | escape }}"
 							form="{{ product_form_id }}"
