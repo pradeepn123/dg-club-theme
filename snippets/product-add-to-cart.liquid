@@ -1,4 +1,4 @@
-{% if product.template_suffix == "products_with_editor" %}
+{% if product.template_suffix == "products_with_editor" or product.template_suffix == "products_collage" %}
 	<script src="{{ shop.metafields.backend.editor_js.value }}" type="module"></script>
 	<link rel="stylesheet" href="{{ shop.metafields.backend.editor_css.value }}" />
 	{{ 'editor.css' | asset_url | stylesheet_tag }}
@@ -21,7 +21,7 @@
   	data-section="{{ section.id }}"
   	data-hide-errors="{{ gift_card_recipient_feature_active }}"
   	data-template-suffix="{{ product.template_suffix }}"
-  	data-editor-flow="{% if product.template_suffix == "products_with_editor" %}true{% else %}false{% endif %}"
+  	data-editor-flow="{% if product.template_suffix == "products_with_editor" or product.template_suffix == "products_collage" %}true{% else %}false{% endif %}"
   	data-frame-count="{{ product.metafields.backend.frame_count.value | default : 1 }}"
   	id="{{ product_form_id }}--product-form-element"
   >
@@ -58,7 +58,7 @@
 					<button type="submit" name="add" id="AddToCart" class="single-add-to-cart-button button accent {% unless product.selected_or_first_available_variant.available %}sold-out{% endunless %}" {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}>
 						<span class="single-add-to-cart-button--text">
 							{%- if product.selected_or_first_available_variant.available -%}
-								{% if product.template_suffix == "products_with_editor" %}
+								{% if product.template_suffix == "products_with_editor" or product.template_suffix == "products_collage" %}
 									Customize design
 								{% else %}
 									{{ 'products.product.add_to_cart' | t }}

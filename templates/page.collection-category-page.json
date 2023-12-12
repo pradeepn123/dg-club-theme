@@ -8,6 +8,20 @@
     },
     "8e4e8a64-a152-4ed6-875a-addad3cdb812": {
       "type": "collection-category-list",
+      "blocks": {
+        "fe874394-5d75-44c0-a4f4-508c24536a49": {
+          "type": "collections",
+          "repeater": "{{ page.metafields.custom.collection_category.value }}",
+          "settings": {
+            "collection_image": "{{ block.repeater.collection_image.value }}",
+            "title": "{{ block.repeater.collection_title.value }}",
+            "redirection_link": "{{ block.repeater.redirection_page.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "fe874394-5d75-44c0-a4f4-508c24536a49"
+      ],
       "settings": {
         "heading": "{{ page.title }}",
         "marker_style": "style1",

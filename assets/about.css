@@ -397,10 +397,10 @@
   color: var(--text-color, #fff);
 }
 
-.animations-true .image-with-text-overlay--content h3 {
+/* .animations-true .image-with-text-overlay--content h3 {
   visibility: hidden;
   will-change: visibility;
-}
+} */
 
 .image-with-text-overlay--content>*+.button {
   margin-top: 30px;
@@ -428,10 +428,10 @@
   font-size: inherit;
 }
 
-.animations-true .image-with-text-overlay--content .rte p {
+/* .animations-true .image-with-text-overlay--content .rte p {
   visibility: hidden;
   will-change: visibility;
-}
+} */
 
 .image-with-text-overlay--content.content-top-left {
   justify-content: flex-start;
