@@ -71,7 +71,7 @@
   border-radius: 8px;
   border: 1px solid #DBDBDB;
 }
-.thb-form-container #login .field input[type="email"]:valid+label,
+/* .thb-form-container #login .field input[type="email"]:valid+label,
 .thb-form-container #login .field input[type="password"]:valid+label,
 .thb-form-container #create_customer .field input[type="email"]:valid+label,
 .thb-form-container #create_customer .field input[type="password"]:valid+label{
@@ -81,7 +81,7 @@
   height: auto;
   left: 11px;
   transform: translateY(-50%);
-}
+} */
 .thb-form-container .thb-login-form .field [type=submit]{
   background: #4444E1;
   font-size: 18px;
@@ -206,6 +206,11 @@
   padding: 16px;
   font-weight: 600;
   min-width: 130px;
+}
+
+.thb-form-container .thb-login-form .field [type=submit]:hover {
+  background: var(--solid-button-background-hover, var(--color-accent));
+  color: var(--solid-button-label, #fff);
 }
 
 .register_button_container .tab.active{

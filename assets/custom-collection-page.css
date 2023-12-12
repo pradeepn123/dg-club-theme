@@ -146,11 +146,14 @@
     margin-bottom: 48px;
 }
 .sidebar-container--tabbed-filters .tag-filters__item {
-    padding: 1px 16px;
     height: 40px;
     border-radius: 60px;
     background: #ECECEC;
     cursor: pointer;
+    padding: 0;
+}
+.sidebar-container--tabbed-filters button a {
+    padding: 1px 16px;
 }
 .sidebar-container--tabbed-filters button a,
 .sidebar-container--tabbed-filters .tag-filters__item {
