@@ -299,7 +299,7 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0,
         "disable_top_spacing": false,
-        "disable_bottom_spacing": true
+        "disable_bottom_spacing": false
       }
     },
     "66e51d40-1da7-4a8a-8d7c-2e5b727c5f4c": {
@@ -349,11 +349,11 @@
         "button_link": "",
         "heading_size": "small",
         "collection_list": [
-          "framed-prints",
-          "aarav-sharma",
-          "nandini-patel",
-          "priya-singhania",
-          "siddharth-sharma"
+          "startsy",
+          "scribble-station",
+          "colorist",
+          "being_ai-human",
+          "autumn"
         ],
         "image_ratio": "square",
         "collection_layout": "grid",

@@ -341,6 +341,22 @@
         "sectionPadding": "medium",
         "text_align": "left"
       }
+    },
+    "170167060601de35fc": {
+      "type": "apps",
+      "blocks": {
+        "d5e278ea-d839-48ca-9cd9-c6826ae24ddc": {
+          "type": "shopify:\/\/apps\/tolstoy-shoppable-video-quiz\/blocks\/carousel-block\/06fa8282-42ff-403e-b67c-1936776aed11",
+          "settings": {
+            "publishId": "pr4eio8v0e21f"
+          }
+        }
+      },
+      "block_order": [
+        "d5e278ea-d839-48ca-9cd9-c6826ae24ddc"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
