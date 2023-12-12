@@ -830,6 +830,7 @@ if (!customElements.get('product-form')) {
         framecount="${this.getAttribute("data-frame-count") || 1}"
         variantjson='${JSON.stringify(currentVariant)}'
         formId="${this.form.getAttribute("id")}--product-form-element"
+        baseurl="${theme.routes.backend_url}"
       ></digi-editor>`
       document.addEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
     }
@@ -847,7 +848,6 @@ if (!customElements.get('product-form')) {
     handleEditorAddToCart = (pdfFiles) => {
       let formData = new FormData(this.form);      
       if (pdfFiles.length > 1) {
-        // let counter = pdfFiles.length
         pdfFiles.forEach((file, index) => {
           formData.append(`properties[Frame Design ${index + 1}]`, file)
         })
