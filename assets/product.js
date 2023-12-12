@@ -746,6 +746,22 @@ if (!customElements.get('product-form')) {
         label: "A5 (5.8 x 8.3 Inches)",
         value: "5.8x8.3",
         shape: "rectangle"
+      }, {
+        label: "2*A2 (16.5 x 23.4 Inches)",
+        value: "16.5x23.4",
+        shape: "rectangle"
+      }, {
+        label: "2*A3 (11.7 x 16.5 Inches)",
+        value: "11.7x16.5",
+        shape: "rectangle"
+      }, {
+        label: "2*A4 (8.3 x 11.7 Inches)",
+        value: "8.3x11.7",
+        shape: "rectangle"
+      }, {
+        label: "2*A5 (5.8 x 8.3 Inches)",
+        value: "5.8x8.3",
+        shape: "rectangle"
       }
     ]
 
@@ -831,9 +847,9 @@ if (!customElements.get('product-form')) {
     handleEditorAddToCart = (pdfFiles) => {
       let formData = new FormData(this.form);      
       if (pdfFiles.length > 1) {
-        let counter = pdfFiles.length
+        // let counter = pdfFiles.length
         pdfFiles.forEach((file, index) => {
-          formData.append(`properties[Frame Design ${counter + 1}]`, file)
+          formData.append(`properties[Frame Design ${index + 1}]`, file)
         })
       } else {
         formData.append("properties[Design]", pdfFiles[0])
