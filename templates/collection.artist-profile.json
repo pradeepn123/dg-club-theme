@@ -25,17 +25,8 @@
     "product-grid": {
       "type": "custom-collection-product-grid",
       "blocks": {
-        "5ee26f09-1d5e-432f-95fc-199e572a5a87": {
-          "type": "collection_category",
-          "repeater": "{{ collection.metafields.custom.trial.value }}",
-          "settings": {
-            "tab_heading": "{{ block.repeater.tab_title.value }}",
-            "category_collection": "{{ block.repeater.category_collection.value }}"
-          }
-        }
       },
-      "block_order": [
-        "5ee26f09-1d5e-432f-95fc-199e572a5a87"
+      "block_order": [        
       ],
       "settings": {
         "heading": "",
