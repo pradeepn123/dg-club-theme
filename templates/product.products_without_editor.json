@@ -103,6 +103,7 @@
         },
         "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
           "type": "share",
+          "disabled": true,
           "settings": {
           }
         },
