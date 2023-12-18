@@ -36,18 +36,20 @@
                 class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}"
               >
                 {% for collection in collections %}
-                  <li class="column">
-                    {% render 'collection-card',
-                      grid_collection: collection,
-                      media_aspect_ratio: section.settings.image_ratio,
-                      style: style,
-                      index: forloop.index,
-                      columns_desktop: columns_desktop,
-                      heading_position: heading_position,
-                      heading_size: heading_size,
-                      products_count: products_count
-                    %}
-                  </li>
+                  {% if collection.template_suffix == 'artist-profile' %}
+                    <li class="column">
+                      {% render 'collection-card',
+                        grid_collection: collection,
+                        media_aspect_ratio: section.settings.image_ratio,
+                        style: style,
+                        index: forloop.index,
+                        columns_desktop: columns_desktop,
+                        heading_position: heading_position,
+                        heading_size: heading_size,
+                        products_count: products_count
+                      %}
+                    </li>
+                  {% endif %}
                 {%- endfor -%}
               </ul>
               {% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}

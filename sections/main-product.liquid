@@ -74,30 +74,43 @@
 								</div>
 							</scroll-shadow>
 						</div>
+            {% if product.template_suffix == 'products_without_editor'%}
+              <div class="product_like_count">
+                <button class="like__btn" id="like__btn">
+                  <span id="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <span id="count">0</span>
+                </button>
+              </div>
+            {% endif %}
 			    </div>
 					{%- assign info_boxes = section.blocks | where: "type", "info_box" -%}
 					{%- if info_boxes -%}
-					{{- 'info-box.css' | asset_url | stylesheet_tag -}}
-					<div class="product--infobox-container">
-						{%- for info_box in info_boxes %}
-							<div class="product--infobox" style="--info-box-bg: {{ info_box.settings.info_box_bg }};--info-box-color: {{ info_box.settings.info_box_color }};">
-								{% if info_box.settings.image %}
-								<span class="product--infobox-image">
-									{%- render 'responsive-image', image: info_box.settings.image, sizes: '24x24,48x48' -%}
-								</span>
-								{%- else -%}
-								<span class="product--infobox-image">
-									{% render 'svg-icons-inline', icon: info_box.settings.icon %}
-								</span>
-								{%- endif -%}
-								<span>{{ info_box.settings.text }}</span>
-								{% if info_box.settings.link %}
-								<a href="{{ info_box.settings.link }}" class="product--infobox-link"></a>
-								{%- endif -%}
-							</div>
-						{%- endfor -%}
-					</div>
-					{%- endif -%}
+            {{- 'info-box.css' | asset_url | stylesheet_tag -}}
+            <div class="product--infobox-container">
+              {%- for info_box in info_boxes %}
+                <div class="product--infobox" style="--info-box-bg: {{ info_box.settings.info_box_bg }};--info-box-color: {{ info_box.settings.info_box_color }};">
+                  {% if info_box.settings.image %}
+                  <span class="product--infobox-image">
+                    {%- render 'responsive-image', image: info_box.settings.image, sizes: '24x24,48x48' -%}
+                  </span>
+                  {%- else -%}
+                  <span class="product--infobox-image">
+                    {% render 'svg-icons-inline', icon: info_box.settings.icon %}
+                  </span>
+                  {%- endif -%}
+                  <span>{{ info_box.settings.text }}</span>
+                  {% if info_box.settings.link %}
+                  <a href="{{ info_box.settings.link }}" class="product--infobox-link"></a>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+					{%- endif -%}          
+
 				</div>
 		    <div class="product-information">
 					<div id="ProductInfo-{{ section.id }}" class="product-information--inner">
@@ -224,6 +237,25 @@
       {%- endfor -%}
     ]
   }
+</script>
+
+<script>
+  const likeButton = document.getElementById('like__btn');
+  const likeCountElement = document.getElementById('count');
+  let likeIcon = document.querySelector("#icon")
+
+  let likeCount = JSON.parse(localStorage.getItem('likeCount')) || 0;
+  likeCountElement.innerText = likeCount;
+
+  likeButton.addEventListener('click', () => {
+    likeIcon.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z" fill="#D5BFF1" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>`;
+    likeCount++;
+    likeCountElement.innerText = likeCount;
+    
+    localStorage.setItem('likeCount', JSON.stringify(likeCount));
+  });
 </script>
 
 {% schema %}

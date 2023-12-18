@@ -72,7 +72,7 @@
               {%- endif -%}
               <div class="customer-reviews--content">
                 {% assign star_rating = block.settings.star_rating | default: block.settings.stars %}
-                {%- if block.settings.stars and block.settings.stars != '' -%}
+                {%- if star_rating or block.settings.stars != '' -%}
                   <div class="star-rating" style="--star-rating: {{star_rating}};"></div>
                 {%- endif -%}
                 {%- if block.settings.heading != blank -%}
