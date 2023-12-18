@@ -24,10 +24,6 @@
     },
     "product-grid": {
       "type": "custom-collection-product-grid",
-      "blocks": {
-      },
-      "block_order": [        
-      ],
       "settings": {
         "heading": "",
         "marker_style": "style1",
