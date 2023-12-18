@@ -322,7 +322,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Similar products",
         "description": "<p>Combine your style with these products<\/p>",
         "mobile_swipe": true,
         "product_limit": 4,
