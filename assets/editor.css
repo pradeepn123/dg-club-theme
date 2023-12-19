@@ -123,6 +123,15 @@
 .sidebar-panel-content .close_tab {
     display: none;
 }
+.editor-layout .editor-sidebar-container{
+    overflow: auto;
+    width: 10%;
+}
+.shape-icons-container{
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+
 @media (max-width: 1023px) {
     .editor-layout {
         width: 100%;
@@ -178,7 +187,7 @@
         align-items: center;
    }
     .editor-layout .sidebar-panel-container .shapes-sidebar-panel-content .shape-icons-container {
-        justify-content: flex-start;
+        justify-content: center;
    }
     .editor-layout .sidebar-panel-container .upload-sidebar-panel-content .uploaded-image-collection {
         max-height: 115px;
