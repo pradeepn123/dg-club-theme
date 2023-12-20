@@ -373,7 +373,7 @@
         "heading": "Similar products",
         "description": "",
         "mobile_swipe": true,
-        "product_limit": 6,
+        "product_limit": 4,
         "columns_desktop": 4,
         "disable_top_spacing": true,
         "disable_bottom_spacing": false
