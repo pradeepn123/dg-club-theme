@@ -3048,9 +3048,9 @@ scroll-shadow>*::-webkit-scrollbar {
   margin-top: 0;
 }
 
-.section-spacing.section-spacing--disable-bottom {
+/* .section-spacing.section-spacing--disable-bottom {
   margin-bottom: 0;
-}
+} */
 
 .section-spacing-bottom {
   margin-bottom: var(--section-spacing-mobile, 0);
