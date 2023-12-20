@@ -161,4 +161,13 @@
   .scrolling-text .scrolling-text--inner span {
     font-size: 36px;
   }
+  .scrolling-text {
+    margin: 30px 0;
+  }
+  .scrolling-text--item .scrolling-text--svg{
+    margin-right: 24px;
+  }
+  .scrolling-text--item {
+    padding: 0 12px;
+  }
 }
