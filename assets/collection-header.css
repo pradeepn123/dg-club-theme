@@ -58,14 +58,14 @@
   border: 20px solid #f5f5f5;
   border-radius: 50%;
   position: absolute;
-  top: -65%;
+  top: -130px;
   left: 5%;
 }
 
 @media only screen and (max-width: 1200px) {
   .template-header--image {
     width: 200px;
-    top: -42%;
+    top: -80px;
   }
 }
 
@@ -215,7 +215,7 @@
   }
   .template-header--image {
     width: 153px;
-    top: -24%;
+    top: -70px;
     left: 2%;
   }
   .template-header--content {
@@ -236,4 +236,10 @@
 }
 .template-header .row .columns{
   position: relative;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 990px) {
+  .template-header--content {
+    max-width: 67%;
+  }
 }

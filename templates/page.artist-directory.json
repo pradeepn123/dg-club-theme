@@ -224,7 +224,7 @@
         "image_ratio": "square",
         "style": "style1",
         "columns_desktop": 4,
-        "collection_list_pagination_num": 8,
+        "collection_list_pagination_num": 13,
         "heading_position": "top-left",
         "text_color": "#000000",
         "overlay_color": "rgba(0,0,0,0)",
