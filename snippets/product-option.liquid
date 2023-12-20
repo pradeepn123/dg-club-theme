@@ -55,7 +55,8 @@
 			</fieldset>
 		{% else %}
 			<fieldset class="product-form__input product-form__input--block" data-index="option{{ forloop.index }}" data-handle="{{ handle }}">
-				<div class="form__label">{{ option.name }}: <span class="form__label__value">{{ option.selected_value }}</span>{{ sizing_link }}</div>
+				{% comment %} <div class="form__label">{{ option.name }}: <span class="form__label__value">{{ option.selected_value }}</span>{{ sizing_link }}</div> {% endcomment %}
+				<div class="form__label">{{ option.name }}{{ sizing_link }}</div>
 				{%- for value in option.values -%}
 					{%- if option.name == 'Size' and value == 'Custom' -%}
 						<input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}{{ appended }}"

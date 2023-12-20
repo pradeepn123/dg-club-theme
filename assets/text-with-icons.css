@@ -119,19 +119,26 @@
   @media only screen and (max-width: 768px) {
     .text-with-icons__block-content h6 {
       margin-bottom: 30px;
-      letter-spacing: 0.001rem; }
+      letter-spacing: 0.001rem; 
+    }
     .text-with-icons.heading-large h6 {
       font-size: 20px;
       font-weight: 600;
-      max-width: 136px; }
+      max-width: 136px; 
+    }
     .text-with-icons__block-content p {
       font-size: 16px;
-      line-height: 150%; }
+      line-height: 150%; 
+    }
     .text-with-icons.icon-xlarge .text-with-icons__icon {
       height: 108px;
-      width: 108px; }
+      width: 108px; 
+    }
     .text-with-icons.icon-top .text-with-icons__icon {
-      margin-bottom: 35px; }
+      margin-bottom: 32px; 
+      width: 90px;
+      height: 90px;
+    }
   }
   @media only screen and (min-width: 768px) and (max-width: 1200px) {
     .text-with-icons__block-content h6 {

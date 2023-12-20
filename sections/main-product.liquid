@@ -76,24 +76,13 @@
 						</div>
             
             {% if product.template_suffix == 'products_without_editor'%}
-              <product-likes loginurl={{routes.account_login_url}} redirecturl="{{product.url}}">
-                {% comment %} <div class="product_like_count">
-                  <button class="like__btn" id="like__btn">
-                    <span id="icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                    <span id="count">0</span>
-                  </button>
-                </div> {% endcomment %}
-              </product-likes>
+              <product-likes loginurl={{routes.account_login_url}} redirecturl="{{product.url}}"></product-likes>
             {% endif %}
             
 			    </div>
 
 					{%- assign info_boxes = section.blocks | where: "type", "info_box" -%}
-					{%- if info_boxes -%}
+					{%- if info_boxes and info_box.settings.text != blank -%}
             {{- 'info-box.css' | asset_url | stylesheet_tag -}}
             <div class="product--infobox-container">
               {%- for info_box in info_boxes %}
