@@ -239,7 +239,7 @@
         "use_video": false,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
-        "height": "small",
+        "height": "adapt",
         "desktop_image_width": "medium",
         "full_width": false,
         "layout": "image_first",
