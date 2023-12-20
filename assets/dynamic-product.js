@@ -197,7 +197,7 @@ if (!customElements.get('variant-selects')) {
       if (!section) return;
 
       const productForm = section.querySelector('product-form');
-      if (productForm) productForm.handleErrorMessage();
+      if (productForm && productForm.handleErrorMessage) productForm.handleErrorMessage();
     }
 
     getSectionsToRender() {

@@ -1452,6 +1452,120 @@ class AnimatedMarkers {
   }
 }
 
+class ProductLikes extends HTMLElement {
+  constructor() {
+    super();
+    this.customerId = this.getAttribute("data-customer-id")
+    this.productId = this.getAttribute("data-product-id")
+    this.loginUrl = this.getAttribute("data-login-url")
+    this.getLikes();
+  }
+
+  handleClick = function(event) {
+    if (!this.customerId) {
+      window.location.href = this.loginUrl
+      return false
+    }
+    this.updateLikes()
+  }
+
+  getLikes = async () => {
+    fetch(`${theme.routes.backend_url}/api/product-likes/?shop=${Shopify.shop}&product_id=${this.productId}`, {
+      method: 'GET',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(this.handleServerResponse)
+    .then(response => JSON.parse(response))
+    .then((response) => {
+      this.likeCount = response.response.likes
+      this.renderBaseTemplate()
+    })
+    .catch(response => {
+      let responseJson = JSON.parse(response)       
+    })
+    return 0
+  }
+
+  handleServerResponse(response) {
+    return response.json()
+    .then((json) => {
+    // Modify response to include status ok, success, and status text
+      let modifiedJson = {
+        success: response.ok,
+        status: response.status,
+        statusText: response.statusText ? response.statusText : json.error || '',
+        response: json
+      }
+      // If request failed, reject and return modified json string as error
+      if (! modifiedJson.success) return Promise.reject(JSON.stringify(modifiedJson))
+      // If successful, continue by returning modified json string
+      return JSON.stringify(modifiedJson)
+    })
+  }
+
+  updateLikes() {
+    fetch(`${theme.routes.backend_url}/api/update-product-likes/?shop=${Shopify.shop}`, {
+      method: 'POST',
+      body: JSON.stringify({
+        customer_id: this.customerId,
+        product_id: this.productId,
+        shop: Shopify.shop
+      }),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(this.handleServerResponse)
+    .then(response => JSON.parse(response))
+    .then(responseJson => {
+      this.likeCount = responseJson.response.likes
+      this.likeContainer.innerHTML = this.likeCount
+    })
+  }
+
+  renderBaseTemplate() {        
+    this.innerHTML = `
+      <style> 
+        .product_like_count{
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          transform: translate(-50%, -50%);
+          border-radius: 60px;
+          background: #FFF;              
+        }
+        #like__btn {
+          display: inline-flex;
+          padding: 7px var(--2, 16px);
+          align-items: center;
+          gap: var(--1, 8px);
+          background: transparent;
+          border: 0;
+          cursor: pointer;
+        }           
+      </style>
+      <div class="product_like_count">
+        <button class="like__btn" id="like__btn">
+          <span id="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z" fill="#D5BFF1" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span id="like-count-element">${this.likeCount}</span>
+        </button>
+      </div>
+    `;
+    this.likeContainer = this.querySelector("#like-count-element")
+    this.likeBtn = this.querySelector("#like__btn")
+    this.likeBtn.addEventListener("click", this.handleClick.bind(this))
+  }
+}    
+customElements.define('product-likes', ProductLikes);
+
 const creatorTracker = function () {
   const url = new URL(window.location.href)
   let data = JSON.parse(sessionStorage.getItem("creatorTracker") || "{}")
@@ -1460,8 +1574,14 @@ const creatorTracker = function () {
   } else if (data.pathname != url.pathname) {
     data = sessionStorage.removeItem("creatorTracker")
   }
+  const redirect_uri = url.searchParams.get("redirect_uri")
+  if (redirect_uri) {
+    const redirectUriField = document.querySelector("#return_to_navigator")
+    if (redirectUriField) {
+      redirectUriField.value = redirect_uri
+    }
+  }
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   creatorTracker()
@@ -1504,28 +1624,12 @@ document.addEventListener('DOMContentLoaded', () => {
         showTabContent(tab.getAttribute('data-form-tab'))
       })
     })
-    const artistDashboardTab = document.querySelector('.dashboard_tabs.artist_dashboard');
-    
-    
-    // redirectToArtistDashboard = function(){
-    //   if(window.location.pathname == '/account/addresses'){
-    //     window.location.pathname = '/account';
-    //     artistDashboardTab.click();
-    //   }
-    // }
-    // showArtistDashboard = function(){
-    //   tablinks.forEach(tabItem => {
-    //     tabItem.classList.remove('active');
-    //   })
-    //   artistDashboardTab.classList.add('active');
-    //   showAccountTabContent(tab.getAttribute('data-form-tab'))
-    // }
-
     const accountTablinks = document.querySelectorAll('.dashboard_tabs');
     function showAccountTabContent(formId){
       document.querySelectorAll('.dashboard_tabs_content').forEach(elem => elem.classList.remove('showTab'))
       document.querySelector(`.${formId}`).classList.add('showTab')
     }
+
     accountTablinks.forEach(tab => {
       tab.addEventListener('click', () => {
         accountTablinks.forEach(tabItem => {
@@ -1536,9 +1640,13 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-    document.getElementById('dropdownBtnSort').addEventListener('click', () => {
-      showArtistDashboardSortDropDown()
-    })
+    const dropdownBtnSort = document.getElementById("dropdownBtnSort")
+    if (dropdownBtnSort) {
+      dropdownBtnSort.addEventListener('click', () => {
+        showArtistDashboardSortDropDown()
+      })
+    }
+
     function showArtistDashboardSortDropDown(){
       const dropDownOptions = document.getElementById('dropdownSortOptions');
       dropDownOptions.classList.toggle('activeFilter');
