@@ -2605,6 +2605,7 @@ variant-selects .product-form__input .form__group_custom label.custom_label_inch
   z-index: 5;
   border: 1px solid #4444E1;
   background: #D5BFF1;
+  color: #4444E1;
 }
 .product-information .product-form__input.product-information--line-item input[type=radio]+label{
   border: 1px solid #D3D3D3;

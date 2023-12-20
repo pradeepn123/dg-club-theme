@@ -43,8 +43,8 @@
 			    {%- endform -%}
 			</div>
         	<div class="thb-login-form" id="login">
-          		{% form 'customer_login', novalidate: 'novalidate' %}					
-					<input type="hidden" name="return_to" value="{{product.url}}">
+          		{% form 'customer_login', novalidate: 'novalidate' %}
+					<input type="hidden" name="return_to" value="/account" id="return_to_navigator">
 					<h4 class="login_title">{{ 'customer.login_page.login' | t }}</h4>
 					<p class="login_description">{{ 'customer.login_page.login_description' | t }}</p>
 					{% if form.errors %}
