@@ -130,6 +130,32 @@
 .shape-icons-container{
     flex-wrap: wrap;
     row-gap: 30px;
+    justify-content: flex-start !important;
+}
+.editor-layout .toolbar-panel-container .upload-toolbar .replace_dropdown_block .replace-dropdown ul{
+    z-index: 1;
+}
+.canvas-footer-container .counter-input input{
+    border: none !important;
+    background-color: transparent;
+    width: 44px;
+}
+.canvas-footer-container .reduce-zoom-counter-btn{
+    border-right: none !important;
+    background-color: transparent;
+    padding: 5px;
+}
+.canvas-footer-container .increase-zoom-counter-btn{
+    border-left: none !important;
+    background-color: transparent;
+    padding: 5px;
+}
+.canvas-footer-container > div:first-child{
+    background-color: #F5F5F5;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    border-radius: 8px;
 }
 @media (max-width: 1200px){
     .editor-layout .editor-sidebar-container {
@@ -144,11 +170,19 @@
         background: #fff;
         justify-content: space-around;
         border-top: 1px solid #ddd;
-   }
+    }
+    .editor-layout .toolbar-panel-container .upload-toolbar .replace_dropdown_block .replace-dropdown ul{
+        top: 100%;
+    }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
     .editor-layout{
         height: calc(100% - 118px);
+    }
+}
+@media (max-width: 540px){
+    .editor-layout .sidebar-panel-container {
+        bottom: 103px !important;
     }
 }
 @media (max-width: 1023px) {
@@ -156,18 +190,6 @@
         width: 100%;
         background-color: #d6d6d6;
    }
-    /* .editor-layout .editor-sidebar-container {
-        flex-direction: row;
-        width: 100%;
-        max-width: 100%;
-        position: absolute;
-        bottom: 0;
-        z-index: 2;
-        padding: 12px 0;
-        background: #fff;
-        justify-content: space-around;
-        border-top: 1px solid #ddd;
-   } */
     .editor-layout .sidebar-panel-container {
         bottom: 116px;
         background: #fff;
@@ -237,6 +259,7 @@
         position: relative;
         background-color: #d6d6d6;
         top: -1px;
+        left: -2%;
         width: 95%;
         margin: auto;
    }
