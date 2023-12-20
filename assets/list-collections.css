@@ -58,8 +58,8 @@
 }
 @media only screen and (max-width: 767px) {
   .collection-grid.swipe-on-mobile.mobile-columns--2 {
-    grid-auto-columns: minmax(calc(50vw - 30px), 1fr);
-    grid-template-columns: repeat(1, minmax(calc(50vw - 30px), 1fr)); } }
+    grid-auto-columns: minmax(calc(42vw - 15px), 1fr);
+    grid-template-columns: repeat(1, minmax(calc(42vw - 15px), 1fr)); } }
 .collection-grid__carousel {
   display: block;
   grid-gap: 0;

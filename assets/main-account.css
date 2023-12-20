@@ -24,6 +24,7 @@
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+    width: 100%;
 }
 
 .dashboard_tabs a{
@@ -104,6 +105,12 @@
     padding: 22px 15px;
     flex-basis: calc(100% / 3 - 21px);
     min-height: 19.438rem;
+}
+.customer-addresses .my-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 .my-address .my_address_index{
     border-bottom: 1px solid #E4E4E4;

@@ -1047,7 +1047,7 @@ screen and (min-width: 48em) {
 
 .small-6 {
   flex: 0 0 50%;
-  max-width: 50%;
+  max-width: 42%;
 }
 
 .small-offset-5 {
@@ -3048,9 +3048,9 @@ scroll-shadow>*::-webkit-scrollbar {
   margin-top: 0;
 }
 
-.section-spacing.section-spacing--disable-bottom {
+/* .section-spacing.section-spacing--disable-bottom {
   margin-bottom: 0;
-}
+} */
 
 .section-spacing-bottom {
   margin-bottom: var(--section-spacing-mobile, 0);

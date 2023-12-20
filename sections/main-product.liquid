@@ -74,30 +74,37 @@
 								</div>
 							</scroll-shadow>
 						</div>
+            
+            {% if product.template_suffix == 'products_without_editor'%}
+              <product-likes loginurl={{routes.account_login_url}} redirecturl="{{product.url}}"></product-likes>
+            {% endif %}
+            
 			    </div>
+
 					{%- assign info_boxes = section.blocks | where: "type", "info_box" -%}
-					{%- if info_boxes -%}
-					{{- 'info-box.css' | asset_url | stylesheet_tag -}}
-					<div class="product--infobox-container">
-						{%- for info_box in info_boxes %}
-							<div class="product--infobox" style="--info-box-bg: {{ info_box.settings.info_box_bg }};--info-box-color: {{ info_box.settings.info_box_color }};">
-								{% if info_box.settings.image %}
-								<span class="product--infobox-image">
-									{%- render 'responsive-image', image: info_box.settings.image, sizes: '24x24,48x48' -%}
-								</span>
-								{%- else -%}
-								<span class="product--infobox-image">
-									{% render 'svg-icons-inline', icon: info_box.settings.icon %}
-								</span>
-								{%- endif -%}
-								<span>{{ info_box.settings.text }}</span>
-								{% if info_box.settings.link %}
-								<a href="{{ info_box.settings.link }}" class="product--infobox-link"></a>
-								{%- endif -%}
-							</div>
-						{%- endfor -%}
-					</div>
-					{%- endif -%}
+					{%- if info_boxes and info_box.settings.text != blank -%}
+            {{- 'info-box.css' | asset_url | stylesheet_tag -}}
+            <div class="product--infobox-container">
+              {%- for info_box in info_boxes %}
+                <div class="product--infobox" style="--info-box-bg: {{ info_box.settings.info_box_bg }};--info-box-color: {{ info_box.settings.info_box_color }};">
+                  {% if info_box.settings.image %}
+                  <span class="product--infobox-image">
+                    {%- render 'responsive-image', image: info_box.settings.image, sizes: '24x24,48x48' -%}
+                  </span>
+                  {%- else -%}
+                  <span class="product--infobox-image">
+                    {% render 'svg-icons-inline', icon: info_box.settings.icon %}
+                  </span>
+                  {%- endif -%}
+                  <span>{{ info_box.settings.text }}</span>
+                  {% if info_box.settings.link %}
+                  <a href="{{ info_box.settings.link }}" class="product--infobox-link"></a>
+                  {%- endif -%}
+                </div>
+              {%- endfor -%}
+            </div>
+					{%- endif -%}          
+
 				</div>
 		    <div class="product-information">
 					<div id="ProductInfo-{{ section.id }}" class="product-information--inner">
@@ -225,6 +232,76 @@
     ]
   }
 </script>
+
+<script>
+    class ProductLikes extends HTMLElement {
+      constructor() {
+        super();        
+        this.attachShadow({ mode: 'open' });        
+        this.likeCount = JSON.parse(localStorage.getItem('likeCount')) || 0;
+        this.render();
+        this.shadowRoot.querySelector('#like__btn').addEventListener('click', () => { 
+          this.likeCount++;
+          this.render();
+          // Update local storage.
+          localStorage.setItem('likeCount', JSON.stringify(this.likeCount));
+          if (this.loginUrl) { 
+            const redirectUrl = this.getAttribute('redirecturl') || '/';
+            window.location.href = `${this.loginUrl}?redirect=${encodeURIComponent(redirectUrl)}`;
+          }
+        });
+      }
+      static get observedAttributes() {
+        return ['loginurl', 'redirecturl'];
+      }
+
+      attributeChangedCallback(name, newValue) {
+        if (name === 'loginurl') {
+          this.loginUrl = newValue;
+          console.log('Login URL:', this.loginUrl);
+        }
+      }
+
+      connectedCallback() {        
+        this.loginUrl = this.getAttribute('loginurl');
+      }
+
+      render() {        
+        this.shadowRoot.innerHTML = `
+          <style> 
+            .product_like_count{
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              transform: translate(-50%, -50%);
+              border-radius: 60px;
+              background: #FFF;              
+            }
+            #like__btn{
+              display: inline-flex;
+              padding: 7px var(--2, 16px);
+              align-items: center;
+              gap: var(--1, 8px);
+              background: transparent;
+              border: 0;
+              cursor: pointer;
+            }           
+          </style>
+          <div class="product_like_count">
+            <button class="like__btn" id="like__btn">
+              <span id="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 7.69431C10 2.99988 3 3.49988 3 9.49991C3 15.4999 12 20.5001 12 20.5001C12 20.5001 21 15.4999 21 9.49991C21 3.49988 14 2.99988 12 7.69431Z" fill="#D5BFF1" stroke="#4444E1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span id="count">${this.likeCount}</span>
+            </button>
+          </div>
+        `;
+      }
+    }    
+    customElements.define('product-likes', ProductLikes);
+  </script>
 
 {% schema %}
 {

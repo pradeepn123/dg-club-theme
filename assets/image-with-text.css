@@ -187,6 +187,10 @@
   .image-with-text--content--inner .rte p {
     font-size: var(--font-size-text-mobile);
   }
+  .image-with-text.column-spacing--small, 
+  .image-with-text.column-spacing--medium {
+    grid-gap: 16px;
+  }
 }
 
 .image-with-text .image-with-text--content .image-with-text--content--inner h3.h3{

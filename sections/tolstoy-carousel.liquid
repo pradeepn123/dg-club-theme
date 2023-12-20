@@ -1,7 +1,10 @@
 {% style %}
+    .tolstoy-carousel{
+        width: 100%;
+    }
     .tolstoy-carousel-container{
         margin: 0 auto;
-        width: 95% !important;
+        width: 100% !important;
     }
     .tolstoy_carousel_wrapper .section_heading.row{
         margin-bottom: 0;    
@@ -59,7 +62,7 @@
 {% endstyle %}
 
 <div class="tolstoy_carousel_wrapper {% unless section.settings.remove_spacing == true %}section-padding--{{ section.settings.sectionPadding }}{% endunless %}" style="background: linear-gradient(0deg, {{ section.settings.section_background }} 0%, rgba(195, 231, 107, 0.00) 100%);">
-    <div class="tolstoy_carousel_container page-width">
+    <div class="tolstoy_carousel_container row">
         <div class="section_heading">
             <a href="{{ section.settings.link }}" target="_blank" style="text-align:{{ section.settings.text_align }};"><span class="textHeading">{{ section.settings.heading }}</span> <span class="textLink">{{ section.settings.linkText }}<span></a>
         </div>

@@ -5,7 +5,7 @@
 			<div class="thb-login-form" id="recover">
 				<h4>{{ 'customer.recover_password.title' | t }}</h4>
 				<p>{{ 'customer.recover_password.subtext' | t }}</p>
-				{%- form 'recover_customer_password' -%}
+				{%- form 'recover_customer_password', return_to: "/account/login#recover" -%}
 					{% if form.posted_successfully? %}
 						<div class="recover_password_success_message">An e-mail has been sent to your email address with instructions to reset your password.</div>
 					{% else %}
@@ -22,7 +22,7 @@
 							autocorrect="off"
 							autocapitalize="off"
 							autocomplete="email"
-							{% comment %} placeholder="{{ 'customer.login_page.email' | t | escape }}" {% endcomment %}
+							placeholder="{{ 'customer.login_page.email' | t | escape }}"
 							{% if form.errors %}
 								aria-invalid="true"
 								aria-describedby="RecoverEmail-email-error"
@@ -43,7 +43,8 @@
 			    {%- endform -%}
 			</div>
         	<div class="thb-login-form" id="login">
-          		{% form 'customer_login', novalidate: 'novalidate' %}
+          		{% form 'customer_login', novalidate: 'novalidate' %}					
+					<input type="hidden" name="return_to" value="{{product.url}}">
 					<h4 class="login_title">{{ 'customer.login_page.login' | t }}</h4>
 					<p class="login_description">{{ 'customer.login_page.login_description' | t }}</p>
 					{% if form.errors %}

@@ -218,6 +218,7 @@
     
     {%- when 'collapsible_tab' -%}
       <collapsible-row class="product__accordion accordion" {{ block.shopify_attributes }}>
+        {% if block.settings.content != blank or block.settings.page.content != blank or block.settings.custom_liquid != blank %}
         <details id="Details-{{ block.id }}-{{ section.id }}" {% if block.settings.open %}open{% endif %}>
           <summary>
             {{ block.settings.heading | default: block.settings.page.title }}
@@ -229,6 +230,7 @@
             {{ block.settings.custom_liquid }}
           </div>
         </details>
+        {% endif %}
       </collapsible-row>
     {%- when 'complementary' -%}
       <product-recommendations class="complementary-products no-js-hidden" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ block.settings.product_list_limit }}&intent=complementary">
