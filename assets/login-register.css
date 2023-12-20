@@ -378,7 +378,7 @@ creator-form .creator_form p{
 }
 
 .creator_form.showForm .field input[type="email"]{
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
 }
 .email_id_error{
   font-size: 12px !important;
@@ -391,4 +391,19 @@ creator-form .creator_form p{
 .thb-form-container .thb-login-form .field [type=submit]:hover {
   background: var(--solid-button-background-hover, var(--color-accent));
   color: var(--solid-button-label, #fff);
+}
+
+.more_social_links{
+  display: block;
+  background: #E5EFFD;
+  border-radius: 4px;
+  font-size: 12px;  
+  font-weight: 600;
+  color: #1F5199;
+  padding: 6px;
+  width: fit-content;
+  margin-bottom: 16px;
+}
+.more_social_field{
+  margin-bottom: 10px !important;
 }
