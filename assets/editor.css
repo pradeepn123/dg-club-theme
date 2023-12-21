@@ -78,7 +78,7 @@
     border-left: none;
     cursor: pointer;
 }
-.editor-layout .toolbar-panel-container .canvas-toolbar-panel-content .frame-blocks{
+.editor-layout .toolbar-panel-container .frame-blocks{
     max-width: 100%;
     flex-wrap: wrap;
 }
