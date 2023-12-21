@@ -736,11 +736,11 @@ if (!customElements.get('product-form')) {
       this.body = document.body;
 
       this.hideErrors = this.dataset.hideErrors === 'true';
+      this.productHandle = this.getAttribute("data-product-handle")
       this.variantSelector = document.getElementById(`variant-selects-${this.dataset.section}`)
     }
 
     connectedCallback() {
-      console.log(this.getAttribute("data-section"), this.parentElement)
       if (!this.sticky) {
         if (this.dataset.templateSuffix == "products_without_editor") {
           this.form.removeEventListener('submit', this.handleDynamicVariant.bind(this));
@@ -784,12 +784,12 @@ if (!customElements.get('product-form')) {
       .then((response) => {
         _this7.form.querySelector('[name=id]').value = response.id
         setTimeout(() => {
-          _this7.onSubmitHandler(evt)
+          _this7.onSubmitHandler(evt, _this7.productHandle)
         }, 500)
       })
     }
 
-    onSubmitHandler(evt) {
+    onSubmitHandler(evt, productHandle) {
       evt.preventDefault();
 
       if (!this.form.reportValidity()) {
@@ -820,6 +820,9 @@ if (!customElements.get('product-form')) {
 
       formData.append('sections', this.getSectionsToRender().map((section) => section.section));
       formData.append('sections_url', window.location.pathname);
+      if (productHandle) {
+        formData.append("properties[_product_handle]", productHandle)
+      }
       config.body = formData;
 
       fetch(`${theme.routes.cart_add_url}`, config)
