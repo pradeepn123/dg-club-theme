@@ -1299,15 +1299,26 @@ if (!customElements.get('creator-form')) {
           this.fileInput.addEventListener("change", this.handleFileUpload.bind(this))
           this.addMoreLinks.addEventListener('click', this.handleSocialMediaLinks.bind(this))
           this.uploadedFiles = []
-          this.linkCloseButtons();
         }
 
+        getMediaLinksForPayload(){
+          let finalObject = {}
+          let captureSocialMediaLinks = document.querySelectorAll("#getInputData");
+
+          Object.values(captureSocialMediaLinks).map((items,index) => {
+            finalObject['social_media_' + index] = items.value;
+          });
+          return finalObject;
+        }
         linkCloseButtons(){
           let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
           Object.values(closeButtonLinks).map(eachLinkItem => {
             eachLinkItem.addEventListener('click', (e) => {
-              console.log(e);
-              console.log(eachLinkItem);
+              // console.log(e);
+              // console.log(eachLinkItem);
+              console.log(eachLinkItem.parentElement);
+              eachLinkItem.parentElement.remove();
+              console.log(eachLinkItem.parentElement);
             })
           })
         }
@@ -1319,7 +1330,7 @@ if (!customElements.get('creator-form')) {
           const formData = new FormData(evt.target)
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
-          payload.social_media_links = this.social_media_links;
+          payload.social_media_links = this.getMediaLinksForPayload();
           payload.store = 4
           fetch(`${theme.routes.backend_url}/api/creators/?shop=${Shopify.shop}`, {
             method: 'POST',
@@ -1366,8 +1377,11 @@ if (!customElements.get('creator-form')) {
           temp.classList.add("field", "field__class");
 
           // console.log(temp);
+          let parentElementFixed = document.querySelector("#social_media_main_fixed");
           let parentElement = document.querySelector("#social_media_main");
-          parentElement.parentNode.insertBefore(temp, parentElement.nextSibling);
+          parentElementFixed.parentNode.insertBefore(temp, parentElementFixed.nextSibling);
+
+          this.linkCloseButtons();
         }
         async handleFileUpload(evt) {
           // Show Loader

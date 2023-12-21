@@ -424,3 +424,7 @@ creator-form .creator_form p{
   flex-direction: row;
   column-gap: 5px;
 }
+
+.bgRed{
+  background-color: red;
+}
