@@ -78,7 +78,10 @@
     border-left: none;
     cursor: pointer;
 }
-
+.editor-layout .toolbar-panel-container .canvas-toolbar-panel-content .frame-blocks{
+    max-width: 100%;
+    flex-wrap: wrap;
+}
 @media(min-width: 1024px) {
     .editor-dialog .preview-navtoolbar .nav-info-icon {
         display: none;
