@@ -808,7 +808,14 @@ if (!customElements.get('product-form')) {
     openEditor(evt) {
       const currentVariant = this.variantSelector.currentVariant
       const sizePosition = this.optionsInformation.find((option) => option.name.toLowerCase() == "size").position
-      const size = this.SIZES.find(s => s.label.toLowerCase() == currentVariant[`option${sizePosition}`].toLowerCase())
+      const size = this.SIZES.find(s => {
+        let currentVariantSizeValue = currentVariant[`option${sizePosition}`].toLowerCase()
+        if (currentVariantSizeValue.includes("*")) {
+          let [widgetTemp, heightTemp] = currentVariantSizeValue.split("*")
+          currentVariantSizeValue = `${widgetTemp.trim()} x ${heightTemp.trim()}`
+        }
+        return s.label.toLowerCase() == currentVariantSizeValue
+      })
       const container = document.querySelector("#backend-editor-container")
 
       let [width, height] = size.value.split("x")
