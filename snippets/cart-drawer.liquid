@@ -24,8 +24,28 @@
 					{% for item in cart.items %}
 					<div class="product-cart-item" id="CartDrawerItem-{{ item.index | plus: 1 }}">
 						<div class="product-cart-item-image">
-							{% if item.image %}
-								{%- render 'responsive-image', image: item.image, sizes: '168x0' -%}
+							{% liquid
+								if item.image
+									assign item_title = item.product.title
+									assign item_image = item.image
+								elsif item.variant.image
+									assign item_image = item.variant.image
+								elsif item.product.featured_image
+									assign item_image = item.product.featured_image
+								else
+									for property in item.properties
+										if property.first == "_product_handle"
+											assign cart_item_product =	all_products[property.last]
+											assign item_image = cart_item_product.featured_image
+											assign item_title = cart_item_product.title
+											break
+										endif
+									endfor
+								endif
+							%}
+
+							{% if item_image %}
+								{%- render 'responsive-image', image: item_image, sizes: '168x0' -%}
 							{% else %}
 								<div class="thb-placeholder" style="width: 100px;">
 									{{ 'product-1' | placeholder_svg_tag }}
@@ -36,7 +56,7 @@
 							</div>
 						</div>
 						<div class="product-cart-item-info">
-							<a href="{{ item.url }}" title="{{ item.product.title | escape }}" class="cart-product-link">{{ item.product.title }}</a>
+							<a href="{{ item.url }}" title="{{ item_title | escape }}" class="cart-product-link">{{ item_title }}</a>
 							<span class="price">
 								{%- if item.original_line_price != item.final_line_price -%}
 								 <del><span class="amount">{{ item.original_line_price | money }}</span></del>
@@ -49,7 +69,7 @@
 										{{ item.variant.unit_price | money }}
 										<span class="unit-price-separator">/</span>
 										{%- if item.variant.unit_price_measurement.reference_value != 1 -%}
-										{{- item.variant.unit_price_measurement.reference_value -}}
+											{{- item.variant.unit_price_measurement.reference_value -}}
 										{%- endif -%}
 										{{ item.variant.unit_price_measurement.reference_unit }}
 									</small>
@@ -76,7 +96,7 @@
 												<a href="{{ property.last }}" class="link" target="_blank">
 													{{ property.last | split: '/' | last }}
 												</a>
-											{% elsif property.last %}
+											{% elsif property.last contains "http" %}
 												<a href="{{ property.last }}" class="link" target="_blank">
 													{{ property.last }}
 												</a>
@@ -98,7 +118,7 @@
 							</ul>
 							{%- endif -%}
 							<quantity-selector class="quantity cart-update small-qty" data-id="{{ item.key | escape }}">
-							 <button class="minus" type="button" aria-label="{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}">{% render 'svg-icons' with 'minus' %}</button>
+							 <button class="minus" type="button" aria-label="{{ 'products.product.quantity.decrease' | t: product: item_title | escape }}">{% render 'svg-icons' with 'minus' %}</button>
 							 <input
 							 type="number"
 							 name="updates[]"
@@ -113,9 +133,9 @@
 							 step="{{ item.variant.quantity_rule.increment }}"
 							 class="qty"
 							 data-index="{{ item.index | plus: 1 }}"
-							 aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+							 aria-label="{{ 'products.product.quantity.input_label' | t: product: item_title | escape }}"
 							 >
-							 <button class="plus" type="button" aria-label="{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}">{% render 'svg-icons' with 'plus' %}</button>
+							 <button class="plus" type="button" aria-label="{{ 'products.product.quantity.increase' | t: product: item_title | escape }}">{% render 'svg-icons' with 'plus' %}</button>
 							</quantity-selector>
 							<a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" class="remove" data-index="{{ item.index | plus: 1 }}">{% render 'svg-icons' with 'trash' %}</a>
 						</div>
