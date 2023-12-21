@@ -1314,11 +1314,7 @@ if (!customElements.get('creator-form')) {
           let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
           Object.values(closeButtonLinks).map(eachLinkItem => {
             eachLinkItem.addEventListener('click', (e) => {
-              // console.log(e);
-              // console.log(eachLinkItem);
-              console.log(eachLinkItem.parentElement);
               eachLinkItem.parentElement.remove();
-              console.log(eachLinkItem.parentElement);
             })
           })
         }
@@ -1376,9 +1372,8 @@ if (!customElements.get('creator-form')) {
           temp.innerHTML += newHTMLElement;
           temp.classList.add("field", "field__class");
 
-          // console.log(temp);
           let parentElementFixed = document.querySelector("#social_media_main_fixed");
-          let parentElement = document.querySelector("#social_media_main");
+          // let parentElement = document.querySelector("#social_media_main");
           parentElementFixed.parentNode.insertBefore(temp, parentElementFixed.nextSibling);
 
           this.linkCloseButtons();
