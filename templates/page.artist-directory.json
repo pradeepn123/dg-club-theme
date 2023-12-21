@@ -60,7 +60,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_306.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/acrylic-prints",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
@@ -84,7 +84,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_307.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/autumn",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
@@ -108,7 +108,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_308.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/being_ai-human",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
@@ -132,7 +132,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_309.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/colorist",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
