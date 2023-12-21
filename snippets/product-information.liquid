@@ -73,6 +73,7 @@
       -%}
       <variant-selects
         id="variant-selects-{{ section.id }}"
+        data-product-form-id="{{ product_form_id }}"
         class="no-js-hidden"
         data-update-url="{{ update_url }}"
         data-section="{{ section.id }}"
@@ -272,7 +273,7 @@
           assign required = block.settings.text_required
           assign text_placeholder = block.settings.text_placeholder
         -%}
-        <fieldset class="product-form__input product-information--line-item" {{ block.shopify_attributes }}>
+        <fieldset class="product-form__input product-information--line-item" {{ block.shopify_attributes }} data-custom-option-identifier="{{- product_form_id -}}--{{block.settings.label}}">
           <div class="form__label" for="{{ line_item_input_id }}">{{ block.settings.label | escape }}</div>
           {% case block.settings.type %}
             {% when 'text' %}
