@@ -1302,14 +1302,10 @@ if (!customElements.get('creator-form')) {
         }
 
         getMediaLinksForPayload(){
-          let finalObject = {}
           let captureSocialMediaLinks = document.querySelectorAll("#getInputData");
-
-          Object.values(captureSocialMediaLinks).map((items,index) => {
-            finalObject['social_media_' + index] = items.value;
-          });
-          return finalObject;
+          return Object.values(captureSocialMediaLinks).map((items) => items.value)
         }
+
         linkCloseButtons(){
           let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
           Object.values(closeButtonLinks).map(eachLinkItem => {
