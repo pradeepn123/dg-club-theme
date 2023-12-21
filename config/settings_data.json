@@ -40,6 +40,7 @@
     "product_card_spacing": "medium",
     "product_aspect_ratio": "square",
     "enable_quick_view": false,
+    "enable_quick_add": true,
     "show_products_vendor": false,
     "show_products_label": false,
     "product_label_1": "custom.product_label_1",
