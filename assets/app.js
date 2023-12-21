@@ -1293,12 +1293,24 @@ if (!customElements.get('creator-form')) {
           this.uploadedFileContainer = this.querySelector(".uploaded_files ul")
           this.thankYouMessage = this.querySelector("#creator_form")
           this.ctaLoader = this.querySelector(".creator_form_button")
+          this.addMoreLinks = document.querySelector(".more_social_links");
 
           this.formElement.addEventListener("submit", this.handleSubmit.bind(this))
           this.fileInput.addEventListener("change", this.handleFileUpload.bind(this))
+          this.addMoreLinks.addEventListener('click', this.handleSocialMediaLinks.bind(this))
           this.uploadedFiles = []
+          this.linkCloseButtons();
         }
 
+        linkCloseButtons(){
+          let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
+          Object.values(closeButtonLinks).map(eachLinkItem => {
+            eachLinkItem.addEventListener('click', (e) => {
+              console.log(e);
+              console.log(eachLinkItem);
+            })
+          })
+        }
         handleSubmit(evt) {
           // Show Loader
           const initialCTAContent = this.ctaLoader.innerHTML
@@ -1307,6 +1319,7 @@ if (!customElements.get('creator-form')) {
           const formData = new FormData(evt.target)
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
+          payload.social_media_links = this.social_media_links;
           payload.store = 4
           fetch(`${theme.routes.backend_url}/api/creators/?shop=${Shopify.shop}`, {
             method: 'POST',
@@ -1335,6 +1348,27 @@ if (!customElements.get('creator-form')) {
           return false
         }
 
+        handleSocialMediaLinks(){
+          // let addLinkButton = document.querySelector("#more_social_links");
+          let newHTMLElement = `
+            <input type="text" name="social_media_1" class="full more_social_field" id="getInputData" value="" placeholder="Social media link" spellcheck="false" data-ms-editor="true">
+            <label for="social_media_1">Social media link</label>
+            <span class="close_button_mediaLinks" id="close_button_mediaLinks">
+              <svg viewPort="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                <line x1="1" y1="11" x2="11" y2="1" stroke="black" stroke-width="2"/>
+                <line x1="1" y1="1" x2="11" y2="11" stroke="black" stroke-width="2"/>
+              </svg>
+            </span>
+          `;
+
+          let temp = document.createElement('div');
+          temp.innerHTML += newHTMLElement;
+          temp.classList.add("field", "field__class");
+
+          // console.log(temp);
+          let parentElement = document.querySelector("#social_media_main");
+          parentElement.parentNode.insertBefore(temp, parentElement.nextSibling);
+        }
         async handleFileUpload(evt) {
           // Show Loader
           let hasError = false;          
