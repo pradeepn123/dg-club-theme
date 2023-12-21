@@ -37,7 +37,7 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "color_picker": true,
+            "color_picker": false,
             "variant_is_disabled": true,
             "sizing_guide_variant": "Size",
             "sizing_guide_text": "",
