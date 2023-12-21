@@ -24,8 +24,17 @@
 					{% for item in cart.items %}
 					<div class="product-cart-item" id="CartDrawerItem-{{ item.index | plus: 1 }}">
 						<div class="product-cart-item-image">
-							{% if item.image %}
-								{%- render 'responsive-image', image: item.image, sizes: '168x0' -%}
+							{% liquid 
+								if item.image
+									assign item_image = item.image
+								elsif item.variant.image
+									assign item_image = item.variant.image
+								else
+									assign item_image = item.product.featured_image
+								endif
+							%}
+							{% if item_image %}
+								{%- render 'responsive-image', image: item_image, sizes: '168x0' -%}
 							{% else %}
 								<div class="thb-placeholder" style="width: 100px;">
 									{{ 'product-1' | placeholder_svg_tag }}

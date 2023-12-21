@@ -779,7 +779,7 @@ if (!customElements.get('product-form')) {
       var _this7 = this;
       config.body = JSON.stringify(this.variantSelector.variantConfiguration);
 
-      fetch(`https://digiapp-a1524492c4ed.herokuapp.com/api/store-variants/?shop=${Shopify.shop}`, config)
+      fetch(`${theme.routes.backend_url}/api/store-variants/?shop=${Shopify.shop}`, config)
       .then((response) => response.json())
       .then((response) => {
         _this7.form.querySelector('[name=id]').value = response.id
