@@ -7,7 +7,7 @@
         }
       },
       "template-header": {
-        "type": "template-header",
+        "type": "collection-header",
         "settings": {
           "show_collection_image": true,
           "show_collection_description": true,
