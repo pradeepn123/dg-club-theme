@@ -230,9 +230,11 @@
   z-index: 1;
 }
 
+/*
 .variations input[type="radio"].is-disabled+label:before {
   content: "";
 }
+*/
 
 .variations input[type="radio"].is-disabled+label:after,
 .variations input[type="radio"].is-disabled+label>span {
