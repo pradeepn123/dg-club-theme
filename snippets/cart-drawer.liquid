@@ -76,6 +76,10 @@
 												<a href="{{ property.last }}" class="link" target="_blank">
 													{{ property.last | split: '/' | last }}
 												</a>
+											{% elsif property.last %}
+												<a href="{{ property.last }}" class="link" target="_blank">
+													{{ property.last }}
+												</a>
 											{%- else -%}
 												{{ property.last }}
 											{%- endif -%}
