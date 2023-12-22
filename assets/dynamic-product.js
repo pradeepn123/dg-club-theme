@@ -248,7 +248,7 @@ if (!customElements.get('variant-selects')) {
       let custom_width = Number(this.querySelector("#custom_width").value)
       let custom_height = Number(this.querySelector("#custom_height").value)
       totalArea = custom_width * custom_height
-      this.querySelector("#custom_area").value = totalArea
+      this.querySelector("#custom_area").value = totalArea + " sq.ft"
 
       var finalPrice = totalArea * priceRate * 100
       let amountSpan = priceElement.querySelector(".amount")
@@ -257,9 +257,9 @@ if (!customElements.get('variant-selects')) {
       this.variantConfiguration = {
         product_id: this.dataset.productId,
         price: finalPrice / 100,
-        option1: this.currentVariant.option1 == "Custom" ? `${custom_width}x${custom_height} sqft` : this.currentVariant.option1,
-        option2: this.currentVariant.option2 == "Custom" ? `${custom_width}x${custom_height} sqft` : this.currentVariant.option2,
-        option3: this.currentVariant.option3 == "Custom" ? `${custom_width}x${custom_height} sqft` : this.currentVariant.option3,
+        option1: this.currentVariant.option1 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option1,
+        option2: this.currentVariant.option2 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option2,
+        option3: this.currentVariant.option3 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option3,
       }
       return totalArea >= 1
     }
@@ -783,13 +783,11 @@ if (!customElements.get('product-form')) {
       .then((response) => response.json())
       .then((response) => {
         _this7.form.querySelector('[name=id]').value = response.id
-        setTimeout(() => {
-          _this7.onSubmitHandler(evt, _this7.productHandle)
-        }, 500)
+        _this7.onSubmitHandler(evt, response)
       })
     }
 
-    onSubmitHandler(evt, productHandle) {
+    onSubmitHandler(evt, dynamicVariant) {
       evt.preventDefault();
 
       if (!this.form.reportValidity()) {
@@ -820,8 +818,12 @@ if (!customElements.get('product-form')) {
 
       formData.append('sections', this.getSectionsToRender().map((section) => section.section));
       formData.append('sections_url', window.location.pathname);
-      if (productHandle) {
-        formData.append("properties[_product_handle]", productHandle)
+      if (dynamicVariant) {
+        formData.set("properties[Height]", formData.get('properties[Height]') + " ft")
+        formData.set("properties[Width]", formData.get('properties[Width]') + " ft")
+        formData.append("properties[_product_handle]", this.productHandle)
+        formData.append("properties[_variant_price]", Number(dynamicVariant.price) * 100)
+        formData.append("properties[_variant_title]", dynamicVariant.title)
       }
       config.body = formData;
 
