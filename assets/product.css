@@ -1497,7 +1497,7 @@
 .product-popup-modal__content-header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   height: 73px;
   text-align: center;
   position: sticky;
@@ -1506,6 +1506,15 @@
   top: 0;
   left: 0;
   flex-shrink: 0;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+@media only screen and (min-width: 768px) {
+  .product-popup-modal__content-header {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 .product-popup-modal__content-header h5 {
