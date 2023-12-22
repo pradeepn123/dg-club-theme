@@ -98,6 +98,11 @@
         max-width: 98px;
     }
 }
+@media (min-width: 1680px){
+    .editor-layout .editor-sidebar-container{
+        max-width: 120px;
+    }
+}
 
 @media(max-width: 1023px) {
     .editor-dialog .nav-toolbar .nav-info-tooltip .nav-info {
@@ -109,9 +114,9 @@
     .editor-layout .editor-sidebar-container {
         column-gap: 28.5px;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: flex-start !important;
         overflow: auto;
-        padding: 13px;
+        padding: 13px !important;
         margin-bottom: -5px;
     }
 }
