@@ -19,6 +19,7 @@
   <product-form
   	class="product-form"
   	data-section="{{ section.id }}"
+	data-product-handle="{{ product.handle }}"
   	data-hide-errors="{{ gift_card_recipient_feature_active }}"
   	data-template-suffix="{{ product.template_suffix }}"
   	data-editor-flow="{% if product.template_suffix == "products_with_editor" or product.template_suffix == "products_collage" %}true{% else %}false{% endif %}"

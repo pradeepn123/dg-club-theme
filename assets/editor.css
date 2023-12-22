@@ -127,8 +127,11 @@
 }
 
 @media(max-width: 390px) {
-    .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-container-content-wrapper {
+    .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-container-content-wrapper {        
         margin: 0;
+        min-width: 70%;
+        max-width: 80%;
+        margin-left: 15px;
     }
     .canvas-section-container .canvas-container-wrapper .canvas-footer-container {
         width: calc(100% - 45px);
@@ -137,6 +140,14 @@
 @media(max-width: 375px) {
     .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container {
         margin: 0 auto;
+    }    
+}
+@media(max-width: 320px) {
+    .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-container-content-wrapper {        
+        margin: 0;
+        min-width: 70%;
+        max-width: 70%;
+        margin-left: 15px;
     }
 }
 

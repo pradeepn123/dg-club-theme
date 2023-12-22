@@ -7,7 +7,6 @@
   assign collection_list_pagination_num = section.settings.collection_list_pagination_num
   assign style = section.settings.style
   assign heading_position = section.settings.heading_position
-
   assign products_count = section.settings.products_count
   assign pagination_type = section.settings.pagination_type
 -%}
@@ -25,31 +24,30 @@
         </div>
       </div>
     {% endif %}
-    {%- paginate collections by collection_list_pagination_num -%}
+    {% assign artist_collections = section.settings.collection_list %}
+    {%- paginate artist_collections by collection_list_pagination_num -%}
       <div class="collection-container section-spacing-bottom">
         <div id="ProductGridContainer">
-          <div class="sidebar-container results--{{ collections.size }}">
+          <div class="sidebar-container results--{{ artist_collections.size }}">
             <div>
               <ul
                 id="product-grid"
                 data-id="{{ section.id }}"
                 class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}"
               >
-                {% for collection in collections %}
-                  {% if collection.template_suffix == 'artist-profile' %}
-                    <li class="column">
-                      {% render 'collection-card',
-                        grid_collection: collection,
-                        media_aspect_ratio: section.settings.image_ratio,
-                        style: style,
-                        index: forloop.index,
-                        columns_desktop: columns_desktop,
-                        heading_position: heading_position,
-                        heading_size: heading_size,
-                        products_count: products_count
-                      %}
-                    </li>
-                  {% endif %}
+                {% for collection in artist_collections %}
+                  <li class="column">
+                    {% render 'collection-card',
+                      grid_collection: collection,
+                      media_aspect_ratio: section.settings.image_ratio,
+                      style: style,
+                      index: forloop.index,
+                      columns_desktop: columns_desktop,
+                      heading_position: heading_position,
+                      heading_size: heading_size,
+                      products_count: products_count
+                    %}
+                  </li>
                 {%- endfor -%}
               </ul>
               {% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}
@@ -70,6 +68,10 @@
       "id": "heading",
       "label": "Heading",
       "default": "Shop by category"
+    },{
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Collection List"
     },
     {
       "type": "select",
