@@ -25,7 +25,7 @@
       "settings": {
         "heading": "",
         "marker_style": "style1",
-        "products_per_page": 8,
+        "products_per_page": 12,
         "columns_desktop": 4,
         "pagination_type": "loadmore",
         "enable_filtering": false,
