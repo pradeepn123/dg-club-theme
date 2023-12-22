@@ -143,8 +143,6 @@ if (!customElements.get('variant-selects')) {
         activeMedia = productSlider.querySelector(mediaId);
 
       if (flkty && this.hideVariants) {
-
-
         if (productSlider.querySelector('.product-images__slide.is-initial-selected')) {
           productSlider.querySelector('.product-images__slide.is-initial-selected').classList.remove('is-initial-selected');
         }
@@ -834,10 +832,6 @@ if (!customElements.get('product-form')) {
       const sizePosition = this.optionsInformation.find((option) => option.name.toLowerCase() == "size").position
       const size = this.SIZES.find(s => {
         let currentVariantSizeValue = currentVariant[`option${sizePosition}`].toLowerCase()
-        if (currentVariantSizeValue.includes("*")) {
-          let [widgetTemp, heightTemp] = currentVariantSizeValue.split("*")
-          currentVariantSizeValue = `${widgetTemp.trim()} x ${heightTemp.trim()}`
-        }
         return s.label.toLowerCase() == currentVariantSizeValue
       })
       const container = document.querySelector("#backend-editor-container")
