@@ -218,6 +218,7 @@
       "type": "artist-directory",
       "settings": {
         "heading": "Shop by Creators",
+        "collection_list": "{{ page.metafields.custom.collection_list.value }}",
         "heading_size": "small",
         "pagination_type": "loadmore",
         "products_count": true,

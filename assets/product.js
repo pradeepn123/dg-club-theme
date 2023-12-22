@@ -887,7 +887,6 @@ if (!customElements.get('product-form')) {
     }
 
     performOperation(formData) {
-      debugger;
       const submitButtons = document.querySelectorAll('.single-add-to-cart-button');
 
       submitButtons.forEach((submitButton) => {
