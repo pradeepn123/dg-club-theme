@@ -5146,16 +5146,22 @@ select.resize-select {
   display: inline-flex;
   padding: 0;
   width: 34px;
-  height: 42px;
-  line-height: 42px;
+  height: 48px;
+  line-height: 26px;
   text-align: center;
   border: 0;
   justify-content: center;
   background: transparent;
-  font-size: 0.8125rem;
+  font-size: 16px;
   font-weight: 400;
   margin: 0;
   outline: 0;
+}
+
+@media (max-width: 767px) {
+  .quantity .qty {
+    width: 64px;
+  }
 }
 
 .no-js .quantity .qty {
@@ -5198,7 +5204,7 @@ select.resize-select {
   padding: 0;
   margin: 0;
   border: 0;
-  height: 42px;
+  height: 48px;
   position: absolute;
   justify-content: center;
   align-items: center;
@@ -5847,6 +5853,7 @@ https://flickity.metafizzy.co
   border: 0;
   padding: 0;
   z-index: 20;
+  margin-top: 36px;
 }
 
 .flickity-page-dots .dot {
