@@ -1304,11 +1304,7 @@ if (!customElements.get('creator-form')) {
         getMediaLinksForPayload(){
           let finalObject = {}
           let captureSocialMediaLinks = document.querySelectorAll("#getInputData");
-
-          Object.values(captureSocialMediaLinks).map((items,index) => {
-            finalObject['social_media_' + index] = items.value;
-          });
-          return finalObject;
+          return Object.values(captureSocialMediaLinks).map((items) => items.value)
         }
         linkCloseButtons(){
           let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
@@ -1373,12 +1369,6 @@ if (!customElements.get('creator-form')) {
           newElement.classList.add("field", "field__class");
           newElement.id = "social_media_main";
 
-          // Logic 1
-          // let parentElement = document.querySelector("#social_media_main");
-          // let parentElementFixed = document.querySelector("#social_media_main_fixed");
-          // parentElementFixed.parentNode.insertBefore(newElement, parentElementFixed.ne
-        
-          // Logic 2
           let socialLinkContainer = document.querySelector('#social__link__container');
           
           socialLinkContainer.appendChild(newElement);
