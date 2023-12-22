@@ -28,3 +28,18 @@
         margin-top: 53px;
     }
 }
+
+@media screen and (max-width: 480px){
+    .collage-products-wrap{
+        gap: 23px;
+    }
+    .photo-collage-section .column,
+    .photo-collage-section .columns{
+        padding: 0;
+        min-width: 93px;
+    }
+    .collage-products-wrap{
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+}

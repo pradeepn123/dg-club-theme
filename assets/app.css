@@ -6089,6 +6089,7 @@ input[type="radio"],
 
 .section-header--description {
   font-size: 0.9375rem;
+  font-weight: 600;
 }
 
 @media only screen and (min-width: 768px) {

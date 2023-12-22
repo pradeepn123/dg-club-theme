@@ -2344,6 +2344,10 @@ h6,
   .product-recommendations__heading {
     margin-bottom: 45px;
   }
+  .thb-product-detail.product .product-thumbnail img{
+    height: 80px;
+    object-fit: contain;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -2368,6 +2372,9 @@ h6,
   .product-recommendations.swipe-on-mobile .products.row .columns {
     flex: 0 0 100%;
     max-width: 100%;
+  }
+  div.product_like_count{
+    transform: translate(-50% , -80%);
   }
 }
 
