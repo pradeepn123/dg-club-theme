@@ -76,6 +76,7 @@
 									type="number"
 									placeholder="Width"
 									min="1"
+									oninput="validity.valid||(value='');"
 									required
 									form="{{ product_form_id }}"
 								/>
@@ -89,6 +90,7 @@
 									type="number"
 									placeholder="Height"
 									min="1"
+									oninput="validity.valid||(value='');"
 									required
 									form="{{ product_form_id }}"
 								/>

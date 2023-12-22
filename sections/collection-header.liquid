@@ -34,7 +34,7 @@
 	{%- endif -%}
   	<div class="row">
 		<div class="small-12 columns">
-			<div class="template-header--content">
+			<div class="template-header--content {% if collection.template_suffix != 'artist-profile' %} template-header--spacing{% endif %}">
 				{%- if show_collection_image and banner_image -%}
 					{%- if profile_image != blank -%}
 						<div class="template-header--image">

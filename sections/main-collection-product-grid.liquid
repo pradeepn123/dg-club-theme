@@ -34,7 +34,7 @@
 		{%- paginate collection.products by products_per_page -%}
 			<div class="collection-container section-spacing-bottom">
 				<div id="ProductGridContainer">
-					<div class="sidebar-container facets--{{ facets_desktop }} results--{{ collection.products.size }}">
+					<div class="facets--{{ facets_desktop }} results--{{ collection.products.size }}">
 						{%- if facets_desktop == 'sidebar' -%}
 							{%- render 'facets-desktop', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, show_counts: show_counts, filter_color_swatches: filter_color_swatches -%}
 						{%- endif -%}
@@ -95,7 +95,6 @@
 <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {{- 'collection-page.css' | asset_url | stylesheet_tag -}}
-{{- 'custom-collection-page.css' | asset_url | stylesheet_tag -}}
 
 {% schema %}
   {
