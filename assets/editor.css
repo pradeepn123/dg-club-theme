@@ -297,7 +297,7 @@
    }
     .editor-layout .sidebar-panel-container .upload-sidebar-panel-content .uploaded-image-collection {
         max-height: 115px;
-        justify-content: space-between;
+        justify-content: flex-start;
    }
     .editor-layout .sidebar-panel-container .search-results-container .search-results-column-one, .editor-layout .sidebar-panel-container .search-results-container .search-results-column-two, .editor-layout .sidebar-panel-container .search-results-container .search-results-column-three {
         flex-basis: calc(100% / 3 - 13px);
