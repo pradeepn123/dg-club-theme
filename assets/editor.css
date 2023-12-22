@@ -36,7 +36,7 @@
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper .shape-fill-color, .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper .shape-fill-color, .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper .shape-outline-color, .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper .shape-outline-color {
      flex: 1;
-     padding: 9px 16px;
+     padding: 9px 10px;
      font-size: 15px;
 }
  
@@ -59,8 +59,10 @@
     background-position: right 5px center !important;
 }
 .editor-layout .toolbar-panel-container .color-wrapper .canvas-color-text, 
-.editor-layout .toolbar-panel-container .text-color-wrapper .text-color-text{
-    border-radius: 4px 0 0 4px;
+.editor-layout .toolbar-panel-container .text-color-wrapper .text-color-text,
+.editor-layout .toolbar-panel-container .shapes-toolbar-option .shape-outline-color-text,
+.editor-layout .toolbar-panel-container .shapes-toolbar-option .shape-fill-color-text{
+    border-radius: 4px 0 0 4px !important;
 }
 
 
@@ -70,7 +72,7 @@
     
 }
 
-.editor-layout .toolbar-panel-container .color-wrapper .canvas-color-box {
+.editor-layout .toolbar-panel-container .color-wrapper .canvas-color-box ,.editor-layout .toolbar-panel-container .shapes-toolbar .shape-outline-color-wrapper .shape-outline-color-box{
     padding: 8px 12px;
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -238,6 +240,9 @@
     .editor-layout .sidebar-panel-container {
         bottom: 103px !important;
     }
+    .editor-layout .toolbar-panel-container {
+        bottom: 100px !important;
+    }
 }
 @media (max-width: 1023px) {
     .editor-layout {
@@ -252,7 +257,8 @@
         max-width: 100%;
         position: absolute;
         padding: 43px 0;
-        max-height: 428px;
+        /* max-height: 428px; */
+        max-height: 35vh;
    }
     .editor-layout .sidebar-panel-container .sidebar-panel-content {
         row-gap: 10px;
@@ -353,11 +359,14 @@
    }
     .editor-layout .toolbar-panel-container {
         position: absolute;
-        bottom: 115px;
+        bottom: 111px;
         width: 100%;
         z-index: 3;
         height: 0;
         transition: height 550ms;
+   }
+   .editor-layout .toolbar-panel-content .upload-toolbar-panel{
+        max-height: 35vh;
    }
     .editor-layout .toolbar-panel-container:has(.upload-toolbar-panel:not(.active)), .editor-layout .toolbar-panel-container:has(.shapes-toolbar-panel:not(.active)), .editor-layout .toolbar-panel-container:has(.text-toolbar-panel:not(.active)) {
         height: 0;
