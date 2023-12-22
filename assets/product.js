@@ -18,6 +18,7 @@ if (!customElements.get('variant-selects')) {
       this.productWrapper = this.closest('.thb-product-detail');
       this.productSlider = this.productWrapper.querySelector('.product-images');
       this.hideVariants = this.dataset.hideVariants === 'true';
+      this.productFormId = this.getAttribute("data-product-form-id")
     }
 
     connectedCallback() {
@@ -25,6 +26,7 @@ if (!customElements.get('variant-selects')) {
       this.updateMasterId();
       this.setDisabled();
       this.setImageSet();
+      this.handleOrientationDisplay()
     }
 
     onVariantChange() {
@@ -102,6 +104,28 @@ if (!customElements.get('variant-selects')) {
         this.other[0].updateMasterId();
         this.other[0].updateVariantText();
         this.other[0].setDisabled();
+      }
+      this.handleOrientationDisplay()
+    }
+
+    handleOrientationDisplay() {
+      const customProperties = document.querySelector(`[data-custom-option-identifier="${this.productFormId}--Orientation"]`)
+      if (!customProperties) {
+        return
+      }
+      const isRectangle = this.options.find((option) => {
+        return option.toLowerCase() == "rectangle"
+      })
+      if (isRectangle) {
+        customProperties.querySelectorAll("input").forEach((input) => {
+          input.removeAttribute("disabled")
+        })
+        customProperties.style.display = ''
+      } else {
+        customProperties.style.display = 'none'
+        customProperties.querySelectorAll("input").forEach((input) => {
+          input.setAttribute("disabled", "disabled")
+        })
       }
     }
 
@@ -819,10 +843,8 @@ if (!customElements.get('product-form')) {
       const container = document.querySelector("#backend-editor-container")
 
       let [width, height] = size.value.split("x")
-      let orientation = "portrait"
-      if (width && height && Number(width) > Number(height)) {
-        orientation = "landscape"
-      }
+      const orientationElement = this.form.elements["properties[Orientation]"]
+      let orientation = orientationElement ? orientationElement.value.toLowerCase() : "portrait"
 
       currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
       currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
