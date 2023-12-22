@@ -407,3 +407,24 @@ creator-form .creator_form p{
 .more_social_field{
   margin-bottom: 10px !important;
 }
+
+.close_button_mediaLinks{
+  transform: rotate(45deg);
+  position: relative;
+  top: -10px;
+  cursor: pointer;
+}
+
+.close_button_mediaLinks svg{
+  transform-origin: center center;
+  transform: rotate(45deg);
+}
+.field__class{
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+}
+
+.bgRed{
+  background-color: red;
+}

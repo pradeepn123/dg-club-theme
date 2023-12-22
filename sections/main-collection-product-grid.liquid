@@ -38,7 +38,6 @@
 						{%- if facets_desktop == 'sidebar' -%}
 							{%- render 'facets-desktop', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, show_counts: show_counts, filter_color_swatches: filter_color_swatches -%}
 						{%- endif -%}
-						<div>
 						{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
 
 							<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}">
@@ -84,8 +83,6 @@
 								{%- endif -%}
 							</ul>
 							{% render 'pagination', paginate: paginate, pagination_type: pagination_type, id: section.id %}
-
-						</div>
 					</div>
 				</div>
 			</div>
@@ -98,6 +95,7 @@
 <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 {{- 'collection-page.css' | asset_url | stylesheet_tag -}}
+{{- 'custom-collection-page.css' | asset_url | stylesheet_tag -}}
 
 {% schema %}
   {

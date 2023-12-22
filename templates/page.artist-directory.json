@@ -24,7 +24,7 @@
         "template--21608791802156__5ba91645-a867-48e4-915f-fe702de01b99-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Explore the latest seasonal collections, shop directly from your favorite creator profiles<\/p>",
+            "text": "<p>Explore the latest collections, shop directly from your favorite creator profiles<\/p>",
             "size": "text-size-regular"
           }
         }
@@ -60,7 +60,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_306.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/acrylic-prints",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
@@ -84,7 +84,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_307.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/autumn",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
@@ -108,7 +108,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_308.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/being_ai-human",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
@@ -132,7 +132,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Rectangle_309.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/colorist",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
@@ -218,13 +218,14 @@
       "type": "artist-directory",
       "settings": {
         "heading": "Shop by Creators",
+        "collection_list": "{{ page.metafields.custom.collection_list.value }}",
         "heading_size": "small",
         "pagination_type": "loadmore",
         "products_count": true,
         "image_ratio": "square",
         "style": "style1",
         "columns_desktop": 4,
-        "collection_list_pagination_num": 13,
+        "collection_list_pagination_num": 14,
         "heading_position": "top-left",
         "text_color": "#000000",
         "overlay_color": "rgba(0,0,0,0)",

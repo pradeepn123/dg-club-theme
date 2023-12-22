@@ -57,11 +57,18 @@
             </div>
             <span class="email_id_error"></span>
             
-            <div class="field" id="social_media_main">
-              <input type="text" name="social_media_1" class="full more_social_field" value="" placeholder="Social media link" />
+            <div id="social_media_main_fixed"></div>
+            <div class="field field__class" id="social_media_main" class="social_media_main">
+              <input type="text" name="social_media_1" class="full more_social_field" id="getInputData" value="" placeholder="Social media link" />
               <label for="social_media_1">Social media link</label>
+              <span class="close_button_mediaLinks" id="close_button_mediaLinks">
+                <svg viewPort="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+                  <line x1="1" y1="11" x2="11" y2="1" stroke="black" stroke-width="2"/>
+                  <line x1="1" y1="1" x2="11" y2="11" stroke="black" stroke-width="2"/>
+                </svg>
+              </span>
             </div>
-            <a href="javascript:void(0)" class="more_social_links">+ Add more links</a>
+            <a href="javascript:void(0)" class="more_social_links" id="more_social_links">+ Add more links</a>
 
             <span class="field_label">Share your works for us to review and approve your account* </span>
             <div class="field">
