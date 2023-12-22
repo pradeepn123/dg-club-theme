@@ -1,6 +1,6 @@
-.main-collection{
+/* .main-collection{
     margin-top: 62px;
-}
+} */
 .main-collection .section-header{
     padding: 0 0 56px;
 }
@@ -27,9 +27,9 @@
     margin-bottom: 0;
 }
 @media (max-width: 767px){
-    .main-collection{
+    /* .main-collection{
         margin-top:49px;
-    }
+    } */
     .main-collection .section-header{
         padding: 0 0 32px;
     }
@@ -56,5 +56,13 @@
     .price del+ins .amount{
         display: inline-block;
         width: 100%;
+    }
+}
+.template-header {
+    padding: 50px 0 32px 0;
+}
+@media only screen and (min-width: 768px) {
+    .template-header {
+        padding: 62px 0 56px 0;
     }
 }
