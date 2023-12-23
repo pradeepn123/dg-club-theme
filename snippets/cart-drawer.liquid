@@ -26,12 +26,12 @@
 					<div class="product-cart-item" id="CartDrawerItem-{{ item.index | plus: 1 }}">
 						<div class="product-cart-item-image">
 							{% liquid
-								if item.image
-									assign item_title = item.product.title
+								assign item_variant_price = item.item_price
+								assign item_variant = item.variant
+								assign item_variant_title = item.variant.title
+								assign item_title = item.product.title
+								if item_title
 									assign item_image = item.image
-									assign item_variant = item.variant
-									assign item_variant_price = item.item_price
-									assign item_variant_title = item.variant.title
 								else
 									for property in item.properties
 										if property.first == "_product_handle"
