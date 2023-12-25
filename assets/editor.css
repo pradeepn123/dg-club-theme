@@ -84,6 +84,40 @@
     max-width: 100%;
     flex-wrap: wrap;
 }
+.live-preview--dialog .MuiDialog-container > .MuiPaper-root{
+    height: 80%;
+}
+.live-preview--dialog .MuiDialog-container > .MuiPaper-root .MuiDialogContent-root{
+    max-height: unset;
+    overflow-y: hidden;
+}
+.live-preview--dialog .MuiDialog-container > .MuiPaper-root .MuiDialogContent-root .MuiPaper-root.MuiPaper-elevation{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.live-preview--dialog .react-swipeable-view-container > div > div{
+    max-height: 50%;
+    height: -webkit-fill-available;
+}
+.live-preview--dialog .react-swipeable-view-container > div > div img{
+    object-fit: contain;
+}
+@media (max-width: 540px){
+    .editor-layout .sidebar-panel-container{
+        padding: 10px 24px !important;
+    }
+    .editor-layout .sidebar-panel-container .initial-sidebar-panel-text{
+        font-size: 12px;
+    }
+    .editor-layout .canvas-section-container{
+        height: 58vh !important;
+    }
+    .editor-layout .canvas-footer-container{
+        max-width: 100vw;
+    }
+}
 @media(min-width: 1024px) {
     .editor-dialog .preview-navtoolbar .nav-info-icon {
         display: none;
@@ -230,6 +264,9 @@
     .editor-layout .toolbar-panel-container .upload-toolbar .replace_dropdown_block .replace-dropdown ul{
         top: 100%;
     }
+    .editor-layout .sidebar-panel-content .upload-sidebar-panel-heading-wrapper, .editor-layout .sidebar-panel-content .visuals-heading-wrapper{
+        padding: 0 !important;
+    }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
     .editor-layout{
@@ -239,6 +276,21 @@
 @media (max-width: 767px){
     .editor-layout .canvas-section-container .canvas-toolbar-container{
         left: 1% !important;
+    }
+    .storefront-preview-container{
+        grid-template-rows: 361px 1fr;
+        grid-template-columns: unset;
+    }
+    .storefront-preview-container .preview-template-section{
+        height: unset;
+    }
+    .storefront-preview-container .preview-content-section .preview-description h1{
+        font-size: 20px;
+        color: #4444e1;
+    }
+    .storefront-preview-container .preview-content-section .preview-description p{
+        font-size: 16px;
+        line-height: 24px;
     }
 }
 @media (max-width: 540px){
