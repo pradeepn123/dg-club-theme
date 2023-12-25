@@ -277,6 +277,21 @@
     .editor-layout .canvas-section-container .canvas-toolbar-container{
         left: 1% !important;
     }
+    .storefront-preview-container{
+        grid-template-rows: 361px 1fr;
+        grid-template-columns: unset;
+    }
+    .storefront-preview-container .preview-template-section{
+        height: unset;
+    }
+    .storefront-preview-container .preview-content-section .preview-description h1{
+        font-size: 20px;
+        color: #4444e1;
+    }
+    .storefront-preview-container .preview-content-section .preview-description p{
+        font-size: 16px;
+        line-height: 24px;
+    }
 }
 @media (max-width: 540px){
     .editor-layout .sidebar-panel-container {
