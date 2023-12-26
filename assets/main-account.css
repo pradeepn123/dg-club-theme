@@ -321,6 +321,9 @@ body.open-cc{
     color: blue;
     text-decoration: underline;
 }
+.artist_directory_content .earning_details {
+    position: relative;
+}
 .artist_directory_content .earning_details .sortDropdown .dropdownSortOptions.activeFilter{
     visibility: visible !important;
     height: fit-content;
@@ -535,6 +538,8 @@ body.open-cc{
         border-bottom: 1px solid #E4E4E4;
         margin-bottom: 20px;
         padding-bottom: 20px;
+        text-transform: capitalize;
+        font-weight: 600;
     }
     .artist_dashboard_table thead{
         display: none;
@@ -566,8 +571,10 @@ body.open-cc{
         display: flex;
         flex-direction: column;
         background: #fff;
-        padding: 20px;
         border-radius: 12px;
+    }
+    .artist_dashboard_data tr:has(td div) {
+        padding: 20px;
     }
     .artist_dashboard_data tr td:last-child{
         border-bottom: 0;
@@ -591,12 +598,23 @@ body.open-cc{
 }
 
 .loader-container .file_loader {
-    position: absolute;
     top: 50%;
     left: 50%;
 }
 
+.earning_details .file_loader {
+    top: 100%;
+    left: 50%;
+}
+@media only screen and (max-width: 768px) {
+    .earning_details .file_loader {
+        top: 130%;
+        left: 50%;
+    }
+}
+
 .file_loader { 
+  position: absolute;
   width:35px;
   height:35px;
   display:inline-block;

@@ -1498,7 +1498,7 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  height: 73px;
+  height: fit-content;
   text-align: center;
   position: sticky;
   border-bottom: 1px solid var(--color-border, #dadce0);
@@ -1506,14 +1506,34 @@
   top: 0;
   left: 0;
   flex-shrink: 0;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 20px;
+}
+
+.product-popup-modal__content-header h5 {
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.product-popup-modal__content-info table tr:first-child td {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 19.2px;
 }
 
 @media only screen and (min-width: 768px) {
   .product-popup-modal__content-header {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 34px;
+  }
+  .product-popup-modal__content-header h5 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 42.66px;
+  }
+  .product-popup-modal__content-info table tr:first-child td {
+    font-size: 20px;
+    line-height: 26px;
   }
 }
 
@@ -1556,8 +1576,6 @@
   font-size: 20px;
   font-weight: 600;
 }
-
-
 
 .variations input[type="radio"]+label:before,
 .variations .product-form__input--color input[type="radio"]+label,
@@ -2297,9 +2315,6 @@ h6,
   font-size: 0.75rem;
 }
 
-
-
-
 .variations input[type="radio"]+label:before,
 .variations .product-form__input--color input[type="radio"]+label,
 .variations .product-form__input--color input[type="radio"]+label:after,
@@ -2331,14 +2346,12 @@ h6,
   box-shadow: var(--block-shadows);
 }
 
-
 .thb-product-detail .product-single__media-zoom,
 .thb-product-detail .product-single__media-xr-close,
 .product-popup-modal__content,
 .product-add-to-cart-sticky {
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
 }
-
 
 .product-recommendations {
   display: none;
@@ -2642,12 +2655,13 @@ variant-selects .product-form__input .form__group_custom label.custom_label_inch
 /* like count for product */
 .product_like_count{
   position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translate(-50%, -50%);
+  bottom: 6%;
+  right: 2%;
+  transform: translate(0%, -100%);
   border-radius: 60px;
   background: #FFF;              
 }
+
 #like__btn{
   display: inline-flex;
   padding: 7px var(--2, 16px);
@@ -2660,4 +2674,28 @@ variant-selects .product-form__input .form__group_custom label.custom_label_inch
 
 .variations .product-form__input--dropdown .select select:focus-visible {
   outline: #4444E1 auto 1px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 875px) {
+  .product_like_count{
+    bottom: 2%;
+    right: 5%;
+    transform: translate(0%, 0%);          
+  }
+}
+
+@media only screen and (min-width: 876px) and (max-width: 1067px) {
+  .product_like_count{
+    bottom: 2%;
+    right: 6%;
+    transform: translate(-100%, 0%);        
+  }
+}
+
+@media only screen and (min-width: 1068px) {
+  .product_like_count{
+    bottom: 0;
+    right: 0;
+    transform: translate(-50%, -50%);            
+  }
 }

@@ -245,6 +245,7 @@
 }
 .list-collections_custom.section-spacing {
   margin-top: 45px;
+  margin-bottom: 0px;
 }
 @media only screen and (min-width: 768px) {
   .list-collections_custom .products.row .columns,
