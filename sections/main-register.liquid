@@ -9,6 +9,7 @@
           <button id="register_creator" class="tab" data-form-tab="creator_form"> Creator </button>
         </div>
         <p>{{ 'customer.login_page.create_account_description' | t }}</p>
+        <span id="form-custom-errors"></span>
         {% form 'create_customer', novalidate: 'novalidate', class: 'customer_form showForm' %}
 					{% if form.errors %}
 					<div class="form-notification error">
@@ -17,18 +18,21 @@
 					{% endif %}
 					<div class="fields">
             <div class="field">
-              <input type="text" name="customer[first_name]" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required/>
+              <input type="text" id="RegisterForm-FirstName" name="customer[first_name]" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required/>
 	            <label for="first_name">{{ 'customer.login_page.first_name' | t }}*</label>
             </div>
+
             <div class="field">
-              <input type="text" name="customer[last_name]" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required/>
+              <input type="text" id="RegisterForm-LastName" name="customer[last_name]" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required/>
 	            <label for="last_name">{{ 'customer.login_page.last_name' | t }}*</label>
             </div>
 					</div>
+
           <div class="field">
             <input type="email" name="customer[email]" class="full {% if form.errors contains 'email' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.email' | t }}" />
             <label for="email">{{ 'customer.login_page.email' | t }}</label>
           </div>
+
           <div class="field">
             <input type="password" name="customer[password]" class="full" value="" placeholder="{{ 'customer.login_page.password' | t }}" />
             <label for="password">{{ 'customer.login_page.password' | t }}</label>
@@ -109,4 +113,28 @@
   appendButton.addEventListener('click', function() {
     console.log('ji')
   });
+
+  if (window.location.pathname === '/account/register') {
+    setTimeout(()=>{
+      const firstName = document.querySelector('#RegisterForm-FirstName')
+      const lastName = document.querySelector('#RegisterForm-LastName')
+      const submitBtn = document.querySelector('#create_customer button:last-child')
+      const registerForm = document.querySelector('#create_customer')
+      const format = /[0-9 `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+      const customError = document.querySelector('#form-custom-errors');
+  
+      if (registerForm && firstName && lastName && submitBtn) {
+        submitBtn.onclick = function (e) {
+            e.preventDefault();
+            if (!firstName.value || !lastName.value || format.test(firstName.value) || format.test(lastName.value)) {
+              customError.textContent = "Your first and last name is only allowed to consist of letters, not blanks, not numbers or symbols.";
+              customError.style.color = "red";
+              
+            } else {
+              registerForm.submit();
+            }
+        }
+      }
+    }, 2000)
+  }
 </script>
