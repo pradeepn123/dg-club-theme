@@ -406,7 +406,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_1.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/mural-wallpapers",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
@@ -430,7 +430,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_2.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/pages\/photo-collage-prints",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
@@ -454,7 +454,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_3.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/pages\/photo-gifts",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
@@ -478,7 +478,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_4.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/collections\/mural-wallpapers",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
