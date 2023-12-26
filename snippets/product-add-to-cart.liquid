@@ -26,6 +26,11 @@
   	data-frame-count="{{ product.metafields.backend.frame_count.value | default : 1 }}"
   	id="{{ product_form_id }}--product-form-element"
   >
+  	<div data-pre-select-template style="display: none;">{
+  		{%- for variant in product.variants -%}
+  			"{{- variant.id -}}": {{- variant.metafields.backend.preselect_template_id | default: "null" -}}{%- unless forloop.last -%},{%- endunless -%}
+  		{%- endfor -%}
+  	}</div>
   	<div data-template_ids style="display: none;">{
   		{%- for variant in product.variants -%}
   			"{{- variant.id -}}": {{- variant.metafields.backend.template_ids | default: "[]" -}}{%- unless forloop.last -%},{%- endunless -%}

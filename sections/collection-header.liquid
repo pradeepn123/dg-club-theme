@@ -13,6 +13,9 @@
 	assign collection_share_link = section.settings.collection_share_link
 
 	assign heading = collection.title
+	if collection.template_suffix == "artist-profile" and collection.title contains "Photo Gifts"
+		assign heading = collection.title | replace : "Photo Gifts", ""
+	endif
 	if show_collection_description
 		assign description = collection.description
 	endif
@@ -34,7 +37,7 @@
 	{%- endif -%}
   	<div class="row">
 		<div class="small-12 columns">
-			<div class="template-header--content">
+			<div class="template-header--content {% if collection.template_suffix != 'artist-profile' %} template-header--spacing{% endif %}">
 				{%- if show_collection_image and banner_image -%}
 					{%- if profile_image != blank -%}
 						<div class="template-header--image">

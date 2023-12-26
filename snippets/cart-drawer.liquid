@@ -21,24 +21,30 @@
 							render 'free-shipping', free_shipping_minimum: free_shipping_minimum, total: total
 						endif
 					-%}
+					{% assign custom_item_price = 0 %}
 					{% for item in cart.items %}
 					<div class="product-cart-item" id="CartDrawerItem-{{ item.index | plus: 1 }}">
 						<div class="product-cart-item-image">
 							{% liquid
-								if item.image
-									assign item_title = item.product.title
+								assign item_variant_price = item.item_price
+								assign item_variant = item.variant
+								assign item_variant_title = item.variant.title
+								assign item_title = item.product.title
+								if item_title
 									assign item_image = item.image
-								elsif item.variant.image
-									assign item_image = item.variant.image
-								elsif item.product.featured_image
-									assign item_image = item.product.featured_image
 								else
 									for property in item.properties
 										if property.first == "_product_handle"
-											assign cart_item_product =	all_products[property.last]
+											assign cart_item_product = all_products[property.last]
 											assign item_image = cart_item_product.featured_image
 											assign item_title = cart_item_product.title
-											break
+										endif
+										if property.first == "_variant_price"
+											assign item_variant_price = property.last | times: item.quantity
+											assign custom_item_price = custom_item_price | plus : item_variant_price
+										endif
+										if property.first == "_variant_title"
+											assign item_variant_title = property.last
 										endif
 									endfor
 								endif
@@ -61,16 +67,22 @@
 								 <del><span class="amount">{{ item.original_line_price | money }}</span></del>
 								 <ins><span class="amount">{{ item.final_line_price | money }}</span></ins>
 								{%- else -%}
-								 <ins><span class="amount">{{ item.original_line_price | money }}</span></ins>
+								 <ins><span class="amount">
+								 	{% if item.image %}
+								 		{{ item.original_line_price | money }}
+								 	{% else %}
+								 		{{ item_variant_price | money }}
+								 	{% endif %}
+								 </span></ins>
 								{%- endif -%}
-								{%- if item.variant.available and item.unit_price_measurement -%}
+								{%- if item_variant.available and item.unit_price_measurement -%}
 									<small class="unit-price">
-										{{ item.variant.unit_price | money }}
+										{{ item_variant.unit_price | money }}
 										<span class="unit-price-separator">/</span>
-										{%- if item.variant.unit_price_measurement.reference_value != 1 -%}
-											{{- item.variant.unit_price_measurement.reference_value -}}
+										{%- if item_variant.unit_price_measurement.reference_value != 1 -%}
+											{{- item_variant.unit_price_measurement.reference_value -}}
 										{%- endif -%}
-										{{ item.variant.unit_price_measurement.reference_unit }}
+										{{ item_variant.unit_price_measurement.reference_unit }}
 									</small>
 								{%- endif -%}
 							</span>
@@ -79,11 +91,15 @@
 								<span class="selling-plan">{{ item.selling_plan_allocation.selling_plan.name }}</span>
 							</div>
 							{% endif %}
-							{% unless item.variant.title contains 'Default' %}
+							{% unless item_variant_title contains 'Default' %}
 								<div class="product-cart-item-options">
-									{% for option in item.product.options %}
-										{{ item.variant.options[forloop.index0] }}{% if forloop.last != true %}, {% endif %}
-									{% endfor %}
+									{% if item.product %}
+										{% for option in item.product.options %}
+											{{ item_variant.options[forloop.index0] }}{% if forloop.last != true %}, {% endif %}
+										{% endfor %}
+									{% else %}
+										{{ item_variant_title }}
+									{% endif %}
 								</div>
 							{% endunless %}
 							{%- for property in item.properties -%}
@@ -123,13 +139,13 @@
 							 name="updates[]"
 							 id="updates_{{ item.key }}"
 							 value="{{ item.quantity }}"
-							 min="{{ item.variant.quantity_rule.min }}"
-							 {% if item.variant.quantity_rule.max != null %}
-		           max="{{ item.variant.quantity_rule.max }}"
-							 {% elsif item.variant.inventory_management != null and item.variant.inventory_quantity > 0 %}
-							 max="{{ item.variant.inventory_quantity }}"
+							 min="{{ item_variant.quantity_rule.min }}"
+							 {% if item_variant.quantity_rule.max != null %}
+		           max="{{ item_variant.quantity_rule.max }}"
+							 {% elsif item_variant.inventory_management != null and item_variant.inventory_quantity > 0 %}
+							 max="{{ item_variant.inventory_quantity }}"
 		           {% endif %}
-							 step="{{ item.variant.quantity_rule.increment }}"
+							 step="1"
 							 class="qty"
 							 data-index="{{ item.index | plus: 1 }}"
 							 aria-label="{{ 'products.product.quantity.input_label' | t: product: item_title | escape }}"
@@ -144,16 +160,22 @@
 							 <del><span class="amount">{{ item.original_line_price | money }}</span></del>
 							 <ins><span class="amount">{{ item.final_line_price | money }}</span></ins>
 							{%- else -%}
-							 <ins><span class="amount">{{ item.original_line_price | money }}</span></ins>
+							 <ins><span class="amount">
+							 		{% if item.product %}
+								 		{{ item.original_line_price | money }}
+								 	{% else %}
+								 		{{ item_variant_price | money }}
+								 	{% endif %}
+								</span></ins>
 							{%- endif -%}
-							{%- if item.variant.available and item.unit_price_measurement -%}
+							{%- if item_variant.available and item.unit_price_measurement -%}
 								<small class="unit-price">
-									{{ item.variant.unit_price | money }}
+									{{ item_variant.unit_price | money }}
 									<span class="unit-price-separator">/</span>
-									{%- if item.variant.unit_price_measurement.reference_value != 1 -%}
+									{%- if item_variant.unit_price_measurement.reference_value != 1 -%}
 									{{- item.variant.unit_price_measurement.reference_value -}}
 									{%- endif -%}
-									{{ item.variant.unit_price_measurement.reference_unit }}
+									{{ item_variant.unit_price_measurement.reference_unit }}
 								</small>
 							{%- endif -%}
 							</span>
@@ -224,11 +246,12 @@
 								<td>
 									<span class="price">
 										<span class="amount">
-										 {% if settings.currency_code_enabled %}
-											{{ cart.total_price | money_with_currency }}
-										 {% else %}
-											{{ cart.total_price | money }}
-										 {% endif %}
+										 	{% assign total_price = cart.total_price | plus : custom_item_price %}
+										 	{% if settings.currency_code_enabled %}
+												{{ total_price | money_with_currency }}
+										 	{% else %}
+												{{ total_price | money }}
+										 	{% endif %}
 									 </span>
 								 </span>
 								</td>

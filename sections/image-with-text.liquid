@@ -88,8 +88,9 @@
 									assign marker_color = block.settings.marker_color
 									assign text = block.settings.text | newline_to_br
 								-%}
+								{% if text != blank %}
 									<h3 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{% render 'animated-marker-heading', heading: text, style: marker_style, color: marker_color %}</h3>
-								
+								{% endif %}
 								{%- when 'text' -%}
 									<div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
 								

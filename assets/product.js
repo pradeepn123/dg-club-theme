@@ -808,6 +808,9 @@ if (!customElements.get('product-form')) {
       if (this.querySelector("[data-template_ids]")) {
         this.variantTemplateIds = JSON.parse(this.querySelector('[data-template_ids]').innerHTML)
       }
+      if (this.querySelector("[data-pre-select-template]")) {
+        this.preSelectTemplates = JSON.parse(this.querySelector('[data-pre-select-template]').innerHTML)
+      }
       if (this.querySelector("[data-super-imposed-images]")) {
         this.variantSuperImposedImages = JSON.parse(this.querySelector('[data-super-imposed-images]').innerHTML)
       }
@@ -840,21 +843,24 @@ if (!customElements.get('product-form')) {
       const orientationElement = this.form.elements["properties[Orientation]"]
       let orientation = orientationElement ? orientationElement.value.toLowerCase() : "portrait"
 
-      currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
       currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
-      container.innerHTML = `<digi-editor
-        integration="editor"
-        title="${currentVariant.name}"
-        size="${size.value}"
-        orientation="${orientation}"
-        shape="${size.shape}"
-        description=""
-        price="${this.formatCurrency(currentVariant.price)}"
-        framecount="${this.getAttribute("data-frame-count") || 1}"
-        variantjson='${JSON.stringify(currentVariant)}'
-        formId="${this.form.getAttribute("id")}--product-form-element"
-        baseurl="${theme.routes.backend_url}"
-      ></digi-editor>`
+      const editor = document.createElement("digi-editor")
+      editor.setAttribute("integration", "editor")
+      editor.setAttribute("title", currentVariant.name)
+      editor.setAttribute("size", size.value)
+      editor.setAttribute("orientation", orientation)
+      editor.setAttribute("shape", size.shape)
+      editor.setAttribute("price", this.formatCurrency(currentVariant.price))
+      editor.setAttribute("framecount", this.getAttribute("data-frame-count") || 1)
+      editor.setAttribute("formId", `${this.form.getAttribute("id")}--product-form-element`)
+      editor.setAttribute("baseurl", theme.routes.backend_url)
+      if (this.preSelectTemplates[currentVariant.id]) {
+        editor.setAttribute("templateid", this.preSelectTemplates[currentVariant.id])
+      } else {
+        currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
+      }
+      editor.setAttribute("variantjson", JSON.stringify(currentVariant))
+      container.appendChild(editor)
       document.addEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
     }
 

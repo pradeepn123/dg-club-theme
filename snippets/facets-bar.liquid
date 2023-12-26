@@ -52,6 +52,7 @@
 					</custom-select>
 				</div>
 			{%- endif -%}
+			{% if show_counts %}
 			<div class="thb-filter-count" id="ProductCount">
 				<span class="facets__label">
 					{%- if results.results_count -%}
@@ -66,6 +67,7 @@
 					{% render 'svg-icons' with 'thb-loading' %}
 				</span>
 			</div>
+			{% endif %}
 		</div>
 	</form>
 	{%- if enable_filtering -%}
