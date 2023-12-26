@@ -199,7 +199,7 @@
       "settings": {
         "text_alignment": "center",
         "icon_position": "top",
-        "icon_size": "large",
+        "icon_size": "xlarge",
         "heading_size": "large",
         "mobile_swipe": true,
         "mobile_block_spacing": "small",
