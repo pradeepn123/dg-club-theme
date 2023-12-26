@@ -838,12 +838,14 @@ if (!customElements.get('product-form')) {
         return s.label.toLowerCase() == currentVariantSizeValue
       })
       const container = document.querySelector("#backend-editor-container")
-
-      let [width, height] = size.value.split("x")
+        
       const orientationElement = this.form.elements["properties[Orientation]"]
       let orientation = orientationElement ? orientationElement.value.toLowerCase() : "portrait"
+            
+      if(this.variantSuperImposedImages){
+        currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
+      }
 
-      currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
       const editor = document.createElement("digi-editor")
       editor.setAttribute("integration", "editor")
       editor.setAttribute("title", currentVariant.name)
