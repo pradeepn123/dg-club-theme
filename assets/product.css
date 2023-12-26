@@ -1552,7 +1552,7 @@
   font-weight: 400;
 }
 
-.product-popup-modal__content-info table tr:first-child td {
+.product-popup-modal__content-info table thead tr:first-child td {
   font-size: 20px;
   font-weight: 600;
 }
