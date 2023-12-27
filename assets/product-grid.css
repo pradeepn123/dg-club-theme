@@ -153,14 +153,13 @@
 
 @media only screen and (min-width: 768px) {
   .product-card-spacing-medium .products.row {
-    margin: 0 -10px;
-    gap: 48px;
+    margin: 0 -35px;    
   }
 
   .product-card-spacing-medium .products.row .columns,
   .product-card-spacing-medium .products.row .column {
-    padding: 0;
-    max-width: 129px;
+    /* padding: 0; */
+    /* max-width: 129px; */
   }
 
   .product-card-spacing-medium .products.row .product-card {
