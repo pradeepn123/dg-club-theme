@@ -321,9 +321,6 @@ body.open-cc{
     color: blue;
     text-decoration: underline;
 }
-.artist_directory_content .earning_details {
-    position: relative;
-}
 .artist_directory_content .earning_details .sortDropdown .dropdownSortOptions.activeFilter{
     visibility: visible !important;
     height: fit-content;
@@ -457,8 +454,6 @@ body.open-cc{
     .order_details_content.desktop{
         display: none;
     }
-
-
     .order_details_container{
         flex-direction: column;
         margin: 32px 0;
@@ -600,21 +595,10 @@ body.open-cc{
 .loader-container .file_loader {
     top: 50%;
     left: 50%;
-}
-
-.earning_details .file_loader {
-    top: 100%;
-    left: 50%;
-}
-@media only screen and (max-width: 768px) {
-    .earning_details .file_loader {
-        top: 130%;
-        left: 50%;
-    }
+    position: absolute;
 }
 
 .file_loader { 
-  position: absolute;
   width:35px;
   height:35px;
   display:inline-block;
