@@ -451,7 +451,7 @@ if (!customElements.get('variant-selects')) {
     }
 
     getVariantData() {
-      this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+      this.variantData = this.variantData || JSON.parse(this.querySelector('[data--product-variant-json-script]').textContent);
       return this.variantData;
     }
   }
