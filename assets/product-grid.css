@@ -725,3 +725,10 @@
 #product-grid .column.hide__pages_search{
   display: none;
 }
+
+@media only screen and (min-width: 768px){
+  product-recommendations .products.row{
+    margin-right: -0.9375rem !important;
+    margin-left: -0.9375rem !important;
+  }
+}
