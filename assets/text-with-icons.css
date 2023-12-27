@@ -184,9 +184,12 @@
   font-weight: 600;
 }
 
+.section-text-with-icons .text-with-icons .text-with-icons__block-content h6 {
+  color: #000000;
+}
 .text-with-icons.heading-large h6 {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 700;  
 }
 
 .text-with-icons.heading-medium h6 {

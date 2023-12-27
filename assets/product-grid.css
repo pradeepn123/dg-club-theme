@@ -153,18 +153,18 @@
 
 @media only screen and (min-width: 768px) {
   .product-card-spacing-medium .products.row {
-    margin: 0 -35px;    
+    margin: 0 -35px;
   }
-
-  .product-card-spacing-medium .products.row .columns,
-  .product-card-spacing-medium .products.row .column {
-    /* padding: 0; */
-    /* max-width: 129px; */
+  
+  #tag-section .collection-container .sidebar-container .products.collection.row{
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
   }
 
   .product-card-spacing-medium .products.row .product-card {
     margin-bottom: 20px;
   }
+
   /* Image Border Radius */
   .product-card .product-featured-image-link.aspect-ratio--square{
     border-radius: 12px;
