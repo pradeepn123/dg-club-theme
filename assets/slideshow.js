@@ -321,7 +321,6 @@ if (!customElements.get('slide-show')) {
       if (prev_button) {
         prev_button.addEventListener('click', (event) => {
           flkty.previous();
-          console.log(flkty);
         });
         prev_button.addEventListener('keyup', (event) => {
           flkty.previous();
