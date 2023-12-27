@@ -9,7 +9,14 @@
     "template-header": {
       "type": "collection-header",
       "settings": {
+        "custom_collection_title": "",
+        "custom_collection_description_title": "",
+        "custom_collection_description": "",
+        "collection_share_text": "",
+        "collection_share_link": "",
         "show_collection_image": true,
+        "show_collection_banner": false,
+        "show_collection_share": false,
         "show_collection_description": true
       }
     },
@@ -21,9 +28,9 @@
         "products_per_page": 4,
         "columns_desktop": 4,
         "pagination_type": "loadmore",
-        "enable_filtering": true,
-        "enable_sorting": true,
-        "show_counts": true,
+        "enable_filtering": false,
+        "enable_sorting": false,
+        "show_counts": false,
         "filter_color_swatches": false,
         "facets_desktop": "drawer"
       }
