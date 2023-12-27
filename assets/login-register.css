@@ -411,7 +411,7 @@ creator-form .creator_form p{
 .close_button_mediaLinks{
   transform: rotate(45deg);
   position: relative;
-  top: -10px;
+  top: -4px;
   cursor: pointer;
 }
 
@@ -419,10 +419,11 @@ creator-form .creator_form p{
   transform-origin: center center;
   transform: rotate(45deg);
 }
-.field__class{
+#social__link__container .field__class{
   display: flex;
   flex-direction: row;
-  column-gap: 5px;
+  column-gap: 8px;
+  align-items: center;
 }
 
 .bgRed{
