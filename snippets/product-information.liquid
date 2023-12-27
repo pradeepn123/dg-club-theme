@@ -82,11 +82,11 @@
         data-hide-variants="{{ hide_variants }}"
         data-product-id="{{ product.id }}"
       >
-      <div data-variant-fittings style="display: none;">{
+      <script type="application/json" data-variant-fittings style="display: none;">{
         {%- for variant in product.variants -%}
           "{{- variant.id -}}": {{- variant.metafields.custom.fittings | default: "[]" -}}{%- unless forloop.last -%},{%- endunless -%}
         {%- endfor -%}
-      }</div>
+      }</script>
         <div class="variations" {{ block.shopify_attributes }}>
           {% assign sizePresent = false %}
           {%- for option in product.options_with_values -%}
@@ -174,7 +174,7 @@
             {% render 'product-option', option_type: option_type, product: product, option: option, forloop: forloop, product_form_id: product_form_id, sizing_link: sizing_link %}
           {%- endfor -%}
         </div>
-        <script type="application/json" id="product--data-variant-json-script-{{ section.id }}">
+        <script type="application/json" id="product--data-variant-json-script-{{ section.id }}" data--product-variant-json-script>
           {{ product.variants | json }}
         </script>
       </variant-selects>

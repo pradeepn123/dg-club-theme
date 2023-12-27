@@ -479,7 +479,7 @@ if (!customElements.get('variant-selects')) {
     }
 
     getVariantData() {
-      this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+      this.variantData = this.variantData || JSON.parse(this.querySelector('[data--product-variant-json-script]').textContent);
       return this.variantData;
     }
   }
@@ -876,7 +876,7 @@ if (!customElements.get('product-form')) {
         
       const orientationElement = this.form.elements["properties[Orientation]"]
       let orientation = orientationElement ? orientationElement.value.toLowerCase() : "portrait"
-            
+
       if(this.variantSuperImposedImages){
         currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
       }
