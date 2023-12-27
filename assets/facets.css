@@ -528,10 +528,10 @@ tabs-group {
 	color: #ffffff;
 }
 
-.tabs__controls button[aria-selected="true"] {
+/* .tabs__controls button[aria-selected="true"] {
   background: #4444E1;
 	color: #ffffff;
-}
+} */
 
 .tabs__panel__inner {
   padding: 20px;
