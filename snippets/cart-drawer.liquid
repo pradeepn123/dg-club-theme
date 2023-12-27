@@ -26,12 +26,12 @@
 					<div class="product-cart-item" id="CartDrawerItem-{{ item.index | plus: 1 }}">
 						<div class="product-cart-item-image">
 							{% liquid
-								if item.image
-									assign item_title = item.product.title
+								assign item_variant_price = item.item_price
+								assign item_variant = item.variant
+								assign item_variant_title = item.variant.title
+								assign item_title = item.product.title
+								if item_title
 									assign item_image = item.image
-									assign item_variant = item.variant
-									assign item_variant_price = item.item_price
-									assign item_variant_title = item.variant.title
 								else
 									for property in item.properties
 										if property.first == "_product_handle"
@@ -281,7 +281,7 @@
           {% endif %}
 					<div class="cart-drawer-buttons">
 						{%- if settings.cart_drawer_cart_button -%}
-						<a href="{{ routes.cart_url }}" class="button" title="{{ 'general.cart_drawer.view_cart' | t | escape }}"><span>{{ 'general.cart_drawer.view_cart' | t }}</span></a>
+						<a href="{{ routes.cart_url }}" class="button full" title="{{ 'general.cart_drawer.view_cart' | t | escape }}"><span>{{ 'general.cart_drawer.view_cart' | t }}</span></a>
 						{%- endif -%}
 						{%- if settings.cart_drawer_checkout_button -%}
 						<form action="{{ routes.cart_url }}" method="post" novalidate>

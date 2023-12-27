@@ -1302,10 +1302,10 @@ if (!customElements.get('creator-form')) {
         }
 
         getMediaLinksForPayload(){
+          let finalObject = {}
           let captureSocialMediaLinks = document.querySelectorAll("#getInputData");
           return Object.values(captureSocialMediaLinks).map((items) => items.value)
         }
-
         linkCloseButtons(){
           let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
           Object.values(closeButtonLinks).map(eachLinkItem => {
@@ -1364,14 +1364,14 @@ if (!customElements.get('creator-form')) {
             </span>
           `;
 
-          let temp = document.createElement('div');
-          temp.innerHTML += newHTMLElement;
-          temp.classList.add("field", "field__class");
+          let newElement = document.createElement('div');
+          newElement.innerHTML += newHTMLElement;
+          newElement.classList.add("field", "field__class");
+          newElement.id = "social_media_main";
 
-          let parentElementFixed = document.querySelector("#social_media_main_fixed");
-          // let parentElement = document.querySelector("#social_media_main");
-          parentElementFixed.parentNode.insertBefore(temp, parentElementFixed.nextSibling);
-
+          let socialLinkContainer = document.querySelector('#social__link__container');
+          
+          socialLinkContainer.appendChild(newElement);
           this.linkCloseButtons();
         }
         async handleFileUpload(evt) {

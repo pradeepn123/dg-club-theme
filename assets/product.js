@@ -19,6 +19,11 @@ if (!customElements.get('variant-selects')) {
       this.productSlider = this.productWrapper.querySelector('.product-images');
       this.hideVariants = this.dataset.hideVariants === 'true';
       this.productFormId = this.getAttribute("data-product-form-id")
+      if (this.querySelector("[data-variant-fittings]")) {
+        this.variantFittingOptions = JSON.parse(this.querySelector("[data-variant-fittings]").innerHTML)
+      } else {
+        this.variantFittingOptions = {}
+      }
     }
 
     connectedCallback() {
@@ -27,6 +32,7 @@ if (!customElements.get('variant-selects')) {
       this.setDisabled();
       this.setImageSet();
       this.handleOrientationDisplay()
+      this.handleFittings()
     }
 
     onVariantChange() {
@@ -106,6 +112,7 @@ if (!customElements.get('variant-selects')) {
         this.other[0].setDisabled();
       }
       this.handleOrientationDisplay()
+      this.handleFittings()
     }
 
     handleOrientationDisplay() {
@@ -127,6 +134,34 @@ if (!customElements.get('variant-selects')) {
           input.setAttribute("disabled", "disabled")
         })
       }
+    }
+
+    handleFittings() {
+      const customProperties = document.querySelector(`[data-custom-option-identifier="${this.productFormId}--Fittings"]`)
+      if (!customProperties ) {
+        return
+      }
+
+      const availableOptions = this.variantFittingOptions[this.currentVariant.id]
+
+      if (availableOptions.length > 0) {
+        customProperties.querySelectorAll("input").forEach((input) => {
+          input.labels[0].style.display = 'none'
+        })
+        availableOptions.forEach((option, index) => {
+          const field = customProperties.querySelector(`input[value="${option}"]`)
+          if (index == 0) {
+            field.click()
+          }
+          field.labels[0].style.display = ''
+        })
+      } else {
+        customProperties.querySelectorAll("input").forEach((input) => {
+          input.labels[0].style.display = ''
+        })
+      }
+
+      customProperties.querySelector('input[value="Plastic hook"]')
     }
 
     updateMedia() {
@@ -444,7 +479,7 @@ if (!customElements.get('variant-selects')) {
     }
 
     getVariantData() {
-      this.variantData = this.variantData || JSON.parse(this.querySelector('[type="application/json"]').textContent);
+      this.variantData = this.variantData || JSON.parse(this.querySelector('[data--product-variant-json-script]').textContent);
       return this.variantData;
     }
   }
@@ -808,6 +843,9 @@ if (!customElements.get('product-form')) {
       if (this.querySelector("[data-template_ids]")) {
         this.variantTemplateIds = JSON.parse(this.querySelector('[data-template_ids]').innerHTML)
       }
+      if (this.querySelector("[data-pre-select-template]")) {
+        this.preSelectTemplates = JSON.parse(this.querySelector('[data-pre-select-template]').innerHTML)
+      }
       if (this.querySelector("[data-super-imposed-images]")) {
         this.variantSuperImposedImages = JSON.parse(this.querySelector('[data-super-imposed-images]').innerHTML)
       }
@@ -835,26 +873,31 @@ if (!customElements.get('product-form')) {
         return s.label.toLowerCase() == currentVariantSizeValue
       })
       const container = document.querySelector("#backend-editor-container")
-
-      let [width, height] = size.value.split("x")
+        
       const orientationElement = this.form.elements["properties[Orientation]"]
       let orientation = orientationElement ? orientationElement.value.toLowerCase() : "portrait"
 
-      currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
-      currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
-      container.innerHTML = `<digi-editor
-        integration="editor"
-        title="${currentVariant.name}"
-        size="${size.value}"
-        orientation="${orientation}"
-        shape="${size.shape}"
-        description=""
-        price="${this.formatCurrency(currentVariant.price)}"
-        framecount="${this.getAttribute("data-frame-count") || 1}"
-        variantjson='${JSON.stringify(currentVariant)}'
-        formId="${this.form.getAttribute("id")}--product-form-element"
-        baseurl="${theme.routes.backend_url}"
-      ></digi-editor>`
+      if(this.variantSuperImposedImages){
+        currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
+      }
+
+      const editor = document.createElement("digi-editor")
+      editor.setAttribute("integration", "editor")
+      editor.setAttribute("title", currentVariant.name)
+      editor.setAttribute("size", size.value)
+      editor.setAttribute("orientation", orientation)
+      editor.setAttribute("shape", size.shape)
+      editor.setAttribute("price", this.formatCurrency(currentVariant.price))
+      editor.setAttribute("framecount", this.getAttribute("data-frame-count") || 1)
+      editor.setAttribute("formId", `${this.form.getAttribute("id")}--product-form-element`)
+      editor.setAttribute("baseurl", theme.routes.backend_url)
+      if (this.preSelectTemplates[currentVariant.id]) {
+        editor.setAttribute("templateid", this.preSelectTemplates[currentVariant.id])
+      } else {
+        currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
+      }
+      editor.setAttribute("variantjson", JSON.stringify(currentVariant))
+      container.appendChild(editor)
       document.addEventListener("DigiEditor:Toogle", this.handleCloseEditor.bind(this))
     }
 

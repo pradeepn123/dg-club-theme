@@ -65,7 +65,7 @@
 							<tabs-group>	
 						{% endif %}					
 
-						{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
+						{%- render 'facets-bar', results: collection, enable_filtering: enable_filtering, show_counts: show_counts, enable_sorting: enable_sorting, facets_desktop: facets_desktop, filter_color_swatches: filter_color_swatches -%}
 
 							<ul id="product-grid" data-id="{{ section.id }}" class="products collection row small-up-2 medium-up-{{ columns_desktop }} pagination--{{ pagination_type }}{% if collection.products.size == 0 %} collection--empty{%- endif -%}">
 								{%- if collection.products.size == 0 -%}

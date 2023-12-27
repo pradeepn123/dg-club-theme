@@ -22,8 +22,8 @@
         "af80e3ff-a80a-4f8d-b332-03164936b7c3"
       ],
       "settings": {
-        "heading": "Photo Collage",
-        "description": "<p>Choose a product<\/p>",
+        "heading": "{{ product.metafields.custom.product_collage_heading.value.heading.value }}",
+        "description": "{{ product.metafields.custom.product_collage_heading.value.description | metafield_tag }}",
         "text_position": "center",
         "text_alignment": "center",
         "color_bg": "rgba(0,0,0,0)",
@@ -56,6 +56,11 @@
             "show_products_rating": true
           }
         },
+        "0e680cc8-1a69-4b05-9510-1ebea597a065": {
+          "type": "separator",
+          "settings": {
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -80,6 +85,11 @@
             "checkbox_unchecked_value": "No",
             "multiple_style": "radio",
             "multiple_options": "<p>{{ block.repeater.variant_options | metafield_tag }}<\/p>"
+          }
+        },
+        "3c130131-dce8-40a2-9ac9-214f116f90fb": {
+          "type": "separator",
+          "settings": {
           }
         },
         "a6e62c49-648d-410f-be7b-35603d6309e1": {
@@ -156,8 +166,10 @@
         "2b609eea-6cce-4efe-b447-c5560de1d797",
         "e431a79e-9c7b-4a53-a79a-0cb918617ecf",
         "title",
+        "0e680cc8-1a69-4b05-9510-1ebea597a065",
         "variant_picker",
         "0fc5e1fc-7fc2-4083-b277-86b31cbec8a3",
+        "3c130131-dce8-40a2-9ac9-214f116f90fb",
         "a6e62c49-648d-410f-be7b-35603d6309e1",
         "quantity",
         "buy_buttons",
@@ -186,7 +198,7 @@
         "mobile_swipe": true,
         "product_limit": 4,
         "columns_desktop": 4,
-        "disable_top_spacing": true,
+        "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
     }

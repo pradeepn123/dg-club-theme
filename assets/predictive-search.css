@@ -47,3 +47,16 @@
       .thb-predictive-search--promotion-products .products.row {
         grid-auto-columns: minmax(40%, 1fr);
         grid-template-columns: repeat(auto-fill, minmax(40%, 1fr)); } }
+
+.thb-predictive-search .thb-predictive-search--promotion-products .product-card .product-card-info a {
+  white-space: nowrap;
+  width: 192px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.thb-predictive-search .thb-predictive-search--promotion-products .product-card .product-card-info .price del {
+  font-size: 14px;
+}
+.price del+ins {
+  margin-left: 5px;
+}
