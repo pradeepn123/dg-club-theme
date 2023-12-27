@@ -22,8 +22,8 @@
         "af80e3ff-a80a-4f8d-b332-03164936b7c3"
       ],
       "settings": {
-        "heading": "Photo Collage",
-        "description": "<p>Choose a product<\/p>",
+        "heading": "{{ product.metafields.custom.product_collage_heading.value.heading.value }}",
+        "description": "{{ product.metafields.custom.product_collage_heading.value.description | metafield_tag }}",
         "text_position": "center",
         "text_alignment": "center",
         "color_bg": "rgba(0,0,0,0)",
