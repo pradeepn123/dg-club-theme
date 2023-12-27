@@ -2689,4 +2689,11 @@ variant-selects .product-form__input .form__group_custom label.custom_label_inch
   .quantity__add_to_cart_btn .quantity__add_to_cart_btn_wrap{
       width: 50%;
   }
+  .tolstoy-carousel-videos-container .tolstoy-play-button-container{
+    width: 45px;
+    height: 45px;
+  }
 }
+
+
+
