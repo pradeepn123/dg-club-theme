@@ -74,12 +74,13 @@
 								</div> 
 							</scroll-shadow>
 						</div>
-            
-            <product-likes
-              data-customer-id="{% if customer %}{{ customer.id }}{% endif %}"
-              data-product-id="{{ product.id }}"
-              data-login-url="{{ routes.account_login_url }}?redirect_uri={{ product.url }}"
-            ></product-likes>
+            {%- if product.media.size > 1 -%}
+              <product-likes
+                data-customer-id="{% if customer %}{{ customer.id }}{% endif %}"
+                data-product-id="{{ product.id }}"
+                data-login-url="{{ routes.account_login_url }}?redirect_uri={{ product.url }}"
+              ></product-likes>
+            {%- endif -%}
 			    </div>
 
 					{%- assign info_boxes = section.blocks | where: "type", "info_box" -%}

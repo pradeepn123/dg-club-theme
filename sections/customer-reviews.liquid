@@ -33,74 +33,77 @@
   endcase
 -%}
 
-<customer-reviews
-  class="customer-reviews section-spacing-padding{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}"
-  style="--color-bg:{{ color_bg }}; --color-heading:{{ color_heading }}; --color-text:{{ color_text }}; --dot-speed: {{ autoplay | divided_by: 1000 | append: 's' }};"
->
-  <div class="row">
-    <div class="small-12 columns">
-      {%- render 'section-header', section_heading: section_heading, section_description: section_description -%}
-      <slide-show class="customer-reviews--carousel" data-align="left">
-        {%- for block in section.blocks -%}
-          {%- liquid
-            assign product_handle = block.settings.product_handle
-            assign review_product = all_products[product_handle]
-          -%}
-          <div class="small-12 {{ columns_class }} columns carousel__slide">
-            <div
-              class="customer-reviews--review {% if has_bg -%}customer-reviews--review--has-bg{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              {%- if product_handle != blank -%}
-                <div class="customer-reviews--product">
-                  {%- if review_product.featured_image -%}
-                    {%- render 'responsive-image', image: review_product.featured_image, sizes: '300x250,600x500' -%}
-                  {%- else -%}
-                    <div class="thb-placeholder">
-                      {{ 'product-1' | placeholder_svg_tag }}
-                    </div>
-                  {%- endif -%}
-                  <quick-view class="customer-reviews--quick-view" data-product-handle="{{ review_product.handle }}">
-                    {%- render 'svg-icons' with 'thb-add-to-cart' %}
-                    {%- unless review_product == empty -%}
-                      <div class="loading-overlay">
-                        {% render 'svg-icons' with 'thb-loading' %}
+{% if section.blocks.size > 1 %}
+  <customer-reviews
+    class="customer-reviews section-spacing-padding{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}"
+    style="--color-bg:{{ color_bg }}; --color-heading:{{ color_heading }}; --color-text:{{ color_text }}; --dot-speed: {{ autoplay | divided_by: 1000 | append: 's' }};"
+  >
+    <div class="row">
+      <div class="small-12 columns">
+        {%- render 'section-header', section_heading: section_heading, section_description: section_description -%}
+        <slide-show class="customer-reviews--carousel" data-align="left">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign product_handle = block.settings.product_handle
+              assign review_product = all_products[product_handle]
+            -%}
+            <div class="small-12 {{ columns_class }} columns carousel__slide">
+              <div
+                class="customer-reviews--review {% if has_bg -%}customer-reviews--review--has-bg{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                {%- if product_handle != blank -%}
+                  <div class="customer-reviews--product">
+                    {%- if review_product.featured_image -%}
+                      {%- render 'responsive-image', image: review_product.featured_image, sizes: '300x250,600x500' -%}
+                    {%- else -%}
+                      <div class="thb-placeholder">
+                        {{ 'product-1' | placeholder_svg_tag }}
                       </div>
-                    {%- endunless -%}
-                  </quick-view>
-                </div>
-              {%- endif -%}
-              <div class="customer-reviews--content">
-                {% assign star_rating = block.settings.star_rating | default: block.settings.stars %}
-                {%- if star_rating or block.settings.stars != '' -%}
-                  <div class="star-rating" style="--star-rating: {{star_rating}};"></div>
-                {%- endif -%}
-                {%- if block.settings.heading != blank -%}
-                  <h6>{{ block.settings.heading }}</h6>
-                {%- endif -%}
-                {%- if block.settings.text != blank -%}
-                  <p>{{ block.settings.text | newline_to_br }}</p>
-                {%- endif -%}
-                {%- if block.settings.author != blank -%}
-                  <div class="customer-reviews--author">
-                    {%- if block.settings.author_image != blank -%}
-                      {%- render 'responsive-image', image: block.settings.author_image, sizes: '64x64' -%}
                     {%- endif -%}
-                    <span>{{- block.settings.author -}}</span>
+                    <quick-view class="customer-reviews--quick-view" data-product-handle="{{ review_product.handle }}">
+                      {%- render 'svg-icons' with 'thb-add-to-cart' %}
+                      {%- unless review_product == empty -%}
+                        <div class="loading-overlay">
+                          {% render 'svg-icons' with 'thb-loading' %}
+                        </div>
+                      {%- endunless -%}
+                    </quick-view>
                   </div>
                 {%- endif -%}
+                <div class="customer-reviews--content">
+                  {% assign star_rating = block.settings.star_rating | default: block.settings.stars %}
+                  {%- if star_rating or block.settings.stars != '' -%}
+                    <div class="star-rating" style="--star-rating: {{star_rating}};"></div>
+                  {%- endif -%}
+                  {%- if block.settings.heading != blank -%}
+                    <h6>{{ block.settings.heading }}</h6>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <p>{{ block.settings.text | newline_to_br }}</p>
+                  {%- endif -%}
+                  {%- if block.settings.author != blank -%}
+                    <div class="customer-reviews--author">
+                      {%- if block.settings.author_image != blank -%}
+                        {%- render 'responsive-image', image: block.settings.author_image, sizes: '64x64' -%}
+                      {%- endif -%}
+                      <span>{{- block.settings.author -}}</span>
+                    </div>
+                  {%- endif -%}
+                </div>
               </div>
             </div>
-          </div>
-        {%- endfor -%}
-        {%- if section.blocks.size > columns -%}
-          <div class="flickity-nav flickity-prev" tabindex="0">{% render 'svg-icons' with 'carousel-prev' %}</div>
-          <div class="flickity-nav flickity-next" tabindex="0">{% render 'svg-icons' with 'carousel-next' %}</div>
-        {%- endif -%}
-      </slide-show>
+          {%- endfor -%}
+          {%- if section.blocks.size > columns -%}
+            <div class="flickity-nav flickity-prev" tabindex="0">{% render 'svg-icons' with 'carousel-prev' %}</div>
+            <div class="flickity-nav flickity-next" tabindex="0">{% render 'svg-icons' with 'carousel-next' %}</div>
+          {%- endif -%}
+        </slide-show>
+      </div>
     </div>
-  </div>
-</customer-reviews>
+  </customer-reviews>
+{% endif %}
+
 {% schema %}
 {
   "name": "Customer reviews",
