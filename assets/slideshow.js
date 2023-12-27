@@ -28,7 +28,7 @@ if (!customElements.get('slide-show')) {
         selectedIndex = 0,
         tick = autoplay ? window.setInterval(autoplay, 10) : false,
         args = {
-          wrapAround: true,
+          wrapAround: false,
           cellAlign: align,
           pageDots: pageDots,
           contain: true,
@@ -63,7 +63,7 @@ if (!customElements.get('slide-show')) {
         args.adaptiveHeight = true;
       }
       if (slideshow.classList.contains('customer-reviews--carousel')) {
-        args.wrapAround = true;
+        args.wrapAround = false;
         args.adaptiveHeight = false;
         args.resize = true;
         args.on.ready = function () {
@@ -321,6 +321,7 @@ if (!customElements.get('slide-show')) {
       if (prev_button) {
         prev_button.addEventListener('click', (event) => {
           flkty.previous();
+          console.log(flkty);
         });
         prev_button.addEventListener('keyup', (event) => {
           flkty.previous();
