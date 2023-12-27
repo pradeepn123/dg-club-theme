@@ -206,14 +206,14 @@
     line-height: 26px;
     text-transform: capitalize;
   }
-}
-
-@media only screen and (min-width: 1068px) {
   .artist-collection-grid .collection-card--link-large {
     font-size: 2rem;
   }
+  .directory-collection-list-section .artist-collection-grid .products.collection.row{
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem;
+  }
 }
-
 
 .artist-collection-grid .collection-card--image {
   position: relative;
