@@ -19,6 +19,11 @@ if (!customElements.get('variant-selects')) {
       this.productSlider = this.productWrapper.querySelector('.product-images');
       this.hideVariants = this.dataset.hideVariants === 'true';
       this.productFormId = this.getAttribute("data-product-form-id")
+      if (this.querySelector("[data-variant-fittings]")) {
+        this.variantFittingOptions = JSON.parse(this.querySelector("[data-variant-fittings]").innerHTML)
+      } else {
+        this.variantFittingOptions = {}
+      }
     }
 
     connectedCallback() {
@@ -27,6 +32,7 @@ if (!customElements.get('variant-selects')) {
       this.setDisabled();
       this.setImageSet();
       this.handleOrientationDisplay()
+      this.handleFittings()
     }
 
     onVariantChange() {
@@ -106,6 +112,7 @@ if (!customElements.get('variant-selects')) {
         this.other[0].setDisabled();
       }
       this.handleOrientationDisplay()
+      this.handleFittings()
     }
 
     handleOrientationDisplay() {
@@ -127,6 +134,34 @@ if (!customElements.get('variant-selects')) {
           input.setAttribute("disabled", "disabled")
         })
       }
+    }
+
+    handleFittings() {
+      const customProperties = document.querySelector(`[data-custom-option-identifier="${this.productFormId}--Fittings"]`)
+      if (!customProperties ) {
+        return
+      }
+
+      const availableOptions = this.variantFittingOptions[this.currentVariant.id]
+
+      if (availableOptions.length > 0) {
+        customProperties.querySelectorAll("input").forEach((input) => {
+          input.labels[0].style.display = 'none'
+        })
+        availableOptions.forEach((option, index) => {
+          const field = customProperties.querySelector(`input[value="${option}"]`)
+          if (index == 0) {
+            field.click()
+          }
+          field.labels[0].style.display = ''
+        })
+      } else {
+        customProperties.querySelectorAll("input").forEach((input) => {
+          input.labels[0].style.display = ''
+        })
+      }
+
+      customProperties.querySelector('input[value="Plastic hook"]')
     }
 
     updateMedia() {
