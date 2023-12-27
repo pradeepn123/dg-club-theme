@@ -28,7 +28,7 @@ if (!customElements.get('slide-show')) {
         selectedIndex = 0,
         tick = autoplay ? window.setInterval(autoplay, 10) : false,
         args = {
-          wrapAround: true,
+          wrapAround: false,
           cellAlign: align,
           pageDots: pageDots,
           contain: true,

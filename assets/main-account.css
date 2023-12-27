@@ -454,8 +454,6 @@ body.open-cc{
     .order_details_content.desktop{
         display: none;
     }
-
-
     .order_details_container{
         flex-direction: column;
         margin: 32px 0;
@@ -535,6 +533,8 @@ body.open-cc{
         border-bottom: 1px solid #E4E4E4;
         margin-bottom: 20px;
         padding-bottom: 20px;
+        text-transform: capitalize;
+        font-weight: 600;
     }
     .artist_dashboard_table thead{
         display: none;
@@ -566,8 +566,10 @@ body.open-cc{
         display: flex;
         flex-direction: column;
         background: #fff;
-        padding: 20px;
         border-radius: 12px;
+    }
+    .artist_dashboard_data tr:has(td div) {
+        padding: 20px;
     }
     .artist_dashboard_data tr td:last-child{
         border-bottom: 0;
@@ -591,9 +593,9 @@ body.open-cc{
 }
 
 .loader-container .file_loader {
-    position: absolute;
     top: 50%;
     left: 50%;
+    position: absolute;
 }
 
 .file_loader { 

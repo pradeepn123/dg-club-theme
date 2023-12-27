@@ -298,7 +298,7 @@
         "color_text_hover": "#4444e1",
         "overlay_color": "#000000",
         "overlay_opacity": 0,
-        "disable_top_spacing": true,
+        "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
     },
