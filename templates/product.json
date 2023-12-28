@@ -54,10 +54,14 @@
             "show_gift_card_recipient": false
           }
         },
-        "0b3e272b-c86a-4dba-946c-c6912251371c": {
-          "type": "description",
-          "disabled": true,
+        "f3ebee27-c883-49ba-b0f4-82185208e4d5": {
+          "type": "collapsible_tab",
           "settings": {
+            "heading": "Description",
+            "open": false,
+            "content": "",
+            "page": "",
+            "custom_liquid": "{{ product.description }}"
           }
         },
         "386f7e4a-6127-4141-928b-9cb4614ee18c": {
@@ -104,16 +108,6 @@
             "info_box_bg": "#e9e7ed",
             "info_box_color": "#2b1559"
           }
-        },
-        "f3ebee27-c883-49ba-b0f4-82185208e4d5": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Collapsible row",
-            "open": false,
-            "content": "",
-            "page": "",
-            "custom_liquid": ""
-          }
         }
       },
       "block_order": [
@@ -123,13 +117,12 @@
         "variant_picker",
         "quantity",
         "buy_buttons",
-        "0b3e272b-c86a-4dba-946c-c6912251371c",
+        "f3ebee27-c883-49ba-b0f4-82185208e4d5",
         "386f7e4a-6127-4141-928b-9cb4614ee18c",
         "d56924f2-0137-4e3b-8c33-49b1f28391c6",
         "4fd23485-293f-46a0-8a4c-34d0e25ea41b",
         "fc6da228-45eb-4a6e-aa68-d6ec477bec34",
-        "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7",
-        "f3ebee27-c883-49ba-b0f4-82185208e4d5"
+        "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7"
       ],
       "settings": {
         "enable_sticky_add_to_cart": true,
