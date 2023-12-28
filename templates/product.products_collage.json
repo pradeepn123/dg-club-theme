@@ -190,6 +190,55 @@
         "enable_video_looping": false
       }
     },
+    "400f5aba-214f-4aa6-a2af-308bb49624f2": {
+      "type": "text-with-icons",
+      "blocks": {
+        "template--21714722292012__400f5aba-214f-4aa6-a2af-308bb49624f2-icon-1": {
+          "type": "icon",
+          "settings": {
+            "icon": "ruler",
+            "image": "shopify:\/\/shop_images\/Frame_487_1.jpg",
+            "heading": "Quality Assurance",
+            "text": ""
+          }
+        },
+        "template--21714722292012__400f5aba-214f-4aa6-a2af-308bb49624f2-icon-2": {
+          "type": "icon",
+          "settings": {
+            "icon": "ruler",
+            "heading": "Heading",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "template--21714722292012__400f5aba-214f-4aa6-a2af-308bb49624f2-icon-3": {
+          "type": "icon",
+          "settings": {
+            "icon": "ruler",
+            "heading": "Heading",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21714722292012__400f5aba-214f-4aa6-a2af-308bb49624f2-icon-1",
+        "template--21714722292012__400f5aba-214f-4aa6-a2af-308bb49624f2-icon-2",
+        "template--21714722292012__400f5aba-214f-4aa6-a2af-308bb49624f2-icon-3"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "icon_position": "left",
+        "icon_size": "large",
+        "heading_size": "large",
+        "mobile_swipe": true,
+        "mobile_block_spacing": "small",
+        "enable_image_shadow": true,
+        "color_bg": "transparent",
+        "color_heading": "#1a1c1d",
+        "color_text": "#2c2d2e",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
+    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -207,6 +256,7 @@
     "breadcrumbs",
     "0d4e93ad-5247-43a8-8522-e82664694197",
     "main-product",
+    "400f5aba-214f-4aa6-a2af-308bb49624f2",
     "product-recommendations"
   ]
 }
