@@ -138,10 +138,12 @@
 
 .customer-reviews--carousel .flickity-nav.flickity-prev {
   left: -9px;
+  margin-top: -25px;
 }
 
 .customer-reviews--carousel .flickity-nav.flickity-next {
   right: -9px;
+  margin-top: -25px;
 }
 
 @media only screen and (max-width: 1068px) {

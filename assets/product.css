@@ -1196,7 +1196,7 @@
 .thb-product-detail .product-images__slide {
   width: 75%;
   margin: 0 2px;
-  /* padding: 0 5px; */
+  padding: 0 5px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -2224,7 +2224,7 @@ h6,
     margin-top: 13px;
   }
   .product-gallery-container{
-    margin-bottom: 67px;
+    margin-bottom: 30px;
   }
   #shopify-product-reviews .spr-summary-actions {
     display: block;
@@ -2604,6 +2604,10 @@ variant-selects .product-form__input .form__group_custom label.custom_label_inch
   line-height: 1;
 }
 
+.thb-product-detail.product .product-information .product-information--inner .product__accordion.accordion:last-child{
+  margin-bottom: 0;
+}
+
 .product-information .product-form__input.product-information--line-item input[type=radio]{
   clip: rect(0,0,0,0);
   overflow: hidden;
@@ -2690,8 +2694,8 @@ variant-selects .product-form__input .form__group_custom label.custom_label_inch
       width: 50%;
   }
   .tolstoy-carousel-videos-container .tolstoy-play-button-container{
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
   }
 }
 
