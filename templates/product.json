@@ -97,18 +97,6 @@
         "enable_video_looping": false
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "heading": "You may also like",
-        "description": "",
-        "mobile_swipe": true,
-        "product_limit": 4,
-        "columns_desktop": 4,
-        "disable_top_spacing": false,
-        "disable_bottom_spacing": false
-      }
-    },
     "2e707e73-6516-4d19-a435-9f908342ba49": {
       "type": "text-with-icons",
       "blocks": {
@@ -144,7 +132,7 @@
           "settings": {
             "icon": "ruler",
             "image": "shopify:\/\/shop_images\/Frame_489.jpg",
-            "heading": "Fast <br> Shipping",
+            "heading": "Fast  Shipping",
             "text": ""
           }
         }
@@ -169,12 +157,24 @@
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "description": "",
+        "mobile_swipe": true,
+        "product_limit": 4,
+        "columns_desktop": 4,
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
     }
   },
   "order": [
     "breadcrumbs",
     "main-product",
-    "product-recommendations",
-    "2e707e73-6516-4d19-a435-9f908342ba49"
+    "2e707e73-6516-4d19-a435-9f908342ba49",
+    "product-recommendations"
   ]
 }
