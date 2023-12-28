@@ -43,7 +43,7 @@
         "quantity": {
           "type": "quantity",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
         },
@@ -83,31 +83,6 @@
             "page": "",
             "custom_liquid": ""
           }
-        },
-        "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
-          "type": "share",
-          "disabled": true,
-          "settings": {
-          }
-        },
-        "fc6da228-45eb-4a6e-aa68-d6ec477bec34": {
-          "type": "complementary",
-          "disabled": true,
-          "settings": {
-            "block_heading": "Pairs well with",
-            "product_list_limit": 6
-          }
-        },
-        "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7": {
-          "type": "info_box",
-          "disabled": true,
-          "settings": {
-            "icon": "ruler",
-            "text": "Info box text",
-            "link": "",
-            "info_box_bg": "#e9e7ed",
-            "info_box_color": "#2b1559"
-          }
         }
       },
       "block_order": [
@@ -119,10 +94,7 @@
         "buy_buttons",
         "f3ebee27-c883-49ba-b0f4-82185208e4d5",
         "386f7e4a-6127-4141-928b-9cb4614ee18c",
-        "d56924f2-0137-4e3b-8c33-49b1f28391c6",
-        "4fd23485-293f-46a0-8a4c-34d0e25ea41b",
-        "fc6da228-45eb-4a6e-aa68-d6ec477bec34",
-        "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7"
+        "d56924f2-0137-4e3b-8c33-49b1f28391c6"
       ],
       "settings": {
         "enable_sticky_add_to_cart": true,
