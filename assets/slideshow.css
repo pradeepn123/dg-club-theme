@@ -421,7 +421,6 @@
 .flickity-custom-navigation-wrapper .flickity-custom-navigation .flickity-nav {
   box-shadow: unset;
   border: unset;
-  opacity: 1 !important;
 }
 .flickity-custom-navigation-wrapper .flickity-custom-navigation .flickity-custom-navigation--dots {
   color: var(--color-carousel-button);

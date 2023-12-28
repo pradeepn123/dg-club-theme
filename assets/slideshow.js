@@ -11,6 +11,8 @@ if (!customElements.get('slide-show')) {
         parent_section = slideshow.closest('.shopify-section'),
         dots = slideshow.dataset.dots === 'true',
         groupCells = slideshow.dataset.groupCells,
+        enableSelect = slideshow.dataset.enableSelect,
+        customCollectionSlider = slideshow.dataset.customCollectionSlider == "true",
         slideshow_slides = Array.from(slideshow.querySelectorAll('.carousel__slide')),
         autoplay = slideshow.dataset.autoplay == 'false' ? false : parseInt(slideshow.dataset.autoplay, 10),
         align = slideshow.dataset.align == 'center' ? 'center' : 'left',
@@ -262,6 +264,12 @@ if (!customElements.get('slide-show')) {
               slideshow.centerArrows(flickity, slideshow, prev_button, next_button);
             });
           }
+          if (customCollectionSlider) {
+          // Arrows initialization
+            prev_button.style.opacity = this.selectedIndex == 0 ? 0 : 1
+            next_button.style.opacity = this.selectedIndex == this.slides.length - 1 ? 0 : 1
+          }
+
           window.dispatchEvent(new Event('resize.center_arrows'));
         };
       }
@@ -313,68 +321,19 @@ if (!customElements.get('slide-show')) {
         };
       }
 
+      if (enableSelect) {
+        args.on.select = function() {
+          prev_button.style.opacity = this.selectedIndex > 0 ? 1 : 0
+          next_button.style.opacity = this.selectedIndex == this.slides.length - 1 ? 0 : 1
+        }
+      }
+
       // Initiate
       const flkty = new Flickity(slideshow, args);
 
       selectedIndex = flkty.selectedIndex;
 
       slideshow.dataset.initiated = true;
-
-      //Arrows drag function
-      flkty.on( 'dragStart', function() {
-        console.log(flkty.selectedIndex);
-        console.log(flkty.slides.length);
-        if(flkty.selectedIndex == 0) {
-          prev_button.style.opacity = "0";
-        }
-        else {
-          prev_button.style.opacity = "1";
-        }
-        
-      });
-      flkty.on( 'dragMove', function() {
-        if(flkty.selectedIndex == 0) {
-          prev_button.style.opacity = "0";
-        }
-        else {
-          prev_button.style.opacity = "1";
-        }
-        if(flkty.selectedIndex == flkty.slides.length - 1) {
-          next_button.style.opacity = "0";
-        }
-        else {
-          next_button.style.opacity = "1";
-        }     
-      });
-      flkty.on( 'dragEnd', function() {
-        if(flkty.selectedIndex == 0) {
-          prev_button.style.opacity = "0";
-        }
-        else {
-          prev_button.style.opacity = "1";
-        }
-        if(flkty.selectedIndex == flkty.slides.length - 1) {
-          next_button.style.opacity = "0";
-        }
-        else {
-          next_button.style.opacity = "1";
-        }
-      });
-
-      // Arrows initialization
-      if(flkty.selectedIndex == 0) {
-        prev_button.style.opacity = "0";
-      }
-      else {
-        prev_button.style.opacity = "1";
-      }
-
-      if(flkty.selectedIndex == flkty.slides.length - 1) {
-        next_button.style.opacity = "0";
-      }
-      else {
-        next_button.style.opacity = "1";
-      }
 
       // Arrows
       if (prev_button) {
