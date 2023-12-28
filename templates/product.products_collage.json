@@ -360,7 +360,7 @@
         "template--21716411253036__b23cc76c-c2f7-4f26-980b-a8e162151f6d-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>{{ product.metafields.custom.image_with_text_third.value.description | metafield_tag }}<\/p>"
           }
         }
       },
@@ -369,6 +369,7 @@
         "template--21716411253036__b23cc76c-c2f7-4f26-980b-a8e162151f6d-text-1"
       ],
       "settings": {
+        "image": "{{ product.metafields.custom.image_with_text_third.value.image.value }}",
         "use_video": false,
         "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "video_autoplay": true,
