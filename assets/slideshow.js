@@ -333,8 +333,18 @@ if (!customElements.get('slide-show')) {
         
       });
       flkty.on( 'dragMove', function() {
-        prev_button.style.opacity = "1";
-        next_button.style.opacity = "1";      
+        if(flkty.selectedIndex == 0) {
+          prev_button.style.opacity = "0";
+        }
+        else {
+          prev_button.style.opacity = "1";
+        }
+        if(flkty.selectedIndex == flkty.slides.length - 1) {
+          next_button.style.opacity = "0";
+        }
+        else {
+          next_button.style.opacity = "1";
+        }     
       });
       flkty.on( 'dragEnd', function() {
         if(flkty.selectedIndex == 0) {

@@ -41,7 +41,7 @@
     <div class="row">
       <div class="small-12 columns">
         {%- render 'section-header', section_heading: section_heading, section_description: section_description -%}
-        <slide-show class="customer-reviews--carousel" data-align="left">
+        <slide-show class="customer-reviews--carousel" data-align="left" data-group-cells="100%">
           {%- for block in section.blocks -%}
             {%- liquid
               assign product_handle = block.settings.product_handle
