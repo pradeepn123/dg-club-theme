@@ -310,7 +310,7 @@
         "c070d048-ff17-4e79-ae45-5bc44186eee7": {
           "type": "heading",
           "settings": {
-            "text": "Image with text",
+            "text": "{{ product.metafields.custom.image_with_text_second.value.heading.value }}",
             "marker_style": "style1",
             "heading_size": "h3",
             "marker_color": "#FD6262"
