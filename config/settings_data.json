@@ -61,6 +61,7 @@
     "search_product_collection": "all",
     "search_product_collection_limit": 3,
     "checkout_logo_image": "shopify:\/\/shop_images\/Logo.png",
+    "checkout_logo_size": "small",
     "search_product_list": [
 
     ],
