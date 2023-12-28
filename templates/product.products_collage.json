@@ -319,7 +319,7 @@
         "template--21716411253036__6a4f6366-8942-4a39-bbb3-95bb4e0a8bd6-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>{{ product.metafields.custom.image_with_text_second.value.description | metafield_tag }}<\/p>"
           }
         }
       },
@@ -344,6 +344,46 @@
         "disable_top_spacing": true,
         "disable_bottom_spacing": false
       }
+    },
+    "b23cc76c-c2f7-4f26-980b-a8e162151f6d": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--21716411253036__b23cc76c-c2f7-4f26-980b-a8e162151f6d-heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "{{ product.metafields.custom.image_with_text_third.value.heading.value }}",
+            "marker_style": "style1",
+            "heading_size": "h3",
+            "marker_color": "#FD6262"
+          }
+        },
+        "template--21716411253036__b23cc76c-c2f7-4f26-980b-a8e162151f6d-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--21716411253036__b23cc76c-c2f7-4f26-980b-a8e162151f6d-heading-1",
+        "template--21716411253036__b23cc76c-c2f7-4f26-980b-a8e162151f6d-text-1"
+      ],
+      "settings": {
+        "use_video": false,
+        "video": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_autoplay": true,
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "full_width": false,
+        "layout": "image_first",
+        "content_position": "text-left",
+        "column_spacing": "medium",
+        "color_bg": "#ffffff",
+        "color_text": "#2c2d2e",
+        "color_border": "#e2e2e2",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
     }
   },
   "order": [
@@ -353,6 +393,7 @@
     "85cc24f0-e934-4b33-8896-5852c6827c57",
     "product-recommendations",
     "d8d64e7b-fd75-42f6-a0bb-d0a32816aeb6",
-    "6a4f6366-8942-4a39-bbb3-95bb4e0a8bd6"
+    "6a4f6366-8942-4a39-bbb3-95bb4e0a8bd6",
+    "b23cc76c-c2f7-4f26-980b-a8e162151f6d"
   ]
 }
