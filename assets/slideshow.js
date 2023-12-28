@@ -10,6 +10,9 @@ if (!customElements.get('slide-show')) {
       let
         parent_section = slideshow.closest('.shopify-section'),
         dots = slideshow.dataset.dots === 'true',
+        groupCells = slideshow.dataset.groupCells,
+        enableSelect = slideshow.dataset.enableSelect,
+        customCollectionSlider = slideshow.dataset.customCollectionSlider == "true",
         slideshow_slides = Array.from(slideshow.querySelectorAll('.carousel__slide')),
         autoplay = slideshow.dataset.autoplay == 'false' ? false : parseInt(slideshow.dataset.autoplay, 10),
         align = slideshow.dataset.align == 'center' ? 'center' : 'left',
@@ -39,6 +42,9 @@ if (!customElements.get('slide-show')) {
           cellSelector: '.carousel__slide',
           on: {}
         };
+        if (groupCells) {
+          args.groupCells = groupCells
+        }
       this.paused = false;
       if (custom_dots) {
         args.pageDots = false;
@@ -63,7 +69,7 @@ if (!customElements.get('slide-show')) {
         args.adaptiveHeight = true;
       }
       if (slideshow.classList.contains('customer-reviews--carousel')) {
-        args.wrapAround = true;
+        args.wrapAround = false;
         args.adaptiveHeight = false;
         args.resize = true;
         args.on.ready = function () {
@@ -258,6 +264,13 @@ if (!customElements.get('slide-show')) {
               slideshow.centerArrows(flickity, slideshow, prev_button, next_button);
             });
           }
+          if (customCollectionSlider) {
+            console.log(customCollectionSlider,'slider')
+          // Arrows initialization
+            prev_button.style.opacity = this.selectedIndex == 0 ? 0 : 1
+            next_button.style.opacity = this.selectedIndex == this.slides.length - 1 ? 0 : 1
+          }
+
           window.dispatchEvent(new Event('resize.center_arrows'));
         };
       }
@@ -309,6 +322,13 @@ if (!customElements.get('slide-show')) {
         };
       }
 
+      if (enableSelect) {
+        args.on.select = function() {
+          prev_button.style.opacity = this.selectedIndex > 0 ? 1 : 0
+          next_button.style.opacity = this.selectedIndex == this.slides.length - 1 ? 0 : 1
+        }
+      }
+
       // Initiate
       const flkty = new Flickity(slideshow, args);
 
@@ -316,17 +336,16 @@ if (!customElements.get('slide-show')) {
 
       slideshow.dataset.initiated = true;
 
-
       // Arrows
       if (prev_button) {
         prev_button.addEventListener('click', (event) => {
-          flkty.previous();
+          flkty.previous();          
         });
         prev_button.addEventListener('keyup', (event) => {
           flkty.previous();
         });
         next_button.addEventListener('click', (event) => {
-          flkty.next();
+          flkty.next();          
         });
         next_button.addEventListener('keyup', (event) => {
           flkty.next();

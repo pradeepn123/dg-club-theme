@@ -20,11 +20,11 @@
     "main-search": {
       "type": "main-search",
       "settings": {
-        "products_per_page": 12,
+        "products_per_page": 13,
         "columns_desktop": 4,
-        "pagination_type": "paginated",
-        "enable_filtering": true,
-        "enable_sorting": true,
+        "pagination_type": "loadmore",
+        "enable_filtering": false,
+        "enable_sorting": false,
         "facets_desktop": "drawer",
         "image_ratio": "square",
         "show_date": true,

@@ -43,7 +43,7 @@
 								{% render 'animated-marker-heading', heading: section_heading, style: marker_style, color: marker_color %}
 							</h3>
 						{%- endif -%}
-					</div>				
+					</div>
 					<scroll-shadow>
 						<collection-tabs class="collection-tabs__list" data-target="product-grid-{{ section.id }}">
 							{%- for block in section.blocks -%}
@@ -58,6 +58,9 @@
 				<slide-show
 					id="product-grid-{{ section.id }}"
 					data-id="{{ section.id }}"
+					data-group-cells="80%"
+					data-enable-select="true"
+					data-custom-collection-slider="true"
 					class="products carousel row small-up-2 medium-up-{{ columns_desktop }}"
 				>
 					{%- for block in section.blocks -%}

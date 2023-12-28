@@ -151,7 +151,7 @@
                               {% for variant in product.variants %}
                                 <tr>
                                   <td>
-                                    {{ variant.title | replace : ' / Custom', '' }}
+                                    {{ variant.title | replace : ' / Custom', '' | replace : 'Custom /', '' }}
                                   </td>
                                   <td>
                                     {% if template.suffix == "products_without_editor" %}
