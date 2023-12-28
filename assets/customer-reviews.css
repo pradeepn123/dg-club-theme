@@ -112,6 +112,9 @@
     width: calc(100% + 20px);
     padding: 0;
   }
+  .customer-reviews--carousel .large-3 {
+    width: 45%;
+  }
 }
 
 @media only screen and (min-width: 1068px) {
@@ -326,6 +329,13 @@
 .customer-reviews--content p:empty {
   display: none;
 }
-.customer-reviews--carousel .large-3 {
-  width: 25%;
+@media only screen and (max-width: 767px) {
+  .customer-reviews--carousel .large-3{
+    width: 75%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .customer-reviews--carousel .large-3{
+    width: 25%;
+  }
 }
