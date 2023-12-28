@@ -9,8 +9,8 @@
           <button id="register_creator" class="tab" data-form-tab="creator_form"> Creator </button>
         </div>
         <p>{{ 'customer.login_page.create_account_description' | t }}</p>
-        <span id="form-custom-errors"></span>
         {% form 'create_customer', novalidate: 'novalidate', class: 'customer_form showForm' %}
+          <span id="form-custom-errors"></span>
 					{% if form.errors %}
 					<div class="form-notification error">
 						{% render 'svg-icons' with 'thb-error' %} {{ form.errors | default_errors }}
@@ -123,9 +123,9 @@
         submitBtn.onclick = function (e) {
             e.preventDefault();
             if (!firstName.value || !lastName.value || format.test(firstName.value) || format.test(lastName.value)) {
-              customError.textContent = "Your first and last name is only allowed to consist of letters, not blanks, not numbers or symbols.";
+              customError.textContent = "First Name or Last Name can't be blank.";
               customError.style.color = "red";
-              
+              customError.style.fontSize = "13px";
             } else {
               registerForm.submit();
             }

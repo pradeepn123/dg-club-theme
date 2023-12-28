@@ -1,5 +1,17 @@
 {{ 'product-grid.css' | asset_url | stylesheet_tag }}
 {{ 'blog.css' | asset_url | stylesheet_tag }}
+{% style %}
+{% if template contains 'search' %}
+	.product-card .product-card-title {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	.sidebar-container .products.collection.row {
+		margin: 0 -12px;
+	}
+{% endif %}
+{% endstyle %}
 {%- liquid
 	assign enable_filtering = section.settings.enable_filtering
 	assign enable_sorting = section.settings.enable_sorting
