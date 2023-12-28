@@ -215,8 +215,9 @@
           "type": "icon",
           "settings": {
             "icon": "ruler",
-            "heading": "Heading",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "image": "shopify:\/\/shop_images\/Frame_490.jpg",
+            "heading": "Customer Satisfaction",
+            "text": ""
           }
         },
         "7a806146-215a-48c4-8f2c-7f3c77f6793a": {
