@@ -381,15 +381,14 @@
     },
     "7b02b8ce-7477-4bfc-98bd-df9747d2a607": {
       "type": "tolstoy-carousel",
-      "disabled": true,
       "settings": {
-        "publishId": "publishId",
+        "publishId": "ohri63bh7kyen",
         "section_background": "#c3e76b",
-        "heading": "",
-        "linkText": "",
-        "link": "",
+        "heading": "Follow Us",
+        "linkText": "@Thedecorgiftingclub",
+        "link": "https:\/\/www.instagram.com\/thedecorgiftingclub\/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==",
         "remove_spacing": false,
-        "sectionPadding": "large",
+        "sectionPadding": "medium",
         "text_align": "left"
       }
     }
