@@ -35,7 +35,7 @@
         "quantity": {
           "type": "quantity",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
         },
