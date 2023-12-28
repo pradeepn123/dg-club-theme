@@ -67,9 +67,9 @@
         "386f7e4a-6127-4141-928b-9cb4614ee18c": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
+            "heading": "{{ product.metafields.custom.shipping_returns.value.heading.value }}",
             "open": false,
-            "content": "<p>Row content<\/p>",
+            "content": "{{ product.metafields.custom.shipping_returns.value.row_content | metafield_tag }}",
             "page": "",
             "custom_liquid": ""
           }
