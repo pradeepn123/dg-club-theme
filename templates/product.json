@@ -138,12 +138,22 @@
             "heading": "Customer Satisfaction",
             "text": ""
           }
+        },
+        "0c6af4cd-abe2-4f8f-a9cf-e51d3ac254ea": {
+          "type": "icon",
+          "settings": {
+            "icon": "ruler",
+            "image": "shopify:\/\/shop_images\/Frame_489.jpg",
+            "heading": "Fast <br> Shipping",
+            "text": ""
+          }
         }
       },
       "block_order": [
         "template--21508483973420__2e707e73-6516-4d19-a435-9f908342ba49-icon-1",
         "template--21508483973420__2e707e73-6516-4d19-a435-9f908342ba49-icon-2",
-        "template--21508483973420__2e707e73-6516-4d19-a435-9f908342ba49-icon-3"
+        "template--21508483973420__2e707e73-6516-4d19-a435-9f908342ba49-icon-3",
+        "0c6af4cd-abe2-4f8f-a9cf-e51d3ac254ea"
       ],
       "settings": {
         "text_alignment": "center",
