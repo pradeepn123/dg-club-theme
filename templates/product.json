@@ -56,6 +56,7 @@
         },
         "0b3e272b-c86a-4dba-946c-c6912251371c": {
           "type": "description",
+          "disabled": true,
           "settings": {
           }
         },
@@ -81,11 +82,13 @@
         },
         "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
           "type": "share",
+          "disabled": true,
           "settings": {
           }
         },
         "fc6da228-45eb-4a6e-aa68-d6ec477bec34": {
           "type": "complementary",
+          "disabled": true,
           "settings": {
             "block_heading": "Pairs well with",
             "product_list_limit": 6
@@ -93,6 +96,7 @@
         },
         "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7": {
           "type": "info_box",
+          "disabled": true,
           "settings": {
             "icon": "ruler",
             "text": "Info box text",
@@ -101,14 +105,14 @@
             "info_box_color": "#2b1559"
           }
         },
-        "561eac20-aae8-4774-91be-f5693346c253": {
-          "type": "info_box",
+        "f3ebee27-c883-49ba-b0f4-82185208e4d5": {
+          "type": "collapsible_tab",
           "settings": {
-            "icon": "ruler",
-            "text": "Info box text",
-            "link": "",
-            "info_box_bg": "#e9e5e2",
-            "info_box_color": "#592e15"
+            "heading": "Collapsible row",
+            "open": false,
+            "content": "",
+            "page": "",
+            "custom_liquid": ""
           }
         }
       },
@@ -125,7 +129,7 @@
         "4fd23485-293f-46a0-8a4c-34d0e25ea41b",
         "fc6da228-45eb-4a6e-aa68-d6ec477bec34",
         "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7",
-        "561eac20-aae8-4774-91be-f5693346c253"
+        "f3ebee27-c883-49ba-b0f4-82185208e4d5"
       ],
       "settings": {
         "enable_sticky_add_to_cart": true,
