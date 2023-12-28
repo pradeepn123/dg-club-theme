@@ -102,11 +102,11 @@
       "type": "product-recommendations",
       "settings": {
         "heading": "You may also like",
-        "description": "<p>Combine your style with these products<\/p>",
+        "description": "",
         "mobile_swipe": true,
         "product_limit": 4,
         "columns_desktop": 4,
-        "disable_top_spacing": true,
+        "disable_top_spacing": false,
         "disable_bottom_spacing": false
       }
     }
