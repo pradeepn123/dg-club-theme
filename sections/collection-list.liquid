@@ -58,7 +58,11 @@
 				{%- render 'section-header', section_heading: section_heading, section_description: section_description, marker_color: marker_color, marker_style: marker_style -%}
 			{% endif %}
 
-			<{{ tag }} class="collection-grid collection-grid__{{ collection_layout }} {{ carousel_class }}{% if mobile_swipe %} swipe-on-mobile{% endif %} mobile-columns--{{ columns_mobile | default: 1 }}">
+			<{{ tag }} class="collection-grid collection-grid__{{ collection_layout }} {{ carousel_class }}{% if mobile_swipe %} swipe-on-mobile{% endif %} mobile-columns--{{ columns_mobile | default: 1 }}"
+				data-group-cells="80%"
+				data-enable-select="true"
+				data-custom-collection-slider="true"
+			>
 				{%- if collections.count > 0 -%}
 					{%- for collection in collections -%}
 						{%- render 'collection-card', grid_collection: collection, media_aspect_ratio: section.settings.image_ratio, style: style, layout: collection_layout, index: forloop.index, is_carousel: is_carousel, columns_desktop: columns_desktop, columns_mobile: columns_mobile, heading_position: heading_position, heading_size: heading_size -%}
