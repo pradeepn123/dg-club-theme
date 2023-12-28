@@ -206,8 +206,9 @@
           "type": "icon",
           "settings": {
             "icon": "ruler",
-            "heading": "Heading",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "image": "shopify:\/\/shop_images\/Frame_488.jpg",
+            "heading": "Secure   Payment",
+            "text": ""
           }
         },
         "template--21716411253036__85cc24f0-e934-4b33-8896-5852c6827c57-icon-3": {
