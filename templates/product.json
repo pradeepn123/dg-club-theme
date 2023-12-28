@@ -46,6 +46,12 @@
             "show_gift_card_recipient": false
           }
         },
+        "8df1a81c-8ae9-44f2-a783-35f644a9a044": {
+          "type": "price",
+          "settings": {
+            "product_price": true
+          }
+        },
         "953e95d9-2f86-44d9-b7e5-cf3cab013be6": {
           "type": "collapsible_tab",
           "settings": {
@@ -83,6 +89,7 @@
         "variant_picker",
         "quantity",
         "buy_buttons",
+        "8df1a81c-8ae9-44f2-a783-35f644a9a044",
         "953e95d9-2f86-44d9-b7e5-cf3cab013be6",
         "386f7e4a-6127-4141-928b-9cb4614ee18c",
         "d56924f2-0137-4e3b-8c33-49b1f28391c6"
