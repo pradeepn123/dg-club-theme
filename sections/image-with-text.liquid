@@ -34,6 +34,16 @@
 		endif
 	endif
 -%}
+{% style %}
+	{% if template contains 'product' %}
+		@media only screen and (max-width: 768px){
+			.image-with-text.column-spacing--small, .image-with-text.column-spacing--medium {
+				margin-bottom: 24px;
+			}
+		}
+	{% endif %}
+{% endstyle %}
+
 <div class="row{% if full_width %} full-width-row{% endif %}">
 	<div class="small-12 columns">
 		{%- if image != blank or use_video != blank -%}

@@ -252,4 +252,13 @@
   .list-collections_custom .products.row .column {
     padding: 0 18px;
   }
+  .collection-tabs .list-collections_custom slide-show.products.row{
+    margin: 0 -14px;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1067px) {
+  .collection-tabs .list-collections_custom .products .large-3.carousel__slide{
+    width: 33.33%;
+  }
 }
