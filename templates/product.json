@@ -2,6 +2,7 @@
   "sections": {
     "breadcrumbs": {
       "type": "breadcrumbs",
+      "disabled": true,
       "settings": {
       }
     },
@@ -11,13 +12,6 @@
         "2b609eea-6cce-4efe-b447-c5560de1d797": {
           "type": "label",
           "settings": {
-          }
-        },
-        "e431a79e-9c7b-4a53-a79a-0cb918617ecf": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "style_vendor"
           }
         },
         "title": {
@@ -48,13 +42,18 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
+            "show_dynamic_checkout": false,
             "show_gift_card_recipient": false
           }
         },
-        "0b3e272b-c86a-4dba-946c-c6912251371c": {
-          "type": "description",
+        "953e95d9-2f86-44d9-b7e5-cf3cab013be6": {
+          "type": "collapsible_tab",
           "settings": {
+            "heading": "Description",
+            "open": false,
+            "content": "",
+            "page": "",
+            "custom_liquid": "{{ product.description }}"
           }
         },
         "386f7e4a-6127-4141-928b-9cb4614ee18c": {
@@ -76,54 +75,17 @@
             "page": "",
             "custom_liquid": ""
           }
-        },
-        "4fd23485-293f-46a0-8a4c-34d0e25ea41b": {
-          "type": "share",
-          "settings": {
-          }
-        },
-        "fc6da228-45eb-4a6e-aa68-d6ec477bec34": {
-          "type": "complementary",
-          "settings": {
-            "block_heading": "Pairs well with",
-            "product_list_limit": 6
-          }
-        },
-        "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7": {
-          "type": "info_box",
-          "settings": {
-            "icon": "ruler",
-            "text": "Info box text",
-            "link": "",
-            "info_box_bg": "#e9e7ed",
-            "info_box_color": "#2b1559"
-          }
-        },
-        "561eac20-aae8-4774-91be-f5693346c253": {
-          "type": "info_box",
-          "settings": {
-            "icon": "ruler",
-            "text": "Info box text",
-            "link": "",
-            "info_box_bg": "#e9e5e2",
-            "info_box_color": "#592e15"
-          }
         }
       },
       "block_order": [
         "2b609eea-6cce-4efe-b447-c5560de1d797",
-        "e431a79e-9c7b-4a53-a79a-0cb918617ecf",
         "title",
         "variant_picker",
         "quantity",
         "buy_buttons",
-        "0b3e272b-c86a-4dba-946c-c6912251371c",
+        "953e95d9-2f86-44d9-b7e5-cf3cab013be6",
         "386f7e4a-6127-4141-928b-9cb4614ee18c",
-        "d56924f2-0137-4e3b-8c33-49b1f28391c6",
-        "4fd23485-293f-46a0-8a4c-34d0e25ea41b",
-        "fc6da228-45eb-4a6e-aa68-d6ec477bec34",
-        "47f50ec7-2a76-44a7-bce6-b7895e0e8ca7",
-        "561eac20-aae8-4774-91be-f5693346c253"
+        "d56924f2-0137-4e3b-8c33-49b1f28391c6"
       ],
       "settings": {
         "enable_sticky_add_to_cart": true,
