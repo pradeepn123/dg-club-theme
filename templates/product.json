@@ -64,22 +64,22 @@
             "custom_liquid": "{{ product.description }}"
           }
         },
+        "d56924f2-0137-4e3b-8c33-49b1f28391c6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "{{ product.metafields.custom.product_highlights.value.heading.value }}",
+            "open": false,
+            "content": "{{ product.metafields.custom.product_highlights.value.row_content | metafield_tag }}",
+            "page": "",
+            "custom_liquid": ""
+          }
+        },
         "386f7e4a-6127-4141-928b-9cb4614ee18c": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "{{ product.metafields.custom.shipping_returns.value.heading.value }}",
             "open": false,
             "content": "{{ product.metafields.custom.shipping_returns.value.row_content | metafield_tag }}",
-            "page": "",
-            "custom_liquid": ""
-          }
-        },
-        "d56924f2-0137-4e3b-8c33-49b1f28391c6": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Compatibility",
-            "open": false,
-            "content": "<p>Row content<\/p>",
             "page": "",
             "custom_liquid": ""
           }
@@ -93,8 +93,8 @@
         "quantity",
         "buy_buttons",
         "f3ebee27-c883-49ba-b0f4-82185208e4d5",
-        "386f7e4a-6127-4141-928b-9cb4614ee18c",
-        "d56924f2-0137-4e3b-8c33-49b1f28391c6"
+        "d56924f2-0137-4e3b-8c33-49b1f28391c6",
+        "386f7e4a-6127-4141-928b-9cb4614ee18c"
       ],
       "settings": {
         "enable_sticky_add_to_cart": true,
