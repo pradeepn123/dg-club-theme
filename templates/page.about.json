@@ -400,10 +400,9 @@
     },
     "31d68794-7380-4b4d-90c0-6555126dc159": {
       "type": "spacer",
-      "disabled": true,
       "settings": {
         "spacer_mobile": 50,
-        "spacer_desktop": 80,
+        "spacer_desktop": 30,
         "border_separator": false,
         "border_separator_full": false
       }
