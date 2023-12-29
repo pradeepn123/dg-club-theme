@@ -244,7 +244,7 @@
         "mobile_swipe": true,
         "mobile_block_spacing": "small",
         "enable_image_shadow": true,
-        "color_bg": "transparent",
+        "color_bg": "rgba(0,0,0,0)",
         "color_heading": "#000000",
         "color_text": "#000000",
         "disable_top_spacing": false,
@@ -272,7 +272,7 @@
             "text": "{{ product.metafields.custom.image_with_text.value.heading.value }}",
             "marker_style": "style1",
             "heading_size": "h3",
-            "marker_color": "#FD6262"
+            "marker_color": "#fd6262"
           }
         },
         "dd2c134d-c6f2-4dfd-bc50-dacad59b64ff": {
@@ -313,7 +313,7 @@
             "text": "{{ product.metafields.custom.image_with_text_second.value.heading.value }}",
             "marker_style": "style1",
             "heading_size": "h3",
-            "marker_color": "#FD6262"
+            "marker_color": "#fd6262"
           }
         },
         "template--21716411253036__6a4f6366-8942-4a39-bbb3-95bb4e0a8bd6-text-1": {
@@ -354,7 +354,7 @@
             "text": "{{ product.metafields.custom.image_with_text_third.value.heading.value }}",
             "marker_style": "style1",
             "heading_size": "h3",
-            "marker_color": "#FD6262"
+            "marker_color": "#fd6262"
           }
         },
         "template--21716411253036__b23cc76c-c2f7-4f26-980b-a8e162151f6d-text-1": {
@@ -385,6 +385,39 @@
         "disable_top_spacing": true,
         "disable_bottom_spacing": false
       }
+    },
+    "5f747433-53ef-4c0c-b1a8-dfcbb53d231b": {
+      "type": "customer-reviews",
+      "blocks": {
+        "template--21714722292012__5f747433-53ef-4c0c-b1a8-dfcbb53d231b-review-1": {
+          "type": "review",
+          "repeater": "{{ product.metafields.custom.product_customer_reviews.value }}",
+          "settings": {
+            "product_handle": "{{ block.repeater.product.value }}",
+            "stars": "",
+            "star_rating": "{{ block.repeater.star_rating.value }}",
+            "heading": "{{ block.repeater.heading.value }}",
+            "text": "{{ block.repeater.description_content | metafield_tag }}",
+            "author": "{{ block.repeater.author_name.value }}",
+            "author_image": "{{ block.repeater.author_avatar.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "template--21714722292012__5f747433-53ef-4c0c-b1a8-dfcbb53d231b-review-1"
+      ],
+      "settings": {
+        "heading": "Customer reviews",
+        "description": "<p>Add a short description for this section<\/p>",
+        "columns": 4,
+        "autoplay": true,
+        "autoplay_length": 5,
+        "color_bg": "#ffffff",
+        "color_heading": "#1A1C1D",
+        "color_text": "#2C2D2E",
+        "disable_top_spacing": false,
+        "disable_bottom_spacing": false
+      }
     }
   },
   "order": [
@@ -395,6 +428,7 @@
     "product-recommendations",
     "d8d64e7b-fd75-42f6-a0bb-d0a32816aeb6",
     "6a4f6366-8942-4a39-bbb3-95bb4e0a8bd6",
-    "b23cc76c-c2f7-4f26-980b-a8e162151f6d"
+    "b23cc76c-c2f7-4f26-980b-a8e162151f6d",
+    "5f747433-53ef-4c0c-b1a8-dfcbb53d231b"
   ]
 }
