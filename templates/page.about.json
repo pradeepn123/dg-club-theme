@@ -401,7 +401,7 @@
     "31d68794-7380-4b4d-90c0-6555126dc159": {
       "type": "spacer",
       "settings": {
-        "spacer_mobile": 50,
+        "spacer_mobile": 0,
         "spacer_desktop": 20,
         "border_separator": false,
         "border_separator_full": false
