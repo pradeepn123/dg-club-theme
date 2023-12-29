@@ -15,9 +15,11 @@
 .photo-collage-section .collage-products-wrap li .product-card .product-card-info a {
     font-size: 16px;
     font-weight: 400;
-    text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
 }
 .photo-collage-section .collage-products-wrap li .product-card .product-featured-image.is__active{
     border-radius: 16px;
