@@ -45,7 +45,7 @@
         "text_alignment": "left",
         "desktop_height": "desktop-height-650",
         "content_width": "medium",
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
         "height": "adapt",
@@ -400,6 +400,7 @@
     },
     "31d68794-7380-4b4d-90c0-6555126dc159": {
       "type": "spacer",
+      "disabled": true,
       "settings": {
         "spacer_mobile": 50,
         "spacer_desktop": 80,
