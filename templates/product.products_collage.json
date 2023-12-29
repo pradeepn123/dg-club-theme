@@ -407,15 +407,15 @@
         "template--21714722292012__5f747433-53ef-4c0c-b1a8-dfcbb53d231b-review-1"
       ],
       "settings": {
-        "heading": "Customer reviews",
+        "heading": "What customers think",
         "description": "<p>Add a short description for this section<\/p>",
         "columns": 4,
         "autoplay": true,
         "autoplay_length": 5,
         "color_bg": "#ffffff",
-        "color_heading": "#1A1C1D",
-        "color_text": "#2C2D2E",
-        "disable_top_spacing": false,
+        "color_heading": "#000000",
+        "color_text": "#000000",
+        "disable_top_spacing": true,
         "disable_bottom_spacing": false
       }
     }
