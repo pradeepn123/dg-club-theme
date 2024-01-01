@@ -181,12 +181,8 @@
           "type": "collection",
           "settings": {
             "collection_list": [
-              "priya-singhania",
-              "siddharth-sharma",
-              "designer-pattern-wallpaper",
-              "nandini-patel",
-              "mural-wallpapers",
-              "frontpage"
+              "all-wall-combos",
+              "all-wall-arts"
             ],
             "title": "Decor Prints",
             "handle": "decor-prints"
