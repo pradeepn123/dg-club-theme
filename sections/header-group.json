@@ -102,7 +102,7 @@
         "header_shadow": "header--shadow-small",
         "menu": "main-menu",
         "button_label": "Start Selling",
-        "button_link": "shopify:\/\/collections",
+        "button_link": "shopify:\/\/pages\/artist-landing-page",
         "transparent_header": false,
         "mobile_secondary_menu": "",
         "show_social_links": true,
