@@ -42,7 +42,7 @@
           "type": "slide",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_Banner_2.jpg",
-            "slide_link": "",
+            "slide_link": "shopify:\/\/pages\/photo-gifts",
             "video_background": false,
             "badge_text": "",
             "subheading": "",
@@ -68,7 +68,7 @@
             "use_text_button_1": false,
             "button_2_text": "",
             "button_2_color": "white",
-            "button_2_link": "",
+            "button_2_link": "shopify:\/\/pages\/photo-gifts",
             "use_text_button_2": false
           }
         },
