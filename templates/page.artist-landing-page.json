@@ -27,7 +27,7 @@
           "type": "button",
           "settings": {
             "button_text": "Join Now",
-            "button_link": "",
+            "button_link": "https:\/\/dgclub-in.myshopify.com\/account\/register",
             "button_color": "accent"
           }
         }
