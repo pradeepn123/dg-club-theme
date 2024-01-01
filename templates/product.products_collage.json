@@ -407,6 +407,18 @@
         "disable_bottom_spacing": false
       }
     },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "Similar products",
+        "description": "",
+        "mobile_swipe": true,
+        "product_limit": 4,
+        "columns_desktop": 4,
+        "disable_top_spacing": true,
+        "disable_bottom_spacing": false
+      }
+    },
     "59f0097f-ea70-41af-ba3b-50ea2aa1a033": {
       "type": "tolstoy-carousel",
       "settings": {
@@ -419,18 +431,6 @@
         "sectionPadding": "small",
         "text_align": "left"
       }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "heading": "Similar products",
-        "description": "",
-        "mobile_swipe": true,
-        "product_limit": 4,
-        "columns_desktop": 4,
-        "disable_top_spacing": true,
-        "disable_bottom_spacing": false
-      }
     }
   },
   "order": [
@@ -442,7 +442,7 @@
     "6a4f6366-8942-4a39-bbb3-95bb4e0a8bd6",
     "b23cc76c-c2f7-4f26-980b-a8e162151f6d",
     "5f747433-53ef-4c0c-b1a8-dfcbb53d231b",
-    "59f0097f-ea70-41af-ba3b-50ea2aa1a033",
-    "product-recommendations"
+    "product-recommendations",
+    "59f0097f-ea70-41af-ba3b-50ea2aa1a033"
   ]
 }
