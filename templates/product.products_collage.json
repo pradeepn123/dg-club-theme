@@ -323,7 +323,7 @@
         "height": "small",
         "desktop_image_width": "medium",
         "full_width": false,
-        "layout": "image_first",
+        "layout": "text_first",
         "content_position": "text-left",
         "column_spacing": "medium",
         "color_bg": "#d5bff1",
