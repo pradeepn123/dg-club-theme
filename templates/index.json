@@ -133,7 +133,7 @@
             "image": "shopify:\/\/shop_images\/Copy_of_Promotion_Block_1.jpg",
             "title": "Discover Our Fully Customizable Framed Prints, Acrylic Prints And Many More!",
             "button_text": "Shop Now",
-            "button_link": "shopify:\/\/pages\/photo-gifts"
+            "button_link": "shopify:\/\/collections\/photo-gifts"
           }
         },
         "dbbd21fc-6396-4bee-a3ca-7cd24590466d": {
@@ -142,7 +142,7 @@
             "image": "shopify:\/\/shop_images\/Copy_of_Promotion_Block_2.jpg",
             "title": "Explore Wallpapers, Wall Arts And Beyond!",
             "button_text": "Shop Now",
-            "button_link": "shopify:\/\/collections\/mural-wallpapers"
+            "button_link": "shopify:\/\/collections\/decor-prints"
           }
         }
       },
