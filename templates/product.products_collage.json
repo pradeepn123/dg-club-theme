@@ -140,7 +140,7 @@
             "heading": "Customization Options",
             "open": false,
             "content": "{{ product.metafields.custom.customization_options_info.value.row_content | metafield_tag }}",
-            "page": "",
+            "page": "{{ product.metafields.custom.customization_options_info.value.row_content_from_page.value }}",
             "custom_liquid": ""
           }
         },
