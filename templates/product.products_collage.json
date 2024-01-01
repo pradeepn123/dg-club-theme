@@ -396,7 +396,7 @@
       ],
       "settings": {
         "heading": "What customers think",
-        "description": "<p>Add a short description for this section<\/p>",
+        "description": "",
         "columns": 4,
         "autoplay": true,
         "autoplay_length": 5,
