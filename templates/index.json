@@ -400,7 +400,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_1.jpg",
-            "slide_link": "shopify:\/\/collections\/mural-wallpapers",
+            "slide_link": "shopify:\/\/collections\/designer-pattern-wallpaper",
             "use_video": false,
             "video_autoplay": true,
             "column": 2,
@@ -448,7 +448,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_3.jpg",
-            "slide_link": "shopify:\/\/pages\/photo-gifts",
+            "slide_link": "shopify:\/\/pages\/wall-art-combos",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
@@ -472,7 +472,7 @@
           "type": "media",
           "settings": {
             "image": "shopify:\/\/shop_images\/Copy_of_featured_collection_4.jpg",
-            "slide_link": "shopify:\/\/collections\/mural-wallpapers",
+            "slide_link": "shopify:\/\/collections\/all-wall-arts",
             "use_video": false,
             "video_autoplay": true,
             "column": 1,
