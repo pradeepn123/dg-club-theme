@@ -264,7 +264,7 @@ if (!customElements.get('slide-show')) {
               slideshow.centerArrows(flickity, slideshow, prev_button, next_button);
             });
           }
-          if (customCollectionSlider) {            
+          if (customCollectionSlider) {
           // Arrows initialization
             if (prev_button) {
               prev_button.style.opacity = this.selectedIndex == 0 ? 0 : 1

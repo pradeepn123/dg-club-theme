@@ -195,3 +195,19 @@
 .sidebar-container--tabbed-filters .tabs__controls .tag-filters__item:last-child{
     margin-right: 0;
 }
+
+
+.main-collection .collection-container .products.collection li.column, 
+.main-collection .collection-container .products.collection li.column product-card.product-card{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+.main-collection .collection-container .products.collection li.column product-card.product-card .product-card-info{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+.main-collection .collection-container .products.collection li.column product-card.product-card .product-card-info a.product-card-title{
+    flex: 1 1 auto;
+}

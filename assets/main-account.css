@@ -613,6 +613,19 @@ body.open-cc{
   animation: file_loader 1s ease-in-out infinite;
   margin: 0 auto;
 }
+
+.artist_dashboard_data{
+    position: relative;
+}
+
+@media only screen and (min-width: 1024px) {
+    .file_loader {
+      position: absolute;
+      left: 50%;
+      top: 100%;
+    }
+}
+
 @keyframes file_loader {
   from {transform: rotate(0deg);}
   to {transform: rotate(360deg);}

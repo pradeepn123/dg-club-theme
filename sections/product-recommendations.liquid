@@ -28,24 +28,24 @@
 	endcase
 -%}
 
-
 <div class="row">
 	<div class="small-12 columns">
-		<product-recommendations class="product-recommendations {% if mobile_swipe %} swipe-on-mobile{% endif %} section-spacing-padding{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product_id }}&limit={{ product_limit }}">
+		<product-recommendations class="product-recommendations {% if mobile_swipe %} swipe-on-mobile{% endif %}" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product_id }}&limit={{ product_limit }}">
 			{% if recommendations.performed and recommendations.products_count > 0 %}
-				{% render 'section-header', section_heading: section_heading, section_description: section_description %}
-				<ul class="products row no-padding">
-					{% for recommendation in recommendations.products %}
-						<li class="{{ columns_class }} columns">
-							{% render 'product-card', product_card_product: recommendation %}
-						</li>
-					{% endfor %}
-				</ul>
+				<div class="section-spacing-padding{% if disable_top_spacing %} section-spacing--disable-top{% endif %}{% if disable_bottom_spacing %} section-spacing--disable-bottom{% endif %}">
+					{% render 'section-header', section_heading: section_heading, section_description: section_description %}
+					<ul class="products row no-padding">
+						{% for recommendation in recommendations.products %}
+							<li class="{{ columns_class }} columns">
+								{% render 'product-card', product_card_product: recommendation %}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
 			{% endif %}
 		</product-recommendations>
 	</div>
 </div>
-
 
 {% schema %}
 	{

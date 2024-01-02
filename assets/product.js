@@ -26,6 +26,21 @@ if (!customElements.get('variant-selects')) {
       }
     }
 
+    handleFormToggle = () => {
+      const select = document.querySelectorAll('select');
+      document.addEventListener('form-disabled', () => {
+        select.forEach((item) => {
+          item.disabled = true;
+        })
+      })
+
+      document.addEventListener('form-enabled', () => {
+        select.forEach((item) => {
+          item.disabled = false;
+        })
+      })
+    }
+
     connectedCallback() {
       this.updateOptions();
       this.updateMasterId();
@@ -33,6 +48,7 @@ if (!customElements.get('variant-selects')) {
       this.setImageSet();
       this.handleOrientationDisplay()
       this.handleFittings()
+      this.handleFormToggle()
     }
 
     onVariantChange() {
@@ -300,9 +316,11 @@ if (!customElements.get('variant-selects')) {
         if (!submitButtonText) return;
 
         if (disable) {
+          document.dispatchEvent(new Event('form-disabled'));
           submitButton.setAttribute('disabled', 'disabled');
           if (text) submitButtonText.textContent = text;
         } else {
+          document.dispatchEvent(new Event('form-enabled'));
           submitButton.removeAttribute('disabled');
           submitButton.classList.remove('loading');
           submitButtonText.textContent = window.theme.variantStrings.addToCart;
