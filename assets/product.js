@@ -827,6 +827,7 @@ if (!customElements.get('product-form')) {
 
       this.sticky = this.dataset.sticky;
       this.editorFlow = this.dataset.editorFlow == "true"
+      this.productTitle = this.dataset.productTitle;
       this.form = document.getElementById(`product-form-${this.dataset.section}`);
       this.form.querySelector('[name=id]').disabled = false;
       if (!this.sticky) {
@@ -859,13 +860,13 @@ if (!customElements.get('product-form')) {
       }
 
       if (this.editorFlow) {
-        return this.openEditor(evt)
+        return this.openEditor(evt, this.productTitle)
       }
       let formData = new FormData(this.form);
       return this.performOperation(formData)
     }
 
-    openEditor(evt) {
+    openEditor(evt, productTitle) {
       const currentVariant = this.variantSelector.currentVariant
       const sizePosition = this.optionsInformation.find((option) => option.name.toLowerCase() == "size").position
       const size = this.SIZES.find(s => {
@@ -883,7 +884,8 @@ if (!customElements.get('product-form')) {
 
       const editor = document.createElement("digi-editor")
       editor.setAttribute("integration", "editor")
-      editor.setAttribute("title", currentVariant.name)
+      editor.setAttribute("title", productTitle)
+      editor.setAttribute("selectedVariant", currentVariant.public_title)
       editor.setAttribute("size", size.value)
       editor.setAttribute("orientation", orientation)
       editor.setAttribute("shape", size.shape)
