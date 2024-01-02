@@ -182,7 +182,9 @@
           "settings": {
             "collection_list": [
               "all-wall-combos",
-              "all-wall-arts"
+              "all-wall-arts",
+              "wall-arts-acrylic",
+              "wall-arts-canvas-wrap"
             ],
             "title": "Decor Prints",
             "handle": "decor-prints"
