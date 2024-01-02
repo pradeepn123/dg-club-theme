@@ -65,4 +65,7 @@
     .template-header {
         padding: 62px 0 56px 0;
     }
+    .main-collection .collection-container .products.row{
+        margin: 0 -45px;
+    }
 }
