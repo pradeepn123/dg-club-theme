@@ -429,7 +429,7 @@
 }
 @media (min-width: 1024px){
     .editor-layout .canvas-toolbar-container{
-        width: 100% !important;
+        width: 100%;
     }
 }
 .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color{
@@ -514,7 +514,7 @@
 }
 @media (max-width: 767px){
     .editor-layout .canvas-section-container .canvas-toolbar-container{
-        left: 1% !important;
+        left: 0 !important;
     }
     .storefront-preview-container{
         grid-template-rows: 361px 1fr;
@@ -640,7 +640,7 @@
         background-color: #d6d6d6;
         top: -1px;
         left: -1%;
-        width: 95%;
+        /* width: 95%; */
         margin: auto;
    }
     .editor-layout .canvas-section-container .canvas-toolbar-container .menu_dots {
