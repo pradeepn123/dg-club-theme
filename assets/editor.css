@@ -104,6 +104,47 @@
 .live-preview--dialog .react-swipeable-view-container > div > div img{
     object-fit: contain;
 }
+.image-filter-options-wrapper{
+    padding: 13px 0 0 13px;
+}
+.image-filter-options-wrapper .image-filter-input-wrapper .filter-color-wrapper{
+    display: flex;
+    width: 100%;
+}
+.image-filter-input-wrapper .filter-color-wrapper .filter-color-box{
+    padding: 9px 12px;
+    background-color: #E9ECEF;
+    cursor: pointer;
+    width: 50px;
+}
+.image-filter-input-wrapper .filter-color-wrapper .filter-color-box .filter-input-color{
+    width: 100%;
+    height: 100%;
+}
+.image-filter-input-wrapper .filter-color-wrapper .filter-color{
+    width: 100%;
+    border-radius: 4px 0 0 4px;
+}
+.editor-layout .canvas-section-container{
+    max-width: unset;
+}
+.canvas-section-container .canvas-toolbar-container .menu_dots{
+    position: relative;
+}
+.frames_present::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    color: red;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    border-radius: 50%;
+    background: #4444E1;
+}
+.sidebar-panel-content .visuals-panel-sidebar-content .visuals-tablist .visuals-tab:active{
+    border-color: #4444E1 !important;
+}
 @media (max-width: 540px){
     .editor-layout .sidebar-panel-container{
         padding: 10px 24px !important;
@@ -131,6 +172,12 @@
     .editor-layout .editor-sidebar-container{
         max-width: 98px;
     }
+    .nav-toolbar #nav-title-text{
+        white-space: nowrap;
+        max-width: 70vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 }
 @media (min-width: 1680px){
     .editor-layout .editor-sidebar-container{
@@ -152,6 +199,180 @@
         overflow: auto;
         padding: 13px !important;
         margin-bottom: -5px;
+    }
+    .editor-layout .toolbar-panel-container .frame-blocks button{
+        padding: 0.5em 1em;
+        min-width: fit-content;
+    }
+    .editor-layout .editor-sidebar-container .sidebar-menu-item-container .menu-icon-text,
+    .editor-layout .editor-sidebar-container .sidebar-menu-item-container .active-menu-icon-text{
+        font-size: 12px;
+    }
+    .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar.chromePicker-active{
+        overflow-x: hidden;
+    }
+    .editor-layout .toolbar-panel-container .text-toolbar-panel .text-toolbar{
+        flex-direction: row;
+        width: 100%;
+        overflow-x: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 14px;
+    }
+    .editor-layout .toolbar-panel-container .text-toolbar-panel .text-toolbar input, .editor-layout .toolbar-panel-container .text-toolbar-panel .text-toolbar select{
+        min-width: 166px;
+        height: 38px;
+    }
+    /* .editor-layout .sidebar-panel-container{
+        padding: 15px 24px;
+    } */
+    .text-toolbar-panel,
+    .shapes-toolbar-panel,
+    .upload-toolbar-panel,
+    .visuals-toolbar-panel,
+    .templates-toolbar-panel{
+        /* padding: 14px 0 0 15px !important; */
+        padding: unset !important;
+    }
+    .text-toolbar-panel .text-toolbar{
+        padding: 16px 20px 16px 0;
+        justify-content: flex-start !important;
+    }
+    .text-toolbar-panel .text-toolbar .text-font-family{
+        margin-top: 0 !important;
+    }
+    .toolbar-panel-title{
+        max-width: 90%;
+        padding-bottom: 5px;
+        font-size: 16px !important;
+    }
+    .upload-toolbar-panel .toolbar-panel-title{
+        max-width: 100%;
+    }
+    .text-toolbar .text-alignment, .text-toolbar .text-styles{
+        transform: translateY(10%);
+    }
+    .text-toolbar .text-style-wrapper{
+        gap: 14px;
+    }
+    .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .chrome-text-color-picker,
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper .chrome-shape-outline-color-picker,
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper .chrome-shape-fill-color-picker,
+    .toolbar-panel-container .toolbar-panel-content .image-filter-input-wrapper .chrome-image-filter-color-picker,
+    .toolbar-panel-container .canvas-toolbar-panel-content .background_container .chrome-color-picker{
+        position: fixed;
+        /* right: 25%; */
+        /* transform: translate(50%, 144%); */
+        /* bottom: 50%; */
+        z-index: 5;
+        /* padding: 30px 0; */
+        width: 60vw !important;
+        height: fit-content;
+        right: 40px;
+        /* transform: translate(50%, 50%); */
+        /* bottom: 93px; */
+        top: 60%;
+        /* padding: 30px 0; */
+        width: 100vw !important;
+        max-width: 200px;
+    }
+    .toolbar-panel-container .toolbar-panel-content .image-filter-input-wrapper .chrome-image-filter-color-picker{
+        /* transform: translate(50%, 100%); */
+    }
+    /* .toolbar-panel-container .toolbar-panel-content .image-filter-input-wrapper .chrome-image-filter-color-picker > div:first-child,
+    .toolbar-panel-container .canvas-toolbar-panel-content .background_container .chrome-color-picker > div:first-child{
+        padding-bottom: 40% !important;
+    } */
+    .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .chrome-text-color-picker > div:first-child,
+    .toolbar-panel-container .toolbar-panel-content .image-filter-input-wrapper .chrome-image-filter-color-picker > div:first-child,
+    .toolbar-panel-container .canvas-toolbar-panel-content .background_container .chrome-color-picker > div:first-child,
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper .chrome-shape-outline-color-picker > div:first-child,
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper .chrome-shape-fill-color-picker > div:first-child{
+        padding-bottom: 40% !important;
+        height: fit-content;
+    }
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar:has(.shape-outline-color-box.active),
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar:has(.shape-fill-color-box.active){
+        overflow: hidden;
+    }
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper .shape-outline-color-box.active,
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper .shape-fill-color-box.active{
+        border: 1px solid orange;
+    }
+    .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .chrome-text-color-picker:last-child{
+        background: #fff;
+    }
+    /* shapes container */
+    .editor-layout .sidebar-panel-content .shape-icons-container{
+        gap: 20px;
+        margin-top: 17px;
+    }
+    .editor-layout .sidebar-panel-content .sidebar-panel-title{
+        font-size: 16px;
+    }
+    .editor-layout .sidebar-panel-content .shapes-sidebar-panel-content .shape-icons-container svg{
+        width: 42px;
+        height: 42px;
+    }
+    .editor-layout .toolbar-panel-container .shapes-toolbar-panel .shapes-toolbar{
+        flex-direction: row;
+        gap: 8px;
+        margin: 7px 0;
+        overflow-x: auto;
+    }
+    .editor-layout .toolbar-panel-container .shapes-toolbar-panel .shapes-toolbar input{
+        max-width: 125px;
+    }
+    .editor-layout .toolbar-panel-container .shapes-toolbar-panel .shapes-toolbar select{
+        max-width: 94px;
+        width: 100% !important;
+        height: 100%;
+    }
+    /* Uploads container */
+    .toolbar-panel-container .upload-toolbar-panel .upload-toolbar{
+        justify-content: space-evenly;
+    }
+    .toolbar-panel-container .upload-toolbar-panel .upload-toolbar button{
+        flex-basis: calc(100%/4 - 24px);
+        max-width: 38px;
+    }
+    .toolbar-panel-container .upload-toolbar-panel .image-filter-options-wrapper{
+        position: absolute;
+        top: -45%;
+        left: 0;
+        background: #fff;
+        /* overflow: auto; */
+        /* padding: 40px 0; */
+        height: 180px;
+        overflow: auto;
+        width: 100%;
+    }
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options{
+        display: flex;
+        flex-wrap: nowrap;
+        column-gap: 12px;
+        row-gap: 15px;
+        overflow: auto;
+        padding: 20px 0;
+    }
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper img{
+        max-width: unset;
+        width: 88px;
+    }
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options-wrapper .image-filter-input-wrapper{
+        padding: 0 20px;
+    }
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options-wrapper .image-filter-input-wrapper .filter-options-title{
+        display: flex;
+    }
+    .live-preview--dialog .react-swipeable-view-container > div > div img{
+        object-fit: cover;
+        height: fit-content;
+    }
+    .live-preview--dialog .MuiDialog-container > .MuiPaper-root{
+        width: 100%;
+        height: 100%;
+        margin: 0;
     }
 }
 @media (max-width: 560px){
@@ -205,6 +426,14 @@
 }
 .canvas-section-container .canvas-toolbar-container .menu_dots {
     display: none;
+}
+@media (min-width: 1024px){
+    .editor-layout .canvas-toolbar-container{
+        width: 100% !important;
+    }
+}
+.editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color{
+    padding: 9px;
 }
 .sidebar-panel-content .close_tab {
     display: none;
@@ -272,6 +501,16 @@
     .editor-layout{
         height: calc(100% - 118px);
     }
+    .editor-layout .sidebar-panel-container .upload-sidebar-panel-content,
+    .editor-layout .sidebar-panel-container .visuals-panel-sidebar-content{
+        margin-top: 20px;
+    }
+    .editor-layout .sidebar-panel-container .upload-sidebar-panel-content .uploaded-image-collection .image-wrapper{
+        flex-basis: calc(50% - 10px);
+    }
+    .sidebar-panel-content .visuals-panel-sidebar-content .visuals-tablist .visuals-tab{
+        padding: 12px 0 !important;
+    }
 }
 @media (max-width: 767px){
     .editor-layout .canvas-section-container .canvas-toolbar-container{
@@ -291,6 +530,19 @@
     .storefront-preview-container .preview-content-section .preview-description p{
         font-size: 16px;
         line-height: 24px;
+    }
+    .storefront-preview-container .preview-info{
+        margin: 40px 0 20px 0;
+    }
+    .storefront-preview-container .preview-info-title{
+        font-size: 16px !important;
+        font-weight: bold !important;
+    }
+    .storefront-preview-container .preview-info-variant{
+        font-size: 16px;
+    }
+    .storefront-preview-container .preview-info-price{
+        margin-top: 20px;
     }
 }
 @media (max-width: 540px){
@@ -315,7 +567,18 @@
         position: absolute;
         padding: 43px 0;
         /* max-height: 428px; */
-        max-height: 35vh;
+        /* max-height: 35vh; */
+   }
+    .editor-layout .sidebar-panel-container .initial-sidebar-panel-text{
+        font-size: 12px;
+    }
+   .editor-layout .sidebar-panel-container:has(.upload-sidebar-panel-content),
+   .editor-layout .sidebar-panel-container:has(.visuals-panel-sidebar-content){
+         max-height: 466px;
+         height: fit-content;
+   }
+   .editor-layout .canvas-section-container .canvas-container-content-wrapper .canvas-container-content{
+     width: 100%;
    }
     .editor-layout .sidebar-panel-container .sidebar-panel-content {
         row-gap: 10px;
@@ -485,5 +748,18 @@
     .editor-layout:has(.upload-toolbar-panel.active) .sidebar-panel-container {
         height: 0;
         transition: height 550ms;
+   }
+   .editor-layout .sidebar-panel-container:has(.initial-sidebar-panel-content){
+        padding: 32px 24px;
+   }
+   .preview-info-options .preview-options{
+        flex-direction: row !important;
+        width: 100% !important;
+        gap: 8px;
+   }
+   .preview-info-options .preview-options button{
+        min-width: unset !important;
+        flex-basis: 50% !important; 
+        width: 100% !important;
    }
 }
