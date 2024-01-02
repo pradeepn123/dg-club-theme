@@ -3711,6 +3711,8 @@ h6,
     border-radius: 12px;
     font-size: 16px;
     font-weight: 600;
+    max-width: 128px;
+    max-height: 46px;
   }
 
   .thb-secondary-area .no-js-hidden {
