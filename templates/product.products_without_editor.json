@@ -160,7 +160,7 @@
           "settings": {
             "icon": "ruler",
             "image": "shopify:\/\/shop_images\/Secure_Payment.svg",
-            "heading": "Secure  Payment",
+            "heading": "Secure <br> Payment",
             "text": ""
           }
         },
@@ -178,7 +178,7 @@
           "settings": {
             "icon": "ruler",
             "image": "shopify:\/\/shop_images\/Fast_Shipping.svg",
-            "heading": "Fast  Shipping",
+            "heading": "Fast <br> Shipping",
             "text": ""
           }
         }
