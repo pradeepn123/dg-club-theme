@@ -174,7 +174,7 @@
         "text_alignment": "center",
         "desktop_height": "desktop-height-650",
         "content_width": "medium",
-        "text_color": "#FFFFFF",
+        "text_color": "#ffffff",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
         "height": "adapt",
@@ -197,7 +197,7 @@
           "type": "icon",
           "settings": {
             "icon": "none",
-            "image": "shopify:\/\/shop_images\/Frame_487_1.jpg",
+            "image": "shopify:\/\/shop_images\/Fill_the_form.svg",
             "heading": "Fill the form",
             "text": ""
           }
@@ -206,7 +206,7 @@
           "type": "icon",
           "settings": {
             "icon": "none",
-            "image": "shopify:\/\/shop_images\/Frame_488.jpg",
+            "image": "shopify:\/\/shop_images\/Get_Approved.svg",
             "heading": "Get Approved",
             "text": ""
           }
@@ -215,7 +215,7 @@
           "type": "icon",
           "settings": {
             "icon": "none",
-            "image": "shopify:\/\/shop_images\/Frame_489.jpg",
+            "image": "shopify:\/\/shop_images\/Share_your_Work.svg",
             "heading": "Share your work",
             "text": ""
           }
@@ -224,7 +224,7 @@
           "type": "icon",
           "settings": {
             "icon": "none",
-            "image": "shopify:\/\/shop_images\/Frame_490.jpg",
+            "image": "shopify:\/\/shop_images\/Start_Selling.svg",
             "heading": "Start Selling",
             "text": ""
           }
