@@ -116,7 +116,7 @@
           "type": "icon",
           "settings": {
             "icon": "ruler",
-            "image": "shopify:\/\/shop_images\/Frame_487_1.jpg",
+            "image": "shopify:\/\/shop_images\/Quality_Assurance.svg",
             "heading": "Quality Assurance",
             "text": ""
           }
@@ -125,8 +125,8 @@
           "type": "icon",
           "settings": {
             "icon": "ruler",
-            "image": "shopify:\/\/shop_images\/Frame_488.jpg",
-            "heading": "Secure <br> Payment",
+            "image": "shopify:\/\/shop_images\/Secure_Payment.svg",
+            "heading": "Secure  Payment",
             "text": ""
           }
         },
