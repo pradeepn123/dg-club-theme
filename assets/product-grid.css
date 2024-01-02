@@ -732,3 +732,18 @@
     margin-left: -0.9375rem !important;
   }
 }
+
+product-recommendations .products li.columns, 
+product-recommendations .products li.columns product-card.product-card{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+product-recommendations .products li.columns product-card.product-card .product-card-info{
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+product-recommendations .products li.columns product-card.product-card .product-card-info a.product-card-title{
+  flex: 1 1 auto;
+}
