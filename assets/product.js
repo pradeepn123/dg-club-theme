@@ -899,7 +899,6 @@ if (!customElements.get('product-form')) {
       if(this.variantSuperImposedImages){
         currentVariant.superImposedImages = this.variantSuperImposedImages[currentVariant.id]
       }
-      console.log("currentVariant", currentVariant['public_title'])
       let selectedVariant = currentVariant['public_title'];
 
       const editor = document.createElement("digi-editor")
