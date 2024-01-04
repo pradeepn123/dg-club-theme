@@ -102,6 +102,12 @@
     max-width: 100%;
     flex-wrap: wrap;
 }
+.storefront-preview-container .preview-content-section .preview-description h1{
+    color: #4444E1;
+}
+.storefront-preview-container .preview-content-section .preview-info .preview-info-title{
+    font-weight: bold !important;
+}
 .live-preview--dialog .MuiDialog-container > .MuiPaper-root{
     height: 80%;
 }
@@ -210,6 +216,10 @@
 }
 
 
+.editor-layout .toolbar-panel-content .upload-toolbar .toolbar-panel-button.filtersOpen{
+    background: #4444E1;
+    color: #FFFFFF;
+}
 @media (max-width: 540px){
     .editor-layout .sidebar-panel-container{
         padding: 10px 24px !important;
@@ -688,8 +698,7 @@
         height: unset;
     }
     .storefront-preview-container .preview-content-section .preview-description h1{
-        font-size: 20px;
-        color: #4444e1;
+        font-size: 20px !important;
     }
     .storefront-preview-container .preview-content-section .preview-description p{
         font-size: 16px;
@@ -697,10 +706,6 @@
     }
     .storefront-preview-container .preview-info{
         margin: 40px 0 20px 0;
-    }
-    .storefront-preview-container .preview-info-title{
-        font-size: 16px !important;
-        font-weight: bold !important;
     }
     .storefront-preview-container .preview-info-variant{
         font-size: 16px;
@@ -871,8 +876,8 @@
         position: absolute;
         background-color: #fff;
         z-index: 2;
-        top: 33px;
-        left: 15px;
+        top: 40px;
+        left: 0;
         border-radius: 8px;
         border: 1px solid #ced4da;
         background: #fff;
@@ -1018,6 +1023,9 @@
         min-width: unset !important;
         flex-basis: 50% !important; 
         width: 100% !important;
+   }
+   .storefront-preview-container .preview-content-section .preview-description h1{
+        font-size: 30px;
    }
 }
 
