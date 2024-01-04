@@ -1,9 +1,12 @@
 .editor-layout {
-     height: 100%;
-     padding-bottom: 0;
+    height: 100%;
+    padding-bottom: 0;
+    max-height: 100vh;
+    overflow: auto;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .color-wrapper {
      height: auto;
+     border: inherit;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .color-wrapper .canvas-color-picker {
      height: auto;
@@ -22,22 +25,23 @@
     min-width: unset;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper {
-     height: auto;
+    height: auto;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color-picker {
-     height: auto;
+    height: auto;
 }
 .editor-layout .canvas-container-content-wrapper .canvas-container{
     min-height: 100%;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color {
-     flex: 1;
-     padding: 9px 16px;
-     font-size: 15px;
+    flex: 1;
+    padding: 9px 16px;
+    font-size: 15px;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper, .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper {
-     height: auto;
-     margin: 0;
+    height: auto;
+    margin: 0;
+    border: inherit;
 }
 .editor-layout .toolbar-panel-container .toolbar-panel-content .shape-outline-color-wrapper .shape-outline-color-box{
     cursor: pointer;
@@ -80,6 +84,11 @@
 .editor-layout .toolbar-panel-container .color-wrapper .canvas-color-text {
     border-left: 1px solid #DEE2E6;
     border-right: 1px solid #DEE2E6;
+}
+
+.sidebar-panel-container .upload-sidebar-panel-content .uploaded-image-collection .upload-image-prompt{
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 .editor-layout .toolbar-panel-container .color-wrapper .canvas-color-box ,.editor-layout .toolbar-panel-container .shapes-toolbar .shape-outline-color-wrapper .shape-outline-color-box, .editor-layout .toolbar-panel-container .shapes-toolbar .shape-fill-color-wrapper .shape-fill-color-box{
@@ -186,22 +195,21 @@
 .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper .chrome-shape-fill-color-picker,
 .toolbar-panel-container .toolbar-panel-content .image-filter-input-wrapper .chrome-image-filter-color-picker,
 .toolbar-panel-container .canvas-toolbar-panel-content .background_container .chrome-color-picker{
-    position: fixed;
-    /* right: 25%; */
-    /* transform: translate(50%, 144%); */
-    /* bottom: 50%; */
-    z-index: 5;
-    /* padding: 30px 0; */
+    position: fixed;    
+    z-index: 5;    
     width: 60vw !important;
     height: fit-content;
-    right: 40px;
-    /* transform: translate(50%, 50%); */
-    /* bottom: 93px; */
-    top: 60%;
-    /* padding: 30px 0; */
+    right: 40px; 
+    top: 60%;    
     width: 100vw !important;
     max-width: 200px;
 }
+
+.toolbar-panel-container .toolbar-panel-content .image-filter-options-wrapper .image-filter-input-wrapper .filter-color-wrapper .chrome-image-filter-color-picker .flexbox-fix input{
+    background-color: #fff;
+}
+
+
 @media (max-width: 540px){
     .editor-layout .sidebar-panel-container{
         padding: 10px 24px !important;
@@ -223,8 +231,40 @@
     }
 }
 @media(min-width: 1024px) {
+    .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .chrome-text-color-picker,
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper .chrome-shape-outline-color-picker,
+    .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper .chrome-shape-fill-color-picker,
+    .toolbar-panel-container .toolbar-panel-content .image-filter-input-wrapper .chrome-image-filter-color-picker,
+    .toolbar-panel-container .canvas-toolbar-panel-content .background_container .chrome-color-picker{
+        position: absolute;
+        right: 0px;
+        top: 100%;
+    }
+    .toolbar-panel-container .toolbar-panel-content{
+        max-height: 88vh;
+    }
+    .editor-layout .canvas-section-container .canvas-container-wrapper{
+        max-height: 88vh;
+        overflow: auto;
+    }
     .editor-dialog .preview-navtoolbar .nav-info-icon {
         display: none;
+    }
+    .editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1em;
+    }
+    .cropper-button-group button{
+        padding: 10px 16px;
+        height: 38px;
+        min-width: inherit;
+    }
+    .editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .image-filter{
+        height: 100%;
+    }
+    .editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .image-filter-type{
+        text-align: center;
     }
 
     .nav-toolbar .next-frame-btn, .nav-toolbar .preview-btn, .editor-layout .sidebar-panel-container .initial-sidebar-panel-text,
@@ -249,11 +289,17 @@
 }
 
 @media(max-width: 1023px) {
+    .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container{
+        height: 100vh;
+    }
     .editor-dialog .nav-toolbar .nav-info-tooltip .nav-info {
         width: 100px;
     }
     .editor-layout .canvas-section-container .canvas-container-content {
         margin: auto;
+        overflow:scroll;
+        -webkit-overflow-scrolling:touch;
+        height: 40vh;
     }
     .canvas-container-wrapper, .canvas-toolbar-container, .canvas-container-content-wrapper, .canvas-container-content{
         margin: 0 auto !important;
@@ -381,11 +427,12 @@
     }
     /* Uploads container */
     .toolbar-panel-container .upload-toolbar-panel .upload-toolbar{
-        justify-content: space-evenly;
+        justify-content: flex-start;
     }
     .toolbar-panel-container .upload-toolbar-panel .upload-toolbar button{
         flex-basis: calc(100%/4 - 24px);
-        max-width: 38px;
+        max-width: fit-content;
+        min-width: min-content;
     }
     .toolbar-panel-container .upload-toolbar-panel .image-filter-options-wrapper{
         position: absolute;
@@ -575,6 +622,7 @@
         margin: auto;
     }
 }
+
 @media (min-width: 1024px){
     .filter-color-wrapper{
         position: relative;
@@ -583,14 +631,19 @@
         /* top: 49%;
         right: 100px; */
         position: absolute;
-        top: 0;
-        right: 10%;
+        top: 100%;
+        right: 0;
     }
     .editor-layout .sidebar-panel-container .initial-sidebar-panel-text{
         font-size: 16px;
     }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
+        transform: translate(-50%, -50%);
+        top: 35%;
+        left: 50%;
+    }
     .editor-layout{
         height: calc(100% - 118px);
     }
@@ -605,7 +658,25 @@
         padding: 12px 0 !important;
     }
 }
+@media (min-width: 1440px){
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 50%;
+    }
+}
 @media (max-width: 767px){
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
+        transform: translate(-50%, -50%);
+        top: 45%;
+        left: 50%;
+    }
+    .editor-dialog .nav-toolbar .nav-info-tooltip .nav-info{
+        width: 200px;
+    }
+    .editor-dialog .nav-toolbar .nav-info-tooltip .nav-info:before{
+        transform: translate(-50px, 0px);
+    }
     .editor-layout .canvas-section-container .canvas-toolbar-container{
         left: 0 !important;
     }
@@ -657,7 +728,9 @@
 @media (max-width: 1023px) {
     .editor-layout {
         width: 100%;
+        height: 100vh;
         background-color: #d6d6d6;
+        padding-top:4rem;
     }
     .editor-layout .sidebar-panel-container {
         bottom: 105px;
@@ -778,7 +851,7 @@
     .editor-layout .canvas-section-container .canvas-toolbar-container {
         position: relative;
         background-color: #d6d6d6;
-        top: -1px;
+        top: 4px;
         left: -1%;
         /* width: 95%; */
         margin: auto;
@@ -789,6 +862,7 @@
         border: 1px solid var(--primary-color, #4444e1);
         background: #fff;
         padding: 6px;
+        line-height: 1;
    }
     .editor-layout .canvas-section-container .canvas-toolbar-container .menu_dots svg {
         display: flex;
@@ -841,6 +915,7 @@
    }
     .editor-layout .toolbar-panel-container .toolbar-panel-title span {
         display: block;
+        line-height: 1;
    }
     .editor-layout .toolbar-panel-container .toolbar-panel-title span svg {
         display: flex;
@@ -944,4 +1019,22 @@
         flex-basis: 50% !important; 
         width: 100% !important;
    }
+}
+
+.editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options-wrapper{
+    padding: 13px 0 0 0;
+}
+
+.editor-layout .sidebar-panel-container .sidebar-panel-content .visuals-panel-sidebar-content .visuals-heading-wrapper .css-pc1mzd .css-1q0ig8p{
+    width: auto;
+}
+.editor-layout .sidebar-panel-container .sidebar-panel-content .visuals-panel-sidebar-content .visuals-heading-wrapper .css-pc1mzd .css-12qnib .css-1q2h7u5{
+    min-width: inherit;
+    padding: 12px 8px !important;   
+}
+.editor-layout .sidebar-panel-container .sidebar-panel-content .visuals-panel-sidebar-content .visuals-heading-wrapper{
+    padding-bottom: 20px;
+}
+.editor-layout .sidebar-panel-container .sidebar-panel-content .visuals-panel-sidebar-content .tab-content-container{
+    padding: 0;
 }
