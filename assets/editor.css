@@ -4,6 +4,7 @@
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .color-wrapper {
      height: auto;
+     border: inherit;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .color-wrapper .canvas-color-picker {
      height: auto;
@@ -22,22 +23,23 @@
     min-width: unset;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper {
-     height: auto;
+    height: auto;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color-picker {
-     height: auto;
+    height: auto;
 }
 .editor-layout .canvas-container-content-wrapper .canvas-container{
     min-height: 100%;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color {
-     flex: 1;
-     padding: 9px 16px;
-     font-size: 15px;
+    flex: 1;
+    padding: 9px 16px;
+    font-size: 15px;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-fill-color-wrapper, .editor-layout .toolbar-panel-container .toolbar-panel-content .shapes-toolbar-panel .shapes-toolbar .shape-outline-color-wrapper {
-     height: auto;
-     margin: 0;
+    height: auto;
+    margin: 0;
+    border: inherit;
 }
 .editor-layout .toolbar-panel-container .toolbar-panel-content .shape-outline-color-wrapper .shape-outline-color-box{
     cursor: pointer;
@@ -80,6 +82,11 @@
 .editor-layout .toolbar-panel-container .color-wrapper .canvas-color-text {
     border-left: 1px solid #DEE2E6;
     border-right: 1px solid #DEE2E6;
+}
+
+.sidebar-panel-container .upload-sidebar-panel-content .uploaded-image-collection .upload-image-prompt{
+    font-size: 20px;
+    line-height: 1.4;
 }
 
 .editor-layout .toolbar-panel-container .color-wrapper .canvas-color-box ,.editor-layout .toolbar-panel-container .shapes-toolbar .shape-outline-color-wrapper .shape-outline-color-box, .editor-layout .toolbar-panel-container .shapes-toolbar .shape-fill-color-wrapper .shape-fill-color-box{
@@ -226,6 +233,22 @@
     .editor-dialog .preview-navtoolbar .nav-info-icon {
         display: none;
     }
+    .editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 1em;
+    }
+    .cropper-button-group button{
+        padding: 10px 16px;
+        height: 38px;
+        min-width: inherit;
+    }
+    .editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .image-filter{
+        height: 100%;
+    }
+    .editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .image-filter-type{
+        text-align: center;
+    }
 
     .nav-toolbar .next-frame-btn, .nav-toolbar .preview-btn, .editor-layout .sidebar-panel-container .initial-sidebar-panel-text,
     .editor-layout .editor-sidebar-container .sidebar-menu-item-container .menu-icon-text,
@@ -254,6 +277,8 @@
     }
     .editor-layout .canvas-section-container .canvas-container-content {
         margin: auto;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
     }
     .canvas-container-wrapper, .canvas-toolbar-container, .canvas-container-content-wrapper, .canvas-container-content{
         margin: 0 auto !important;
@@ -381,11 +406,12 @@
     }
     /* Uploads container */
     .toolbar-panel-container .upload-toolbar-panel .upload-toolbar{
-        justify-content: space-evenly;
+        justify-content: flex-start;
     }
     .toolbar-panel-container .upload-toolbar-panel .upload-toolbar button{
         flex-basis: calc(100%/4 - 24px);
-        max-width: 38px;
+        max-width: fit-content;
+        min-width: min-content;
     }
     .toolbar-panel-container .upload-toolbar-panel .image-filter-options-wrapper{
         position: absolute;
@@ -575,6 +601,7 @@
         margin: auto;
     }
 }
+
 @media (min-width: 1024px){
     .filter-color-wrapper{
         position: relative;
@@ -591,6 +618,11 @@
     }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
+        transform: translate(-50%, -50%);
+        top: 35%;
+        left: 50%;
+    }
     .editor-layout{
         height: calc(100% - 118px);
     }
@@ -605,7 +637,25 @@
         padding: 12px 0 !important;
     }
 }
+@media (min-width: 1440px){
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
+        transform: translate(-50%, -50%);
+        top: 40%;
+        left: 50%;
+    }
+}
 @media (max-width: 767px){
+    .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
+        transform: translate(-50%, -50%);
+        top: 45%;
+        left: 50%;
+    }
+    .editor-dialog .nav-toolbar .nav-info-tooltip .nav-info{
+        width: 200px;
+    }
+    .editor-dialog .nav-toolbar .nav-info-tooltip .nav-info:before{
+        transform: translate(-50px, 0px);
+    }
     .editor-layout .canvas-section-container .canvas-toolbar-container{
         left: 0 !important;
     }
@@ -657,6 +707,7 @@
 @media (max-width: 1023px) {
     .editor-layout {
         width: 100%;
+        height: 100vh;
         background-color: #d6d6d6;
     }
     .editor-layout .sidebar-panel-container {
@@ -944,4 +995,16 @@
         flex-basis: 50% !important; 
         width: 100% !important;
    }
+}
+
+.editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options-wrapper{
+    padding: 13px 0 0 0;
+}
+
+.editor-layout .sidebar-panel-container .sidebar-panel-content .visuals-panel-sidebar-content .visuals-heading-wrapper .css-pc1mzd .css-1q0ig8p{
+    width: auto;
+}
+.editor-layout .sidebar-panel-container .sidebar-panel-content .visuals-panel-sidebar-content .visuals-heading-wrapper .css-pc1mzd .css-12qnib .css-1q2h7u5{
+    min-width: inherit;
+    padding: 12px 8px !important;   
 }
