@@ -4,6 +4,14 @@
     max-height: 100vh;
     overflow: auto;
 }
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+        .editor-layout .layoutContent.safari_only { 
+            height: auto;
+            overflow: auto;
+        }
+    }
+}
  .editor-layout .toolbar-panel-container .toolbar-panel-content .color-wrapper {
      height: auto;
      border: inherit;
