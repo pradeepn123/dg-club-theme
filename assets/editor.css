@@ -307,9 +307,12 @@
 }
 
 @media(max-width: 1023px) {
-    .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container{
+    /* .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container{
         height: 100vh;
-    }
+    } */
+    /* .editor-layout .canvas-container-wrapper .canvas-container-content-wrapper{
+        min-height: 100% !important;
+    } */
     .editor-dialog .nav-toolbar .nav-info-tooltip .nav-info {
         width: 100px;
     }
@@ -512,11 +515,11 @@
         margin: 0;
     }
 }
-@media (max-width: 390px){
+/* @media (max-width: 390px){
     .canvas-section-container .canvas-container-wrapper .canvas-footer-container {
         width: calc(100% - 45px);
     }
-}
+} */
 
 @media(max-width: 430px) {
     .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-container-content-wrapper {        
@@ -532,9 +535,9 @@
     
 }
 @media(max-width: 375px) {
-    .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container {
+    /* .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container {
         margin: 0 auto;
-    }  
+    }   */
     .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-container-content-wrapper {        
         margin: 0 auto;
         /* min-width: 70%;
@@ -776,8 +779,8 @@
     }
    .editor-layout .sidebar-panel-container:has(.upload-sidebar-panel-content),
    .editor-layout .sidebar-panel-container:has(.visuals-panel-sidebar-content){
-         max-height: 250px;
-         height: 250px;
+         max-height: 300px;
+         height: auto;
    }
    .editor-layout .canvas-section-container .canvas-container-content-wrapper .canvas-container-content{
      width: 100%;
@@ -1019,6 +1022,9 @@
    .editor-layout .sidebar-panel-container > div:not([class='initial-sidebar-panel-content']), .editor-layout .sidebar-panel-container .sidebar-panel-content > :not(div){
         padding: 0 !important;
    }
+   .editor-layout .sidebar-panel-container .sidebar-panel-content > :has(div){
+        padding: 13px 15px;
+   }
    .editor-layout .sidebar-panel-container .text-sidebar-panel-content,
    .editor-layout .sidebar-panel-container .shapes-sidebar-panel-content,
    .editor-layout .sidebar-panel-container .upload-sidebar-panel-content,
@@ -1039,6 +1045,9 @@
    }
    .storefront-preview-container .preview-content-section .preview-description h1{
         font-size: 30px;
+   }
+   .canvas-section-container .canvas-container-wrapper .canvas-footer-container .resize-canvas-icon{
+        margin-right: 0px;
    }
 }
 
