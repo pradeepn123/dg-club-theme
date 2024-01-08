@@ -183,6 +183,9 @@
           "type": "collection",
           "settings": {
             "collection_list": [
+              "mural-wallpapers",
+              "designer-pattern-wallpaper",
+              "printed-curtain-blinds",
               "all-wall-combos",
               "all-wall-arts"
             ],
