@@ -40,6 +40,7 @@
 }
 .editor-layout .canvas-container-content-wrapper .canvas-container{
     min-height: 100%;
+    border: 2px solid #4444E1;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color {
     flex: 1;
@@ -317,14 +318,14 @@
     .editor-layout .canvas-section-container, 
     .editor-layout .canvas-section-container .canvas-container-wrapper, 
     .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-toolbar-container{
-        background: #F2F2F2 !important;
+        /* background: #F2F2F2 !important; */
     }
     .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-container-content{
-        background: #D9D9D9;
+        /* background: #D9D9D9; */
     }
     .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container{
-        background: #D9D9D9;
-        padding: 10px;
+        /* background: #D9D9D9; */
+        /* padding: 10px; */
     }
     .editor-layout .canvas-container-wrapper{
         position: relative;
@@ -343,8 +344,8 @@
         height: auto;
         min-height: unset !important;
         max-height: 100% !important;
-        background: #d9d9d9;
-        max-width: 95% !important;
+        /* background: #d9d9d9; */
+        /* max-width: 95% !important; */
         padding-top: 10px;
     }
     .editor-layout .canvas-section-container .canvas-container-content {
@@ -720,6 +721,11 @@
         left: 50%;
     }
 }
+@media (max-width: 320px){
+    .canvas-footer-container .counter-input input{
+        display: none;
+    }
+}
 @media (max-width: 767px){
     .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
         transform: translate(-50%, -50%);
@@ -735,8 +741,8 @@
     .editor-layout .canvas-section-container .canvas-toolbar-container{
         left: 0 !important;
     }
-    .editor-layout .canvas-section-container .canvas-panel-button button{
-        max-width: 37px;
+    .editor-layout .canvas-section-container .canvas-panel-button{
+        min-width: 30px !important;
     }
     .editor-layout .canvas-section-container .canvas-panel-button .canvas_panel-button-text{
         display: none;
@@ -805,12 +811,26 @@
         /* max-height: 35vh; */
     }
    .editor-layout .canvas-section-container ::-webkit-scrollbar{
-        width: 10px;
-        height: 10px;
+        width: 7px;
+        height: 7px;
+        background: transparent;
+        margin: 10px;
     }
+    .editor-layout .canvas-section-container ::-webkit-scrollbar-thumb{
+        background-color: #4444E1;
+        border-radius: 16px;
+    }
+    /* .editor-layout .canvas-section-container ::-webkit-scrollbar-track{
+        background-color: transparent;
+        border-radius: 16px;
+    } */
     .editor-layout .canvas-section-container ::-webkit-scrollbar-track{
-        background: #D9D9D9;
+        background-color: #9B9B9B;
+        border-radius: 16px;
     }
+    /* .editor-layout .canvas-section-container ::-webkit-scrollbar-track{
+        background: #D9D9D9;
+    } */
     .editor-layout .canvas-section-container{
         scrollbar-width: 10px;
     }
@@ -827,6 +847,7 @@
    }
    .editor-layout .canvas-section-container .canvas-container-content-wrapper .canvas-container-content{
      width: 100%;
+     overflow: auto !important;
    }
     .editor-layout .sidebar-panel-container .sidebar-panel-content {
         row-gap: 10px;
