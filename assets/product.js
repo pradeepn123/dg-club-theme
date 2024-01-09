@@ -913,6 +913,7 @@ if (!customElements.get('product-form')) {
       editor.setAttribute("formId", `${this.form.getAttribute("id")}--product-form-element`)
       editor.setAttribute("baseurl", theme.routes.backend_url)
       if (this.preSelectTemplates[currentVariant.id]) {
+        editor.setAttribute("iscollage", true)
         editor.setAttribute("templateid", this.preSelectTemplates[currentVariant.id])
       } else {
         currentVariant.templateIds = (this.variantTemplateIds[currentVariant.id]).join(",")
