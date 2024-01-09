@@ -40,6 +40,8 @@
 }
 .editor-layout .canvas-container-content-wrapper .canvas-container{
     min-height: 100%;
+}
+.editor-layout .canvas-container-content-wrapper .canvas-container .upper-canvas{
     border: 2px solid #4444E1;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color {
@@ -162,7 +164,7 @@
     position: relative;
 }
 .canvas-section-container .canvas-toolbar-container:has(button){
-    /* padding-bottom: 15px !important; */
+    padding-bottom: 15px !important;
     width: 100% !important;
 }
 .canvas-section-container .canvas-toolbar-container{
@@ -353,7 +355,7 @@
         overflow:scroll;
         -webkit-overflow-scrolling:touch;
         /* height: 40vh; */
-        height: auto !important;
+        height: 100% !important;
         width: 95% !important;
         max-height: 100%;
     }
@@ -740,9 +742,11 @@
     }
     .editor-layout .canvas-section-container .canvas-toolbar-container{
         left: 0 !important;
+        column-gap: 8px;
     }
     .editor-layout .canvas-section-container .canvas-panel-button{
         min-width: 30px !important;
+        padding: 6px;
     }
     .editor-layout .canvas-section-container .canvas-panel-button .canvas_panel-button-text{
         display: none;
@@ -1090,6 +1094,9 @@
    }
    .editor-layout .sidebar-panel-container .sidebar-panel-content > :has(div){
         padding: 13px 15px;
+   }
+   .editor-layout .sidebar-panel-container .sidebar-panel-content > :has(.visuals-sidebar-panel-content){
+        padding: 0 15px 13px 15px !important;
    }
    .editor-layout .sidebar-panel-container .text-sidebar-panel-content,
    .editor-layout .sidebar-panel-container .shapes-sidebar-panel-content,
