@@ -171,7 +171,9 @@
               "framed-prints",
               "canvas-print-wraps",
               "mdf-base-print-wraps",
-              "acrylic-prints"
+              "acrylic-prints",
+              "all-photo-print-combos",
+              "all-photo-collage-prints"
             ],
             "title": "Photo Gifts",
             "handle": "photo-gifts"
@@ -181,11 +183,11 @@
           "type": "collection",
           "settings": {
             "collection_list": [
-              "all-wall-combos",
-              "all-wall-arts",
               "mural-wallpapers",
               "designer-pattern-wallpaper",
-              "printed-curtain-blinds"
+              "printed-curtain-blinds",
+              "all-wall-arts",
+              "all-wall-combos"
             ],
             "title": "Decor Prints",
             "handle": "decor-prints"
