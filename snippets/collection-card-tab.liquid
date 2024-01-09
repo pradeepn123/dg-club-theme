@@ -6,7 +6,7 @@
 	{%- assign grid_collection_url = '#' -%}
 	{%- assign grid_collection_title = 'onboarding.collection_title' | t -%}
 {%- else -%}
-	{%- assign grid_collection_url = grid_collection.url -%}
+	{%- assign grid_collection_url = link_url | default: grid_collection.url -%}
 	{%- assign grid_collection_title = grid_collection.title -%}
 	{%- if grid_collection.featured_image -%}
 		{%- assign grid_collection_image = grid_collection.featured_image -%}
