@@ -182,7 +182,10 @@
           "settings": {
             "collection_list": [
               "all-wall-combos",
-              "all-wall-arts"
+              "all-wall-arts",
+              "mural-wallpapers",
+              "designer-pattern-wallpaper",
+              "printed-curtain-blinds"
             ],
             "title": "Decor Prints",
             "handle": "decor-prints"
