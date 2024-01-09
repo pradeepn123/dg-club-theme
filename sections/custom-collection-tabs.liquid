@@ -67,11 +67,12 @@
 						{%- assign mainloop = forloop -%}
 						{%- assign collection_list = block.settings.collection_list -%}
 						{%- for collection in collection_list -%}
+							{%- assign link_url = collection.metafields.custom.collection_redirection_link -%}
 							<div
 								class="{{ columns_class }} columns{% if mainloop.first == true %} carousel__slide{% endif %}"
 								data-collection="{{ block.settings.handle }}"
 							>
-								{%- render 'collection-card-tab', grid_collection: collection, media_aspect_ratio: section.settings.image_ratio, style: style, index: forloop.index, heading_position: heading_position, heading_size: heading_size -%}
+								{%- render 'collection-card-tab', grid_collection: collection,link_url: link_url, media_aspect_ratio: section.settings.image_ratio, style: style, index: forloop.index, heading_position: heading_position, heading_size: heading_size -%}
 							</div>
 						{%- endfor -%}
 						
