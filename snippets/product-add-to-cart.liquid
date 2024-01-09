@@ -1,6 +1,6 @@
 {% if product.template_suffix == "products_with_editor" or product.template_suffix == "products_collage" %}
-	<script src="http://localhost:4173//assets/index.js" type="module"></script>
-	<link rel="stylesheet" href="http://localhost:4173//assets/index.css" />
+	<script src="{{ shop.metafields.backend.editor_js.value }}" type="module"></script>
+	<link rel="stylesheet" href="{{ shop.metafields.backend.editor_css.value }}" />
 	{{ 'editor.css' | asset_url | stylesheet_tag }}
 {% endif %}
 <div class="quantity__add_to_cart_btn_wrap" {{ block.shopify_attributes }}>
