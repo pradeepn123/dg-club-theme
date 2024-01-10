@@ -38,7 +38,7 @@
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color-picker {
     height: auto;
 }
-.editor-layout .canvas-container-content-wrapper .canvas-container{
+.editor-layout .canvas-container-content-wrapper .canvas-container canvas{
     min-height: 100%;
     border: 2px solid #4444E1;
 }
@@ -308,6 +308,17 @@
 }
 
 @media(max-width: 1023px) {
+    .cropper-button-group button{
+        padding: 10px 16px;
+        height: 38px;
+        min-width: inherit;
+    }
+    .editor-layout .sidebar-panel-container .ai-filters-sidebar-panel-content .ai-filters-collection .ai-filter-item{
+        flex: 0 0 12%;
+    }
+    .editor-layout .sidebar-panel-container .ai-filters-sidebar-panel-content .ai-filters-collection{
+        overflow: scroll;
+    }
     .editor-layout .sidebar-panel-container .sidebar-panel-content .visuals-panel-sidebar-content .visuals-heading-wrapper{
         padding-bottom: 12px !important;
     }
@@ -727,6 +738,9 @@
     }
 }
 @media (max-width: 767px){
+    .editor-layout .sidebar-panel-container .ai-filters-sidebar-panel-content .ai-filters-collection .ai-filter-item{
+        flex: 0 0 25%;
+    }
     .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
         transform: translate(-50%, -50%);
         top: 45%;
@@ -798,6 +812,9 @@
     }
 }
 @media (max-width: 1023px) {
+    .editor-layout .sidebar-panel-container .ai-filters-sidebar-panel-content .ai-filters-collection-wrapper{
+        margin-bottom: 4px;
+    }
     .editor-layout {
         width: 100%;
         height: 100vh;
@@ -848,9 +865,10 @@
         font-size: 12px;
     }
    .editor-layout .sidebar-panel-container:has(.upload-sidebar-panel-content),
-   .editor-layout .sidebar-panel-container:has(.visuals-panel-sidebar-content){
-         max-height: 300px;
-         height: auto;
+   .editor-layout .sidebar-panel-container:has(.visuals-panel-sidebar-content),
+   .editor-layout .sidebar-panel-container:has(.ai-filters-sidebar-panel-content){
+        max-height: 300px;
+        height: auto;
    }
    .editor-layout .canvas-section-container .canvas-container-content-wrapper .canvas-container-content{
      width: 100%;
