@@ -40,6 +40,8 @@
 }
 .editor-layout .canvas-container-content-wrapper .canvas-container canvas{
     min-height: 100%;
+}
+.editor-layout .canvas-container-content-wrapper .canvas-container{
     border: 2px solid #4444E1;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper .text-color {
