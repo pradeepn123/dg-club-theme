@@ -257,6 +257,7 @@
     .ai-filters-sidebar-panel-content .ai-filters-collection-wrapper h4{
         margin: 1rem 0;
         font-size: 18px;
+        font-weight: 500;
     }
     .editor-layout .canvas-container-content::-webkit-scrollbar{
         width: 0px;
@@ -769,7 +770,7 @@
         left: 50%;
     }
     .storefront-preview-container .preview-template-section .live-preview-container{
-        margin-top: 6px;
+        margin-top: -10px;
     }
 }
 @media (max-width: 320px){
