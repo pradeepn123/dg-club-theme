@@ -1129,7 +1129,8 @@
         white-space: pre;
         position: fixed;
         bottom: 28%;
-        right: 40%;
+        right: 40% !important;
+        left: unset !important;
         top: unset;
         transform: translate(50%, 50%);
    }
@@ -1196,11 +1197,11 @@
     padding: 0;
 }
 
-.storefront-preview-container .preview-template-section .preview-container .display-preview svg rect, 
+/* .storefront-preview-container .preview-template-section .preview-container .display-preview svg rect, 
 .storefront-preview-container .preview-template-section .preview-container .display-preview svg{
     stroke: #4444e1;
     stroke-width: 2px;
-}
+} */
 .nav-toolbar #nav-title-text{
     font-family: 'Jost', sans-serif;
 }
