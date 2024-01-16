@@ -694,15 +694,6 @@
     border-radius: 8px;
 }
 
-.editor-dialog .storefront-preview-container .preview-content-section .preview-description h1 {
-    color: #4444e1;
-}
-
-.storefront-preview-container .preview-template-section .live-preview-container {
-    display: flex;
-    justify-content: center;
-}
-
 @media (max-width: 1200px){
     .editor-layout .editor-sidebar-container {
         flex-direction: row;
