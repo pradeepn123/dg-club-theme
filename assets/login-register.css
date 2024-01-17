@@ -217,6 +217,13 @@
   min-width: 130px;
 }
 
+@media only screen and (max-width: 360px) {
+  .register_button_container .tab{
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
 .thb-form-container .thb-login-form .field [type=submit]:hover {
   background: var(--solid-button-background-hover, var(--color-accent));
   color: var(--solid-button-label, #fff);
