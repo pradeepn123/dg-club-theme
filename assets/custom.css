@@ -42,10 +42,6 @@ a:hover, a:focus {
   right: -75px;
 }
 
-/* .template-header--content {
-  justify-content: center;
-} */
-
 @media only screen and (max-width: 767px) {
   .mobile-height-360 {
     min-height: 360px;
@@ -55,6 +51,12 @@ a:hover, a:focus {
 @media only screen and (max-width: 1068px) {
   .flickity-nav {
     opacity: 1 !important;
+  }
+}
+
+@media only screen and (min-width: 1068px) {
+  .header--inner .full-menu .thb-full-menu .menu-item-hide {
+    display: none;
   }
 }
 
