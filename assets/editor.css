@@ -138,6 +138,13 @@
 .live-preview--dialog .react-swipeable-view-container > div > div img{
     object-fit: contain;
 }
+ /* ios: To fit image and scale it out */
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    .live-preview--dialog .react-swipeable-view-container > div > div img {
+        position: absolute;
+        object-fit: contain;
+    }
+}
 .image-filter-options-wrapper{
     padding: 13px 0 0 13px;
 }
@@ -693,6 +700,7 @@
     height: 36px;
     border-radius: 8px;
 }
+
 @media (max-width: 1200px){
     .editor-layout .editor-sidebar-container {
         flex-direction: row;
