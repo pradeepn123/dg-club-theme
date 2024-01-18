@@ -184,6 +184,7 @@
   font-size: var(--font-size-text-desktop);
   font-weight: var(--font-weight-text-normal);
   line-height: 30px;
+  text-align: justify;
 }
 @media only screen and (min-width: 768px) and (max-width: 1025px) {
   .image-with-text-slideshow--content-content .h3 {
