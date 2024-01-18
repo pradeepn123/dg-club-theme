@@ -86,7 +86,7 @@
 							{%- when 'heading' -%}
 								<h3 class="{{ block.settings.heading_size }}" {{ block.shopify_attributes }}>{{ block.settings.text | newline_to_br }}</h3>
 							{%- when 'text' -%}
-								<div class="rte" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+								<div class="rte{% if block.settings.text_justify %} description-text-justify{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
 							{%- when 'button' -%}
 								{% if block.settings.button_text != blank %}
 									<a class="button {{ block.settings.button_color }}" href="{{ block.settings.button_link }}" role="button" title="{{ block.settings.button_text | escape }}" {{ block.shopify_attributes }}>{{ block.settings.button_text }}</a>
@@ -522,7 +522,13 @@
                         "id": "text",
                         "label": "Content",
                         "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-                    }
+                    },
+					{
+						"type": "checkbox",
+						"id": "text_justify",
+						"label": "Text Justify",
+						"default": false
+					}
                 ]
             },
 			{

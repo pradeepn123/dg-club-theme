@@ -73,3 +73,7 @@ input[type="url"]:focus-visible
 input[type="email"]:valid {
   outline: #4444E1 auto 1px;
 }
+
+.page-content-width.rte.description-text-justify {
+  text-align: justify;
+}
