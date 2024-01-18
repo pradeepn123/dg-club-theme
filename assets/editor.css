@@ -137,6 +137,7 @@
 }
 .live-preview--dialog .react-swipeable-view-container > div > div img{
     object-fit: contain;
+    height: calc(100% - 40px);
 }
  /* ios: To fit image and scale it out */
 @supports (font: -apple-system-body) and (-webkit-appearance: none) {
