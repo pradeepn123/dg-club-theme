@@ -3,6 +3,7 @@
     "main": {
       "type": "main-page",
       "settings": {
+        "text_justify": true
       }
     }
   },

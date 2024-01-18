@@ -49,6 +49,7 @@
 					assign subheading_size = block.settings.subheading_size
 					assign color_bg_badge = block.settings.color_bg_badge
 					assign color_badge = block.settings.color_badge
+					assign text_justify = block.settings.text_justify
 
 				-%}
 				{%- capture section_image -%}
@@ -108,7 +109,7 @@
 							<h3 class="subheading_text">{{ block.settings.subheading }}</h3>
 						{% endif %}
 						{% if block.settings.content %}
-							<div class="rte description-size--{{ description_size }}">{{ block.settings.content }}</div>
+							<div class="rte description-size--{{ description_size }}{% if text_justify %} description-text-justify{% endif %}">{{ block.settings.content }}</div>
 						{% endif %}
 						{% if block.settings.button_text != blank %}
 							{% render 'text-button', url: block.settings.button_link, title: block.settings.button_text %}
@@ -308,6 +309,12 @@
 						}
 					],
 					"default": "medium"
+				},
+				{
+					"type": "checkbox",
+					"id": "text_justify",
+					"label": "Text Justify",
+					"default": false
 				},
 				{
 					"id": "button_text",

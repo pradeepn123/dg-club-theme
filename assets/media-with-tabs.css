@@ -193,6 +193,10 @@
   overflow: hidden;
 }
 
+.media-with-tabs--text.description-text-justify {
+  text-align: justify;
+}
+
 .media-with-tabs--text.has-icon {
   padding-left: 35px;
 }

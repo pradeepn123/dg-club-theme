@@ -161,3 +161,6 @@
     font-size: 18px;
   }
 }
+.scrolling-content--content .rte.description-text-justify {
+  text-align: justify;
+}

@@ -5,7 +5,7 @@
 				<div class="post-title">
 					<h1>{{ page.title }}</h1>
 				</div>
-				<div class="page-content-width rte">
+				<div class="page-content-width rte{% if section.settings.text_justify %} description-text-justify{% endif %}">
 					{{ page.content }}
 				</div>
 			</div>
@@ -17,6 +17,14 @@
 {
   "name": "Page",
   "tag": "section",
-  "class": "section"
+  "class": "section",
+  "settings": [
+	{
+		"type": "checkbox",
+		"id": "text_justify",
+		"label": "Text Justify",
+		"default": false
+	}
+  ]
 }
 {% endschema %}
