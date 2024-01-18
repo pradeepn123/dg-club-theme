@@ -4,7 +4,7 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
-        "text_justify": false
+        "text_justify": true
       }
     },
     "28f936f9-b3bc-4116-aebe-58e204d94a21": {
@@ -164,7 +164,7 @@
           "type": "text",
           "settings": {
             "text": "<p>DG Club welcomes artists from all backgrounds, whether you work with traditional mediums like paint and canvas, digital tools such as tablets, or even AI-generated art. We celebrate and support artistic diversity.<\/p>",
-            "text_justify": false
+            "text_justify": true
           }
         }
       },

@@ -755,7 +755,7 @@
         "height": "adapt",
         "desktop_image_width": "medium",
         "full_width": false,
-        "text_justify": false,
+        "text_justify": true,
         "layout": "text_first",
         "content_position": "text-center",
         "column_spacing": "medium",

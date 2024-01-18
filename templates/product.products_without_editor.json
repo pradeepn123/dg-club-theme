@@ -199,7 +199,7 @@
         "enable_image_shadow": true,
         "color_bg": "rgba(0,0,0,0)",
         "color_heading": "#1a1c1d",
-        "text_justify": false,
+        "text_justify": true,
         "color_text": "#2c2d2e",
         "disable_top_spacing": false,
         "disable_bottom_spacing": true
