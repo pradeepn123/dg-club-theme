@@ -576,7 +576,7 @@
     }
     .live-preview--dialog .react-swipeable-view-container > div > div img{
         object-fit: cover;
-        height: fit-content;
+        height: auto;
     }
     .live-preview--dialog .MuiDialog-container > .MuiPaper-root{
         width: 100%;
