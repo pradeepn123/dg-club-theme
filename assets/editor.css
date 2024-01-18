@@ -143,6 +143,7 @@
     .live-preview--dialog .react-swipeable-view-container > div > div img {
         position: absolute;
         object-fit: contain;
+        height: calc(100% - 100px);
     }
 }
 .image-filter-options-wrapper{
