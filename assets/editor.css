@@ -1210,14 +1210,16 @@
     padding: 0;
 }
 
-/* .storefront-preview-container .preview-template-section .preview-container .display-preview svg rect, 
-.storefront-preview-container .preview-template-section .preview-container .display-preview svg{
-    stroke: #4444e1;
-    stroke-width: 2px;
-} */
 .nav-toolbar #nav-title-text{
     font-family: 'Jost', sans-serif;
 }
 .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container{
     border: 0;
+}
+
+@media(min-width:768px) and (max-width:1024px){
+    .live-preview--dialog .react-swipeable-view-container > div > div img{
+        object-fit: scale-down;
+        height: calc(100% - 10px);
+    }
 }
