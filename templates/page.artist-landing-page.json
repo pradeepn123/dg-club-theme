@@ -4,6 +4,7 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
+        "text_justify": false
       }
     },
     "28f936f9-b3bc-4116-aebe-58e204d94a21": {
@@ -162,7 +163,8 @@
         "template--21535618564396__4a57c2ab-e0eb-4725-bf36-d2a4df43fd14-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>DG Club welcomes artists from all backgrounds, whether you work with traditional mediums like paint and canvas, digital tools such as tablets, or even AI-generated art. We celebrate and support artistic diversity.<\/p>"
+            "text": "<p>DG Club welcomes artists from all backgrounds, whether you work with traditional mediums like paint and canvas, digital tools such as tablets, or even AI-generated art. We celebrate and support artistic diversity.<\/p>",
+            "text_justify": false
           }
         }
       },
@@ -277,6 +279,7 @@
             "heading_size": "small",
             "content": "<p>Start your journey with DG Club by registering as a creator by sharing your profile information, showcasing your existing artworks to evaluate your style and create your personalized creator profile.<\/p>",
             "description_size": "medium",
+            "text_justify": true,
             "button_text": "",
             "button_link": "",
             "marker_color": "#fd6262",
@@ -295,6 +298,7 @@
             "heading_size": "small",
             "content": "<p>Approved creators can submit more designs to add more products in their store, DG Club team will support creators with insight to print on demand design trends, this will help creators to focus on selling potential designs.<\/p>",
             "description_size": "medium",
+            "text_justify": true,
             "button_text": "",
             "button_link": "",
             "marker_color": "#fd6262",
@@ -313,6 +317,7 @@
             "heading_size": "small",
             "content": "<p>Watch your art come to life as our team selects exceptional pieces for conversion into high quality products, prominently showcased on your creator profile, allowing to earn commissions and be duly rewarded for your creativity with each sale<\/p>",
             "description_size": "medium",
+            "text_justify": true,
             "button_text": "",
             "button_link": "",
             "marker_color": "#fd6262",
