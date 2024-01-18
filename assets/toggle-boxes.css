@@ -174,3 +174,6 @@
     font-size: var(--font-size-text-mobile);
   }
 }
+.toggle-box--content-inner.description-text-justify p {
+  text-align: justify;
+}

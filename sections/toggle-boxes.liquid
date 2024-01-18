@@ -9,6 +9,7 @@
 	assign mobile_swipe = section.settings.mobile_swipe
 	assign image_ratio = section.settings.image_ratio
 	assign text_alignment = section.settings.text_alignment
+	assign text_justify = section.settings.text_justify
 
 	assign color_bg = section.settings.color_bg
 	assign color_heading = section.settings.color_heading
@@ -53,7 +54,7 @@
 					{%- endif -%}
 				</figure>
 				<div class="toggle-box--content rte text-{{ text_alignment }}">
-					<scroll-shadow class="toggle-box--content-inner" style="--bg-body-rgb: {{ color_bg.rgb | replace: ' ' , ',' }}">
+					<scroll-shadow class="toggle-box--content-inner{% if text_justify %} description-text-justify{% endif %}" style="--bg-body-rgb: {{ color_bg.rgb | replace: ' ' , ',' }}">
 						<div>
 							{% if block.settings.text != blank %}
 								{{ block.settings.text | newline_to_br }}
@@ -187,6 +188,12 @@
 				],
 				"default": "left",
 				"label": "Content alignment"
+			},
+			{
+				"type": "checkbox",
+				"id": "text_justify",
+				"label": "Text Justify",
+				"default": false
 			},
 			{
 	      "type": "header",

@@ -94,6 +94,10 @@
   font-size: 0.9375rem;
 }
 
+.text-with-icons__block-content.description-text-justify p {
+  text-align: justify;
+}
+
 .text-with-icons__block-content h6 {
   line-height: 130%;
   margin-bottom: 32px;
