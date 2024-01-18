@@ -80,7 +80,7 @@
 					{%- for tab in tabs -%}
 					<div class="media-with-tabs--tab{% if forloop.index == 1 %} active{% endif -%}" {{ tab.shopify_attributes }}>
 						<button class="media-with-tabs--button{% if tab.settings.heading_icon != 'none' and tab.settings.icons_image != 'blank' %} has-icon{% endif -%}">{% if tab.settings.icons_image %}<img src="{{ tab.settings.icons_image | image_url }}"/>{% else %}{% render 'svg-icons-inline', icon: tab.settings.heading_icon %}{% endif %}{{ tab.settings.heading }}</button>
-						<div class="media-with-tabs--text">{{ tab.settings.description }}</div>
+						<div class="media-with-tabs--text{% if tab.settings.text_justify %} description-text-justify{% endif %}">{{ tab.settings.description }}</div>
 					</div>
 					{%- endfor -%}
 				{%- endif -%}
@@ -543,6 +543,12 @@
 						"id": "description",
 						"label": "Description",
 						"default": "Add a short description for this tab"
+					},
+					{
+						"type": "checkbox",
+						"id": "text_justify",
+						"label": "Text Justify",
+						"default": false
 					},
 					{
 						"type": "checkbox",

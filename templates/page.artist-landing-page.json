@@ -89,6 +89,7 @@
             "heading_icon": "apple",
             "heading": "Diverse Opportunities & Endless Possibilities",
             "description": "DG Club welcomes creators from all backgrounds, whether you work with traditional medium like paint and canvas, digital tools such as graphic tablets, or even AI generated art, We celebrate and support artistic diversity. Decor and Gifting products, upcoming apparel and branding products range offers endless possibilities to creators.",
+            "text_justify": true,
             "video_autoplay": true
           }
         },
@@ -101,6 +102,7 @@
             "heading_icon": "apple",
             "heading": "Free Online Store & Sell In Your Own Brand",
             "description": "DG Club offers white labeling for all products sold through Creator store, a fully functioning online store with product customization app features and many more, zero investment and maintenance for life long.",
+            "text_justify": true,
             "video_autoplay": true
           }
         },
@@ -113,6 +115,7 @@
             "heading_icon": "apple",
             "heading": "Attractive Commission On Sales & Free Digital Marketing Support",
             "description": "All products available through DG Club marketplace are directly manufactured to keep best quality standards, good commission for creators and best price for end customers. We do everything on backend to showcase your products with all kind of optimizations for search engines and social media platforms, free ad campaigns offered for selected products from creator store to drive more sales, thus more earning for creators.",
+            "text_justify": true,
             "video_autoplay": true
           }
         }
@@ -274,6 +277,7 @@
             "heading_size": "small",
             "content": "<p>Start your journey with DG Club by registering as a creator by sharing your profile information, showcasing your existing artworks to evaluate your style and create your personalized creator profile.<\/p>",
             "description_size": "medium",
+            "text_justify": true,
             "button_text": "",
             "button_link": "",
             "marker_color": "#fd6262",
@@ -292,6 +296,7 @@
             "heading_size": "small",
             "content": "<p>Approved creators can submit more designs to add more products in their store, DG Club team will support creators with insight to print on demand design trends, this will help creators to focus on selling potential designs.<\/p>",
             "description_size": "medium",
+            "text_justify": true,
             "button_text": "",
             "button_link": "",
             "marker_color": "#fd6262",
@@ -310,6 +315,7 @@
             "heading_size": "small",
             "content": "<p>Watch your art come to life as our team selects exceptional pieces for conversion into high quality products, prominently showcased on your creator profile, allowing to earn commissions and be duly rewarded for your creativity with each sale<\/p>",
             "description_size": "medium",
+            "text_justify": true,
             "button_text": "",
             "button_link": "",
             "marker_color": "#fd6262",

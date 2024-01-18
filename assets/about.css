@@ -424,6 +424,10 @@
   }
 }
 
+.image-with-text-overlay--content .rte.description-text-justify {
+  text-align: justify;
+}
+
 .image-with-text-overlay--content .rte p {
   font-size: inherit;
 }
