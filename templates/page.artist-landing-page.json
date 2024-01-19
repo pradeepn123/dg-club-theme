@@ -4,6 +4,7 @@
       "type": "main-page",
       "disabled": true,
       "settings": {
+        "text_justify": true
       }
     },
     "28f936f9-b3bc-4116-aebe-58e204d94a21": {
@@ -162,7 +163,8 @@
         "template--21535618564396__4a57c2ab-e0eb-4725-bf36-d2a4df43fd14-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>DG Club welcomes artists from all backgrounds, whether you work with traditional mediums like paint and canvas, digital tools such as tablets, or even AI-generated art. We celebrate and support artistic diversity.<\/p>"
+            "text": "<p>DG Club welcomes artists from all backgrounds, whether you work with traditional mediums like paint and canvas, digital tools such as tablets, or even AI-generated art. We celebrate and support artistic diversity.<\/p>",
+            "text_justify": true
           }
         }
       },

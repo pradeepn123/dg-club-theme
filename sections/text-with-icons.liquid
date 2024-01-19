@@ -63,7 +63,7 @@
 						{% render 'svg-icons-inline', icon: block.settings.icon %}
 					{%- endif -%}
 				</div>
-				<div class="text-with-icons__block-content">
+				<div class="text-with-icons__block-content{% if section.settings.text_justify %} description-text-justify{% endif %}">
 					{% if block.settings.heading != blank %}
 					<h6>{{ block.settings.heading }}</h6>
 					{% endif %}
@@ -209,6 +209,12 @@
         "label": "Heading",
 				"default": "#1a1c1d"
       },
+	  {
+		"type": "checkbox",
+		"id": "text_justify",
+		"label": "Text Justify",
+		"default": false
+		},
 			{
         "type": "color",
         "id": "color_text",

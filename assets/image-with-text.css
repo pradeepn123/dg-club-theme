@@ -196,6 +196,9 @@
   font-weight: var(--font-weight-text-normal);
   line-height: var(--line-height-text);
 }
+.image-with-text--content--inner.description-text-justify .rte p {
+  text-align: justify;
+}
 @media only screen and (max-width: 768px) {
   .image-with-text--content--inner .subheading {
     margin-bottom: 9px;
