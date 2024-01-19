@@ -137,6 +137,15 @@
 }
 .live-preview--dialog .react-swipeable-view-container > div > div img{
     object-fit: contain;
+    height: calc(100% - 40px);
+}
+ /* ios: To fit image and scale it out */
+@supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    .live-preview--dialog .react-swipeable-view-container > div > div img {
+        position: absolute;
+        object-fit: contain;
+        height: calc(100% - 100px);
+    }
 }
 .image-filter-options-wrapper{
     padding: 13px 0 0 13px;
@@ -569,7 +578,7 @@
     }
     .live-preview--dialog .react-swipeable-view-container > div > div img{
         object-fit: cover;
-        height: fit-content;
+        height: auto;
     }
     .live-preview--dialog .MuiDialog-container > .MuiPaper-root{
         width: 100%;
@@ -693,6 +702,7 @@
     height: 36px;
     border-radius: 8px;
 }
+
 @media (max-width: 1200px){
     .editor-layout .editor-sidebar-container {
         flex-direction: row;
@@ -1200,14 +1210,16 @@
     padding: 0;
 }
 
-/* .storefront-preview-container .preview-template-section .preview-container .display-preview svg rect, 
-.storefront-preview-container .preview-template-section .preview-container .display-preview svg{
-    stroke: #4444e1;
-    stroke-width: 2px;
-} */
 .nav-toolbar #nav-title-text{
     font-family: 'Jost', sans-serif;
 }
 .editor-layout .canvas-section-container .canvas-container-wrapper .canvas-main-container{
     border: 0;
+}
+
+@media(min-width:768px) and (max-width:1024px){
+    .live-preview--dialog .react-swipeable-view-container > div > div img{
+        object-fit: scale-down;
+        height: calc(100% - 10px);
+    }
 }
