@@ -12,7 +12,13 @@
         }
     }
 }
- .editor-layout .toolbar-panel-container .toolbar-panel-content .color-wrapper {
+.editor-layout .sidebar-panel-container{
+    width: 22%;
+}
+.editor-layout .toolbar-panel-container{
+    width: 26%;
+}
+.editor-layout .toolbar-panel-container .toolbar-panel-content .color-wrapper {
      height: auto;
      border: inherit;
 }
@@ -32,7 +38,6 @@
 }
 .editor-layout .canvas-section-container{
     max-width: unset;
-    min-width: unset;
 }
  .editor-layout .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .text-color-wrapper {
     height: auto;
