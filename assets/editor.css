@@ -730,6 +730,21 @@
         font-family: 'Jost', sans-serif;
         line-height: 150%;
     }
+    .editor-layout .toolbar-panel-container .upload-toolbar .replace_dropdown_block .replace-dropdown ul{
+        width: 155px !important;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1312){
+    .editor-layout .toolbar-panel-container .upload-toolbar .replace_dropdown_block .replace-dropdown ul{
+        right: unset !important;
+        left: 0 !important;
+    }
+}
+@media (min-width: 1313px){
+    .editor-layout .toolbar-panel-container .upload-toolbar .replace_dropdown_block .replace-dropdown ul{
+        left: unset !important;
+        right: 5% !important;
+    }
 }
 @media (min-width: 1024px) and (max-width: 1200px){
     .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper .selected-filter-icon{
