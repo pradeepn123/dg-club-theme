@@ -62,7 +62,7 @@
               onchange="checkFields()" />
               <label for="email">{{ 'customer.login_page.email' | t }}</label>
             </div>
-            {% comment %} <span class="email_id_error"></span> {% endcomment %}
+            <span class="email_id_error"></span>
             <span class="email-error-msg"></span>
             
             <div class="social__link__container" id="social__link__container">
@@ -147,12 +147,6 @@
       const submitBtn = document.querySelector('#create_customer button:last-child')
       const registerForm = document.querySelector('#create_customer')
 
-      const creatorRegisterForm = document.querySelector('#creator_form');
-      const creatorPortfolioUrl = document.querySelector('#creator_portfolio_url');
-      const creatorEmail = document.querySelector('#creator_email');
-      const emailError = document.querySelector('.email-error-msg');
-      const creatorSubmitBtn = document.querySelector('#creator_form button:last-child')
-      const portfolioError = document.querySelector('.portfolio-error-msg');
       const format = /[0-9 `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
       const customError = document.querySelector('#form-custom-errors');
 
@@ -170,24 +164,30 @@
         }
       }
 
-      if(creatorRegisterForm && creatorEmail && creatorPortfolioUrl && creatorSubmitBtn) {
-        creatorSubmitBtn.onclick = function (e) {
-          e.preventDefault();
-          if (!isEmail(creatorEmail.value)) {
-            emailError.textContent = "Email field must be of type email";
-            emailError.style.color = "red";
-            emailError.style.fontSize = "13px";
-          }
-          if(!isUrl(creatorPortfolioUrl.value)) {
-              portfolioError.textContent = "Portfolio field must be a url.";
-              portfolioError.style.color = "red";
-              portfolioError.style.fontSize = "13px";
-          } 
-          if(isEmail(creatorEmail.value) && isUrl(creatorPortfolioUrl.value)) {
-            creatorRegisterForm.submit();
-          }
+     
+    }, 2000)
+
+    const creatorRegisterForm = document.querySelector('#creator_form');
+    const creatorPortfolioUrl = document.querySelector('#creator_portfolio_url');
+    const creatorEmail = document.querySelector('#creator_email');
+    const emailError = document.querySelector('.email-error-msg');
+    const creatorSubmitBtn = document.querySelector('#creator_form button:last-child')
+    const portfolioError = document.querySelector('.portfolio-error-msg');
+
+    if(creatorRegisterForm && creatorEmail && creatorPortfolioUrl && creatorSubmitBtn) {
+      creatorRegisterForm.onsubmit = function (e) {
+        e.preventDefault();
+        if (!isEmail(creatorEmail.value)) {
+          emailError.textContent = "Email field must be of type email";
+          emailError.style.color = "red";
+          emailError.style.fontSize = "13px";
+        }
+        if(!isUrl(creatorPortfolioUrl.value)) {
+            portfolioError.textContent = "Portfolio field must be a url.";
+            portfolioError.style.color = "red";
+            portfolioError.style.fontSize = "13px";
         }
       }
-    }, 2000)
+    }
   }
 </script>
