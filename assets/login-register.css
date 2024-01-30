@@ -162,7 +162,7 @@
 
 .thb-form-container input#creator_email.full,
 .thb-form-container input#creator_phone.full {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .thb-form-container input {
