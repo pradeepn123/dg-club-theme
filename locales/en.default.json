@@ -295,6 +295,8 @@
       "create_account": "Create an account",
       "create_account_description": "Enter your information below to proceed.",
       "email": "Email address*",
+      "phone": "Phone*",
+      "brand_name": "Brand name",
       "forgot_password": "Forgot your password?",
       "dont_have_an_account": "Don’t have an account?",
       "password": "Password*",

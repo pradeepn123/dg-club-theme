@@ -160,8 +160,9 @@
   }
 }
 
-.thb-form-container input#creator_email.full {
-  margin-bottom: 0 !important;
+.thb-form-container input#creator_email.full,
+.thb-form-container input#creator_phone.full {
+  margin-bottom: 0;
 }
 
 .thb-form-container input {
@@ -391,7 +392,7 @@ creator-form .creator_form p{
 .creator_form.showForm .field input[type="email"]{
   /* margin-bottom: 0; */
 }
-.email_id_error{
+.email_id_error, .phone-error-msg {
   font-size: 12px !important;
   display: block;
   margin-top: 0 !important;
