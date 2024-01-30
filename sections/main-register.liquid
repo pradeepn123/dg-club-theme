@@ -66,7 +66,7 @@
             </div>
 
             <div class="field">
-              <input type="tel" name="phone" id="creator_phone" class="full" value="" placeholder="{{ 'customer.login_page.phone' | t }}" 
+              <input type="tel" name="phone_no" id="creator_phone" class="full" value="" placeholder="{{ 'customer.login_page.phone' | t }}" 
               onchange="checkFields()" />
               <label for="phone">{{ 'customer.login_page.phone' | t }}</label>
               <span class="phone-error-msg"></span>
@@ -123,10 +123,6 @@
 
 
 <script>
-  var appendButton = document.querySelector('.more_social_links');
-  appendButton.addEventListener('click', function() {
-    console.log('ji')
-  });
 
   const matcher = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
   function isUrl(string){
