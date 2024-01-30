@@ -64,7 +64,19 @@
               <span class="email_id_error"></span>
               <span class="email-error-msg"></span>
             </div>
+
+            <div class="field">
+              <input type="tel" name="phone" id="creator_phone" class="full" value="" placeholder="{{ 'customer.login_page.phone' | t }}" 
+              onchange="checkFields()" />
+              <label for="phone">{{ 'customer.login_page.phone' | t }}</label>
+              <span class="phone-error-msg"></span>
+            </div>
             
+            <div class="field">
+              <input type="text" name="brand_name" id="creator_brand_name" class="full" value="" placeholder="{{ 'customer.login_page.brand_name' | t }}" />
+              <label for="brand_name">{{ 'customer.login_page.brand_name' | t }}</label>
+            </div>
+
             <div class="social__link__container" id="social__link__container">
               <div class="field field__class" id="social_media_main" class="social_media_main">
                 <input type="text" name="social_media_1" class="full more_social_field" id="getInputData" value="" placeholder="Social media link" />
@@ -126,15 +138,44 @@
     return emailMatcher.test(string);
   }
 
+  const phoneMatcher = /^[0-9]{10,15}$/;
+  function isValidPhoneNo(phoneno) {
+    return phoneMatcher.test(phoneno);
+  }
+
   function checkFields() {
     const creatorFirstName = document.querySelector('#creator_firstname');
     const creatorLastName = document.querySelector('#creator_lastname');
     const creatorPortfolioUrl = document.querySelector('#creator_portfolio_url');
     const creatorEmail = document.querySelector('#creator_email');
+    const creatorPhone = document.querySelector('#creator_phone');
     const creatorSubmitBtn = document.querySelector('#creator_form button:last-child')
+    const phoneError = document.querySelector('.phone-error-msg');
 
-    if(creatorFirstName.value && creatorLastName.value && creatorEmail.value && creatorPortfolioUrl.value) {
-      creatorSubmitBtn.removeAttribute('disabled');
+
+    if(creatorPhone.value) {
+      if(!isValidPhoneNo(creatorPhone.value)) {
+        phoneError.textContent = "Enter a valid Phone number.";
+        phoneError.style.color = "red";
+        phoneError.style.fontSize = "13px";
+      } 
+    }
+
+
+    if(creatorFirstName.value && creatorLastName.value && creatorEmail.value && creatorPortfolioUrl.value && creatorPhone.value) {
+      if(!isValidPhoneNo(creatorPhone.value)) {
+        phoneError.style.display='block';
+        phoneError.textContent = "Enter a valid Phone number.";
+        phoneError.style.color = "red";
+        phoneError.style.fontSize = "13px";
+        setTimeout(() => {
+          phoneError.style.display='none';
+          creatorPhone.style.marginBottom = '20px !important';
+        }, 10000);
+      } else {
+        phoneError.style.display='none';
+        creatorSubmitBtn.removeAttribute('disabled');
+      }
     } else {
       creatorSubmitBtn.disabled = true;
     }
