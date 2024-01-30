@@ -61,9 +61,9 @@
               <input type="email" name="email" id="creator_email" class="full {% if form.errors contains 'email' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.email' | t }}"
               onchange="checkFields()" />
               <label for="email">{{ 'customer.login_page.email' | t }}</label>
+              <span class="email_id_error"></span>
+              <span class="email-error-msg"></span>
             </div>
-            <span class="email_id_error"></span>
-            <span class="email-error-msg"></span>
             
             <div class="social__link__container" id="social__link__container">
               <div class="field field__class" id="social_media_main" class="social_media_main">
