@@ -392,11 +392,11 @@ creator-form .creator_form p{
 .creator_form.showForm .field input[type="email"]{
   /* margin-bottom: 0; */
 }
-.email_id_error, .phone-error-msg {
+.email_id_error, .phone-error-msg, .phone_no_error {
   font-size: 12px !important;
   display: block;
   margin-top: 0 !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 20px;
   color: red;
 }
 
