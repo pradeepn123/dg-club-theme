@@ -1320,6 +1320,10 @@ if (!customElements.get('creator-form')) {
           this.ctaLoader.innerHTML = `<div class="file_loader"></div>`
           evt.preventDefault()
           const formData = new FormData(evt.target)
+          for (let [key, value] of formData.entries())
+          {
+            if (key == 'brand_name' && value === '') formData.delete(key);
+          }
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
           payload.social_media_links = this.getMediaLinksForPayload();
@@ -1344,7 +1348,14 @@ if (!customElements.get('creator-form')) {
             let responseJson = JSON.parse(response)
             if (responseJson.response.email) {
               // Show Email error message
+              document.querySelector('#creator_email').style.marginBottom = '0';
               document.querySelector('.email_id_error').innerHTML = responseJson.response.email
+              this.ctaLoader.innerHTML = initialCTAContent
+            }
+            if (responseJson.response.phone_no) {
+              // Show Phone error message
+              document.querySelector('#creator_phone').style.marginBottom = '0';
+              document.querySelector('.phone_no_error').innerHTML = responseJson.response.phone_no
               this.ctaLoader.innerHTML = initialCTAContent
             }
           })

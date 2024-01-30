@@ -66,9 +66,10 @@
             </div>
 
             <div class="field">
-              <input type="tel" name="phone_no" id="creator_phone" class="full" value="" placeholder="{{ 'customer.login_page.phone' | t }}" 
+              <input type="tel" name="phone_no" id="creator_phone" class="full {% if form.errors contains 'phone_no' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.phone' | t }}" 
               onchange="checkFields()" />
               <label for="phone">{{ 'customer.login_page.phone' | t }}</label>
+              <span class="phone_no_error"></span>
               <span class="phone-error-msg"></span>
             </div>
             
@@ -134,7 +135,7 @@
     return emailMatcher.test(string);
   }
 
-  const phoneMatcher = /^[0-9]{10,15}$/;
+  const phoneMatcher = /((\+\d{1,2}\s?)?1?\-?\.?\s?\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}/
   function isValidPhoneNo(phoneno) {
     return phoneMatcher.test(phoneno);
   }
@@ -166,7 +167,7 @@
         phoneError.style.fontSize = "13px";
       } else {
         phoneError.style.display='none';
-        creatorPhone.style.marginBottom = '20px';
+        phoneError.style.marginBottom = '20px';
         creatorSubmitBtn.removeAttribute('disabled');
       }
     } else {
