@@ -46,20 +46,24 @@
             
             <div class="fields">
               <div class="field">
-                <input type="text" name="first_name" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required/>
+                <input type="text" name="first_name" id="creator_firstname" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" required 
+                  onchange="checkFields()"/>
                 <label for="first_name">{{ 'customer.login_page.first_name' | t }}*</label>
               </div>
               <div class="field">
-                <input type="text" name="last_name" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required/>
+                <input type="text" name="last_name" id="creator_lastname" class="full" value="{% if form.last_name %}{{ form.last_name }}{% endif %}" placeholder="{{ 'customer.login_page.last_name' | t }}" required
+                  onchange="checkFields()"/>
                 <label for="last_name">{{ 'customer.login_page.last_name' | t }}*</label>
               </div>
             </div>
             
             <div class="field">
-              <input type="email" name="email" class="full {% if form.errors contains 'email' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.email' | t }}" />
+              <input type="email" name="email" id="creator_email" class="full {% if form.errors contains 'email' %}invalid{% endif %}" value="" placeholder="{{ 'customer.login_page.email' | t }}"
+              onchange="checkFields()" />
               <label for="email">{{ 'customer.login_page.email' | t }}</label>
+              <span class="email_id_error"></span>
+              <span class="email-error-msg"></span>
             </div>
-            <span class="email_id_error"></span>
             
             <div class="social__link__container" id="social__link__container">
               <div class="field field__class" id="social_media_main" class="social_media_main">
@@ -72,9 +76,11 @@
 
             <span class="field_label">Share your works for us to review and approve your account* </span>
             <div class="field">
-              <input type="url" name="portfolio_url" class="full" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}" />
+              <input type="url" name="portfolio_url" id="creator_portfolio_url" class="full {% if form.errors contains 'portfolio_url' %}invalid{% endif %}" value="{% if form.first_name %}{{ form.first_name }}{% endif %}" placeholder="{{ 'customer.login_page.first_name' | t }}"
+              onchange="checkFields()" />
               <label for="portfolio_url">Portfolio link</label>
             </div>
+            <span class="portfolio-error-msg"></span>
             
             <div class="file-to-upload">
                 <label for="file-input">
@@ -88,7 +94,7 @@
             </div>
             <span class="field_label">By submitting this form, you confirm that you accept the <a href="#">Terms of Service.</a></span>
 
-            <button type="submit" class="button full creator_form_button"><span>Send request</span></button>
+            <button type="submit" class="button full creator_form_button" disabled><span>Send request</span></button>
 
           </form>
         </creator-form>
@@ -110,14 +116,40 @@
     console.log('ji')
   });
 
+  const matcher = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
+  function isUrl(string){
+    return matcher.test(string);
+  }
+
+  const emailMatcher = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/; 
+  function isEmail(string){
+    return emailMatcher.test(string);
+  }
+
+  function checkFields() {
+    const creatorFirstName = document.querySelector('#creator_firstname');
+    const creatorLastName = document.querySelector('#creator_lastname');
+    const creatorPortfolioUrl = document.querySelector('#creator_portfolio_url');
+    const creatorEmail = document.querySelector('#creator_email');
+    const creatorSubmitBtn = document.querySelector('#creator_form button:last-child')
+
+    if(creatorFirstName.value && creatorLastName.value && creatorEmail.value && creatorPortfolioUrl.value) {
+      creatorSubmitBtn.removeAttribute('disabled');
+    } else {
+      creatorSubmitBtn.disabled = true;
+    }
+  }
+
   if (window.location.pathname === '/account/register') {
     setTimeout(()=>{
       const firstName = document.querySelector('#RegisterForm-FirstName')
       const lastName = document.querySelector('#RegisterForm-LastName')
       const submitBtn = document.querySelector('#create_customer button:last-child')
       const registerForm = document.querySelector('#create_customer')
+
       const format = /[0-9 `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
       const customError = document.querySelector('#form-custom-errors');
+
   
       if (registerForm && firstName && lastName && submitBtn) {
         submitBtn.onclick = function (e) {
@@ -131,6 +163,31 @@
             }
         }
       }
+
+     
     }, 2000)
+
+    const creatorRegisterForm = document.querySelector('#creator_form');
+    const creatorPortfolioUrl = document.querySelector('#creator_portfolio_url');
+    const creatorEmail = document.querySelector('#creator_email');
+    const emailError = document.querySelector('.email-error-msg');
+    const creatorSubmitBtn = document.querySelector('#creator_form button:last-child')
+    const portfolioError = document.querySelector('.portfolio-error-msg');
+
+    if(creatorRegisterForm && creatorEmail && creatorPortfolioUrl && creatorSubmitBtn) {
+      creatorRegisterForm.onsubmit = function (e) {
+        e.preventDefault();
+        if (!isEmail(creatorEmail.value)) {
+          emailError.textContent = "Email field must be of type email";
+          emailError.style.color = "red";
+          emailError.style.fontSize = "13px";
+        }
+        if(!isUrl(creatorPortfolioUrl.value)) {
+            portfolioError.textContent = "Portfolio field must be a url.";
+            portfolioError.style.color = "red";
+            portfolioError.style.fontSize = "13px";
+        }
+      }
+    }
   }
 </script>
