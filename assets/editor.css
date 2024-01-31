@@ -565,10 +565,10 @@
     }
     .toolbar-panel-container .upload-toolbar-panel .image-filter-options-wrapper{
         position: absolute;
-        top: -40%;
+        top: -130%;
         left: 0;
         background: #fff;
-        height: 180px;
+        height: 280px;
         overflow: auto;
         width: 100%;
     }
@@ -578,7 +578,7 @@
         column-gap: 12px;
         row-gap: 15px;
         overflow: auto;
-        padding: 20px 0;
+        padding: 0 0 20px;
     }
     .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options .image-filter-wrapper img{
         max-width: unset;
