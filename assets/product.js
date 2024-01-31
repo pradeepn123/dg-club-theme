@@ -157,7 +157,6 @@ if (!customElements.get('variant-selects')) {
       if (!customProperties ) {
         return
       }
-
       const availableOptions = this.variantFittingOptions[this.currentVariant.id]
 
       if (availableOptions.length > 0) {
@@ -822,6 +821,22 @@ if (!customElements.get('product-form')) {
         value: "5.8x8.3",
         shape: "rectangle"
       }, {
+        label: "9 x 3 Inches",
+        value: "9x3",
+        shape: "rectangle"
+      }, {
+        label: "9 x 4 Inches",
+        value: "9x4",
+        shape: "rectangle"
+      }, {
+        label: "12 x 3 Inches",
+        value: "12x3",
+        shape: "rectangle"
+      }, {
+        label: "12 x 4 Inches",
+        value: "12x4",
+        shape: "rectangle"
+      }, {
         label: "2*A2 (16.5 x 23.4 Inches)",
         value: "16.5x23.4",
         shape: "rectangle"
@@ -836,6 +851,22 @@ if (!customElements.get('product-form')) {
       }, {
         label: "2*A5 (5.8 x 8.3 Inches)",
         value: "5.8x8.3",
+        shape: "rectangle"
+      }, {
+        label: "2* (9 x 3 Inches)",
+        value: "9x3",
+        shape: "rectangle"
+      }, {
+        label: "2* (9 x 4 Inches)",
+        value: "9x4",
+        shape: "rectangle"
+      }, {
+        label: "2* (12 x 3 Inches)",
+        value: "12x3",
+        shape: "rectangle"
+      },  {
+        label: "2* (12 x 4 Inches)",
+        value: "12x4",
         shape: "rectangle"
       }
     ]
