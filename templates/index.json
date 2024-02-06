@@ -168,11 +168,11 @@
           "type": "collection",
           "settings": {
             "collection_list": [
+              "poster-prints",
               "framed-prints",
               "canvas-print-wraps",
-              "mdf-base-print-wraps",
               "acrylic-prints",
-              "poster-prints",
+              "mdf-base-print-wraps",
               "name-board-prints"
             ],
             "title": "Photo Gifts",
