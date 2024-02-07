@@ -65,6 +65,7 @@
     "checkout_logo_size": "small",
     "checkout_accent_color": "#4444e1",
     "checkout_button_color": "#4444e1",
+    "checkout_error_color": "#f3373c",
     "search_product_list": [
 
     ],
