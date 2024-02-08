@@ -124,11 +124,6 @@
 
 <script>
 
-  const matcher = /^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/;
-  function isUrl(string){
-    return matcher.test(string);
-  }
-
   const emailMatcher = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/; 
   function isEmail(string){
     return emailMatcher.test(string);
@@ -201,11 +196,9 @@
     }, 2000)
 
     const creatorRegisterForm = document.querySelector('#creator_form');
-    const creatorPortfolioUrl = document.querySelector('#creator_portfolio_url');
     const creatorEmail = document.querySelector('#creator_email');
     const emailError = document.querySelector('.email-error-msg');
     const creatorSubmitBtn = document.querySelector('#creator_form button:last-child')
-    const portfolioError = document.querySelector('.portfolio-error-msg');
 
     if(creatorRegisterForm && creatorEmail && creatorSubmitBtn) {
       creatorRegisterForm.onsubmit = function (e) {
@@ -214,11 +207,6 @@
           emailError.textContent = "Email field must be of type email";
           emailError.style.color = "red";
           emailError.style.fontSize = "13px";
-        }
-        if(!isUrl(creatorPortfolioUrl.value)) {
-            portfolioError.textContent = "Portfolio field must be a url.";
-            portfolioError.style.color = "red";
-            portfolioError.style.fontSize = "13px";
         }
       }
     }
