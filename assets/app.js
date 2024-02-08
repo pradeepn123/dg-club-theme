@@ -1323,6 +1323,7 @@ if (!customElements.get('creator-form')) {
           for (let [key, value] of formData.entries())
           {
             if (key == 'brand_name' && value === '') formData.delete(key);
+            if (key == 'portfolio_url' && value === '') formData.delete(key);
           }
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
