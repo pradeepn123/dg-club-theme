@@ -157,6 +157,10 @@
         phoneError.textContent = "Enter a valid Phone number.";
         phoneError.style.color = "red";
         phoneError.style.fontSize = "13px";
+        setTimeout(() => {
+          phoneError.style.marginBottom = '20px';
+          phoneError.style.display = 'none';
+        }, 4500);
       } else {
         phoneError.style.display='none';
         phoneError.style.marginBottom = '20px';
