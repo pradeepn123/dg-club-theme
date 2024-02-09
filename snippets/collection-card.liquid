@@ -64,7 +64,7 @@
 			</a>
 		</div>
 		<div class="collection-card--content">
-			<a href="{{ grid_collection_url }}" class="collection-card--link collection-card--link-{{ heading_size }} collection-card--link-{{ heading_position }}" title="{{ grid_collection_title | escape }}"><span>{{ grid_collection_title }}</span></a>
+			<a href="{{ grid_collection_url }}" class="collection-card--link collection-card--link-{{ heading_size }} collection-card--link-{{ heading_position }}" title="{{ grid_collection_title | escape }}"><span>{{ grid_collection_title | replace: 'Photo Gifts', '' }}</span></a>
 			{% if products_count %}
 				<p class="collection-card--product-count collection-card--link-{{ heading_size }} collection-card--link-{{ heading_position }}"><span>{{ grid_collection.all_products_count }} Artworks</span></p>
 			{% endif %}
