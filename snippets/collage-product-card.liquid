@@ -47,7 +47,7 @@
 {%- if product_card_product and product_card_product != empty -%}
 <product-card class="product-card text-{{ product_content_alignment }} product-card--content-spacing-{{ info_spacing }} product-card--border-{{ product_card_border }} {{ product_card_shadow_class }}">
     <figure class="product-featured-image {% if products_hover_images and product_card_product.images.size > 1 %}thb-hover{% endif %} {% if product_card_product.handle == pro_url %}is__active{% endif %}">
-        {% render 'product-card-badge', product_card_product: product_card_product %}
+        {% comment %} {% render 'product-card-badge', product_card_product: product_card_product %} {% endcomment %}
         <a href="{{ product_card_product.url | within: collection }}" title="{{ product_card_product.title | escape }}" class="product-featured-image-link aspect-ratio aspect-ratio--{{ settings.product_aspect_ratio }} {% if product_card_product.handle == pro_url %}pointer-event{% endif %}" style="--padding-bottom: {{ 1 | divided_by: ratio | times: 100 }}%;">    
         
             {%- if products_hover_images and product_card_product.images.size > 1 -%}
