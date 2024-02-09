@@ -1342,7 +1342,7 @@ if (!customElements.get('creator-form')) {
           .then(responseJson => {
             this.thankYouMessage.innerHTML = `
             <h3> Thank you for Account Request </h3>
-            <p>Your account request is being reviewed and it might take 24 - 48 hrs for the process to complete. You will recieve an email once the review process is completed.</p>
+            <p>Your account request is being reviewed and it might take 60 secs - 15 mins for the process to complete. You will recieve an email once the review process is completed.</p>
             <a href="${window.location.origin}" class="button full creator_form_button"><span>Back to homepage</span></a>`
           })
           .catch(response => {
