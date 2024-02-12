@@ -1188,6 +1188,16 @@
    .canvas-section-container .canvas-container-wrapper .canvas-footer-container .resize-canvas-icon{
         margin-right: 0px;
    }
+   .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .font-family-container {
+        margin-top: 0;
+    }
+   .toolbar-panel-container .toolbar-panel-content .text-toolbar-panel .text-toolbar .font-family-container .font-family-input {
+        min-width: 166px;
+        height: 38px;
+    }
+    #font-family-popover .MuiPopover-paper ul.font-family-list {
+        min-width: 166px !important;
+    }
 }
 
 .editor-layout .toolbar-panel-container .toolbar-panel-content .upload-toolbar-panel .image-filter-options-wrapper{
