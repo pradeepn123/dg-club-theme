@@ -59,9 +59,11 @@
 			{%- endif -%}
 		</div>
 	</scroll-shadow>
-	<div class="side-panel-content--search-footer">
-		<button class="button full" id="search-results-submit"><span>{{ 'sections.header.view_all_results' | t }}</span></button>
-	</div>
+	{% if predictive_search_products.size > 0 %}
+		<div class="side-panel-content--search-footer">
+			<button class="button full" id="search-results-submit"><span>{{ 'sections.header.view_all_results' | t }}</span></button>
+		</div>
+	{%  endif %}
 	<span class="loading-overlay">
 		{%- render 'svg-icons' with 'thb-loading' -%}
 	</span>
