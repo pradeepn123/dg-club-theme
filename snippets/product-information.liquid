@@ -42,18 +42,23 @@
             <div class="no-js-hidden" id="price-{{ section.id }}">
               {% render 'product-price', product: product, use_variant: true, show_badges: true, variant_rate: product.selected_or_first_available_variant.metafields.custom.per_sqft_rate.value %}
             </div>
-            {%- if section.settings.show_taxes_included != blank -%}
-              {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
-                <div class="product__tax caption">
-                  {%- if cart.taxes_included -%}
-                    {{ 'products.product.include_taxes' | t }}
-                  {%- endif -%}
-                  {%- if shop.shipping_policy.body != blank -%}
-                    {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
-                  {%- endif -%}
-                </div>
+            {% if product.tags contains 'free-shipping' %}
+              <span class="product__tax caption">Free shipping all over India</span>
+            {%  else %}
+              {%- if section.settings.show_taxes_included != blank -%}
+                {%- if cart.taxes_included or shop.shipping_policy.body != blank -%}
+                  <div class="product__tax caption">
+                    {%- if cart.taxes_included -%}
+                      {{ 'products.product.include_taxes' | t }}
+                    {%- endif -%}
+                    {%- if shop.shipping_policy.body != blank -%}
+                      {{ 'products.product.shipping_policy_html' | t: link: shop.shipping_policy.url }}
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
               {%- endif -%}
-            {%- endif -%}
+            {%  endif %}
+            
           </div>
         </div>
       {%- endif -%}
