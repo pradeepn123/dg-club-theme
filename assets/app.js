@@ -1235,23 +1235,27 @@ if (!customElements.get("creator-information")) {
       this.containers.earning.innerHTML = this.formatCurrency(data.response.commission_amount)
       this.containers.totalPayout.innerHTML = this.formatCurrency(data.response.total_payout)
       this.containers.currentMonthEarning.innerHTML = this.formatCurrency(data.response.commission_amount)
-      this.containers.tableBody.innerHTML = data.response.products.map((product) => {
-        return `<tr>
-          <td data-label="Product Name">
-            <div class="creator-product-img-container">
-              <img src="${product.image}" />
-            </div>
-            <p>${product.title}</p>
-          </td>
-          <td data-label="Qty Sold">
-            ${product.quantity_sold}
-          </td>
-          <td data-label="Commission earned">
-            ${this.formatCurrency(product.commission)}
-          </td>
-        </tr>`
-      }).join("")
-    }
+      this.containers.tableBody.innerHTML = 
+        (data.response.products.length > 0  ?  
+            data.response.products.map((product) => {
+              return `<tr>
+                <td data-label="Product Name">
+                  <div class="creator-product-img-container">
+                    <img src="${product.image}" />
+                  </div>
+                  <p>${product.title}</p>
+                </td>
+                <td data-label="Qty Sold">
+                  ${product.quantity_sold}
+                </td>
+                <td data-label="Commission earned">
+                  ${this.formatCurrency(product.commission)}
+                </td>
+              </tr>`
+            }).join("")
+          : '')
+      }
+      
 
     handleServerResponse(response) {
       return response.json()
