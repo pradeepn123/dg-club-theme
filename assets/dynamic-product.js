@@ -278,33 +278,6 @@ if (!customElements.get('variant-selects')) {
       return totalArea >= 1
     }
 
-    // getCalculatedComparePrice = (element) => {
-    //   const priceElement = element.querySelector('[data-variant-compare-rate]')
-    //   const priceRate = Number(priceElement?.getAttribute("data-variant-compare-rate") || 0)
-    //   if (priceRate < 1) {
-    //     return false
-    //   }
-    //   var totalArea = 0
-
-    //   let custom_width = Number(this.querySelector("#custom_width").value)
-    //   let custom_height = Number(this.querySelector("#custom_height").value)
-    //   totalArea = custom_width * custom_height
-    //   this.querySelector("#custom_area").value = totalArea + " sq.ft"
-
-    //   var finalPrice = totalArea * priceRate * 100
-    //   let amountSpan = priceElement.querySelector(".amount")
-    //   amountSpan.innerHTML = formatMoney(finalPrice, window.theme.settings.money_with_currency_format);
-
-    //   this.variantConfiguration = {
-    //     product_id: this.dataset.productId,
-    //     compare_price: finalPrice / 100,
-    //     option1: this.currentVariant.option1 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option1,
-    //     option2: this.currentVariant.option2 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option2,
-    //     option3: this.currentVariant.option3 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option3,
-    //   }
-    //   return totalArea >= 1
-    // }
-
     toggleAddButton(disable = true, text = false, modifyClass = true) {
       const productForm = document.getElementById(`product-form-${this.dataset.section}`);
       if (!productForm) return;
