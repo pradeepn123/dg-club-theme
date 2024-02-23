@@ -220,11 +220,16 @@ if (!customElements.get('variant-selects')) {
             if (source && destination) destination.innerHTML = source.innerHTML;
 
             const price = document.getElementById(id);
+            const compare_price = document.getElementById(id);
             const price_fixed = document.getElementById(id + '--sticky');
 
             if (price && price.querySelector('[data-variant-rate]')) {
               price.classList.remove('visibility-hidden')
-              enableAddBtn = _this7.getCalculatedPrice(price)
+              enableAddBtn = _this7.getCalculatedPrice(price)              
+            }
+            if (compare_price && compare_price.querySelector('[data-variant-compare-rate]')) {
+              compare_price.classList.remove('visibility-hidden')
+              enableAddBtn = _this7.getCalculatedPrice(compare_price)              
             }
             if (price_fixed) price_fixed.classList.remove('visibility-hidden');
           });
@@ -239,8 +244,13 @@ if (!customElements.get('variant-selects')) {
 
     getCalculatedPrice = (element) => {
       const priceElement = element.querySelector('[data-variant-rate]')
+      const comparePriceElement = element.querySelector('[data-variant-compare-rate]')
       const priceRate = Number(priceElement?.getAttribute("data-variant-rate") || 0)
-      if (priceRate < 1) {
+      const comparePriceRate = Number(comparePriceElement?.getAttribute("data-variant-compare-rate") || 0)
+      if (priceRate < 1 ) {
+        return false
+      }
+      if( comparePriceRate < 1){
         return false
       }
       var totalArea = 0
@@ -251,12 +261,16 @@ if (!customElements.get('variant-selects')) {
       this.querySelector("#custom_area").value = totalArea + " sq.ft"
 
       var finalPrice = totalArea * priceRate * 100
+      var compareFinalPrice = totalArea * comparePriceRate * 100
       let amountSpan = priceElement.querySelector(".amount")
+      let compareAmountSpan = comparePriceElement.querySelector(".amount")
       amountSpan.innerHTML = formatMoney(finalPrice, window.theme.settings.money_with_currency_format);
+      compareAmountSpan.innerHTML = formatMoney(compareFinalPrice, window.theme.settings.money_with_currency_format);
 
       this.variantConfiguration = {
         product_id: this.dataset.productId,
         price: finalPrice / 100,
+        compare_price: compareFinalPrice / 100,
         option1: this.currentVariant.option1 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option1,
         option2: this.currentVariant.option2 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option2,
         option3: this.currentVariant.option3 == "Custom" ? `${custom_width}x${custom_height} ft` : this.currentVariant.option3,
