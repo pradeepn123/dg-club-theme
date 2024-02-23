@@ -33,21 +33,25 @@
 	endunless
 -%}
 
-<span class="price" data-variant-rate="{{ variant_rate }}">
+<span class="price">
 	{%- unless product.price_varies == false and product.compare_at_price_varies %}
 		{% if compare_at_price != null and compare_at_price != 0 and price != compare_at_price %}
-			<del>
-				<span class="amount">
-					{% if settings.currency_code_enabled %}
-						{{ compare_at_price | money_with_currency }}
-					{% else %}
-						{{ compare_at_price | money }}
-					{% endif %}
-				</span>
-			</del>
+			<span data-variant-compare-rate= "{{ variant_compare_rate }}">
+				<del>
+					<span class="amount">
+						{% if settings.currency_code_enabled %}
+							{{ compare_at_price | money_with_currency }}
+						{% else %}
+							{{ compare_at_price | money }}
+						{% endif %}
+					</span>
+				</del>
+			</span>
 		{% endif %}
 	{%- endunless -%}
-	<ins><span class="amount {{ discounted_class }}">{{ money_price }}</span></ins>
+	<span data-variant-rate="{{ variant_rate }}">
+		<ins><span class="amount {{ discounted_class }}">{{ money_price }}</span></ins>
+	</span>
 	<small class="unit-price {% if product.selected_or_first_available_variant.unit_price_measurement == nil %} hidden{% endif %}">
 		<span>{{- product.selected_or_first_available_variant.unit_price | money -}}</span>
     <span class="unit-price-separator">/</span>

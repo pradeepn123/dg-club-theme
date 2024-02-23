@@ -40,7 +40,7 @@
           <label class="form__label quantity__label">{{ 'products.product.price.price' | t }}</label>
           <div class="product-price-container">
             <div class="no-js-hidden" id="price-{{ section.id }}">
-              {% render 'product-price', product: product, use_variant: true, show_badges: true, variant_rate: product.selected_or_first_available_variant.metafields.custom.per_sqft_rate.value %}
+              {% render 'product-price', product: product, use_variant: true, show_badges: true, variant_rate: product.selected_or_first_available_variant.metafields.custom.per_sqft_rate.value, variant_compare_rate: product.selected_or_first_available_variant.metafields.custom.per_sqft_compare_rate.value %}
             </div>
             {% if product.tags contains 'free-shipping' %}
               <span class="product__tax caption">Free shipping all over India</span>
