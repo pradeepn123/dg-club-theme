@@ -33,6 +33,7 @@
         "template--21608791802156__5ba91645-a867-48e4-915f-fe702de01b99-heading-1",
         "template--21608791802156__5ba91645-a867-48e4-915f-fe702de01b99-text-1"
       ],
+      "disabled": true,
       "custom_css": [
         ".rich-text.text-width-large .rich-text__inner {max-width: 626px;}",
         ".rich-text__inner .text-size-regular p {max-width: 507px; font-size: 20px; font-weight: 400; line-height: 27px;}",
@@ -159,6 +160,7 @@
         "template--21608791802156__1700aaa0-fd0c-429c-81a0-cd6c8b741f3b-media-3",
         "ada2db17-0646-4ddc-aebe-61d9f2b631ee"
       ],
+      "disabled": true,
       "settings": {
         "desktop_height": 300,
         "mobile_height": 175,
@@ -181,6 +183,7 @@
     },
     "bbcb6e2b-9676-4999-a882-6a81211ce77a": {
       "type": "collection-list",
+      "disabled": true,
       "settings": {
         "heading": "Featured Creators",
         "marker_style": "style1",
