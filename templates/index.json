@@ -348,11 +348,7 @@
         "button_link": "",
         "heading_size": "small",
         "collection_list": [
-          "startsy",
-          "scribble-station",
-          "colorist",
-          "being_ai-human",
-          "autumn"
+
         ],
         "image_ratio": "square",
         "collection_layout": "grid",
@@ -375,6 +371,7 @@
       "blocks": {
         "template--17918041129242__b6a221e5-6cbb-4160-83a7-a387a8f98553-16764607056c9a15f5-1": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "text": "Featured Collections",
             "marker_style": "style3",
@@ -504,6 +501,7 @@
         "template--17918041129242__f896bcf0-40bd-4c23-8c79-b4d0863d7715-167639056582313b87-2",
         "3963f5c5-4bf4-4cd9-b70a-a4a9e5283569"
       ],
+      "disabled": true,
       "settings": {
         "desktop_height": 300,
         "mobile_height": 175,
