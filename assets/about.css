@@ -424,7 +424,8 @@
   }
 }
 
-.image-with-text-overlay--content .rte.description-text-justify {
+.image-with-text-overlay--content .rte.description-text-justify,
+.image-with-text--content--inner_about .rte.description-text-justify{
   text-align: justify;
 }
 
