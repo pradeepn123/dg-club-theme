@@ -219,7 +219,7 @@
     "main": {
       "type": "artist-directory",
       "settings": {
-        "heading": "Shop by Creators",
+        "heading": "Shop by Creators\/Resellers",
         "collection_list": "{{ page.metafields.custom.collection_list.value }}",
         "heading_size": "small",
         "pagination_type": "loadmore",
