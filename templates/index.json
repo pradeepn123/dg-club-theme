@@ -339,6 +339,7 @@
     },
     "60ed2e7d-3f50-428a-b546-03274d862db0": {
       "type": "collection-list",
+      "disabled": true,
       "settings": {
         "heading": "Featured Creators",
         "marker_style": "style3",
