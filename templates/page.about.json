@@ -476,6 +476,7 @@
         "d701b12b-88eb-48fe-b86a-5b9aab72fa94",
         "a2e5279f-e509-4004-bc54-4e3069a183a0"
       ],
+      "disabled": true,
       "settings": {
         "image_ratio": "square",
         "column_spacing": "medium",
