@@ -38,39 +38,6 @@
             "use_text_button_2": false
           }
         },
-        "slide_Aq3Qwy": {
-          "type": "slide",
-          "settings": {
-            "slide_link": "",
-            "video_background": false,
-            "badge_text": "",
-            "subheading": "Add a tagline",
-            "heading": "Slide Heading",
-            "heading_size": "h1",
-            "content": "Add descriptive text for your slide here.",
-            "description_size": "medium",
-            "content_position": "middle-center",
-            "text_alignment": "center",
-            "content_size": "medium",
-            "color_slidebg": "transparent",
-            "color_slidebg_opacity": 0,
-            "color_slidebg_blur": 20,
-            "color_text": "#2c2d2e",
-            "color_badge_bg": "#3f72e5",
-            "color_badge_text": "#ffffff",
-            "overlay_color": "#000000",
-            "overlay_opacity": 70,
-            "overlay_gradient": "linear-gradient(180deg, rgba(0,0,0, 0.1), rgba(0, 0, 0, 0.4) 100%)",
-            "button_1_text": "Shop Now",
-            "button_1_color": "accent",
-            "button_1_link": "",
-            "use_text_button_1": false,
-            "button_2_text": "Shop Now",
-            "button_2_color": "white",
-            "button_2_link": "",
-            "use_text_button_2": false
-          }
-        },
         "template--17993467625754__8ba47ba3-de7f-4f0a-b30d-6f2a540748c3-16787035832bb7b6a4-1": {
           "type": "slide",
           "settings": {
@@ -142,7 +109,6 @@
       },
       "block_order": [
         "template--17993467625754__8ba47ba3-de7f-4f0a-b30d-6f2a540748c3-16787035832bb7b6a4-0",
-        "slide_Aq3Qwy",
         "template--17993467625754__8ba47ba3-de7f-4f0a-b30d-6f2a540748c3-16787035832bb7b6a4-1",
         "f4e4d55d-daaa-4b33-8c5c-a4c756ea6541"
       ],
