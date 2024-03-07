@@ -251,6 +251,7 @@
         "enable_image_shadow": true,
         "color_bg": "rgba(0,0,0,0)",
         "color_heading": "#1a1c1d",
+        "text_justify": false,
         "color_text": "#2c2d2e",
         "disable_top_spacing": false,
         "disable_bottom_spacing": true
@@ -392,9 +393,9 @@
         "template--21535618564396__2285a342-f2cc-46d9-961f-f70a82b4c9a7-block-info-1": {
           "type": "block-info",
           "settings": {
-            "logo_text": "500+",
+            "logo_text": "1000+",
             "link": "",
-            "heading": "Creators Started Working To Launch Their Store Soon"
+            "heading": "Creators\/Resellers Launched their Store"
           }
         },
         "template--21535618564396__2285a342-f2cc-46d9-961f-f70a82b4c9a7-block-info-2": {
