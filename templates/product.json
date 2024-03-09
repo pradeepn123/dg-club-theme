@@ -75,7 +75,7 @@
             "text_placeholder": "Enter your text here",
             "checkbox_checked_value": "Yes",
             "checkbox_unchecked_value": "No",
-            "multiple_style": "dropdown",
+            "multiple_style": "radio",
             "multiple_options": "<p>{{ block.repeater.variant_options | metafield_tag }}<\/p>"
           }
         },
