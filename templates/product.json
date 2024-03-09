@@ -249,8 +249,8 @@
         "layout": "image_first",
         "content_position": "text-left",
         "column_spacing": "medium",
-        "color_bg": "#ffffff",
-        "color_text": "#2c2d2e",
+        "color_bg": "#d5bff1",
+        "color_text": "#4444e1",
         "color_border": "#e2e2e2",
         "disable_top_spacing": false,
         "disable_bottom_spacing": false
