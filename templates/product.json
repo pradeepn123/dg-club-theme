@@ -61,7 +61,7 @@
             "variant_is_disabled": true,
             "sizing_guide_variant": "Size",
             "sizing_guide_text": "{{ product.title }}",
-            "sizing_guide_icon": "ruler",
+            "sizing_guide_icon": "none",
             "sizing_guide_page": ""
           }
         },
