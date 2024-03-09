@@ -56,7 +56,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button",
+            "picker_type": "dropdown",
             "color_picker": false,
             "variant_is_disabled": true,
             "sizing_guide_variant": "Size",
