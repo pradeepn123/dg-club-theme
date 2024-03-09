@@ -60,7 +60,7 @@
             "color_picker": false,
             "variant_is_disabled": true,
             "sizing_guide_variant": "Size",
-            "sizing_guide_text": "{{ product.title }}",
+            "sizing_guide_text": "{{ block.settings.sizing_guide_page.title }}",
             "sizing_guide_icon": "none",
             "sizing_guide_page": ""
           }
