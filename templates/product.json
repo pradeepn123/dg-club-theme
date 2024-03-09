@@ -69,7 +69,7 @@
           "type": "custom_option",
           "repeater": "{{ product.metafields.custom.custom_options.value }}",
           "settings": {
-            "type": "textarea",
+            "type": "multiple",
             "label": "{{ block.repeater.title.value }}",
             "text_required": false,
             "text_placeholder": "Enter your text here",
