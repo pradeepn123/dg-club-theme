@@ -65,6 +65,20 @@
             "sizing_guide_page": ""
           }
         },
+        "custom_option_rWL9hx": {
+          "type": "custom_option",
+          "repeater": "{{ product.metafields.custom.custom_options.value }}",
+          "settings": {
+            "type": "multiple",
+            "label": "{{ block.repeater.title.value }}",
+            "text_required": false,
+            "text_placeholder": "Enter your text here",
+            "checkbox_checked_value": "Yes",
+            "checkbox_unchecked_value": "No",
+            "multiple_style": "dropdown",
+            "multiple_options": "<p>{{ block.repeater.variant_options | metafield_tag }}<\/p>"
+          }
+        },
         "ed885b40-b20d-414a-a4dd-537cebd7e418": {
           "type": "separator",
           "settings": {
@@ -119,6 +133,7 @@
         "title",
         "1e3081a3-e8d2-4b96-b848-b9fc40f61052",
         "variant_picker",
+        "custom_option_rWL9hx",
         "ed885b40-b20d-414a-a4dd-537cebd7e418",
         "8df1a81c-8ae9-44f2-a783-35f644a9a044",
         "quantity",
