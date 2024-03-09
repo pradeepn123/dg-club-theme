@@ -99,14 +99,14 @@
             "heading": "Product Highlights",
             "open": false,
             "content": "",
-            "page": "",
+            "page": "{{ product.metafields.custom.product_highlights.value.row_content_from_page.value }}",
             "custom_liquid": "{{ product.description }}"
           }
         },
         "d56924f2-0137-4e3b-8c33-49b1f28391c6": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "{{ product.metafields.custom.product_highlights.value.heading.value }}",
+            "heading": "Shipping and Returns",
             "open": false,
             "content": "{{ product.metafields.custom.product_highlights.value.row_content | metafield_tag }}",
             "page": "",
