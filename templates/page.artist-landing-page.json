@@ -486,6 +486,7 @@
         "99c4bcb5-b8fa-4563-b66c-04f59c9f244b",
         "4b4cbe8c-730e-4a4e-a4cc-bc94d707fb20"
       ],
+      "disabled": true,
       "settings": {
         "heading": "New to print on demand",
         "marker_style": "style1",
