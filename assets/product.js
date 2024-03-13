@@ -977,7 +977,6 @@ if (!customElements.get('product-form')) {
       } else {
         let pdfObj = pdfFiles[0]
         formData.append("properties[Design]", pdfObj.pdf)
-        debugger;
         let assets = Array.from(new Set(pdfObj.assets))
         assets.forEach((asset, assetIndex) => {
           formData.append(`properties[Design asset ${assetIndex + 1}]`, asset)
