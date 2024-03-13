@@ -965,13 +965,23 @@ if (!customElements.get('product-form')) {
     }
 
     handleEditorAddToCart = (pdfFiles) => {
-      let formData = new FormData(this.form);      
+      let formData = new FormData(this.form);
       if (pdfFiles.length > 1) {
-        pdfFiles.forEach((file, index) => {
-          formData.append(`properties[Frame Design ${index + 1}]`, file)
+        pdfFiles.forEach((pdfObj, index) => {
+          formData.append(`properties[Frame Design ${index + 1}]`, pdfObj.pdf)
+          let assets = Array.from(new Set(pdfObj.assets))
+          assets.forEach((asset, assetIndex) => {
+            formData.append(`properties[Frame Design ${index + 1} asset ${assetIndex + 1}]`, asset)
+          })
         })
       } else {
-        formData.append("properties[Design]", pdfFiles[0])
+        let pdfObj = pdfFiles[0]
+        formData.append("properties[Design]", pdfObj.pdf)
+        debugger;
+        let assets = Array.from(new Set(pdfObj.assets))
+        assets.forEach((asset, assetIndex) => {
+          formData.append(`properties[Design asset ${assetIndex + 1}]`, asset)
+        })
       }
       return this.performOperation(formData)
     }
