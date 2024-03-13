@@ -247,3 +247,18 @@
     transform: translateY(-100%); }
   .product-card-small:hover .product-card-small--add-to-cart-button {
     transform: translateY(0%); }
+
+
+.product-name .product-cart-item .product-cart-item__info{
+  width: 50%;
+}
+@media(min-width: 768px) and (max-width:1024px){
+  .product-name .product-cart-item .product-cart-item__info{
+    width: 100%;
+  }
+}
+@media(min-width: 1200px){
+  .product-name .product-cart-item .product-cart-item__info{
+    width: 75%;
+  }
+}
