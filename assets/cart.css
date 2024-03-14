@@ -249,16 +249,7 @@
     transform: translateY(0%); }
 
 
-.product-name .product-cart-item .product-cart-item__info{
-  width: 50%;
-}
-@media(min-width: 768px) and (max-width:1024px){
-  .product-name .product-cart-item .product-cart-item__info{
-    width: 100%;
-  }
-}
-@media(min-width: 1200px){
-  .product-name .product-cart-item .product-cart-item__info{
-    width: 75%;
-  }
+
+.cart-items .product-cart-item__info .product-cart-item-options a{
+  word-break: break-all;
 }

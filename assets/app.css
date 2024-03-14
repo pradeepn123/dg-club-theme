@@ -6265,15 +6265,6 @@ input[type="radio"],
   border: unset;
 }
 
-.product-cart-item .product-cart-item-image, .product-cart-item .product-cart-item-price{
-  width: 25%;
-}
-.product-cart-item .product-cart-item-info{
-  width: 65%;
-}
-
-@media(min-width:1200px){
-  .product-cart-item .product-cart-item-info{
-    width: 50%;
-  }
+.product-cart-item-info .product-cart-item-options a{
+  word-break: break-all;
 }
