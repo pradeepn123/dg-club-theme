@@ -6264,3 +6264,7 @@ input[type="radio"],
 .announcement-bar .announcement-bar--carousel .flickity-nav {
   border: unset;
 }
+
+.product-cart-item-info .product-cart-item-options a{
+  word-break: break-all;
+}
