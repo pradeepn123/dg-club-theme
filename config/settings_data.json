@@ -313,7 +313,7 @@
   },
   "platform_customizations": {
     "custom_css": [
-      "article {text-align: justify;}"
+
     ]
   }
 }
