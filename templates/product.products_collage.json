@@ -426,6 +426,7 @@
     },
     "59f0097f-ea70-41af-ba3b-50ea2aa1a033": {
       "type": "tolstoy-carousel",
+      "disabled": true,
       "settings": {
         "publishId": "ohri63bh7kyen",
         "section_background": "#ffffff",
