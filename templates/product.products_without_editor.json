@@ -324,6 +324,7 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
+      "disabled": true,
       "settings": {
         "heading": "Similar products",
         "description": "",
@@ -336,6 +337,7 @@
     },
     "ef49b57b-1db9-4741-9051-845bd6bf4e93": {
       "type": "tolstoy-carousel",
+      "disabled": true,
       "settings": {
         "publishId": "ohri63bh7kyen",
         "section_background": "#f5f5f5",
