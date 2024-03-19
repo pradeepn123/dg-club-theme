@@ -1308,7 +1308,11 @@ if (!customElements.get('creator-form')) {
         getMediaLinksForPayload(){
           let finalObject = {}
           let captureSocialMediaLinks = document.querySelectorAll("#getInputData");
-          return Object.values(captureSocialMediaLinks).map((items) => items.value)
+          if(Object.values(captureSocialMediaLinks).map((items) => items.value).length == 1 && Object.values(captureSocialMediaLinks).map((items) => items.value)[0] == "") {
+            return [];
+          } else {
+            return Object.values(captureSocialMediaLinks).map((items) => items.value)
+          }
         }
         linkCloseButtons(){
           let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
