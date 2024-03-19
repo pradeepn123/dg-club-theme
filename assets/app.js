@@ -1366,11 +1366,11 @@ if (!customElements.get('creator-form')) {
               }, 4500);
               this.ctaLoader.innerHTML = initialCTAContent
             }
-            if (responseJson.response.phone_no) {
+            if (responseJson.response.phone_no || responseJson.response.phone) {
               // Show Phone error message
               document.querySelector('#creator_phone').style.marginBottom = '0';
               document.querySelector('.phone_no_error').style.display = 'block';
-              document.querySelector('.phone_no_error').innerHTML = responseJson.response.phone_no;
+              document.querySelector('.phone_no_error').innerHTML = responseJson.response.phone_no != undefined ? responseJson.response.phone_no : responseJson.response.phone;
               setTimeout(() => {
                 document.querySelector('#creator_phone').style.marginBottom = '20px';
                 document.querySelector('.phone_no_error').style.display = 'none';
