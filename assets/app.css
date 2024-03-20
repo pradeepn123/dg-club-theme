@@ -3741,7 +3741,7 @@ h6,
   padding-right: 7px;
 }
 
-.thb-secondary-area-item.thb-secondary-myaccount {
+.thb-secondary-area-item.thb-secondary-myaccount:not(:last-child) {
   display: none;
   font-weight: 500;
   font-size: calc(var(--font-navigation-scale, 1) * 15px);

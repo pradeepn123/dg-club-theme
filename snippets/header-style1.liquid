@@ -1,6 +1,21 @@
+{%- liquid
+	if customer
+  	assign profile_link = routes.account_url
+	else
+  	assign profile_link = routes.account_login_url
+	endif
+-%}
+
 <div class="thb-header-mobile-left">
-	{% render 'header-mobile-toggle', header_settings: header_settings, blocks: blocks %}
+	{% if collection.template_suffix == 'artist-profile' %}
+		{%- if shop.customer_accounts_enabled -%}
+			<a class="thb-secondary-area-item thb-secondary-myaccount" href="{{ profile_link | escape }}" title="{{ 'sections.header.my_account' | t }}">{%- render 'svg-icons' with 'myaccount' -%}</a>
+		{%- endif -%}
+	{% else %}
+		{% render 'header-mobile-toggle', header_settings: header_settings, blocks: blocks %}
+	{% endif %}
 </div>
+
 {% if header_settings.logo %}
 	<a class="logolink" href="{{ routes.root_url }}">
 		<img

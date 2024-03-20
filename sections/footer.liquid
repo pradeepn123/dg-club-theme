@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{{ 'footer.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'footer.css' | asset_url | stylesheet_tag }}</noscript>
 <theme-footer class="footer" id="footer">
-  <div class="row">
+  <div class="row" {% if collection.template_suffix == 'artist-profile' %} id='artist-profile-footer' {% endif %}>
     {%- for block in section.blocks -%}
       {% if block.type == 'text' %}
         {%- liquid
@@ -45,129 +45,135 @@
           </div>
         </div>
       {% endif %}
-      {%- if block.type == 'menu' -%}
-        {%- liquid
-          assign column_class = 'small-12 medium-4 large-2'
-          case block.settings.column_size
-            when 'medium'
-              assign column_class = 'small-12 medium-3'
-            when 'large'
-              assign column_class = 'small-12 medium-4'
-          endcase
-        -%}
-        <div class="{{ column_class | escape }} columns widget--menu-column" {{ block.shopify_attributes }}>
-          <div class="widget widget--menu">
-            <button class="thb-widget-title collapsible desktop-only" tabindex="0">
-              {{ block.settings.title }}
-              <span>{%- render 'svg-icons' with 'custom-collapsible-arrow' -%}</span>
-            </button>
-            {%- if block.settings.menu != blank -%}
-              <ul class="thb-widget-menu">
-                {% for link in block.settings.menu.links %}
-                  {% assign has_sub_menu = false %}
-                  {% if link.links.size > 0 %}
-                    {% assign has_sub_menu = true %}
-                  {% endif %}
-                  <li class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if link.active %} active{% endif %}">
-                    <a
-                      href="{{ link.url }}"
-                      title="{{ link.title | escape }}"
-                      {%- if link.active %}
-                        aria-current="page"
-                      {% endif -%}
-                    >
-                      {{- link.title -}}
-                    </a>
-                    {%- if has_sub_menu -%}
-                      <span class="thb-arrow" tabindex="0">{%- render 'svg-icons' with 'thb-dropdown-bottom' -%}</span>
-                    {%- endif %}
-                    {% if has_sub_menu %}
-                      <ul class="sub-menu" tabindex="-1">
-                        {% for l in link.links %}
-                          {% assign has_sub_menu = false %}
-                          {% if l.links.size > 0 %}
-                            {% assign has_sub_menu = true %}
-                          {% endif %}
-                          <li
-                            class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if l.active %} active{% endif %}"
-                            role="none"
-                          >
-                            <a href="{{ l.url }}" title="{{ l.title | escape }}" role="menuitem">{{ l.title }}</a>
-                            {%- if has_sub_menu -%}
-                              <span class="thb-arrow" tabindex="0">
-                                {%- render 'svg-icons' with 'thb-dropdown-bottom' -%}
-                              </span>
-                            {%- endif %}
-                            {% if has_sub_menu %}
-                              <ul class="sub-menu" role="menu">
-                                {% for sub_link in l.links %}
-                                  {% assign has_sub_menu = false %}
-                                  {% if sub_link.links.size > 0 %}
-                                    {% assign has_sub_menu = true %}
-                                  {% endif %}
-                                  <li
-                                    class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if sub_link.active %} active{% endif %}"
-                                    role="none"
-                                  >
-                                    <a href="{{ sub_link.url }}" title="{{ sub_link.title | escape }}" role="menuitem">
-                                      {{- sub_link.title -}}
-                                    </a>
-                                  </li>
-                                {% endfor %}
-                              </ul>
-                            {% endif %}
-                          </li>
-                        {% endfor %}
-                      </ul>
+      {% if collection.template_suffix != 'artist-profile' %}
+        {%- if block.type == 'menu' -%}
+          {%- liquid
+            assign column_class = 'small-12 medium-4 large-2'
+            case block.settings.column_size
+              when 'medium'
+                assign column_class = 'small-12 medium-3'
+              when 'large'
+                assign column_class = 'small-12 medium-4'
+            endcase
+          -%}
+          <div class="{{ column_class | escape }} columns widget--menu-column" {{ block.shopify_attributes }}>
+            <div class="widget widget--menu">
+              <button class="thb-widget-title collapsible desktop-only" tabindex="0">
+                {{ block.settings.title }}
+                <span>{%- render 'svg-icons' with 'custom-collapsible-arrow' -%}</span>
+              </button>
+              {%- if block.settings.menu != blank -%}
+                <ul class="thb-widget-menu">
+                  {% for link in block.settings.menu.links %}
+                    {% assign has_sub_menu = false %}
+                    {% if link.links.size > 0 %}
+                      {% assign has_sub_menu = true %}
                     {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-            {%- endif -%}
+                    <li class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if link.active %} active{% endif %}">
+                      <a
+                        href="{{ link.url }}"
+                        title="{{ link.title | escape }}"
+                        {%- if link.active %}
+                          aria-current="page"
+                        {% endif -%}
+                      >
+                        {{- link.title -}}
+                      </a>
+                      {%- if has_sub_menu -%}
+                        <span class="thb-arrow" tabindex="0">{%- render 'svg-icons' with 'thb-dropdown-bottom' -%}</span>
+                      {%- endif %}
+                      {% if has_sub_menu %}
+                        <ul class="sub-menu" tabindex="-1">
+                          {% for l in link.links %}
+                            {% assign has_sub_menu = false %}
+                            {% if l.links.size > 0 %}
+                              {% assign has_sub_menu = true %}
+                            {% endif %}
+                            <li
+                              class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if l.active %} active{% endif %}"
+                              role="none"
+                            >
+                              <a href="{{ l.url }}" title="{{ l.title | escape }}" role="menuitem">{{ l.title }}</a>
+                              {%- if has_sub_menu -%}
+                                <span class="thb-arrow" tabindex="0">
+                                  {%- render 'svg-icons' with 'thb-dropdown-bottom' -%}
+                                </span>
+                              {%- endif %}
+                              {% if has_sub_menu %}
+                                <ul class="sub-menu" role="menu">
+                                  {% for sub_link in l.links %}
+                                    {% assign has_sub_menu = false %}
+                                    {% if sub_link.links.size > 0 %}
+                                      {% assign has_sub_menu = true %}
+                                    {% endif %}
+                                    <li
+                                      class="{% if has_sub_menu %}menu-item-has-children{% endif %}{% if sub_link.active %} active{% endif %}"
+                                      role="none"
+                                    >
+                                      <a href="{{ sub_link.url }}" title="{{ sub_link.title | escape }}" role="menuitem">
+                                        {{- sub_link.title -}}
+                                      </a>
+                                    </li>
+                                  {% endfor %}
+                                </ul>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {%- endif -%}
+            </div>
           </div>
-        </div>
-      {%- endif -%}
-      {%- if block.type == 'signup' -%}
-        {%- liquid
-          assign column_class = 'small-12 medium-4 large-2'
-          case block.settings.column_size
-            when 'medium'
-              assign column_class = 'small-12 medium-3'
-            when 'large'
-              assign column_class = 'small-12 medium-4'
-          endcase
-        -%}
-        <div class="{{ column_class | escape }} columns" {{ block.shopify_attributes }}>
-          <div class="widget widget--signup">
-            {% if block.settings.title != blank %}
-              <div class="thb-widget-title">{{ block.settings.title }}</div>
-            {% endif %}
-            {% if block.settings.text != blank %}
-              {{ block.settings.text }}
-            {% endif %}
-            {% render 'email-signup-form' %}
+        {%- endif -%}
+      {% endif %}
+      {% if collection.template_suffix != 'artist-profile' %}
+        {%- if block.type == 'signup' -%}
+          {%- liquid
+            assign column_class = 'small-12 medium-4 large-2'
+            case block.settings.column_size
+              when 'medium'
+                assign column_class = 'small-12 medium-3'
+              when 'large'
+                assign column_class = 'small-12 medium-4'
+            endcase
+          -%}
+          <div class="{{ column_class | escape }} columns" {{ block.shopify_attributes }}>
+            <div class="widget widget--signup">
+              {% if block.settings.title != blank %}
+                <div class="thb-widget-title">{{ block.settings.title }}</div>
+              {% endif %}
+              {% if block.settings.text != blank %}
+                {{ block.settings.text }}
+              {% endif %}
+              {% render 'email-signup-form' %}
+            </div>
           </div>
-        </div>
-      {%- endif -%}
-      {%- if block.type == 'social' -%}
-        {%- liquid
-          assign column_class = 'small-6 medium-4 large-2'
-          case block.settings.column_size
-            when 'medium'
-              assign column_class = 'small-12 medium-3'
-            when 'large'
-              assign column_class = 'small-12 medium-4'
-          endcase
-        -%}
-        <div class="{{ column_class | escape }} columns" {{ block.shopify_attributes }}>
-          <div class="widget widget--social">
-            {% if block.settings.title != blank %}
-              <div class="thb-widget-title">{{ block.settings.title }}</div>
-            {% endif %}
-            {% render 'social-links', show_label: true %}
+        {%- endif -%}
+      {% endif %}
+      {% if collection.template_suffix != 'artist-profile' %}
+        {%- if block.type == 'social' -%}
+          {%- liquid
+            assign column_class = 'small-6 medium-4 large-2'
+            case block.settings.column_size
+              when 'medium'
+                assign column_class = 'small-12 medium-3'
+              when 'large'
+                assign column_class = 'small-12 medium-4'
+            endcase
+          -%}
+          <div class="{{ column_class | escape }} columns" {{ block.shopify_attributes }}>
+            <div class="widget widget--social">
+              {% if block.settings.title != blank %}
+                <div class="thb-widget-title">{{ block.settings.title }}</div>
+              {% endif %}
+              {% render 'social-links', show_label: true %}
+            </div>
           </div>
-        </div>
-      {%- endif -%}
+        {%- endif -%}
+      {% endif %}
     {%- endfor -%}
   </div>
   <div class="sub-footer">
@@ -181,7 +187,7 @@
           open_top: true
         %}
       </div>
-      <div class="footer_secondary__wrapper">
+      <div class="footer_secondary__wrapper" {% if collection.template_suffix == 'artist-profile' %} style="text-align: center; justify-content: center; width: 100%;" {% endif %}>
         <div class="small-12 medium-4 columns">
           <p>
             {% comment %} &copy;  {% endcomment %}
@@ -190,48 +196,50 @@
             - Main <span class="copy_right_text">{{ copyright_text }}</span>
           </p>     
         </div>
-        <div class="small-12 medium-4 columns footer_secondary__social_media">
-          <ul class="social-links{% if show_label %} social-links--has-label{% endif %}">
-            {% if settings.social_facebook_link != blank %}
-            <li><a href="{{ settings.social_facebook_link }}" class="social facebook" target="_blank" rel="noreferrer" title="Facebook">{% render 'svg-icons' with 'facebook' %}{% if show_label %} <span>{{ 'social.links.facebook' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_twitter_link != blank %}
-            <li><a href="{{ settings.social_twitter_link }}" class="social twitter" target="_blank" rel="noreferrer" title="Twitter">{% render 'svg-icons' with 'twitter' %}{% if show_label %} <span>{{ 'social.links.twitter' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_instagram_link != blank %}
-            <li><a href="{{ settings.social_instagram_link }}" class="social instagram" target="_blank" rel="noreferrer" title="Instagram">{% render 'svg-icons' with 'instagram' %}{% if show_label %} <span>{{ 'social.links.instagram' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_youtube_link != blank %}
-            <li><a href="{{ settings.social_youtube_link }}" class="social youtube" target="_blank" rel="noreferrer" title="YouTube">{% render 'svg-icons' with 'youtube' %}{% if show_label %} <span>{{ 'social.links.youtube' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_pinterest_link != blank %}
-            <li><a href="{{ settings.social_pinterest_link }}" class="social pinterest" target="_blank" rel="noreferrer" title="Pinterest">{% render 'svg-icons' with 'pinterest' %}{% if show_label %} <span>{{ 'social.links.pinterest' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_vimeo_link != blank %}
-            <li><a href="{{ settings.social_vimeo_link }}" class="social vimeo" target="_blank" rel="noreferrer" title="Vimeo">{% render 'svg-icons' with 'vimeo' %}{% if show_label %} <span>{{ 'social.links.vimeo' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_tiktok_link != blank %}
-            <li><a href="{{ settings.social_tiktok_link }}" class="social tiktok" target="_blank" rel="noreferrer" title="TikTok">{% render 'svg-icons' with 'tiktok' %}{% if show_label %} <span>{{ 'social.links.tiktok' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_linkedin_link != blank %}
-            <li><a href="{{ settings.social_linkedin_link }}" class="social linkedin" target="_blank" rel="noreferrer" title="Linkedin">{% render 'svg-icons' with 'linkedin' %}{% if show_label %} <span>{{ 'social.links.linkedin' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-            {% if settings.social_wechat_link != blank %}
-            <li><a href="{{ settings.social_wechat_link }}" class="social wechat" target="_blank" rel="noreferrer" title="WeChat">{% render 'svg-icons' with 'wechat' %}{% if show_label %} <span>{{ 'social.links.wechat' | t }}</span>{% endif %}</a></li>
-            {% endif %}
-          </ul>
-        </div>
-        <div class="small-12 medium-4 columns">
-          {%- if show_payment_icons -%}
-            <div class="footer-payment-icons">
-              {%- unless shop.enabled_payment_types == empty -%}
-                {%- for type in shop.enabled_payment_types -%}
-                  <figure>{{ type | payment_type_svg_tag: class: 'payment-icons__icon' }}</figure>
-                {%- endfor -%}
-              {%- endunless -%}
+        {% if collection.template_suffix != 'artist-profile' %}
+          <div class="small-12 medium-4 columns footer_secondary__social_media">
+            <ul class="social-links{% if show_label %} social-links--has-label{% endif %}">
+              {% if settings.social_facebook_link != blank %}
+              <li><a href="{{ settings.social_facebook_link }}" class="social facebook" target="_blank" rel="noreferrer" title="Facebook">{% render 'svg-icons' with 'facebook' %}{% if show_label %} <span>{{ 'social.links.facebook' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_twitter_link != blank %}
+              <li><a href="{{ settings.social_twitter_link }}" class="social twitter" target="_blank" rel="noreferrer" title="Twitter">{% render 'svg-icons' with 'twitter' %}{% if show_label %} <span>{{ 'social.links.twitter' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_instagram_link != blank %}
+              <li><a href="{{ settings.social_instagram_link }}" class="social instagram" target="_blank" rel="noreferrer" title="Instagram">{% render 'svg-icons' with 'instagram' %}{% if show_label %} <span>{{ 'social.links.instagram' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_youtube_link != blank %}
+              <li><a href="{{ settings.social_youtube_link }}" class="social youtube" target="_blank" rel="noreferrer" title="YouTube">{% render 'svg-icons' with 'youtube' %}{% if show_label %} <span>{{ 'social.links.youtube' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_pinterest_link != blank %}
+              <li><a href="{{ settings.social_pinterest_link }}" class="social pinterest" target="_blank" rel="noreferrer" title="Pinterest">{% render 'svg-icons' with 'pinterest' %}{% if show_label %} <span>{{ 'social.links.pinterest' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_vimeo_link != blank %}
+              <li><a href="{{ settings.social_vimeo_link }}" class="social vimeo" target="_blank" rel="noreferrer" title="Vimeo">{% render 'svg-icons' with 'vimeo' %}{% if show_label %} <span>{{ 'social.links.vimeo' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_tiktok_link != blank %}
+              <li><a href="{{ settings.social_tiktok_link }}" class="social tiktok" target="_blank" rel="noreferrer" title="TikTok">{% render 'svg-icons' with 'tiktok' %}{% if show_label %} <span>{{ 'social.links.tiktok' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_linkedin_link != blank %}
+              <li><a href="{{ settings.social_linkedin_link }}" class="social linkedin" target="_blank" rel="noreferrer" title="Linkedin">{% render 'svg-icons' with 'linkedin' %}{% if show_label %} <span>{{ 'social.links.linkedin' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+              {% if settings.social_wechat_link != blank %}
+              <li><a href="{{ settings.social_wechat_link }}" class="social wechat" target="_blank" rel="noreferrer" title="WeChat">{% render 'svg-icons' with 'wechat' %}{% if show_label %} <span>{{ 'social.links.wechat' | t }}</span>{% endif %}</a></li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+        {%- if show_payment_icons -%}
+          {%- unless shop.enabled_payment_types == empty -%}
+            <div class="small-12 medium-4 columns">
+                <div class="footer-payment-icons">
+                    {%- for type in shop.enabled_payment_types -%}
+                      <figure>{{ type | payment_type_svg_tag: class: 'payment-icons__icon' }}</figure>
+                    {%- endfor -%}
+                </div>
             </div>
-          {%- endif -%}
-        </div>
+          {%- endunless -%}
+      {%- endif -%}
       </div>
     </div>
   </div>
