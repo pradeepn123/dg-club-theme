@@ -3760,6 +3760,12 @@ h6,
   .thb-secondary-area-item.thb-secondary-myaccount {
     display: inline-flex;
   }
+  .thb-secondary-area-item.thb-secondary-myaccount:not(:last-child) {
+    display: inline-flex;
+    font-weight: 500;
+    font-size: calc(var(--font-navigation-scale, 1) * 15px);
+    color: var(--color-header-links, --color-accent);
+  }
 }
 
 .thb-secondary-area-item.thb-secondary-myaccount span {
