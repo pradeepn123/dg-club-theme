@@ -3,12 +3,14 @@
 	<div class="small-12 columns">
     <div class="thb-form-container">
       <div class="thb-register-form">
-        <h4>{{ 'customer.login_page.create_account' | t }}</h4>
-        <div class="register_button_container">
-          <button id="register_customer" class="tab active" data-form-tab="customer_form"> Customer </button>
-          <button id="register_creator" class="tab" data-form-tab="creator_form"> Creator/Reseller </button>
+        <div class="register-form-heading-text">
+            <h4>{{ 'customer.login_page.create_account' | t }}</h4>
+            <div class="register_button_container">
+              <button id="register_customer" class="tab active" data-form-tab="customer_form"> Customer </button>
+              <button id="register_creator" class="tab" data-form-tab="creator_form"> Creator/Reseller </button>
+            </div>
+            <p>{{ 'customer.login_page.create_account_description' | t }}</p>
         </div>
-        <p>{{ 'customer.login_page.create_account_description' | t }}</p>
         {% form 'create_customer', novalidate: 'novalidate', class: 'customer_form showForm' %}
           <span id="form-custom-errors"></span>
 					{% if form.errors %}

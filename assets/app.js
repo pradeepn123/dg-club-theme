@@ -1348,6 +1348,7 @@ if (!customElements.get('creator-form')) {
           .then(this.handleServerResponse)
           .then(response => JSON.parse(response))
           .then(responseJson => {
+            document.querySelector('.register-form-heading-text').style.display = 'none';
             this.thankYouMessage.innerHTML = `
             <h3> Thank you for Account Request </h3>
             <p>Your account request is being reviewed and it might take 60 secs - 15 mins for the process to complete. You will recieve an email once the review process is completed.</p>
