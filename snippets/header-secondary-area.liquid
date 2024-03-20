@@ -7,7 +7,9 @@
 -%}
 <div class="thb-secondary-area thb-header-right">
 	{%- if section.settings.button_label != blank -%}
-		<a class="button thb-header-right-button" href="{{ section.settings.button_link }}" role="button">{{ section.settings.button_label }}</a>
+		{% if collection.template_suffix != 'artist-profile' %}
+			<a class="button thb-header-right-button" href="{{ section.settings.button_link }}" role="button">{{ section.settings.button_label }}</a>
+		{% endif %}
 	{%- endif -%}
 	{%- if shop.customer_accounts_enabled -%}
     	<a class="thb-secondary-area-item thb-secondary-myaccount" href="{{ profile_link | escape }}" title="{{ 'sections.header.my_account' | t }}">{%- render 'svg-icons' with 'myaccount' -%}</a>
