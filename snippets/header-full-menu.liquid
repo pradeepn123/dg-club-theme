@@ -1,4 +1,5 @@
 <full-menu class="full-menu">
+	{% if collection.template_suffix != 'artist-profile' %}
 	<ul class="thb-full-menu" role="menubar">
 	  {%- for link in menu.links -%}
 		  {%- liquid
@@ -110,4 +111,5 @@
 		  </li>
 	  {%- endfor -%}
 	</ul>
+	{% endif %}
 </full-menu>

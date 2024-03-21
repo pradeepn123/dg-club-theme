@@ -320,7 +320,32 @@
   border: 1px solid rgba(var(--color-footer-border-rgb, #fff), 0.4); 
 }
 
+
+#artist-profile-footer .columns {
+  max-width: 100%;  
+  flex: 0 0 100%;
+}
+#artist-profile-footer .columns .widget{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 0;
+  text-align: center;
+}
+#artist-profile-footer .columns .widget p{
+  width: 100%;
+  margin-bottom: 0;
+}
 @media only screen and (min-width: 768px) {
+  #artist-profile-footer .columns .widget{
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+  #artist-profile-footer .columns .widget p{
+    width: 100%;    
+  }
   .footer-payment-icons {
     text-align: right; } }
 
