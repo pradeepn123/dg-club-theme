@@ -1308,11 +1308,7 @@ if (!customElements.get('creator-form')) {
         getMediaLinksForPayload(){
           let finalObject = {}
           let captureSocialMediaLinks = document.querySelectorAll("#getInputData");
-          if(Object.values(captureSocialMediaLinks).map((items) => items.value).length == 1 && Object.values(captureSocialMediaLinks).map((items) => items.value)[0] == "") {
-            return [];
-          } else {
-            return Object.values(captureSocialMediaLinks).map((items) => items.value)
-          }
+          return Object.values(captureSocialMediaLinks).map((items) => items.value);
         }
         linkCloseButtons(){
           let closeButtonLinks = document.querySelectorAll("#close_button_mediaLinks");
@@ -1335,7 +1331,7 @@ if (!customElements.get('creator-form')) {
           }
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
-          payload.social_media_links = this.getMediaLinksForPayload();
+          payload.social_media_links = this.getMediaLinksForPayload().filter(item => item !== '');
           payload.store = 4
           fetch(`${theme.routes.backend_url}/api/creators/?shop=${Shopify.shop}`, {
             method: 'POST',
