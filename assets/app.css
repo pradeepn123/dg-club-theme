@@ -6274,3 +6274,24 @@ input[type="radio"],
 .product-cart-item-info .product-cart-item-options a{
   word-break: break-all;
 }
+
+
+body .sidebar-panel-container .templates-panel-sidebar-content .template-item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+  -webkit-user-select: none;
+  user-select: none;
+  align-items: center;
+  @media (min-width: 900px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+body .sidebar-panel-container .templates-panel-sidebar-content .template-item-wrapper .template-item {
+  @media (min-width: 900px) {
+    width: auto;
+  }
+}
