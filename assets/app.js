@@ -1318,7 +1318,51 @@ if (!customElements.get('creator-form')) {
             })
           })
         }
+
+        
+        isValidPhoneNo(phoneno) {    
+          const phoneMatcher = /^\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{4}$/;
+          return phoneMatcher.test(phoneno);
+        }
+
+        checkValidateFields(){          
+          const creatorFirstName = document.querySelector('#creator_firstname');
+          const creatorLastName = document.querySelector('#creator_lastname');
+          const creatorEmail = document.querySelector('#creator_email');
+          const creatorPhone = document.querySelector('#creator_phone');         
+          const phoneError = document.querySelector('.phone-error-msg');
+                              
+          if(creatorPhone.value) {
+            if(!this.isValidPhoneNo(creatorPhone.value)) {
+              phoneError.textContent = "Enter a valid Phone number.";
+              phoneError.style.color = "red";
+              phoneError.style.fontSize = "13px";
+            } 
+          }
+
+          if(creatorFirstName.value && creatorLastName.value && creatorEmail.value && creatorPhone.value) {
+            if(!this.isValidPhoneNo(creatorPhone.value)) {
+              phoneError.style.display='block';
+              phoneError.textContent = "Enter a valid Phone number.";
+              phoneError.style.color = "red";
+              phoneError.style.fontSize = "13px";
+              setTimeout(() => {
+                phoneError.style.marginBottom = '20px';
+                phoneError.style.display = 'none';
+              }, 4500);
+            } else {
+              phoneError.style.display='none';
+              phoneError.style.marginBottom = '20px';
+              // creatorSubmitBtn.removeAttribute('disabled');
+            }
+          }
+
+        }
         handleSubmit(evt) {
+          
+          const creatorPhone = document.querySelector('#creator_phone');   
+          this.checkValidateFields()
+
           // Show Loader
           const initialCTAContent = this.ctaLoader.innerHTML
           this.ctaLoader.innerHTML = `<div class="file_loader"></div>`
@@ -1332,49 +1376,51 @@ if (!customElements.get('creator-form')) {
           const payload = Object.fromEntries(formData)
           payload.attachments = this.uploadedFiles
           payload.social_media_links = this.getMediaLinksForPayload().filter(item => item !== '');
-          payload.store = 4
-          fetch(`${theme.routes.backend_url}/api/creators/?shop=${Shopify.shop}`, {
-            method: 'POST',
-            body: JSON.stringify(payload),
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-          })
-          .then(this.handleServerResponse)
-          .then(response => JSON.parse(response))
-          .then(responseJson => {
-            document.querySelector('.register-form-heading-text').style.display = 'none';
-            this.thankYouMessage.innerHTML = `
-            <h3> Thank you for Account Request </h3>
-            <p>Your account request is being reviewed and it might take 60 secs - 15 mins for the process to complete. You will recieve an email once the review process is completed.</p>
-            <a href="${window.location.origin}" class="button full creator_form_button"><span>Back to homepage</span></a>`
-          })
-          .catch(response => {
-            let responseJson = JSON.parse(response)
-            if (responseJson.response.email) {
-              // Show Email error message
-              document.querySelector('#creator_email').style.marginBottom = '0';
-              document.querySelector('.email_id_error').style.display = 'block';
-              document.querySelector('.email_id_error').innerHTML = responseJson.response.email;  
-              setTimeout(() => {
-                document.querySelector('#creator_email').style.marginBottom = '20px';
-                document.querySelector('.email_id_error').style.display = 'none';
-              }, 4500);
-              this.ctaLoader.innerHTML = initialCTAContent
-            }
-            if (responseJson.response.phone_no || responseJson.response.phone) {
-              // Show Phone error message
-              document.querySelector('#creator_phone').style.marginBottom = '0';
-              document.querySelector('.phone_no_error').style.display = 'block';
-              document.querySelector('.phone_no_error').innerHTML = responseJson.response.phone_no != undefined ? responseJson.response.phone_no : responseJson.response.phone;
-              setTimeout(() => {
-                document.querySelector('#creator_phone').style.marginBottom = '20px';
-                document.querySelector('.phone_no_error').style.display = 'none';
-              }, 4500);
-              this.ctaLoader.innerHTML = initialCTAContent
-            }
-          })
+          payload.store = 4          
+          if(creatorPhone.value && !this.isValidPhoneNo(creatorPhone.value)){
+            fetch(`${theme.routes.backend_url}/api/creators/?shop=${Shopify.shop}`, {
+              method: 'POST',
+              body: JSON.stringify(payload),
+              headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+              },
+            })
+            .then(this.handleServerResponse)
+            .then(response => JSON.parse(response))
+            .then(responseJson => {
+              document.querySelector('.register-form-heading-text').style.display = 'none';
+              this.thankYouMessage.innerHTML = `
+              <h3> Thank you for Account Request </h3>
+              <p>Your account request is being reviewed and it might take 60 secs - 15 mins for the process to complete. You will recieve an email once the review process is completed.</p>
+              <a href="${window.location.origin}" class="button full creator_form_button"><span>Back to homepage</span></a>`
+            })
+            .catch(response => {
+              let responseJson = JSON.parse(response)
+              if (responseJson.response.email) {
+                // Show Email error message
+                document.querySelector('#creator_email').style.marginBottom = '0';
+                document.querySelector('.email_id_error').style.display = 'block';
+                document.querySelector('.email_id_error').innerHTML = responseJson.response.email;  
+                setTimeout(() => {
+                  document.querySelector('#creator_email').style.marginBottom = '20px';
+                  document.querySelector('.email_id_error').style.display = 'none';
+                }, 4500);
+                this.ctaLoader.innerHTML = initialCTAContent
+              }
+              if (responseJson.response.phone_no || responseJson.response.phone) {
+                // Show Phone error message
+                document.querySelector('#creator_phone').style.marginBottom = '0';
+                document.querySelector('.phone_no_error').style.display = 'block';
+                document.querySelector('.phone_no_error').innerHTML = responseJson.response.phone_no != undefined ? responseJson.response.phone_no : responseJson.response.phone;
+                setTimeout(() => {
+                  document.querySelector('#creator_phone').style.marginBottom = '20px';
+                  document.querySelector('.phone_no_error').style.display = 'none';
+                }, 4500);
+                this.ctaLoader.innerHTML = initialCTAContent
+              }
+            })
+          }
           return false
         }
 
